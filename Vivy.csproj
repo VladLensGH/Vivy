@@ -8,4 +8,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Krypton.Docking" Version="95.25.4.111" />
+    <PackageReference Include="Krypton.Navigator" Version="95.25.4.111" />
+    <PackageReference Include="Krypton.Toolkit" Version="95.25.4.111" />
+    <PackageReference Include="Krypton.Workspace" Version="95.25.4.111" />
+  </ItemGroup>
+
 </Project>
