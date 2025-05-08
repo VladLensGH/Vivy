@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Vivy
 {
-    public partial class FrmMain : Form
+    public partial class FrmLogin : Form
     {
-        public FrmMain()
+        public FrmLogin()
         {
             InitializeComponent();
         }
