@@ -8,6 +8,18 @@ namespace Vivy
 {
     public partial class FrmMain : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+
+        private static extern IntPtr CreateRoundRectRgn
+ (
+ int nLeftRect,
+ int nTopRect,
+ int nRightRect,
+ int nBottomRect,
+ int nWidthEllipse,
+ int nHeightEllipse
+
+);
         public FrmMain()
         {
             InitializeComponent();
@@ -263,6 +275,11 @@ namespace Vivy
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelVivy_Paint(object sender, PaintEventArgs e)
         {
 
         }

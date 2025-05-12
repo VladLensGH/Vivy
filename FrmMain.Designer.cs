@@ -28,17 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
-            SuspendLayout();
-            // 
-            // Form1
-            // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Name = "Form1";
-            Text = "Form1";
-
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             pnlNaw = new Panel();
             Pnlscroll = new Panel();
@@ -75,16 +64,16 @@
             label2 = new Label();
             panelSettings = new Panel();
             panelCalendar = new Panel();
+            panelEvents = new Panel();
+            panelAddEvent = new Panel();
+            panelMiniCalendar = new Panel();
+            monthCalendar1 = new MonthCalendar();
             panelAnalytics = new Panel();
             panelInput = new Panel();
             btnSend = new Button();
             textBoxInput = new TextBox();
             panelVivy = new Panel();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            monthCalendar1 = new MonthCalendar();
-            panelMiniCalendar = new Panel();
-            panelAddEvent = new Panel();
-            panelEvents = new Panel();
             pnlNaw.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -96,9 +85,9 @@
             panelAboutVivy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panelCalendar.SuspendLayout();
+            panelMiniCalendar.SuspendLayout();
             panelInput.SuspendLayout();
             panelVivy.SuspendLayout();
-            panelMiniCalendar.SuspendLayout();
             SuspendLayout();
             // 
             // pnlNaw
@@ -277,7 +266,6 @@
             panelAbout.Name = "panelAbout";
             panelAbout.Size = new Size(951, 577);
             panelAbout.TabIndex = 11;
-            panelAbout.Visible = false;
             panelAbout.Paint += panel4_Paint;
             // 
             // panelContact
@@ -286,7 +274,7 @@
             panelContact.Controls.Add(linkLabel2);
             panelContact.Controls.Add(label9);
             panelContact.Controls.Add(label10);
-            panelContact.Location = new Point(405, 259);
+            panelContact.Location = new Point(595, 259);
             panelContact.Name = "panelContact";
             panelContact.Size = new Size(328, 134);
             panelContact.TabIndex = 22;
@@ -328,7 +316,7 @@
             panelaboutUs.BackColor = Color.FromArgb(40, 40, 60);
             panelaboutUs.Controls.Add(label6);
             panelaboutUs.Controls.Add(label5);
-            panelaboutUs.Location = new Point(17, 259);
+            panelaboutUs.Location = new Point(207, 259);
             panelaboutUs.Name = "panelaboutUs";
             panelaboutUs.Size = new Size(364, 134);
             panelaboutUs.TabIndex = 21;
@@ -362,7 +350,7 @@
             panelSupport.Controls.Add(lblSupportCardText);
             panelSupport.Controls.Add(label8);
             panelSupport.Controls.Add(label7);
-            panelSupport.Location = new Point(69, 428);
+            panelSupport.Location = new Point(259, 428);
             panelSupport.Name = "panelSupport";
             panelSupport.Size = new Size(630, 114);
             panelSupport.TabIndex = 20;
@@ -418,7 +406,7 @@
             panelProjects.BackColor = Color.FromArgb(40, 40, 60);
             panelProjects.Controls.Add(label4);
             panelProjects.Controls.Add(linkLabel1);
-            panelProjects.Location = new Point(405, 30);
+            panelProjects.Location = new Point(595, 30);
             panelProjects.Name = "panelProjects";
             panelProjects.Size = new Size(328, 187);
             panelProjects.TabIndex = 19;
@@ -458,7 +446,7 @@
             panelAboutVivy.Controls.Add(lblAboutText);
             panelAboutVivy.Controls.Add(label3);
             panelAboutVivy.Controls.Add(label2);
-            panelAboutVivy.Location = new Point(17, 30);
+            panelAboutVivy.Location = new Point(207, 30);
             panelAboutVivy.Name = "panelAboutVivy";
             panelAboutVivy.Size = new Size(364, 187);
             panelAboutVivy.TabIndex = 18;
@@ -522,9 +510,9 @@
             // panelSettings
             // 
             panelSettings.Dock = DockStyle.Fill;
-            panelSettings.Location = new Point(186, 0);
+            panelSettings.Location = new Point(0, 0);
             panelSettings.Name = "panelSettings";
-            panelSettings.Size = new Size(765, 577);
+            panelSettings.Size = new Size(951, 577);
             panelSettings.TabIndex = 0;
             panelSettings.Visible = false;
             // 
@@ -534,10 +522,41 @@
             panelCalendar.Controls.Add(panelAddEvent);
             panelCalendar.Controls.Add(panelMiniCalendar);
             panelCalendar.Dock = DockStyle.Fill;
-            panelCalendar.Location = new Point(186, 0);
+            panelCalendar.Location = new Point(0, 0);
             panelCalendar.Name = "panelCalendar";
-            panelCalendar.Size = new Size(765, 577);
+            panelCalendar.Size = new Size(951, 577);
             panelCalendar.TabIndex = 0;
+            panelCalendar.Visible = false;
+            // 
+            // panelEvents
+            // 
+            panelEvents.Location = new Point(388, 30);
+            panelEvents.Name = "panelEvents";
+            panelEvents.Size = new Size(200, 100);
+            panelEvents.TabIndex = 0;
+            // 
+            // panelAddEvent
+            // 
+            panelAddEvent.Location = new Point(255, 359);
+            panelAddEvent.Name = "panelAddEvent";
+            panelAddEvent.Size = new Size(200, 100);
+            panelAddEvent.TabIndex = 0;
+            // 
+            // panelMiniCalendar
+            // 
+            panelMiniCalendar.Controls.Add(monthCalendar1);
+            panelMiniCalendar.ForeColor = Color.White;
+            panelMiniCalendar.Location = new Point(25, 30);
+            panelMiniCalendar.Name = "panelMiniCalendar";
+            panelMiniCalendar.Size = new Size(230, 180);
+            panelMiniCalendar.TabIndex = 1;
+            // 
+            // monthCalendar1
+            // 
+            monthCalendar1.Location = new Point(9, 9);
+            monthCalendar1.MaxSelectionCount = 1;
+            monthCalendar1.Name = "monthCalendar1";
+            monthCalendar1.TabIndex = 0;
             // 
             // panelAnalytics
             // 
@@ -591,36 +610,7 @@
             panelVivy.Size = new Size(951, 577);
             panelVivy.TabIndex = 0;
             panelVivy.Visible = false;
-            // 
-            // monthCalendar1
-            // 
-            monthCalendar1.Location = new Point(9, 9);
-            monthCalendar1.MaxSelectionCount = 1;
-            monthCalendar1.Name = "monthCalendar1";
-            monthCalendar1.TabIndex = 0;
-            // 
-            // panelMiniCalendar
-            // 
-            panelMiniCalendar.Controls.Add(monthCalendar1);
-            panelMiniCalendar.ForeColor = Color.White;
-            panelMiniCalendar.Location = new Point(25, 30);
-            panelMiniCalendar.Name = "panelMiniCalendar";
-            panelMiniCalendar.Size = new Size(230, 180);
-            panelMiniCalendar.TabIndex = 1;
-            // 
-            // panelAddEvent
-            // 
-            panelAddEvent.Location = new Point(255, 359);
-            panelAddEvent.Name = "panelAddEvent";
-            panelAddEvent.Size = new Size(200, 100);
-            panelAddEvent.TabIndex = 0;
-            // 
-            // panelEvents
-            // 
-            panelEvents.Location = new Point(388, 30);
-            panelEvents.Name = "panelEvents";
-            panelEvents.Size = new Size(200, 100);
-            panelEvents.TabIndex = 0;
+            panelVivy.Paint += panelVivy_Paint;
             // 
             // FrmMain
             // 
@@ -628,12 +618,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(951, 577);
+            Controls.Add(pnlNaw);
+            Controls.Add(panelAbout);
             Controls.Add(panelCalendar);
             Controls.Add(panelSettings);
-            Controls.Add(pnlNaw);
             Controls.Add(panelVivy);
             Controls.Add(panelAnalytics);
-            Controls.Add(panelAbout);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMain";
             StartPosition = FormStartPosition.CenterScreen;
@@ -656,11 +646,10 @@
             panelAboutVivy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panelCalendar.ResumeLayout(false);
+            panelMiniCalendar.ResumeLayout(false);
             panelInput.ResumeLayout(false);
             panelInput.PerformLayout();
             panelVivy.ResumeLayout(false);
-            panelMiniCalendar.ResumeLayout(false);
-
             ResumeLayout(false);
         }
 
