@@ -122,7 +122,7 @@
             btnsettings.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnsettings.ForeColor = Color.FromArgb(0, 126, 249);
             btnsettings.Image = (Image)resources.GetObject("btnsettings.Image");
-            btnsettings.ImageAlign = ContentAlignment.TopCenter;
+            btnsettings.ImageAlign = ContentAlignment.MiddleRight;
             btnsettings.Location = new Point(0, 502);
             btnsettings.Name = "btnsettings";
             btnsettings.Padding = new Padding(10, 0, 0, 10);
@@ -142,6 +142,7 @@
             btnContactUs.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnContactUs.ForeColor = Color.FromArgb(0, 126, 249);
             btnContactUs.Image = (Image)resources.GetObject("btnContactUs.Image");
+            btnContactUs.ImageAlign = ContentAlignment.MiddleRight;
             btnContactUs.Location = new Point(0, 301);
             btnContactUs.Name = "btnContactUs";
             btnContactUs.Size = new Size(186, 42);
@@ -160,6 +161,7 @@
             btnCalendar.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCalendar.ForeColor = Color.FromArgb(0, 126, 249);
             btnCalendar.Image = (Image)resources.GetObject("btnCalendar.Image");
+            btnCalendar.ImageAlign = ContentAlignment.MiddleRight;
             btnCalendar.Location = new Point(0, 259);
             btnCalendar.Name = "btnCalendar";
             btnCalendar.Size = new Size(186, 42);
@@ -178,6 +180,7 @@
             btnAnalytics.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAnalytics.ForeColor = Color.FromArgb(0, 126, 249);
             btnAnalytics.Image = (Image)resources.GetObject("btnAnalytics.Image");
+            btnAnalytics.ImageAlign = ContentAlignment.MiddleRight;
             btnAnalytics.Location = new Point(0, 217);
             btnAnalytics.Name = "btnAnalytics";
             btnAnalytics.Padding = new Padding(22, 0, 0, 0);
@@ -197,6 +200,7 @@
             BtnDashboard.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             BtnDashboard.ForeColor = Color.FromArgb(0, 126, 249);
             BtnDashboard.Image = (Image)resources.GetObject("BtnDashboard.Image");
+            BtnDashboard.ImageAlign = ContentAlignment.MiddleRight;
             BtnDashboard.Location = new Point(0, 175);
             BtnDashboard.Name = "BtnDashboard";
             BtnDashboard.Padding = new Padding(22, 0, 0, 0);
@@ -432,7 +436,7 @@
             linkLabel1.LinkColor = Color.LightGray;
             linkLabel1.Location = new Point(23, 78);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(287, 60);
+            linkLabel1.Size = new Size(288, 60);
             linkLabel1.TabIndex = 13;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "• CrossLang — мультиязычный переводчик с ИИ\n• StreamMind — генерация сценариев для YouTube\n• ZenNote — минималистичный трекер привычек\n • SportBet — сайт букмекерська контора";
@@ -492,7 +496,7 @@
             label3.ForeColor = Color.Gray;
             label3.Location = new Point(29, 161);
             label3.Name = "label3";
-            label3.Size = new Size(74, 13);
+            label3.Size = new Size(75, 13);
             label3.TabIndex = 3;
             label3.Text = "Версия: 1.0.0";
             // 
