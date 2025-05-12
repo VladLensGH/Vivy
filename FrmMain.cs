@@ -20,11 +20,12 @@ namespace Vivy
         public FrmMain()
         {
             InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25))
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+
 
         }
 
@@ -41,6 +42,22 @@ namespace Vivy
         private void BtnDashboard_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnDashboard_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmLogin dlgLogin = new FrmLogin();
+            DialogResult r = dlgLogin.ShowDialog();
         }
     }
 }
