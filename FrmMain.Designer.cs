@@ -79,6 +79,8 @@
             panelVivy = new Panel();
             richTextBox1 = new RichTextBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            panelHistory = new Panel();
+            listBoxHistory = new ListBox();
             pnlNaw.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -95,6 +97,7 @@
             panelMiniCalendar.SuspendLayout();
             panelInput.SuspendLayout();
             panelVivy.SuspendLayout();
+            panelHistory.SuspendLayout();
             SuspendLayout();
             // 
             // pnlNaw
@@ -289,6 +292,7 @@
             panelContact.Name = "panelContact";
             panelContact.Size = new Size(328, 134);
             panelContact.TabIndex = 22;
+            panelContact.Paint += panelContact_Paint;
             // 
             // linkLabel2
             // 
@@ -331,6 +335,7 @@
             panelaboutUs.Name = "panelaboutUs";
             panelaboutUs.Size = new Size(364, 134);
             panelaboutUs.TabIndex = 21;
+            panelaboutUs.Paint += panelaboutUs_Paint;
             // 
             // label6
             // 
@@ -629,9 +634,9 @@
             panelInput.BackColor = Color.FromArgb(40, 40, 40);
             panelInput.Controls.Add(btnSend);
             panelInput.Controls.Add(textBoxInput);
-            panelInput.Location = new Point(236, 502);
+            panelInput.Location = new Point(210, 504);
             panelInput.Name = "panelInput";
-            panelInput.Size = new Size(632, 45);
+            panelInput.Size = new Size(507, 45);
             panelInput.TabIndex = 0;
             // 
             // btnSend
@@ -639,9 +644,9 @@
             btnSend.BackColor = Color.FromArgb(60, 60, 60);
             btnSend.FlatStyle = FlatStyle.Flat;
             btnSend.ForeColor = Color.White;
-            btnSend.Location = new Point(576, 17);
+            btnSend.Location = new Point(458, 17);
             btnSend.Name = "btnSend";
-            btnSend.Size = new Size(41, 18);
+            btnSend.Size = new Size(38, 18);
             btnSend.TabIndex = 1;
             btnSend.Text = "⬆️\r\n\r\n";
             btnSend.UseVisualStyleBackColor = false;
@@ -655,11 +660,12 @@
             textBoxInput.ForeColor = Color.White;
             textBoxInput.Location = new Point(6, 17);
             textBoxInput.Name = "textBoxInput";
-            textBoxInput.Size = new Size(571, 18);
+            textBoxInput.Size = new Size(446, 18);
             textBoxInput.TabIndex = 0;
             // 
             // panelVivy
             // 
+            panelVivy.Controls.Add(panelHistory);
             panelVivy.Controls.Add(panelInput);
             panelVivy.Controls.Add(richTextBox1);
             panelVivy.Dock = DockStyle.Fill;
@@ -675,13 +681,34 @@
             richTextBox1.BackColor = Color.FromArgb(46, 51, 73);
             richTextBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
             richTextBox1.ForeColor = Color.White;
-            richTextBox1.Location = new Point(236, 36);
+            richTextBox1.Location = new Point(210, 33);
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ReadOnly = true;
             richTextBox1.ScrollBars = RichTextBoxScrollBars.Vertical;
-            richTextBox1.Size = new Size(632, 468);
+            richTextBox1.Size = new Size(507, 468);
             richTextBox1.TabIndex = 2;
             richTextBox1.Text = "";
+            // 
+            // panelHistory
+            // 
+            panelHistory.Controls.Add(listBoxHistory);
+            panelHistory.Location = new Point(720, 33);
+            panelHistory.Name = "panelHistory";
+            panelHistory.Size = new Size(200, 516);
+            panelHistory.TabIndex = 0;
+            // 
+            // listBoxHistory
+            // 
+            listBoxHistory.BackColor = Color.FromArgb(46, 51, 73);
+            listBoxHistory.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            listBoxHistory.ForeColor = Color.White;
+            listBoxHistory.FormattingEnabled = true;
+            listBoxHistory.ItemHeight = 17;
+            listBoxHistory.Location = new Point(0, 3);
+            listBoxHistory.Name = "listBoxHistory";
+            listBoxHistory.Size = new Size(200, 514);
+            listBoxHistory.TabIndex = 0;
+            listBoxHistory.SelectedIndexChanged += listBoxHistory_SelectedIndexChanged;
             // 
             // FrmMain
             // 
@@ -725,6 +752,7 @@
             panelInput.ResumeLayout(false);
             panelInput.PerformLayout();
             panelVivy.ResumeLayout(false);
+            panelHistory.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -781,5 +809,7 @@
         private Button buttonAddEvent;
         private TextBox textBoxNewEvent;
         private RichTextBox richTextBox1;
+        private Panel panelHistory;
+        private ListBox listBoxHistory;
     }
 }

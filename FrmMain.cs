@@ -34,6 +34,8 @@ namespace Vivy
             Pnlscroll.Left = BtnDashboard.Left;
             BtnDashboard.BackColor = Color.FromArgb(46, 51, 73);
         }
+        private Dictionary<string, List<(string sender, string message)>> chatHistory = new();
+        private string currentChatTitle = "";
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
@@ -58,13 +60,13 @@ namespace Vivy
             linkLabel1.LinkBehavior = LinkBehavior.HoverUnderline;
 
             linkSupportCard.Links.Clear();
-            linkSupportCard.Links.Add(0, linkSupportCard.Text.Length, "https://send.monobank.ua/jar/xxxxxxxxxxxxxxxx"); // ← замени на свою ссылку
+            linkSupportCard.Links.Add(0, linkSupportCard.Text.Length, "https://send.monobank.ua/jar/4441114498935962"); // ← замени на свою ссылку
 
 
 
 
 
-            
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -336,19 +338,29 @@ namespace Vivy
             string userMessage = textBoxInput.Text.Trim();
             if (string.IsNullOrEmpty(userMessage)) return;
 
+            // Определяем название чата
+            if (string.IsNullOrEmpty(currentChatTitle))
+            {
+                currentChatTitle = userMessage.Length > 30 ? userMessage.Substring(0, 30) + "..." : userMessage;
+                listBoxHistory.Items.Add(currentChatTitle);
+                chatHistory[currentChatTitle] = new List<(string, string)>();
+            }
+
+            // Сохраняем пользовательское сообщение
+            chatHistory[currentChatTitle].Add(("Вы", userMessage));
+
             // Показываем сообщение пользователя
             richTextBox1.SelectionColor = Color.DeepSkyBlue;
             richTextBox1.AppendText("Вы: ");
             richTextBox1.SelectionColor = Color.White;
             richTextBox1.AppendText(userMessage + "\n\n");
-
-            // Очищаем ввод
             textBoxInput.Clear();
 
             // Получаем ответ от GPT
             string gptResponse = await GetGPTResponse(userMessage);
 
-            // Показываем ответ Vivy
+            // Показываем и сохраняем ответ Vivy
+            chatHistory[currentChatTitle].Add(("Vivy", gptResponse));
             richTextBox1.SelectionColor = Color.MediumPurple;
             richTextBox1.AppendText("Vivy: ");
             richTextBox1.SelectionColor = Color.White;
@@ -360,5 +372,29 @@ namespace Vivy
         }
 
 
+        private void panelaboutUs_Paint(object sender, PaintEventArgs e)
+        {
+            RoundPanelCorners(panelAboutVivy, 15);
+        }
+
+        private void panelContact_Paint(object sender, PaintEventArgs e)
+        {
+            RoundPanelCorners(panelAboutVivy, 15);
+        }
+
+        private void listBoxHistory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBoxHistory.SelectedItem == null) return;
+            currentChatTitle = listBoxHistory.SelectedItem.ToString();
+
+            richTextBox1.Clear();
+            foreach (var (senderName, message) in chatHistory[currentChatTitle])
+            {
+                richTextBox1.SelectionColor = senderName == "Вы" ? Color.DeepSkyBlue : Color.MediumPurple;
+                richTextBox1.AppendText($"{senderName}: ");
+                richTextBox1.SelectionColor = Color.White;
+                richTextBox1.AppendText(message + "\n\n");
+            }
+        }
     }
 }
