@@ -56,6 +56,11 @@ namespace Vivy
             linkSupportCard.Links.Clear();
             linkSupportCard.Links.Add(0, linkSupportCard.Text.Length, "https://send.monobank.ua/jar/xxxxxxxxxxxxxxxx"); // ← замени на свою ссылку
 
+
+
+
+
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
