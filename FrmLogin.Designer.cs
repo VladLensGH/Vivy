@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             pcbLogo = new PictureBox();
             lblLogin = new Label();
@@ -185,6 +184,7 @@
             Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmMain";
+            Load += FrmLogin_Load;
             ((System.ComponentModel.ISupportInitialize)pcbLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pcbLogin).EndInit();
             ((System.ComponentModel.ISupportInitialize)pcbPassword).EndInit();

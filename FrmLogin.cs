@@ -32,7 +32,7 @@ namespace Vivy
         );
 
 
-        public FrmLogin()
+        public FrmLogin() 
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
@@ -48,5 +48,9 @@ namespace Vivy
 
         }
 
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -3,6 +3,9 @@
 ﻿using System.Drawing.Drawing2D;
 using System.Drawing.Printing;
 using System.Runtime.InteropServices;
+using System.Text.Json;
+using RestSharp;
+using System.Text.Json;
 
 
 namespace Vivy
@@ -24,6 +27,7 @@ namespace Vivy
         public FrmMain()
         {
             InitializeComponent();
+
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             Pnlscroll.Height = BtnDashboard.Height;
             Pnlscroll.Top = BtnDashboard.Top;
@@ -284,5 +288,72 @@ namespace Vivy
         {
 
         }
+
+        private void panelCalendar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private async Task<string> GetGPTResponse(string userMessage)
+        {
+            var client = new RestClient("https://openrouter.ai/api/v1/chat/completions");
+            var request = new RestRequest();
+            request.AddHeader("Authorization", "Bearer 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");
+            request.AddHeader("Content-Type", "application/json");
+
+            var body = new
+            {
+                model = "openai/gpt-3.5-turbo", //
+                messages = new[]
+                {
+            new { role = "user", content = userMessage }
+        }
+            };
+
+            request.AddJsonBody(body);
+            var response = await client.PostAsync(request);
+
+            if (response != null && response.Content != null)
+            {
+                using var doc = JsonDocument.Parse(response.Content);
+                return doc.RootElement
+                          .GetProperty("choices")[0]
+                          .GetProperty("message")
+                          .GetProperty("content")
+                          .GetString();
+            }
+
+            return "Помилка при отриманні відповіді.";
+        }
+
+
+        private async void btnSend_Click(object sender, EventArgs e)
+        {
+            string userMessage = textBoxInput.Text.Trim();
+            if (string.IsNullOrEmpty(userMessage)) return;
+
+            // Показываем сообщение пользователя
+            richTextBox1.SelectionColor = Color.DeepSkyBlue;
+            richTextBox1.AppendText("Вы: ");
+            richTextBox1.SelectionColor = Color.White;
+            richTextBox1.AppendText(userMessage + "\n\n");
+
+            // Очищаем ввод
+            textBoxInput.Clear();
+
+            // Получаем ответ от GPT
+            string gptResponse = await GetGPTResponse(userMessage);
+
+            // Показываем ответ Vivy
+            richTextBox1.SelectionColor = Color.MediumPurple;
+            richTextBox1.AppendText("Vivy: ");
+            richTextBox1.SelectionColor = Color.White;
+            richTextBox1.AppendText(gptResponse + "\n\n");
+
+            // Прокручиваем вниз
+            richTextBox1.SelectionStart = richTextBox1.Text.Length;
+            richTextBox1.ScrollToCaret();
+        }
+
+
     }
 }

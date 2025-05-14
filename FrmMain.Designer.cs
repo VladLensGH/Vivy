@@ -65,7 +65,11 @@
             panelSettings = new Panel();
             panelCalendar = new Panel();
             panelEvents = new Panel();
+            labelEventsTitle = new Label();
+            listBoxEvents = new ListBox();
             panelAddEvent = new Panel();
+            buttonAddEvent = new Button();
+            textBoxNewEvent = new TextBox();
             panelMiniCalendar = new Panel();
             monthCalendar1 = new MonthCalendar();
             panelAnalytics = new Panel();
@@ -73,6 +77,7 @@
             btnSend = new Button();
             textBoxInput = new TextBox();
             panelVivy = new Panel();
+            richTextBox1 = new RichTextBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             pnlNaw.SuspendLayout();
             panel2.SuspendLayout();
@@ -85,6 +90,8 @@
             panelAboutVivy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panelCalendar.SuspendLayout();
+            panelEvents.SuspendLayout();
+            panelAddEvent.SuspendLayout();
             panelMiniCalendar.SuspendLayout();
             panelInput.SuspendLayout();
             panelVivy.SuspendLayout();
@@ -436,7 +443,7 @@
             linkLabel1.LinkColor = Color.LightGray;
             linkLabel1.Location = new Point(23, 78);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(288, 60);
+            linkLabel1.Size = new Size(287, 60);
             linkLabel1.TabIndex = 13;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "• CrossLang — мультиязычный переводчик с ИИ\n• StreamMind — генерация сценариев для YouTube\n• ZenNote — минималистичный трекер привычек\n • SportBet — сайт букмекерська контора";
@@ -496,7 +503,7 @@
             label3.ForeColor = Color.Gray;
             label3.Location = new Point(29, 161);
             label3.Name = "label3";
-            label3.Size = new Size(75, 13);
+            label3.Size = new Size(74, 13);
             label3.TabIndex = 3;
             label3.Text = "Версия: 1.0.0";
             // 
@@ -531,26 +538,71 @@
             panelCalendar.Size = new Size(951, 577);
             panelCalendar.TabIndex = 0;
             panelCalendar.Visible = false;
+            panelCalendar.Paint += panelCalendar_Paint;
             // 
             // panelEvents
             // 
-            panelEvents.Location = new Point(388, 30);
+            panelEvents.Controls.Add(labelEventsTitle);
+            panelEvents.Controls.Add(listBoxEvents);
+            panelEvents.Location = new Point(668, 33);
             panelEvents.Name = "panelEvents";
-            panelEvents.Size = new Size(200, 100);
+            panelEvents.Size = new Size(255, 214);
             panelEvents.TabIndex = 0;
+            // 
+            // labelEventsTitle
+            // 
+            labelEventsTitle.AutoSize = true;
+            labelEventsTitle.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold);
+            labelEventsTitle.ForeColor = Color.White;
+            labelEventsTitle.Location = new Point(3, 18);
+            labelEventsTitle.Name = "labelEventsTitle";
+            labelEventsTitle.Size = new Size(257, 34);
+            labelEventsTitle.TabIndex = 13;
+            labelEventsTitle.Text = "\"Події на: [12.05.2025]";
+            labelEventsTitle.UseCompatibleTextRendering = true;
+            // 
+            // listBoxEvents
+            // 
+            listBoxEvents.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            listBoxEvents.FormattingEnabled = true;
+            listBoxEvents.ItemHeight = 17;
+            listBoxEvents.Location = new Point(28, 65);
+            listBoxEvents.Name = "listBoxEvents";
+            listBoxEvents.Size = new Size(172, 140);
+            listBoxEvents.TabIndex = 1;
             // 
             // panelAddEvent
             // 
-            panelAddEvent.Location = new Point(255, 359);
+            panelAddEvent.Controls.Add(buttonAddEvent);
+            panelAddEvent.Controls.Add(textBoxNewEvent);
+            panelAddEvent.Location = new Point(326, 253);
             panelAddEvent.Name = "panelAddEvent";
-            panelAddEvent.Size = new Size(200, 100);
+            panelAddEvent.Size = new Size(351, 312);
             panelAddEvent.TabIndex = 0;
+            // 
+            // buttonAddEvent
+            // 
+            buttonAddEvent.Location = new Point(130, 273);
+            buttonAddEvent.Name = "buttonAddEvent";
+            buttonAddEvent.Size = new Size(115, 23);
+            buttonAddEvent.TabIndex = 1;
+            buttonAddEvent.Text = "Додати подію";
+            buttonAddEvent.UseVisualStyleBackColor = true;
+            // 
+            // textBoxNewEvent
+            // 
+            textBoxNewEvent.Location = new Point(75, 8);
+            textBoxNewEvent.Multiline = true;
+            textBoxNewEvent.Name = "textBoxNewEvent";
+            textBoxNewEvent.Size = new Size(200, 250);
+            textBoxNewEvent.TabIndex = 0;
+            textBoxNewEvent.Text = "Напишіть подію";
             // 
             // panelMiniCalendar
             // 
             panelMiniCalendar.Controls.Add(monthCalendar1);
             panelMiniCalendar.ForeColor = Color.White;
-            panelMiniCalendar.Location = new Point(25, 30);
+            panelMiniCalendar.Location = new Point(255, 30);
             panelMiniCalendar.Name = "panelMiniCalendar";
             panelMiniCalendar.Size = new Size(230, 180);
             panelMiniCalendar.TabIndex = 1;
@@ -577,9 +629,9 @@
             panelInput.BackColor = Color.FromArgb(40, 40, 40);
             panelInput.Controls.Add(btnSend);
             panelInput.Controls.Add(textBoxInput);
-            panelInput.Location = new Point(63, 507);
+            panelInput.Location = new Point(236, 502);
             panelInput.Name = "panelInput";
-            panelInput.Size = new Size(600, 45);
+            panelInput.Size = new Size(632, 45);
             panelInput.TabIndex = 0;
             // 
             // btnSend
@@ -587,12 +639,13 @@
             btnSend.BackColor = Color.FromArgb(60, 60, 60);
             btnSend.FlatStyle = FlatStyle.Flat;
             btnSend.ForeColor = Color.White;
-            btnSend.Location = new Point(538, 17);
+            btnSend.Location = new Point(576, 17);
             btnSend.Name = "btnSend";
             btnSend.Size = new Size(41, 18);
             btnSend.TabIndex = 1;
             btnSend.Text = "⬆️\r\n\r\n";
             btnSend.UseVisualStyleBackColor = false;
+            btnSend.Click += btnSend_Click;
             // 
             // textBoxInput
             // 
@@ -600,14 +653,15 @@
             textBoxInput.BorderStyle = BorderStyle.None;
             textBoxInput.Font = new Font("Segoe UI", 10F);
             textBoxInput.ForeColor = Color.White;
-            textBoxInput.Location = new Point(29, 17);
+            textBoxInput.Location = new Point(6, 17);
             textBoxInput.Name = "textBoxInput";
-            textBoxInput.Size = new Size(550, 18);
+            textBoxInput.Size = new Size(571, 18);
             textBoxInput.TabIndex = 0;
             // 
             // panelVivy
             // 
             panelVivy.Controls.Add(panelInput);
+            panelVivy.Controls.Add(richTextBox1);
             panelVivy.Dock = DockStyle.Fill;
             panelVivy.Location = new Point(0, 0);
             panelVivy.Name = "panelVivy";
@@ -616,6 +670,19 @@
             panelVivy.Visible = false;
             panelVivy.Paint += panelVivy_Paint;
             // 
+            // richTextBox1
+            // 
+            richTextBox1.BackColor = Color.FromArgb(46, 51, 73);
+            richTextBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            richTextBox1.ForeColor = Color.White;
+            richTextBox1.Location = new Point(236, 36);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.ReadOnly = true;
+            richTextBox1.ScrollBars = RichTextBoxScrollBars.Vertical;
+            richTextBox1.Size = new Size(632, 468);
+            richTextBox1.TabIndex = 2;
+            richTextBox1.Text = "";
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -623,11 +690,11 @@
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(951, 577);
             Controls.Add(pnlNaw);
+            Controls.Add(panelVivy);
+            Controls.Add(panelAnalytics);
             Controls.Add(panelAbout);
             Controls.Add(panelCalendar);
             Controls.Add(panelSettings);
-            Controls.Add(panelVivy);
-            Controls.Add(panelAnalytics);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMain";
             StartPosition = FormStartPosition.CenterScreen;
@@ -650,6 +717,10 @@
             panelAboutVivy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panelCalendar.ResumeLayout(false);
+            panelEvents.ResumeLayout(false);
+            panelEvents.PerformLayout();
+            panelAddEvent.ResumeLayout(false);
+            panelAddEvent.PerformLayout();
             panelMiniCalendar.ResumeLayout(false);
             panelInput.ResumeLayout(false);
             panelInput.PerformLayout();
@@ -705,6 +776,10 @@
         private Panel panelAddEvent;
         private Panel panelMiniCalendar;
         private MonthCalendar monthCalendar1;
-
+        private ListBox listBoxEvents;
+        private Label labelEventsTitle;
+        private Button buttonAddEvent;
+        private TextBox textBoxNewEvent;
+        private RichTextBox richTextBox1;
     }
 }
