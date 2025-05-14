@@ -14,9 +14,10 @@ namespace Vivy
             {
                 if (loginForm.ShowDialog() == DialogResult.OK)
                 {
-                    Application.Run(new FrmMain());
+                    Application.Run(new FrmMain(loginForm.UserLogin));
                 }
             }
+
         }
     }
 }

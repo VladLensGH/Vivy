@@ -39,7 +39,7 @@
             panel2 = new Panel();
             label1 = new Label();
             Usder = new Label();
-            pictureBox1 = new PictureBox();
+            picUserAvatar = new PictureBox();
             panelAbout = new Panel();
             panelContact = new Panel();
             linkLabel2 = new LinkLabel();
@@ -83,7 +83,7 @@
             listBoxHistory = new ListBox();
             pnlNaw.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picUserAvatar).BeginInit();
             panelAbout.SuspendLayout();
             panelContact.SuspendLayout();
             panelaboutUs.SuspendLayout();
@@ -135,10 +135,11 @@
             btnsettings.ImageAlign = ContentAlignment.MiddleRight;
             btnsettings.Location = new Point(0, 502);
             btnsettings.Name = "btnsettings";
-            btnsettings.Padding = new Padding(10, 0, 0, 10);
+            btnsettings.Padding = new Padding(30, 0, 0, 10);
             btnsettings.Size = new Size(186, 75);
             btnsettings.TabIndex = 7;
             btnsettings.Text = "Налаштування";
+            btnsettings.TextAlign = ContentAlignment.MiddleLeft;
             btnsettings.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnsettings.UseVisualStyleBackColor = true;
             btnsettings.Click += btnsettings_Click;
@@ -155,9 +156,11 @@
             btnContactUs.ImageAlign = ContentAlignment.MiddleRight;
             btnContactUs.Location = new Point(0, 301);
             btnContactUs.Name = "btnContactUs";
+            btnContactUs.Padding = new Padding(30, 0, 0, 0);
             btnContactUs.Size = new Size(186, 42);
             btnContactUs.TabIndex = 6;
             btnContactUs.Text = "Про нас";
+            btnContactUs.TextAlign = ContentAlignment.MiddleLeft;
             btnContactUs.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnContactUs.UseVisualStyleBackColor = true;
             btnContactUs.Click += btnContactUs_Click;
@@ -174,9 +177,11 @@
             btnCalendar.ImageAlign = ContentAlignment.MiddleRight;
             btnCalendar.Location = new Point(0, 259);
             btnCalendar.Name = "btnCalendar";
+            btnCalendar.Padding = new Padding(30, 0, 0, 0);
             btnCalendar.Size = new Size(186, 42);
             btnCalendar.TabIndex = 5;
             btnCalendar.Text = "Календар";
+            btnCalendar.TextAlign = ContentAlignment.MiddleLeft;
             btnCalendar.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnCalendar.UseVisualStyleBackColor = true;
             btnCalendar.Click += btnCalendar_Click;
@@ -193,10 +198,11 @@
             btnAnalytics.ImageAlign = ContentAlignment.MiddleRight;
             btnAnalytics.Location = new Point(0, 217);
             btnAnalytics.Name = "btnAnalytics";
-            btnAnalytics.Padding = new Padding(22, 0, 0, 0);
+            btnAnalytics.Padding = new Padding(30, 0, 0, 0);
             btnAnalytics.Size = new Size(186, 42);
             btnAnalytics.TabIndex = 4;
             btnAnalytics.Text = "Аналітика";
+            btnAnalytics.TextAlign = ContentAlignment.MiddleLeft;
             btnAnalytics.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnAnalytics.UseVisualStyleBackColor = true;
             btnAnalytics.Click += btnAnalytics_Click;
@@ -213,10 +219,11 @@
             BtnDashboard.ImageAlign = ContentAlignment.MiddleRight;
             BtnDashboard.Location = new Point(0, 175);
             BtnDashboard.Name = "BtnDashboard";
-            BtnDashboard.Padding = new Padding(22, 0, 0, 0);
+            BtnDashboard.Padding = new Padding(30, 0, 0, 0);
             BtnDashboard.Size = new Size(186, 42);
             BtnDashboard.TabIndex = 3;
             BtnDashboard.Text = "Vivy";
+            BtnDashboard.TextAlign = ContentAlignment.MiddleLeft;
             BtnDashboard.TextImageRelation = TextImageRelation.TextBeforeImage;
             BtnDashboard.UseVisualStyleBackColor = true;
             BtnDashboard.Click += BtnDashboard_Click_1;
@@ -226,7 +233,7 @@
             // 
             panel2.Controls.Add(label1);
             panel2.Controls.Add(Usder);
-            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(picUserAvatar);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
@@ -247,7 +254,7 @@
             // 
             // Usder
             // 
-            Usder.AutoSize = true;
+            Usder.AutoSize = false;
             Usder.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             Usder.ForeColor = Color.FromArgb(0, 126, 149);
             Usder.Location = new Point(26, 98);
@@ -255,18 +262,19 @@
             Usder.Size = new Size(133, 16);
             Usder.TabIndex = 1;
             Usder.Text = "Ім'я користувача";
+            Usder.TextAlign = ContentAlignment.MiddleCenter;
             Usder.Click += label1_Click;
             // 
-            // pictureBox1
+            // picUserAvatar
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(60, 22);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(63, 63);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            picUserAvatar.Image = (Image)resources.GetObject("picUserAvatar.Image");
+            picUserAvatar.Location = new Point(60, 22);
+            picUserAvatar.Name = "picUserAvatar";
+            picUserAvatar.Size = new Size(63, 63);
+            picUserAvatar.SizeMode = PictureBoxSizeMode.Zoom;
+            picUserAvatar.TabIndex = 0;
+            picUserAvatar.TabStop = false;
+            picUserAvatar.Click += picUserAvatar_Click;
             // 
             // panelAbout
             // 
@@ -448,7 +456,7 @@
             linkLabel1.LinkColor = Color.LightGray;
             linkLabel1.Location = new Point(23, 78);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(287, 60);
+            linkLabel1.Size = new Size(288, 60);
             linkLabel1.TabIndex = 13;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "• CrossLang — мультиязычный переводчик с ИИ\n• StreamMind — генерация сценариев для YouTube\n• ZenNote — минималистичный трекер привычек\n • SportBet — сайт букмекерська контора";
@@ -508,7 +516,7 @@
             label3.ForeColor = Color.Gray;
             label3.Location = new Point(29, 161);
             label3.Name = "label3";
-            label3.Size = new Size(74, 13);
+            label3.Size = new Size(75, 13);
             label3.TabIndex = 3;
             label3.Text = "Версия: 1.0.0";
             // 
@@ -730,7 +738,7 @@
             pnlNaw.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picUserAvatar).EndInit();
             panelAbout.ResumeLayout(false);
             panelContact.ResumeLayout(false);
             panelContact.PerformLayout();
@@ -761,7 +769,7 @@
 
         private Panel pnlNaw;
         private Panel panel2;
-        private PictureBox pictureBox1;
+        private PictureBox picUserAvatar;
         private Label Usder;
         private Label label1;
         private Button BtnDashboard;
