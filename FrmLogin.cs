@@ -66,11 +66,6 @@ namespace Vivy
         Bitmap bmpHide = Properties.Resources.hide;
         Bitmap bmpReveal = Properties.Resources.reveal;
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            // Не реалізовано
-        }
-
         // Обробка натискання кнопки "Увійти"
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -217,11 +212,6 @@ namespace Vivy
 
             pnlReg.Visible = false;
             pnlLog.Visible = true;
-        }
-
-        private void pnlLog_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
     }

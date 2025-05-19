@@ -51,6 +51,8 @@ namespace Vivy
         // Подія завантаження форми
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            LoadAndApplyUserSettings();
+
             // Заокруглюємо кути панелі вводу
             RoundPanelCorners(panelInput, 10);
 
@@ -84,9 +86,6 @@ namespace Vivy
             toolTip1.SetToolTip(cbSpeakResponses, "Озвучувати відповіді асистента голосом.");
             toolTip1.SetToolTip(cbSaveHistory, "Зберігати історію ваших чатів, поки ви не видалите її вручну.");
 
-            string savedTheme = LoadTheme();
-            cbTheme.SelectedItem = savedTheme;
-            ApplyTheme(savedTheme);
 
         }
 
@@ -378,40 +377,45 @@ namespace Vivy
         }
 
 
-        private void label1_Click(object sender, EventArgs e) { }
-        private void label3_Click(object sender, EventArgs e) { }
-        private void label1_Click_1(object sender, EventArgs e) { }
-        private void textBox1_TextChanged(object sender, EventArgs e) { }
-        private void panel4_Paint(object sender, PaintEventArgs e) { }
-        private void panel1_Paint(object sender, PaintEventArgs e) { }
-        private void panelAnalytics_Paint(object sender, PaintEventArgs e) { }
-        private void lblAboutText_Click(object sender, EventArgs e) { }
-        private void pictureBox2_Click(object sender, EventArgs e) { }
-        private void panelAboutVivy_Paint(object sender, PaintEventArgs e) { RoundPanelCorners(panelAboutVivy, 15); }
-        private void label2_Click(object sender, EventArgs e) { }
-        private void panelProjects_Paint(object sender, PaintEventArgs e) { RoundPanelCorners(panelProjects, 15); }
-        private void panelSupport_Paint(object sender, PaintEventArgs e) { RoundPanelCorners(panelSupport, 15); }
-        private void lblSupportCardText_Click(object sender, EventArgs e) { }
-        private void label6_Click(object sender, EventArgs e) { }
-        private void panelVivy_Paint(object sender, PaintEventArgs e) { }
-        private void panelCalendar_Paint(object sender, PaintEventArgs e) { }
-
-        private void panelSettings_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnSaveSettings_Click(object sender, EventArgs e)
         {
-            if (cbTheme.SelectedItem != null)
+            if (cbTheme.SelectedItem != null && cbModel.SelectedItem != null && cbLanguage.SelectedItem != null)
             {
                 string theme = cbTheme.SelectedItem.ToString();
-                SaveTheme(theme);
+                string model = cbModel.SelectedItem.ToString();
+                string interfaceLanguage = cbLanguage.SelectedItem.ToString();
+
                 ApplyTheme(theme);
+
+                // Сохраняем настройки в БД
+                string connectionString = "Data Source=vivy.db";
+                using var connection = new Microsoft.Data.Sqlite.SqliteConnection(connectionString);
+                connection.Open();
+
+                string updateCmd = @"
+            UPDATE Users SET 
+                Theme = @theme, 
+                NotificationsEnabled = @notifications, 
+                SpeakResponsesEnabled = @speak, 
+                SaveHistoryEnabled = @history,
+                Model = @model,
+                InterfaceLanguage = @interfaceLanguage
+            WHERE Login = @login";
+                using var cmd = new Microsoft.Data.Sqlite.SqliteCommand(updateCmd, connection);
+                cmd.Parameters.AddWithValue("@theme", theme);
+                cmd.Parameters.AddWithValue("@notifications", cbNotifications.Checked ? 1 : 0);
+                cmd.Parameters.AddWithValue("@speak", cbSpeakResponses.Checked ? 1 : 0);
+                cmd.Parameters.AddWithValue("@history", cbSaveHistory.Checked ? 1 : 0);
+                cmd.Parameters.AddWithValue("@model", model);
+                cmd.Parameters.AddWithValue("@interfaceLanguage", interfaceLanguage);
+                cmd.Parameters.AddWithValue("@login", currentLogin);
+                cmd.ExecuteNonQuery();
             }
 
             MessageBox.Show("Налаштування збережено!", "Vivy", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
 
         private void AddWindowControlButtons()
         {
@@ -455,11 +459,27 @@ namespace Vivy
         private SpeechSynthesizer synthesizer = new SpeechSynthesizer();
 
 
+        // В FrmMain.cs
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            File.Delete("user_session.txt");
-            Application.Restart(); // перезапускаем приложение
+            this.Hide();
+            var loginForm = new FrmLogin();
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                currentLogin = loginForm.UserLogin;
+                Usder.Text = currentLogin;
+                LoadUserAvatar();
+                LoadAndApplyUserSettings(); // <--- добавьте этот вызов
+                this.Show();
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
+
+
+
 
         private string selectedTheme = "Темна"; // По умолчанию
 
@@ -550,23 +570,36 @@ namespace Vivy
             }
         }
 
-
-
-
-
-
-
-        private void SaveTheme(string theme)
+        private void LoadAndApplyUserSettings()
         {
-            File.WriteAllText("theme.txt", theme);
+            string connectionString = "Data Source=vivy.db";
+            using var connection = new Microsoft.Data.Sqlite.SqliteConnection(connectionString);
+            connection.Open();
+
+            string selectCmd = "SELECT Theme, NotificationsEnabled, SpeakResponsesEnabled, SaveHistoryEnabled, Model, InterfaceLanguage FROM Users WHERE Login = @login";
+            using var cmd = new Microsoft.Data.Sqlite.SqliteCommand(selectCmd, connection);
+            cmd.Parameters.AddWithValue("@login", currentLogin);
+
+            using var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                string theme = reader.IsDBNull(0) ? "Темна" : reader.GetString(0);
+                bool notifications = !reader.IsDBNull(1) && reader.GetInt32(1) == 1;
+                bool speak = !reader.IsDBNull(2) && reader.GetInt32(2) == 1;
+                bool saveHistory = !reader.IsDBNull(3) && reader.GetInt32(3) == 1;
+                string model = reader.IsDBNull(4) ? "gpt-3.5-turbo" : reader.GetString(4);
+                string interfaceLanguage = reader.IsDBNull(5) ? "uk-UA" : reader.GetString(5);
+
+                cbTheme.SelectedItem = theme;
+                cbNotifications.Checked = notifications;
+                cbSpeakResponses.Checked = speak;
+                cbSaveHistory.Checked = saveHistory;
+                cbModel.SelectedItem = model;
+                cbLanguage.SelectedItem = interfaceLanguage;
+                ApplyTheme(theme);
+            }
         }
 
-        private string LoadTheme()
-        {
-            if (File.Exists("theme.txt"))
-                return File.ReadAllText("theme.txt").Trim();
-            return "Темна";
-        }
 
         private void cbTheme_SelectedIndexChanged(object sender, EventArgs e)
         {

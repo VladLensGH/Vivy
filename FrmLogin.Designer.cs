@@ -77,7 +77,6 @@
             pcbLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pcbLogo.TabIndex = 0;
             pcbLogo.TabStop = false;
-            pcbLogo.Click += pictureBox1_Click;
             // 
             // lblLogin
             // 
@@ -372,7 +371,6 @@
             pnlLog.Name = "pnlLog";
             pnlLog.Size = new Size(308, 486);
             pnlLog.TabIndex = 25;
-            pnlLog.Paint += pnlLog_Paint;
             // 
             // btnReveal
             // 
