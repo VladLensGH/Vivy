@@ -675,6 +675,7 @@
             lblTheme.Size = new Size(177, 21);
             lblTheme.TabIndex = 4;
             lblTheme.Text = "🎨 Тема оформлення : ";
+            lblTheme.Click += lblTheme_Click;
             // 
             // cbTheme
             // 

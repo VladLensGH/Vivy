@@ -482,31 +482,79 @@ namespace Vivy
             }
 
             this.BackColor = backColor;
+
             foreach (Control control in this.Controls)
             {
                 ApplyThemeToControl(control, backColor, foreColor, buttonBack);
             }
+
+            panel2.BackColor = theme == "Світла" ? Color.WhiteSmoke : Color.FromArgb(24, 30, 54);
+            pnlNaw.BackColor = theme == "Світла" ? Color.WhiteSmoke : Color.FromArgb(24, 30, 54);
+            panel2.BackColor = theme == "Світла" ? Color.LightGray : Color.FromArgb(24, 30, 54);
+            pnlNaw.BackColor = theme == "Світла" ? Color.LightGray : Color.FromArgb(24, 30, 54);
+
         }
+
 
         private void ApplyThemeToControl(Control ctrl, Color backColor, Color foreColor, Color buttonBack)
         {
-            if (ctrl is Panel) ctrl.BackColor = backColor;
-            if (ctrl is Label) ctrl.ForeColor = foreColor;
-            if (ctrl is Button btn)
+            if (ctrl is Panel panel)
+            {
+                panel.BackColor = backColor;
+
+                // Цвет имени пользователя в panel2 при тёмной теме
+                if (panel == panel2 && selectedTheme == "Темна")
+                {
+                    foreach (Control child in panel.Controls)
+                    {
+                        if (child is Label nameLabel && nameLabel.Name == "lblUserName") // замените на фактическое имя элемента
+                        {
+                            nameLabel.ForeColor = Color.FromArgb(0, 126, 149);
+                        }
+                    }
+                }
+            }
+            else if (ctrl is Label label)
+            {
+                label.ForeColor = foreColor;
+            }
+            else if (ctrl is Button btn)
             {
                 btn.BackColor = buttonBack;
-                btn.ForeColor = foreColor;
+
+                // Цвет текста кнопок в боковой панели
+                if (pnlNaw.Controls.Contains(btn) && selectedTheme == "Темна")
+                {
+                    btn.ForeColor = Color.FromArgb(0, 126, 249); // ярко-синий
+                }
+                else
+                {
+                    btn.ForeColor = foreColor;
+                }
             }
-            if (ctrl is ComboBox cb)
+            else if (ctrl is ComboBox cb)
             {
                 cb.BackColor = buttonBack;
                 cb.ForeColor = foreColor;
             }
+            // Цвет ника пользователя (Usder) при тёмной теме
+            if (ctrl == Usder && selectedTheme == "Темна")
+            {
+                Usder.ForeColor = Color.FromArgb(0, 126, 149);
+            }
+
+            // Рекурсивно для всех дочерних контролов
             foreach (Control child in ctrl.Controls)
             {
                 ApplyThemeToControl(child, backColor, foreColor, buttonBack);
             }
         }
+
+
+
+
+
+
 
         private void SaveTheme(string theme)
         {
@@ -518,6 +566,16 @@ namespace Vivy
             if (File.Exists("theme.txt"))
                 return File.ReadAllText("theme.txt").Trim();
             return "Темна";
+        }
+
+        private void cbTheme_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTheme_Click(object sender, EventArgs e)
+        {
+
         }
 
     }
