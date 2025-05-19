@@ -66,7 +66,7 @@
             panelSettings = new Panel();
             btnLogout = new Button();
             label12 = new Label();
-            comboBox1 = new ComboBox();
+            cbModel = new ComboBox();
             label11 = new Label();
             cbSaveHistory = new CheckBox();
             cbSpeakResponses = new CheckBox();
@@ -98,6 +98,7 @@
             toolTip1 = new ToolTip(components);
             toolTip2 = new ToolTip(components);
             toolTip3 = new ToolTip(components);
+            numericUpDown1 = new NumericUpDown();
             pnlNaw.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picUserAvatar).BeginInit();
@@ -116,6 +117,7 @@
             panelInput.SuspendLayout();
             panelVivy.SuspendLayout();
             panelHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // pnlNaw
@@ -133,7 +135,6 @@
             pnlNaw.Name = "pnlNaw";
             pnlNaw.Size = new Size(186, 577);
             pnlNaw.TabIndex = 0;
-            pnlNaw.Paint += panel1_Paint;
             // 
             // Pnlscroll
             // 
@@ -268,7 +269,6 @@
             label1.Size = new Size(52, 12);
             label1.TabIndex = 2;
             label1.Text = "Про себе";
-            label1.Click += label1_Click_1;
             // 
             // Usder
             // 
@@ -280,7 +280,6 @@
             Usder.TabIndex = 1;
             Usder.Text = "Ім'я користувача";
             Usder.TextAlign = ContentAlignment.MiddleCenter;
-            Usder.Click += label1_Click;
             // 
             // picUserAvatar
             // 
@@ -305,7 +304,6 @@
             panelAbout.Name = "panelAbout";
             panelAbout.Size = new Size(951, 577);
             panelAbout.TabIndex = 11;
-            panelAbout.Paint += panel4_Paint;
             // 
             // panelContact
             // 
@@ -371,7 +369,6 @@
             label6.Size = new Size(318, 81);
             label6.TabIndex = 15;
             label6.Text = "Цей проект — наша перша спроба створити інтелектуального помічника. Цей проєкт не був би можливим без вас. Ми цінуємо кожен внесок і зворотний зв'язок.\r\n";
-            label6.Click += label6_Click;
             // 
             // label5
             // 
@@ -395,7 +392,6 @@
             panelSupport.Name = "panelSupport";
             panelSupport.Size = new Size(630, 114);
             panelSupport.TabIndex = 20;
-            panelSupport.Paint += panelSupport_Paint;
             // 
             // linkSupportCard
             // 
@@ -420,7 +416,6 @@
             lblSupportCardText.Size = new Size(170, 15);
             lblSupportCardText.TabIndex = 18;
             lblSupportCardText.Text = "Номер картки для підтримки:";
-            lblSupportCardText.Click += lblSupportCardText_Click;
             // 
             // label8
             // 
@@ -451,7 +446,6 @@
             panelProjects.Name = "panelProjects";
             panelProjects.Size = new Size(328, 187);
             panelProjects.TabIndex = 19;
-            panelProjects.Paint += panelProjects_Paint;
             // 
             // label4
             // 
@@ -473,7 +467,7 @@
             linkLabel1.LinkColor = Color.LightGray;
             linkLabel1.Location = new Point(23, 78);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(287, 60);
+            linkLabel1.Size = new Size(288, 60);
             linkLabel1.TabIndex = 13;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "• CrossLang — мультиязычный переводчик с ИИ\n• StreamMind — генерация сценариев для YouTube\n• ZenNote — минималистичный трекер привычек\n • SportBet — сайт букмекерська контора";
@@ -491,7 +485,6 @@
             panelAboutVivy.Name = "panelAboutVivy";
             panelAboutVivy.Size = new Size(364, 187);
             panelAboutVivy.TabIndex = 18;
-            panelAboutVivy.Paint += panelAboutVivy_Paint;
             // 
             // lblAboutTitle
             // 
@@ -513,7 +506,6 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 4;
             pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
             // 
             // lblAboutText
             // 
@@ -524,7 +516,6 @@
             lblAboutText.Size = new Size(284, 67);
             lblAboutText.TabIndex = 1;
             lblAboutText.Text = "Vivy - ваш інтелектуальний помічник, створений для підтримки, натхнення та продуктивної роботи.";
-            lblAboutText.Click += lblAboutText_Click;
             // 
             // label3
             // 
@@ -533,7 +524,7 @@
             label3.ForeColor = Color.Gray;
             label3.Location = new Point(29, 161);
             label3.Name = "label3";
-            label3.Size = new Size(74, 13);
+            label3.Size = new Size(75, 13);
             label3.TabIndex = 3;
             label3.Text = "Версия: 1.0.0";
             // 
@@ -546,14 +537,14 @@
             label2.Size = new Size(163, 15);
             label2.TabIndex = 2;
             label2.Text = " Поддержка: support@vivy.ai";
-            label2.Click += label2_Click;
             // 
             // panelSettings
             // 
             panelSettings.BackColor = Color.FromArgb(46, 51, 72);
+            panelSettings.Controls.Add(numericUpDown1);
             panelSettings.Controls.Add(btnLogout);
             panelSettings.Controls.Add(label12);
-            panelSettings.Controls.Add(comboBox1);
+            panelSettings.Controls.Add(cbModel);
             panelSettings.Controls.Add(label11);
             panelSettings.Controls.Add(cbSaveHistory);
             panelSettings.Controls.Add(cbSpeakResponses);
@@ -569,7 +560,6 @@
             panelSettings.Size = new Size(765, 577);
             panelSettings.TabIndex = 0;
             panelSettings.Visible = false;
-            panelSettings.Paint += panelSettings_Paint;
             // 
             // btnLogout
             // 
@@ -588,20 +578,21 @@
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 12F);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(50, 374);
+            label12.Location = new Point(48, 374);
             label12.Name = "label12";
             label12.Size = new Size(151, 21);
             label12.TabIndex = 11;
             label12.Text = "🌙 Нічний режим : ";
             // 
-            // comboBox1
+            // cbModel
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "GPT-3.5 (стандартний)", " GPT-4", " GPT-4o ", "GPT-o3-mini‑high" });
-            comboBox1.Location = new Point(240, 100);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(200, 23);
-            comboBox1.TabIndex = 10;
+            cbModel.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbModel.FormattingEnabled = true;
+            cbModel.Items.AddRange(new object[] { "GPT-3.5 (стандартний)", " GPT-4", " GPT-4o ", "GPT-o3-mini‑high" });
+            cbModel.Location = new Point(240, 100);
+            cbModel.Name = "cbModel";
+            cbModel.Size = new Size(200, 23);
+            cbModel.TabIndex = 10;
             // 
             // label11
             // 
@@ -678,16 +669,17 @@
             // 
             // cbTheme
             // 
+            cbTheme.DropDownStyle = ComboBoxStyle.DropDownList;
             cbTheme.FormattingEnabled = true;
             cbTheme.Items.AddRange(new object[] { "Світла", " Темна" });
             cbTheme.Location = new Point(240, 193);
             cbTheme.Name = "cbTheme";
             cbTheme.Size = new Size(200, 23);
             cbTheme.TabIndex = 3;
-            cbTheme.SelectedIndexChanged += cbTheme_SelectedIndexChanged;
             // 
             // cbLanguage
             // 
+            cbLanguage.DropDownStyle = ComboBoxStyle.DropDownList;
             cbLanguage.FormattingEnabled = true;
             cbLanguage.Items.AddRange(new object[] { "Українська", " English", " Español" });
             cbLanguage.Location = new Point(240, 151);
@@ -702,7 +694,7 @@
             lblLanguage.ForeColor = Color.White;
             lblLanguage.Location = new Point(48, 151);
             lblLanguage.Name = "lblLanguage";
-            lblLanguage.Size = new Size(165, 21);
+            lblLanguage.Size = new Size(166, 21);
             lblLanguage.TabIndex = 1;
             lblLanguage.Tag = " ";
             lblLanguage.Text = "🌍 Мова інтерфейсу :";
@@ -729,7 +721,6 @@
             panelCalendar.Size = new Size(951, 577);
             panelCalendar.TabIndex = 0;
             panelCalendar.Visible = false;
-            panelCalendar.Paint += panelCalendar_Paint;
             // 
             // panelEvents
             // 
@@ -813,7 +804,6 @@
             panelAnalytics.Size = new Size(951, 577);
             panelAnalytics.TabIndex = 0;
             panelAnalytics.Visible = false;
-            panelAnalytics.Paint += panelAnalytics_Paint;
             // 
             // panelInput
             // 
@@ -860,7 +850,6 @@
             panelVivy.Size = new Size(951, 577);
             panelVivy.TabIndex = 0;
             panelVivy.Visible = false;
-            panelVivy.Paint += panelVivy_Paint;
             // 
             // panelHistory
             // 
@@ -895,6 +884,13 @@
             richTextBox1.Size = new Size(507, 450);
             richTextBox1.TabIndex = 2;
             richTextBox1.Text = "";
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(122, 297);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(120, 23);
+            numericUpDown1.TabIndex = 13;
             // 
             // FrmMain
             // 
@@ -941,6 +937,7 @@
             panelInput.PerformLayout();
             panelVivy.ResumeLayout(false);
             panelHistory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
         }
 
@@ -1011,9 +1008,10 @@
         private ToolTip toolTip1;
         private ToolTip toolTip2;
         private ToolTip toolTip3;
-        private ComboBox comboBox1;
+        private ComboBox cbModel;
         private Label label11;
         private Label label12;
         private Button btnLogout;
+        private NumericUpDown numericUpDown1;
     }
 }
