@@ -372,6 +372,7 @@
             pnlLog.Name = "pnlLog";
             pnlLog.Size = new Size(308, 486);
             pnlLog.TabIndex = 25;
+            pnlLog.Paint += pnlLog_Paint;
             // 
             // btnReveal
             // 

@@ -5,12 +5,15 @@ using System.Text.Json;
 using RestSharp;
 using System.Text.Json;
 using Microsoft.VisualBasic.Logging;
+using System.Speech.Synthesis;
+
 
 namespace Vivy
 {
     public partial class FrmMain : Form
     {
         private string currentLogin;
+
         // Імпорт функції для створення області з заокругленими кутами для форми
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -26,8 +29,12 @@ namespace Vivy
         // Конструктор головної форми
         public FrmMain(string login)
         {
+
             InitializeComponent();
             currentLogin = login;
+
+            AddWindowControlButtons();
+
 
             // Застосовуємо заокруглення кутів до вікна
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
@@ -36,6 +43,7 @@ namespace Vivy
             Pnlscroll.Top = BtnDashboard.Top;
             Pnlscroll.Left = BtnDashboard.Left;
             BtnDashboard.BackColor = Color.FromArgb(46, 51, 73);
+
         }
         private Dictionary<string, List<(string sender, string message)>> chatHistory = new();
         private string currentChatTitle = "";
@@ -71,6 +79,15 @@ namespace Vivy
             linkSupportCard.Links.Add(0, linkSupportCard.Text.Length, "https://send.monobank.ua/jar/4441114498935962"); // ← замініть на своє посилання
             Usder.Text = currentLogin;
             LoadUserAvatar();
+
+            toolTip1.SetToolTip(cbNotifications, "Надсилати сповіщення про нові функції або повідомлення.");
+            toolTip1.SetToolTip(cbSpeakResponses, "Озвучувати відповіді асистента голосом.");
+            toolTip1.SetToolTip(cbSaveHistory, "Зберігати історію ваших чатів, поки ви не видалите її вручну.");
+
+            string savedTheme = LoadTheme();
+            cbTheme.SelectedItem = savedTheme;
+            ApplyTheme(savedTheme);
+
         }
 
         // Обробка натискання на різні кнопки меню для перемикання панелей
@@ -216,7 +233,7 @@ namespace Vivy
         // Асинхронний метод для отримання відповіді від GPT API
         private async Task<string> GetGPTResponse(string userMessage)
         {
-            string apiKey = "64200775fbd37a6ae50714edd5b91e99";
+            string apiKey = "2f87f79ad7945491793b3d76eb6c874a ";
             string model = "gpt-3.5-turbo";
             string apiUrl = $"http://195.179.229.119/gpt/api.php?prompt={Uri.EscapeDataString(userMessage)}&api_key={Uri.EscapeDataString(apiKey)}&model={Uri.EscapeDataString(model)}";
 
@@ -288,6 +305,10 @@ namespace Vivy
             richTextBox1.AppendText("Vivy: ");
             richTextBox1.SelectionColor = Color.White;
             richTextBox1.AppendText(gptResponse + "\n\n");
+            if (cbSpeakResponses.Checked)
+            {
+                synthesizer.SpeakAsync(gptResponse);
+            }
 
             // Прокручуємо чат до останнього повідомлення
             richTextBox1.SelectionStart = richTextBox1.Text.Length;
@@ -375,6 +396,129 @@ namespace Vivy
         private void panelVivy_Paint(object sender, PaintEventArgs e) { }
         private void panelCalendar_Paint(object sender, PaintEventArgs e) { }
 
-        
+        private void panelSettings_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSaveSettings_Click(object sender, EventArgs e)
+        {
+            if (cbTheme.SelectedItem != null)
+            {
+                string theme = cbTheme.SelectedItem.ToString();
+                SaveTheme(theme);
+                ApplyTheme(theme);
+            }
+
+            MessageBox.Show("Налаштування збережено!", "Vivy", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void AddWindowControlButtons()
+        {
+            // Создание кнопки "Свернуть"
+            Button btnMinimize = new Button
+            {
+                Text = "–",
+                Font = new Font("Segoe UI", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                BackColor = Color.FromArgb(24, 30, 54),
+                FlatStyle = FlatStyle.Flat,
+                Size = new Size(30, 30),
+                Location = new Point(this.Width - 70, 10),
+                Anchor = AnchorStyles.Top | AnchorStyles.Right
+            };
+            btnMinimize.FlatAppearance.BorderSize = 0;
+            btnMinimize.Click += (s, e) => this.WindowState = FormWindowState.Minimized;
+
+            // Создание кнопки "Закрыть"
+            Button btnClose = new Button
+            {
+                Text = "×",
+                Font = new Font("Segoe UI", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                BackColor = Color.FromArgb(24, 30, 54),
+                FlatStyle = FlatStyle.Flat,
+                Size = new Size(30, 30),
+                Location = new Point(this.Width - 35, 10),
+                Anchor = AnchorStyles.Top | AnchorStyles.Right
+            };
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.Click += (s, e) => this.Close();
+
+            // Добавляем кнопки на форму (будут поверх всех панелей)
+            this.Controls.Add(btnMinimize);
+            this.Controls.Add(btnClose);
+            btnMinimize.BringToFront();
+            btnClose.BringToFront();
+        }
+
+        private SpeechSynthesizer synthesizer = new SpeechSynthesizer();
+
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            File.Delete("user_session.txt");
+            Application.Restart(); // перезапускаем приложение
+        }
+
+        private string selectedTheme = "Темна"; // По умолчанию
+
+        private void ApplyTheme(string theme)
+        {
+            selectedTheme = theme;
+            Color backColor, foreColor, buttonBack;
+
+            if (theme == "Світла")
+            {
+                backColor = Color.WhiteSmoke;
+                foreColor = Color.Black;
+                buttonBack = Color.LightGray;
+            }
+            else
+            {
+                backColor = Color.FromArgb(46, 51, 73);
+                foreColor = Color.White;
+                buttonBack = Color.FromArgb(24, 30, 54);
+            }
+
+            this.BackColor = backColor;
+            foreach (Control control in this.Controls)
+            {
+                ApplyThemeToControl(control, backColor, foreColor, buttonBack);
+            }
+        }
+
+        private void ApplyThemeToControl(Control ctrl, Color backColor, Color foreColor, Color buttonBack)
+        {
+            if (ctrl is Panel) ctrl.BackColor = backColor;
+            if (ctrl is Label) ctrl.ForeColor = foreColor;
+            if (ctrl is Button btn)
+            {
+                btn.BackColor = buttonBack;
+                btn.ForeColor = foreColor;
+            }
+            if (ctrl is ComboBox cb)
+            {
+                cb.BackColor = buttonBack;
+                cb.ForeColor = foreColor;
+            }
+            foreach (Control child in ctrl.Controls)
+            {
+                ApplyThemeToControl(child, backColor, foreColor, buttonBack);
+            }
+        }
+
+        private void SaveTheme(string theme)
+        {
+            File.WriteAllText("theme.txt", theme);
+        }
+
+        private string LoadTheme()
+        {
+            if (File.Exists("theme.txt"))
+                return File.ReadAllText("theme.txt").Trim();
+            return "Темна";
+        }
+
     }
 }

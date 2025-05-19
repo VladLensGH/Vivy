@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             pnlNaw = new Panel();
             Pnlscroll = new Panel();
@@ -63,6 +64,19 @@
             label3 = new Label();
             label2 = new Label();
             panelSettings = new Panel();
+            btnLogout = new Button();
+            label12 = new Label();
+            comboBox1 = new ComboBox();
+            label11 = new Label();
+            cbSaveHistory = new CheckBox();
+            cbSpeakResponses = new CheckBox();
+            btnSaveSettings = new Button();
+            cbNotifications = new CheckBox();
+            lblTheme = new Label();
+            cbTheme = new ComboBox();
+            cbLanguage = new ComboBox();
+            lblLanguage = new Label();
+            lblSettingsTitle = new Label();
             panelCalendar = new Panel();
             panelEvents = new Panel();
             labelEventsTitle = new Label();
@@ -77,10 +91,13 @@
             btnSend = new Button();
             textBoxInput = new TextBox();
             panelVivy = new Panel();
-            richTextBox1 = new RichTextBox();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panelHistory = new Panel();
             listBoxHistory = new ListBox();
+            richTextBox1 = new RichTextBox();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            toolTip1 = new ToolTip(components);
+            toolTip2 = new ToolTip(components);
+            toolTip3 = new ToolTip(components);
             pnlNaw.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picUserAvatar).BeginInit();
@@ -91,6 +108,7 @@
             panelProjects.SuspendLayout();
             panelAboutVivy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panelSettings.SuspendLayout();
             panelCalendar.SuspendLayout();
             panelEvents.SuspendLayout();
             panelAddEvent.SuspendLayout();
@@ -254,7 +272,6 @@
             // 
             // Usder
             // 
-            Usder.AutoSize = false;
             Usder.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             Usder.ForeColor = Color.FromArgb(0, 126, 149);
             Usder.Location = new Point(26, 98);
@@ -296,7 +313,7 @@
             panelContact.Controls.Add(linkLabel2);
             panelContact.Controls.Add(label9);
             panelContact.Controls.Add(label10);
-            panelContact.Location = new Point(595, 259);
+            panelContact.Location = new Point(595, 261);
             panelContact.Name = "panelContact";
             panelContact.Size = new Size(328, 134);
             panelContact.TabIndex = 22;
@@ -339,7 +356,7 @@
             panelaboutUs.BackColor = Color.FromArgb(40, 40, 60);
             panelaboutUs.Controls.Add(label6);
             panelaboutUs.Controls.Add(label5);
-            panelaboutUs.Location = new Point(207, 259);
+            panelaboutUs.Location = new Point(207, 261);
             panelaboutUs.Name = "panelaboutUs";
             panelaboutUs.Size = new Size(364, 134);
             panelaboutUs.TabIndex = 21;
@@ -430,7 +447,7 @@
             panelProjects.BackColor = Color.FromArgb(40, 40, 60);
             panelProjects.Controls.Add(label4);
             panelProjects.Controls.Add(linkLabel1);
-            panelProjects.Location = new Point(595, 30);
+            panelProjects.Location = new Point(598, 51);
             panelProjects.Name = "panelProjects";
             panelProjects.Size = new Size(328, 187);
             panelProjects.TabIndex = 19;
@@ -456,7 +473,7 @@
             linkLabel1.LinkColor = Color.LightGray;
             linkLabel1.Location = new Point(23, 78);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(288, 60);
+            linkLabel1.Size = new Size(287, 60);
             linkLabel1.TabIndex = 13;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "• CrossLang — мультиязычный переводчик с ИИ\n• StreamMind — генерация сценариев для YouTube\n• ZenNote — минималистичный трекер привычек\n • SportBet — сайт букмекерська контора";
@@ -470,7 +487,7 @@
             panelAboutVivy.Controls.Add(lblAboutText);
             panelAboutVivy.Controls.Add(label3);
             panelAboutVivy.Controls.Add(label2);
-            panelAboutVivy.Location = new Point(207, 30);
+            panelAboutVivy.Location = new Point(207, 51);
             panelAboutVivy.Name = "panelAboutVivy";
             panelAboutVivy.Size = new Size(364, 187);
             panelAboutVivy.TabIndex = 18;
@@ -516,7 +533,7 @@
             label3.ForeColor = Color.Gray;
             label3.Location = new Point(29, 161);
             label3.Name = "label3";
-            label3.Size = new Size(75, 13);
+            label3.Size = new Size(74, 13);
             label3.TabIndex = 3;
             label3.Text = "Версия: 1.0.0";
             // 
@@ -533,12 +550,173 @@
             // 
             // panelSettings
             // 
-            panelSettings.Dock = DockStyle.Fill;
-            panelSettings.Location = new Point(0, 0);
+            panelSettings.BackColor = Color.FromArgb(46, 51, 72);
+            panelSettings.Controls.Add(btnLogout);
+            panelSettings.Controls.Add(label12);
+            panelSettings.Controls.Add(comboBox1);
+            panelSettings.Controls.Add(label11);
+            panelSettings.Controls.Add(cbSaveHistory);
+            panelSettings.Controls.Add(cbSpeakResponses);
+            panelSettings.Controls.Add(btnSaveSettings);
+            panelSettings.Controls.Add(cbNotifications);
+            panelSettings.Controls.Add(lblTheme);
+            panelSettings.Controls.Add(cbTheme);
+            panelSettings.Controls.Add(cbLanguage);
+            panelSettings.Controls.Add(lblLanguage);
+            panelSettings.Controls.Add(lblSettingsTitle);
+            panelSettings.Location = new Point(186, 0);
             panelSettings.Name = "panelSettings";
-            panelSettings.Size = new Size(951, 577);
+            panelSettings.Size = new Size(765, 577);
             panelSettings.TabIndex = 0;
             panelSettings.Visible = false;
+            panelSettings.Paint += panelSettings_Paint;
+            // 
+            // btnLogout
+            // 
+            btnLogout.BackColor = Color.FromArgb(24, 30, 54);
+            btnLogout.ForeColor = Color.White;
+            btnLogout.Location = new Point(337, 471);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(103, 23);
+            btnLogout.TabIndex = 12;
+            btnLogout.Text = "Вийти з акаунта";
+            btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Click += btnLogout_Click;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 12F);
+            label12.ForeColor = Color.White;
+            label12.Location = new Point(50, 374);
+            label12.Name = "label12";
+            label12.Size = new Size(151, 21);
+            label12.TabIndex = 11;
+            label12.Text = "🌙 Нічний режим : ";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "GPT-3.5 (стандартний)", " GPT-4", " GPT-4o ", "GPT-o3-mini‑high" });
+            comboBox1.Location = new Point(240, 100);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(200, 23);
+            comboBox1.TabIndex = 10;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 12F);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(48, 98);
+            label11.Name = "label11";
+            label11.Size = new Size(186, 21);
+            label11.TabIndex = 9;
+            label11.Text = "\U0001f9e0 Обрати модель (AI)  :";
+            // 
+            // cbSaveHistory
+            // 
+            cbSaveHistory.Checked = true;
+            cbSaveHistory.CheckState = CheckState.Checked;
+            cbSaveHistory.Font = new Font("Segoe UI", 11F);
+            cbSaveHistory.ForeColor = Color.White;
+            cbSaveHistory.Location = new Point(523, 419);
+            cbSaveHistory.Name = "cbSaveHistory";
+            cbSaveHistory.Size = new Size(219, 40);
+            cbSaveHistory.TabIndex = 8;
+            cbSaveHistory.Text = "💾 Зберігати історію чатів";
+            cbSaveHistory.UseVisualStyleBackColor = true;
+            // 
+            // cbSpeakResponses
+            // 
+            cbSpeakResponses.Checked = true;
+            cbSpeakResponses.CheckState = CheckState.Checked;
+            cbSpeakResponses.Font = new Font("Segoe UI", 11F);
+            cbSpeakResponses.ForeColor = Color.White;
+            cbSpeakResponses.Location = new Point(288, 419);
+            cbSpeakResponses.Name = "cbSpeakResponses";
+            cbSpeakResponses.Size = new Size(211, 40);
+            cbSpeakResponses.TabIndex = 7;
+            cbSpeakResponses.Text = "🎙 Озвучувати відповіді";
+            cbSpeakResponses.UseVisualStyleBackColor = true;
+            // 
+            // btnSaveSettings
+            // 
+            btnSaveSettings.BackColor = Color.FromArgb(24, 30, 54);
+            btnSaveSettings.ForeColor = Color.White;
+            btnSaveSettings.Location = new Point(288, 514);
+            btnSaveSettings.Name = "btnSaveSettings";
+            btnSaveSettings.Size = new Size(200, 40);
+            btnSaveSettings.TabIndex = 6;
+            btnSaveSettings.Text = "Зберегти налаштування";
+            btnSaveSettings.UseVisualStyleBackColor = false;
+            btnSaveSettings.Click += btnSaveSettings_Click;
+            // 
+            // cbNotifications
+            // 
+            cbNotifications.Checked = true;
+            cbNotifications.CheckState = CheckState.Checked;
+            cbNotifications.Font = new Font("Segoe UI", 11F);
+            cbNotifications.ForeColor = Color.White;
+            cbNotifications.Location = new Point(24, 419);
+            cbNotifications.Name = "cbNotifications";
+            cbNotifications.Size = new Size(234, 40);
+            cbNotifications.TabIndex = 5;
+            cbNotifications.Text = "🔔 Отримувати сповіщення";
+            cbNotifications.UseVisualStyleBackColor = true;
+            // 
+            // lblTheme
+            // 
+            lblTheme.AutoSize = true;
+            lblTheme.Font = new Font("Segoe UI", 12F);
+            lblTheme.ForeColor = Color.White;
+            lblTheme.Location = new Point(48, 196);
+            lblTheme.Name = "lblTheme";
+            lblTheme.Size = new Size(177, 21);
+            lblTheme.TabIndex = 4;
+            lblTheme.Text = "🎨 Тема оформлення : ";
+            // 
+            // cbTheme
+            // 
+            cbTheme.FormattingEnabled = true;
+            cbTheme.Items.AddRange(new object[] { "Світла", " Темна" });
+            cbTheme.Location = new Point(240, 193);
+            cbTheme.Name = "cbTheme";
+            cbTheme.Size = new Size(200, 23);
+            cbTheme.TabIndex = 3;
+            cbTheme.SelectedIndexChanged += cbTheme_SelectedIndexChanged;
+            // 
+            // cbLanguage
+            // 
+            cbLanguage.FormattingEnabled = true;
+            cbLanguage.Items.AddRange(new object[] { "Українська", " English", " Español" });
+            cbLanguage.Location = new Point(240, 151);
+            cbLanguage.Name = "cbLanguage";
+            cbLanguage.Size = new Size(200, 23);
+            cbLanguage.TabIndex = 2;
+            // 
+            // lblLanguage
+            // 
+            lblLanguage.AutoSize = true;
+            lblLanguage.Font = new Font("Segoe UI", 12F);
+            lblLanguage.ForeColor = Color.White;
+            lblLanguage.Location = new Point(48, 151);
+            lblLanguage.Name = "lblLanguage";
+            lblLanguage.Size = new Size(165, 21);
+            lblLanguage.TabIndex = 1;
+            lblLanguage.Tag = " ";
+            lblLanguage.Text = "🌍 Мова інтерфейсу :";
+            // 
+            // lblSettingsTitle
+            // 
+            lblSettingsTitle.AutoSize = true;
+            lblSettingsTitle.Font = new Font("Segoe UI", 16F);
+            lblSettingsTitle.ForeColor = Color.White;
+            lblSettingsTitle.Location = new Point(288, 30);
+            lblSettingsTitle.Name = "lblSettingsTitle";
+            lblSettingsTitle.Size = new Size(161, 30);
+            lblSettingsTitle.TabIndex = 0;
+            lblSettingsTitle.Text = "Налаштування";
             // 
             // panelCalendar
             // 
@@ -557,7 +735,7 @@
             // 
             panelEvents.Controls.Add(labelEventsTitle);
             panelEvents.Controls.Add(listBoxEvents);
-            panelEvents.Location = new Point(668, 33);
+            panelEvents.Location = new Point(653, 151);
             panelEvents.Name = "panelEvents";
             panelEvents.Size = new Size(255, 214);
             panelEvents.TabIndex = 0;
@@ -684,25 +862,12 @@
             panelVivy.Visible = false;
             panelVivy.Paint += panelVivy_Paint;
             // 
-            // richTextBox1
-            // 
-            richTextBox1.BackColor = Color.FromArgb(46, 51, 73);
-            richTextBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            richTextBox1.ForeColor = Color.White;
-            richTextBox1.Location = new Point(210, 33);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.ReadOnly = true;
-            richTextBox1.ScrollBars = RichTextBoxScrollBars.Vertical;
-            richTextBox1.Size = new Size(507, 468);
-            richTextBox1.TabIndex = 2;
-            richTextBox1.Text = "";
-            // 
             // panelHistory
             // 
             panelHistory.Controls.Add(listBoxHistory);
-            panelHistory.Location = new Point(720, 33);
+            panelHistory.Location = new Point(720, 51);
             panelHistory.Name = "panelHistory";
-            panelHistory.Size = new Size(200, 516);
+            panelHistory.Size = new Size(200, 498);
             panelHistory.TabIndex = 0;
             // 
             // listBoxHistory
@@ -714,9 +879,22 @@
             listBoxHistory.ItemHeight = 17;
             listBoxHistory.Location = new Point(0, 3);
             listBoxHistory.Name = "listBoxHistory";
-            listBoxHistory.Size = new Size(200, 514);
+            listBoxHistory.Size = new Size(200, 497);
             listBoxHistory.TabIndex = 0;
             listBoxHistory.SelectedIndexChanged += listBoxHistory_SelectedIndexChanged;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.BackColor = Color.FromArgb(46, 51, 73);
+            richTextBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            richTextBox1.ForeColor = Color.White;
+            richTextBox1.Location = new Point(210, 51);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.ReadOnly = true;
+            richTextBox1.ScrollBars = RichTextBoxScrollBars.Vertical;
+            richTextBox1.Size = new Size(507, 450);
+            richTextBox1.TabIndex = 2;
+            richTextBox1.Text = "";
             // 
             // FrmMain
             // 
@@ -725,11 +903,11 @@
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(951, 577);
             Controls.Add(pnlNaw);
+            Controls.Add(panelSettings);
             Controls.Add(panelVivy);
             Controls.Add(panelAnalytics);
             Controls.Add(panelAbout);
             Controls.Add(panelCalendar);
-            Controls.Add(panelSettings);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMain";
             StartPosition = FormStartPosition.CenterScreen;
@@ -751,6 +929,8 @@
             panelAboutVivy.ResumeLayout(false);
             panelAboutVivy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panelSettings.ResumeLayout(false);
+            panelSettings.PerformLayout();
             panelCalendar.ResumeLayout(false);
             panelEvents.ResumeLayout(false);
             panelEvents.PerformLayout();
@@ -819,5 +999,21 @@
         private RichTextBox richTextBox1;
         private Panel panelHistory;
         private ListBox listBoxHistory;
+        private Label lblLanguage;
+        private Label lblSettingsTitle;
+        private ComboBox cbLanguage;
+        private Label lblTheme;
+        private ComboBox cbTheme;
+        private Button btnSaveSettings;
+        private CheckBox cbNotifications;
+        private CheckBox cbSaveHistory;
+        private CheckBox cbSpeakResponses;
+        private ToolTip toolTip1;
+        private ToolTip toolTip2;
+        private ToolTip toolTip3;
+        private ComboBox comboBox1;
+        private Label label11;
+        private Label label12;
+        private Button btnLogout;
     }
 }

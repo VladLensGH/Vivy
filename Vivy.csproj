@@ -16,6 +16,7 @@
     <PackageReference Include="Krypton.Workspace" Version="95.25.4.111" />
     <PackageReference Include="RestSharp" Version="112.1.0" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.5" />
+    <PackageReference Include="System.Speech" Version="9.0.5" />
   </ItemGroup>
 
   <ItemGroup>

@@ -93,6 +93,8 @@ namespace Vivy
                 // Перевіряємо введений пароль
                 if (VerifyPassword(txtPassword.Text, hash, salt))
                 {
+                    System.IO.File.WriteAllText("user_session.txt", txtUsername.Text);
+
                     // Якщо пароль вірний — закриваємо форму з успішним результатом
                     UserLogin = txtUsername.Text;
                     this.DialogResult = DialogResult.OK;
@@ -216,5 +218,11 @@ namespace Vivy
             pnlReg.Visible = false;
             pnlLog.Visible = true;
         }
+
+        private void pnlLog_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
     }
 }

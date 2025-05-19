@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Vivy
@@ -8,16 +9,22 @@ namespace Vivy
         [STAThread]
         static void Main()
         {
-            ApplicationConfiguration.Initialize();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
-            using (var loginForm = new FrmLogin())
+            string sessionPath = "user_session.txt";
+
+            if (File.Exists(sessionPath))
             {
-                if (loginForm.ShowDialog() == DialogResult.OK)
+                string savedLogin = File.ReadAllText(sessionPath);
+                if (!string.IsNullOrWhiteSpace(savedLogin))
                 {
-                    Application.Run(new FrmMain(loginForm.UserLogin));
+                    Application.Run(new FrmMain(savedLogin));
+                    return;
                 }
             }
 
+            Application.Run(new FrmLogin()); //
         }
     }
 }
