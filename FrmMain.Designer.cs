@@ -272,7 +272,6 @@
             // 
             // Usder
             // 
-            Usder.AutoSize = true;
             Usder.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             Usder.ForeColor = Color.FromArgb(0, 126, 149);
             Usder.Location = new Point(26, 98);
@@ -306,7 +305,6 @@
             panelAbout.Name = "panelAbout";
             panelAbout.Size = new Size(951, 577);
             panelAbout.TabIndex = 11;
-            panelAbout.Visible = false;
             panelAbout.Paint += panel4_Paint;
             // 
             // panelContact
@@ -566,7 +564,6 @@
             panelSettings.Controls.Add(cbLanguage);
             panelSettings.Controls.Add(lblLanguage);
             panelSettings.Controls.Add(lblSettingsTitle);
-            panelSettings.Dock = DockStyle.Fill;
             panelSettings.Location = new Point(186, 0);
             panelSettings.Name = "panelSettings";
             panelSettings.Size = new Size(765, 577);
@@ -900,36 +897,6 @@
             richTextBox1.TabIndex = 2;
             richTextBox1.Text = "";
             // 
-            // monthCalendar1
-            // 
-            monthCalendar1.Location = new Point(9, 9);
-            monthCalendar1.MaxSelectionCount = 1;
-            monthCalendar1.Name = "monthCalendar1";
-            monthCalendar1.TabIndex = 0;
-            // 
-            // panelMiniCalendar
-            // 
-            panelMiniCalendar.Controls.Add(monthCalendar1);
-            panelMiniCalendar.ForeColor = Color.White;
-            panelMiniCalendar.Location = new Point(25, 30);
-            panelMiniCalendar.Name = "panelMiniCalendar";
-            panelMiniCalendar.Size = new Size(230, 180);
-            panelMiniCalendar.TabIndex = 1;
-            // 
-            // panelAddEvent
-            // 
-            panelAddEvent.Location = new Point(255, 359);
-            panelAddEvent.Name = "panelAddEvent";
-            panelAddEvent.Size = new Size(200, 100);
-            panelAddEvent.TabIndex = 0;
-            // 
-            // panelEvents
-            // 
-            panelEvents.Location = new Point(388, 30);
-            panelEvents.Name = "panelEvents";
-            panelEvents.Size = new Size(200, 100);
-            panelEvents.TabIndex = 0;
-            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -979,6 +946,7 @@
         }
 
         #endregion
+
 
         private Panel pnlNaw;
         private Panel panel2;
