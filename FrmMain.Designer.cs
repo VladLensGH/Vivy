@@ -531,6 +531,7 @@
             cbLanguage.Items.AddRange(new object[] { resources.GetString("cbLanguage.Items"), resources.GetString("cbLanguage.Items1"), resources.GetString("cbLanguage.Items2") });
             resources.ApplyResources(cbLanguage, "cbLanguage");
             cbLanguage.Name = "cbLanguage";
+            cbLanguage.SelectedIndexChanged += cbLanguage_SelectedIndexChanged;
             // 
             // lblLanguage
             // 

@@ -1,17 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!--
-    Microsoft ResX Schema
-
+  <!-- 
+    Microsoft ResX Schema 
+    
     Version 2.0
-
-    The primary goals of this format is to allow a simple XML format
-    that is mostly human readable. The generation and parsing of the
-    various data types are done through the TypeConverter classes
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
     associated with the data types.
-
+    
     Example:
-
+    
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-
-    There are any number of "resheader" rows that contain simple
+                
+    There are any number of "resheader" rows that contain simple 
     name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a
-    type or mimetype. Type corresponds to a .NET class that support
-    text/value conversion through the TypeConverter architecture.
-    Classes that don't support this are serialized and stored with the
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
     mimetype set.
-
-    The mimetype is used for serialized objects, and tells the
-    ResXResourceReader how to depersist the object. This is currently not
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
     extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format
-    that the ResXResourceWriter will generate, however the reader can
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
     read any of the formats listed below.
-
+    
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with
+    value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-
+    
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with
+    value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array
+    value   : The object must be serialized into a byte array 
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -117,17 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Pnlscroll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 193</value>
-  </data>
-  <data name="Pnlscroll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>3, 100</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Pnlscroll.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
   <data name="&gt;&gt;Pnlscroll.Name" xml:space="preserve">
     <value>Pnlscroll</value>
   </data>
@@ -139,91 +128,6 @@
   </data>
   <data name="&gt;&gt;Pnlscroll.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnsettings.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnsettings.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Nirmala UI, 9.75pt, style=Bold</value>
-  </data>
-  <data name="btnsettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="btnsettings.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btnsettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnsettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 502</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnsettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>30, 0, 0, 10</value>
-  </data>
-  <data name="btnsettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 75</value>
-  </data>
-  <data name="btnsettings.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="btnsettings.Text" xml:space="preserve">
-    <value>Налаштування</value>
-  </data>
-  <data name="btnsettings.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnsettings.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>TextBeforeImage</value>
   </data>
   <data name="&gt;&gt;btnsettings.Name" xml:space="preserve">
     <value>btnsettings</value>
@@ -237,6 +141,136 @@
   <data name="&gt;&gt;btnsettings.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;btnContactUs.Name" xml:space="preserve">
+    <value>btnContactUs</value>
+  </data>
+  <data name="&gt;&gt;btnContactUs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnContactUs.Parent" xml:space="preserve">
+    <value>pnlNaw</value>
+  </data>
+  <data name="&gt;&gt;btnContactUs.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnCalendar.Name" xml:space="preserve">
+    <value>btnCalendar</value>
+  </data>
+  <data name="&gt;&gt;btnCalendar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCalendar.Parent" xml:space="preserve">
+    <value>pnlNaw</value>
+  </data>
+  <data name="&gt;&gt;btnCalendar.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnAnalytics.Name" xml:space="preserve">
+    <value>btnAnalytics</value>
+  </data>
+  <data name="&gt;&gt;btnAnalytics.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAnalytics.Parent" xml:space="preserve">
+    <value>pnlNaw</value>
+  </data>
+  <data name="&gt;&gt;btnAnalytics.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;BtnDashboard.Name" xml:space="preserve">
+    <value>BtnDashboard</value>
+  </data>
+  <data name="&gt;&gt;BtnDashboard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BtnDashboard.Parent" xml:space="preserve">
+    <value>pnlNaw</value>
+  </data>
+  <data name="&gt;&gt;BtnDashboard.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>pnlNaw</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pnlNaw.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pnlNaw.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pnlNaw.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 577</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pnlNaw.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pnlNaw.Name" xml:space="preserve">
+    <value>pnlNaw</value>
+  </data>
+  <data name="&gt;&gt;pnlNaw.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlNaw.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlNaw.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Pnlscroll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 193</value>
+  </data>
+  <data name="Pnlscroll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>3, 100</value>
+  </data>
+  <data name="Pnlscroll.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnsettings.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnsettings.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Nirmala UI, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnsettings.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnsettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnsettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 502</value>
+  </data>
+  <data name="btnsettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>30, 0, 0, 10</value>
+  </data>
+  <data name="btnsettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 75</value>
+  </data>
+  <data name="btnsettings.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnsettings.Text" xml:space="preserve">
+    <value>Setting up</value>
+  </data>
+  <data name="btnsettings.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnsettings.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>TextBeforeImage</value>
+  </data>
   <data name="btnContactUs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -245,38 +279,6 @@
   </data>
   <data name="btnContactUs.Font" type="System.Drawing.Font, System.Drawing">
     <value>Nirmala UI, 9.75pt, style=Bold</value>
-  </data>
-  <data name="btnContactUs.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
   </data>
   <data name="btnContactUs.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -297,25 +299,13 @@
     <value>6</value>
   </data>
   <data name="btnContactUs.Text" xml:space="preserve">
-    <value>Про нас</value>
+    <value>About us</value>
   </data>
   <data name="btnContactUs.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
   <data name="btnContactUs.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>TextBeforeImage</value>
-  </data>
-  <data name="&gt;&gt;btnContactUs.Name" xml:space="preserve">
-    <value>btnContactUs</value>
-  </data>
-  <data name="&gt;&gt;btnContactUs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnContactUs.Parent" xml:space="preserve">
-    <value>pnlNaw</value>
-  </data>
-  <data name="&gt;&gt;btnContactUs.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="btnCalendar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -325,39 +315,6 @@
   </data>
   <data name="btnCalendar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Nirmala UI, 9.75pt, style=Bold</value>
-  </data>
-  <data name="btnCalendar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        AElFTkSuQmCC
-</value>
   </data>
   <data name="btnCalendar.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -378,25 +335,13 @@
     <value>5</value>
   </data>
   <data name="btnCalendar.Text" xml:space="preserve">
-    <value>Календар</value>
+    <value>Calendar</value>
   </data>
   <data name="btnCalendar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
   <data name="btnCalendar.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>TextBeforeImage</value>
-  </data>
-  <data name="&gt;&gt;btnCalendar.Name" xml:space="preserve">
-    <value>btnCalendar</value>
-  </data>
-  <data name="&gt;&gt;btnCalendar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCalendar.Parent" xml:space="preserve">
-    <value>pnlNaw</value>
-  </data>
-  <data name="&gt;&gt;btnCalendar.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="btnAnalytics.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -406,42 +351,6 @@
   </data>
   <data name="btnAnalytics.Font" type="System.Drawing.Font, System.Drawing">
     <value>Nirmala UI, 9.75pt, style=Bold</value>
-  </data>
-  <data name="btnAnalytics.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        oC5K4++vpv8CVT79w6rhNfEAAAAASUVORK5CYII=
-</value>
   </data>
   <data name="btnAnalytics.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -462,25 +371,13 @@
     <value>4</value>
   </data>
   <data name="btnAnalytics.Text" xml:space="preserve">
-    <value>Аналітика</value>
+    <value>Analytics</value>
   </data>
   <data name="btnAnalytics.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
   <data name="btnAnalytics.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>TextBeforeImage</value>
-  </data>
-  <data name="&gt;&gt;btnAnalytics.Name" xml:space="preserve">
-    <value>btnAnalytics</value>
-  </data>
-  <data name="&gt;&gt;btnAnalytics.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAnalytics.Parent" xml:space="preserve">
-    <value>pnlNaw</value>
-  </data>
-  <data name="&gt;&gt;btnAnalytics.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="BtnDashboard.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -490,40 +387,6 @@
   </data>
   <data name="BtnDashboard.Font" type="System.Drawing.Font, System.Drawing">
     <value>Nirmala UI, 9.75pt, style=Bold</value>
-  </data>
-  <data name="BtnDashboard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        2hcrfeTOaXgAAAAASUVORK5CYII=
-</value>
   </data>
   <data name="BtnDashboard.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -552,17 +415,56 @@
   <data name="BtnDashboard.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>TextBeforeImage</value>
   </data>
-  <data name="&gt;&gt;BtnDashboard.Name" xml:space="preserve">
-    <value>BtnDashboard</value>
+  <data name="Usder.Locked" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;BtnDashboard.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
   </data>
-  <data name="&gt;&gt;BtnDashboard.Parent" xml:space="preserve">
-    <value>pnlNaw</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;BtnDashboard.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Usder.Name" xml:space="preserve">
+    <value>Usder</value>
+  </data>
+  <data name="&gt;&gt;Usder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Usder.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;Usder.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;picUserAvatar.Name" xml:space="preserve">
+    <value>picUserAvatar</value>
+  </data>
+  <data name="&gt;&gt;picUserAvatar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picUserAvatar.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;picUserAvatar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 175</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -583,23 +485,8 @@
     <value>2</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Про себе</value>
+    <value>About yourself</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="Usder.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="Usder.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
@@ -616,22 +503,10 @@
     <value>1</value>
   </data>
   <data name="Usder.Text" xml:space="preserve">
-    <value>Ім'я користувача</value>
+    <value>User name</value>
   </data>
   <data name="Usder.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;Usder.Name" xml:space="preserve">
-    <value>Usder</value>
-  </data>
-  <data name="&gt;&gt;Usder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Usder.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;Usder.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="picUserAvatar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2304,165 +2179,6 @@
   <data name="picUserAvatar.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;picUserAvatar.Name" xml:space="preserve">
-    <value>picUserAvatar</value>
-  </data>
-  <data name="&gt;&gt;picUserAvatar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;picUserAvatar.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;picUserAvatar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 175</value>
-  </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
-    <value>pnlNaw</value>
-  </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="pnlNaw.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="pnlNaw.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="pnlNaw.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 577</value>
-  </data>
-  <data name="pnlNaw.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pnlNaw.Name" xml:space="preserve">
-    <value>pnlNaw</value>
-  </data>
-  <data name="&gt;&gt;pnlNaw.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlNaw.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pnlNaw.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="linkLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="linkLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>158, 15</value>
-  </data>
-  <data name="linkLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 64</value>
-  </data>
-  <data name="linkLabel2.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>Telegram: @vivy_ai Instagram: @vivy.project phone: +49 15164337343 Gmail: apivivy@gmail.com</value>
-  </data>
-  <data name="&gt;&gt;linkLabel2.Name" xml:space="preserve">
-    <value>linkLabel2</value>
-  </data>
-  <data name="&gt;&gt;linkLabel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;linkLabel2.Parent" xml:space="preserve">
-    <value>panelContact</value>
-  </data>
-  <data name="&gt;&gt;linkLabel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8pt</value>
-  </data>
-  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 86</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>322, 41</value>
-  </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Слідкуйте за новинами та оновленнями проєкту в наших соцмережах. Якщо є питання, звертайтесь на будь-який з контактів і ми постараємося вам швидко відповісти</value>
-  </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>panelContact</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 12.75pt, style=Bold</value>
-  </data>
-  <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 36</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 23</value>
-  </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Контакти</value>
-  </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>panelContact</value>
-  </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panelContact.Location" type="System.Drawing.Point, System.Drawing">
-    <value>595, 261</value>
-  </data>
-  <data name="panelContact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 134</value>
-  </data>
-  <data name="panelContact.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
   <data name="&gt;&gt;panelContact.Name" xml:space="preserve">
     <value>panelContact</value>
   </data>
@@ -2474,148 +2190,6 @@
   </data>
   <data name="&gt;&gt;panelContact.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="panelaboutUs.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAABDoAAAJaCAYAAADOCSfZAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAD2lJREFUeF7t2DERACAQwDDkvAj824IdB/QyZKmErpl9AAAAAArWGwAAAAB+ZXQA
-        AAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAA
-        AJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAA
-        GUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBh
-        dAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYH
-        AAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAA
-        AAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAA
-        kGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZ
-        RgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0
-        AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcA
-        AACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAA
-        ABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQ
-        YXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlG
-        BwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQA
-        AAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAA
-        AJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAA
-        GUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBh
-        dAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYH
-        AAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAA
-        AAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAA
-        kGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZ
-        RgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0
-        AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcA
-        AACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAA
-        ABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQ
-        YXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlG
-        BwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQA
-        AAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAA
-        AJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAA
-        GUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBh
-        dAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYH
-        AAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAA
-        AAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAA
-        kGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZ
-        RgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0
-        AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcA
-        AACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAA
-        ABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQ
-        YXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlG
-        BwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQA
-        AAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAA
-        AJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAA
-        GUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBh
-        dAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYH
-        AAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAA
-        AAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAA
-        kGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZ
-        RgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0
-        AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcA
-        AACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAA
-        ABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQ
-        YXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlG
-        BwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQA
-        AAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAA
-        AJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAA
-        GUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBh
-        dAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYH
-        AAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAA
-        AAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAA
-        kGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZ
-        RgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0
-        AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcA
-        AACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAA
-        ABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQ
-        YXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlG
-        BwAAAJBhdAAAAAAZRgcAAACQYXQAAAAAGUYHAAAAkGF0AAAAABlGBwAAAJBhdAAAAAAZRgcAAACQcQEH
-        QNBXM4kJ5gAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.1pt</value>
-  </data>
-  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 42</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>318, 81</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Цей проект — наша перша спроба створити інтелектуального помічника. Цей проєкт не був би можливим без вас. Ми цінуємо кожен внесок і зворотний зв'язок.
-</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>panelaboutUs</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 12.75pt, style=Bold</value>
-  </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 11</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 23</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>О нас </value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>panelaboutUs</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelaboutUs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 261</value>
-  </data>
-  <data name="panelaboutUs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 134</value>
-  </data>
-  <data name="panelaboutUs.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
   </data>
   <data name="&gt;&gt;panelaboutUs.Name" xml:space="preserve">
     <value>panelaboutUs</value>
@@ -2629,138 +2203,6 @@
   <data name="&gt;&gt;panelaboutUs.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="linkSupportCard.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="linkSupportCard.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="linkSupportCard.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="linkSupportCard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>318, 86</value>
-  </data>
-  <data name="linkSupportCard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 17</value>
-  </data>
-  <data name="linkSupportCard.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="linkSupportCard.Text" xml:space="preserve">
-    <value>4441114498935962</value>
-  </data>
-  <data name="&gt;&gt;linkSupportCard.Name" xml:space="preserve">
-    <value>linkSupportCard</value>
-  </data>
-  <data name="&gt;&gt;linkSupportCard.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;linkSupportCard.Parent" xml:space="preserve">
-    <value>panelSupport</value>
-  </data>
-  <data name="&gt;&gt;linkSupportCard.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblSupportCardText.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSupportCardText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSupportCardText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>142, 86</value>
-  </data>
-  <data name="lblSupportCardText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 15</value>
-  </data>
-  <data name="lblSupportCardText.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="lblSupportCardText.Text" xml:space="preserve">
-    <value>Номер картки для підтримки:</value>
-  </data>
-  <data name="&gt;&gt;lblSupportCardText.Name" xml:space="preserve">
-    <value>lblSupportCardText</value>
-  </data>
-  <data name="&gt;&gt;lblSupportCardText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSupportCardText.Parent" xml:space="preserve">
-    <value>panelSupport</value>
-  </data>
-  <data name="&gt;&gt;lblSupportCardText.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 10.75pt, style=Bold</value>
-  </data>
-  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 11</value>
-  </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>251, 20</value>
-  </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>🙏 Дякуємо за вашу підтримку</value>
-  </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>panelSupport</value>
-  </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 43</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>546, 33</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Цей проєкт не був би можливим без вас. Ми цінуємо кожен внесок і зворотний зв'язок. Підтримайте нас, щоб ми могли створювати ще розумніші, корисні та надихаючі інструменти.</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>panelSupport</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="panelSupport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>259, 428</value>
-  </data>
-  <data name="panelSupport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>630, 114</value>
-  </data>
-  <data name="panelSupport.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
   <data name="&gt;&gt;panelSupport.Name" xml:space="preserve">
     <value>panelSupport</value>
   </data>
@@ -2772,81 +2214,6 @@
   </data>
   <data name="&gt;&gt;panelSupport.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 15.75pt, style=Bold</value>
-  </data>
-  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 28</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 34</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Наши проекты</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>panelProjects</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="linkLabel1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="linkLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 78</value>
-  </data>
-  <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 60</value>
-  </data>
-  <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>• CrossLang — мультиязычный переводчик с ИИ
-• StreamMind — генерация сценариев для YouTube
-• ZenNote — минималистичный трекер привычек
- • SportBet — сайт букмекерська контора</value>
-  </data>
-  <data name="&gt;&gt;linkLabel1.Name" xml:space="preserve">
-    <value>linkLabel1</value>
-  </data>
-  <data name="&gt;&gt;linkLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;linkLabel1.Parent" xml:space="preserve">
-    <value>panelProjects</value>
-  </data>
-  <data name="&gt;&gt;linkLabel1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelProjects.Location" type="System.Drawing.Point, System.Drawing">
-    <value>598, 51</value>
-  </data>
-  <data name="panelProjects.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 187</value>
-  </data>
-  <data name="panelProjects.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
   </data>
   <data name="&gt;&gt;panelProjects.Name" xml:space="preserve">
     <value>panelProjects</value>
@@ -2860,26 +2227,41 @@
   <data name="&gt;&gt;panelProjects.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="lblAboutTitle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;panelAboutVivy.Name" xml:space="preserve">
+    <value>panelAboutVivy</value>
   </data>
-  <data name="lblAboutTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 15.75pt, style=Bold</value>
+  <data name="&gt;&gt;panelAboutVivy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblAboutTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;panelAboutVivy.Parent" xml:space="preserve">
+    <value>panelAbout</value>
   </data>
-  <data name="lblAboutTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 21</value>
+  <data name="&gt;&gt;panelAboutVivy.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="lblAboutTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 30</value>
+  <data name="panelAbout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="lblAboutTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="panelAbout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="lblAboutTitle.Text" xml:space="preserve">
-    <value>Про програму Vivy</value>
+  <data name="panelAbout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>951, 577</value>
+  </data>
+  <data name="panelAbout.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;panelAbout.Name" xml:space="preserve">
+    <value>panelAbout</value>
+  </data>
+  <data name="&gt;&gt;panelAbout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelAbout.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelAbout.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;lblAboutTitle.Name" xml:space="preserve">
     <value>lblAboutTitle</value>
@@ -2893,8 +2275,83 @@
   <data name="&gt;&gt;lblAboutTitle.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="pictureBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
+  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
+    <value>pictureBox2</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
+    <value>panelAboutVivy</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblAboutText.Name" xml:space="preserve">
+    <value>lblAboutText</value>
+  </data>
+  <data name="&gt;&gt;lblAboutText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAboutText.Parent" xml:space="preserve">
+    <value>panelAboutVivy</value>
+  </data>
+  <data name="&gt;&gt;lblAboutText.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>panelAboutVivy</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>panelAboutVivy</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="panelAboutVivy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 51</value>
+  </data>
+  <data name="panelAboutVivy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>364, 187</value>
+  </data>
+  <data name="panelAboutVivy.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="lblAboutTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAboutTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 15.75pt, style=Bold</value>
+  </data>
+  <data name="lblAboutTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblAboutTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 28</value>
+  </data>
+  <data name="lblAboutTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 30</value>
+  </data>
+  <data name="lblAboutTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblAboutTitle.Text" xml:space="preserve">
+    <value>About the Vivy program</value>
   </data>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5688,7 +5145,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 11</value>
+    <value>269, 11</value>
   </data>
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 64</value>
@@ -5698,18 +5155,6 @@
   </data>
   <data name="pictureBox2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
-    <value>pictureBox2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
-    <value>panelAboutVivy</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="lblAboutText.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 10pt</value>
@@ -5727,19 +5172,7 @@
     <value>1</value>
   </data>
   <data name="lblAboutText.Text" xml:space="preserve">
-    <value>Vivy - ваш інтелектуальний помічник, створений для підтримки, натхнення та продуктивної роботи.</value>
-  </data>
-  <data name="&gt;&gt;lblAboutText.Name" xml:space="preserve">
-    <value>lblAboutText</value>
-  </data>
-  <data name="&gt;&gt;lblAboutText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAboutText.Parent" xml:space="preserve">
-    <value>panelAboutVivy</value>
-  </data>
-  <data name="&gt;&gt;lblAboutText.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>Vivy is your intellectual assistant designed to support, inspire and produce.</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5760,19 +5193,7 @@
     <value>3</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Версия: 1.0.0</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>panelAboutVivy</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>Version: 1.0.0</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5790,79 +5211,385 @@
     <value>2</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value> Поддержка: support@vivy.ai</value>
+    <value>Support: support@vivy.ai</value>
   </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
   </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>panelAboutVivy</value>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>panelProjects</value>
   </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="panelAboutVivy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 51</value>
+  <data name="&gt;&gt;linkLabel1.Name" xml:space="preserve">
+    <value>linkLabel1</value>
   </data>
-  <data name="panelAboutVivy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 187</value>
+  <data name="&gt;&gt;linkLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="panelAboutVivy.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+  <data name="&gt;&gt;linkLabel1.Parent" xml:space="preserve">
+    <value>panelProjects</value>
   </data>
-  <data name="&gt;&gt;panelAboutVivy.Name" xml:space="preserve">
-    <value>panelAboutVivy</value>
-  </data>
-  <data name="&gt;&gt;panelAboutVivy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelAboutVivy.Parent" xml:space="preserve">
-    <value>panelAbout</value>
-  </data>
-  <data name="&gt;&gt;panelAboutVivy.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="panelAbout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panelAbout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panelAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>951, 577</value>
-  </data>
-  <data name="panelAbout.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;panelAbout.Name" xml:space="preserve">
-    <value>panelAbout</value>
-  </data>
-  <data name="&gt;&gt;panelAbout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelAbout.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panelAbout.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;linkLabel1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnLogout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="panelProjects.Location" type="System.Drawing.Point, System.Drawing">
+    <value>598, 51</value>
+  </data>
+  <data name="panelProjects.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 187</value>
+  </data>
+  <data name="panelProjects.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 15.75pt, style=Bold</value>
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btnLogout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>337, 471</value>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 28</value>
   </data>
-  <data name="btnLogout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 23</value>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 34</value>
   </data>
-  <data name="btnLogout.TabIndex" type="System.Int32, mscorlib">
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="btnLogout.Text" xml:space="preserve">
-    <value>Вийти з акаунта</value>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Our projects</value>
+  </data>
+  <data name="linkLabel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="linkLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 78</value>
+  </data>
+  <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 60</value>
+  </data>
+  <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>• CROSSLANG - multi -language translator from AI
+• Streammind - Generation of scripts for YouTube
+• Zennote - a minimalist tracker of habits
+• Sportbet - site bookmaker office</value>
+  </data>
+  <data name="&gt;&gt;linkLabel2.Name" xml:space="preserve">
+    <value>linkLabel2</value>
+  </data>
+  <data name="&gt;&gt;linkLabel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;linkLabel2.Parent" xml:space="preserve">
+    <value>panelContact</value>
+  </data>
+  <data name="&gt;&gt;linkLabel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>panelContact</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label10.Name" xml:space="preserve">
+    <value>label10</value>
+  </data>
+  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
+    <value>panelContact</value>
+  </data>
+  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panelContact.Location" type="System.Drawing.Point, System.Drawing">
+    <value>595, 261</value>
+  </data>
+  <data name="panelContact.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 134</value>
+  </data>
+  <data name="panelContact.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="linkLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="linkLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 15</value>
+  </data>
+  <data name="linkLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 64</value>
+  </data>
+  <data name="linkLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="linkLabel2.Text" xml:space="preserve">
+    <value>Telegram: @vivy_ai Instagram: @vivy.project phone: +49 15164337343 Gmail: apivivy@gmail.com</value>
+  </data>
+  <data name="label9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8pt</value>
+  </data>
+  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 86</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>322, 41</value>
+  </data>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Follow the news and updates of the project on our social networks.If there is a question contact any of the contacts and we will try to answer you quickly</value>
+  </data>
+  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 12.75pt, style=Bold</value>
+  </data>
+  <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 36</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 23</value>
+  </data>
+  <data name="label10.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>panelaboutUs</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>panelaboutUs</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelaboutUs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 261</value>
+  </data>
+  <data name="panelaboutUs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>364, 134</value>
+  </data>
+  <data name="panelaboutUs.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.1pt</value>
+  </data>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 42</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 81</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>This project is our first attempt to create an intellectual assistant.This project would not be possible without you.We value each contribution and feedback.</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 12.75pt, style=Bold</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>145, 11</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 23</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="&gt;&gt;linkSupportCard.Name" xml:space="preserve">
+    <value>linkSupportCard</value>
+  </data>
+  <data name="&gt;&gt;linkSupportCard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;linkSupportCard.Parent" xml:space="preserve">
+    <value>panelSupport</value>
+  </data>
+  <data name="&gt;&gt;linkSupportCard.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblSupportCardText.Name" xml:space="preserve">
+    <value>lblSupportCardText</value>
+  </data>
+  <data name="&gt;&gt;lblSupportCardText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSupportCardText.Parent" xml:space="preserve">
+    <value>panelSupport</value>
+  </data>
+  <data name="&gt;&gt;lblSupportCardText.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>panelSupport</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>panelSupport</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panelSupport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 428</value>
+  </data>
+  <data name="panelSupport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>630, 114</value>
+  </data>
+  <data name="panelSupport.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="linkSupportCard.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="linkSupportCard.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt, style=Bold</value>
+  </data>
+  <data name="linkSupportCard.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="linkSupportCard.Location" type="System.Drawing.Point, System.Drawing">
+    <value>318, 86</value>
+  </data>
+  <data name="linkSupportCard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 17</value>
+  </data>
+  <data name="linkSupportCard.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="linkSupportCard.Text" xml:space="preserve">
+    <value>4441114498935962</value>
+  </data>
+  <data name="lblSupportCardText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSupportCardText.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSupportCardText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 86</value>
+  </data>
+  <data name="lblSupportCardText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 15</value>
+  </data>
+  <data name="lblSupportCardText.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="lblSupportCardText.Text" xml:space="preserve">
+    <value>Card number to support:</value>
+  </data>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 10.75pt, style=Bold</value>
+  </data>
+  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>187, 11</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 20</value>
+  </data>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>🙏 Thank you for your support</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 43</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>546, 33</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>This project would not be possible without you.We value each contribution and feedback.Support us so we can create even smarter, more useful and inspiring tools.</value>
   </data>
   <data name="&gt;&gt;btnLogout.Name" xml:space="preserve">
     <value>btnLogout</value>
@@ -5876,27 +5603,6 @@
   <data name="&gt;&gt;btnLogout.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 374</value>
-  </data>
-  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 21</value>
-  </data>
-  <data name="label12.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>🌙 Нічний режим : </value>
-  </data>
   <data name="&gt;&gt;label12.Name" xml:space="preserve">
     <value>label12</value>
   </data>
@@ -5908,27 +5614,6 @@
   </data>
   <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="cbModel.Items" xml:space="preserve">
-    <value>GPT-3.5 (стандартний)</value>
-  </data>
-  <data name="cbModel.Items1" xml:space="preserve">
-    <value> GPT-4</value>
-  </data>
-  <data name="cbModel.Items2" xml:space="preserve">
-    <value> GPT-4o </value>
-  </data>
-  <data name="cbModel.Items3" xml:space="preserve">
-    <value>GPT-o3-mini‑high</value>
-  </data>
-  <data name="cbModel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 100</value>
-  </data>
-  <data name="cbModel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 23</value>
-  </data>
-  <data name="cbModel.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
   </data>
   <data name="&gt;&gt;cbModel.Name" xml:space="preserve">
     <value>cbModel</value>
@@ -5942,27 +5627,6 @@
   <data name="&gt;&gt;cbModel.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 98</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 21</value>
-  </data>
-  <data name="label11.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>🧠 Обрати модель (AI)  :</value>
-  </data>
   <data name="&gt;&gt;label11.Name" xml:space="preserve">
     <value>label11</value>
   </data>
@@ -5974,24 +5638,6 @@
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="cbSaveHistory.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 11pt</value>
-  </data>
-  <data name="cbSaveHistory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbSaveHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>523, 419</value>
-  </data>
-  <data name="cbSaveHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 40</value>
-  </data>
-  <data name="cbSaveHistory.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="cbSaveHistory.Text" xml:space="preserve">
-    <value>💾 Зберігати історію чатів</value>
   </data>
   <data name="&gt;&gt;cbSaveHistory.Name" xml:space="preserve">
     <value>cbSaveHistory</value>
@@ -6005,24 +5651,6 @@
   <data name="&gt;&gt;cbSaveHistory.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="cbSpeakResponses.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 11pt</value>
-  </data>
-  <data name="cbSpeakResponses.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbSpeakResponses.Location" type="System.Drawing.Point, System.Drawing">
-    <value>288, 419</value>
-  </data>
-  <data name="cbSpeakResponses.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 40</value>
-  </data>
-  <data name="cbSpeakResponses.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="cbSpeakResponses.Text" xml:space="preserve">
-    <value>🎙 Озвучувати відповіді</value>
-  </data>
   <data name="&gt;&gt;cbSpeakResponses.Name" xml:space="preserve">
     <value>cbSpeakResponses</value>
   </data>
@@ -6034,21 +5662,6 @@
   </data>
   <data name="&gt;&gt;cbSpeakResponses.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="btnSaveSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnSaveSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>288, 514</value>
-  </data>
-  <data name="btnSaveSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 40</value>
-  </data>
-  <data name="btnSaveSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="btnSaveSettings.Text" xml:space="preserve">
-    <value>Зберегти налаштування</value>
   </data>
   <data name="&gt;&gt;btnSaveSettings.Name" xml:space="preserve">
     <value>btnSaveSettings</value>
@@ -6062,24 +5675,6 @@
   <data name="&gt;&gt;btnSaveSettings.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="cbNotifications.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 11pt</value>
-  </data>
-  <data name="cbNotifications.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="cbNotifications.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 419</value>
-  </data>
-  <data name="cbNotifications.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 40</value>
-  </data>
-  <data name="cbNotifications.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="cbNotifications.Text" xml:space="preserve">
-    <value>🔔 Отримувати сповіщення</value>
-  </data>
   <data name="&gt;&gt;cbNotifications.Name" xml:space="preserve">
     <value>cbNotifications</value>
   </data>
@@ -6091,27 +5686,6 @@
   </data>
   <data name="&gt;&gt;cbNotifications.ZOrder" xml:space="preserve">
     <value>7</value>
-  </data>
-  <data name="lblTheme.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblTheme.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="lblTheme.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 196</value>
-  </data>
-  <data name="lblTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 21</value>
-  </data>
-  <data name="lblTheme.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblTheme.Text" xml:space="preserve">
-    <value>🎨 Тема оформлення : </value>
   </data>
   <data name="&gt;&gt;lblTheme.Name" xml:space="preserve">
     <value>lblTheme</value>
@@ -6125,21 +5699,6 @@
   <data name="&gt;&gt;lblTheme.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="cbTheme.Items" xml:space="preserve">
-    <value>Світла</value>
-  </data>
-  <data name="cbTheme.Items1" xml:space="preserve">
-    <value> Темна</value>
-  </data>
-  <data name="cbTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 193</value>
-  </data>
-  <data name="cbTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 23</value>
-  </data>
-  <data name="cbTheme.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
   <data name="&gt;&gt;cbTheme.Name" xml:space="preserve">
     <value>cbTheme</value>
   </data>
@@ -6151,24 +5710,6 @@
   </data>
   <data name="&gt;&gt;cbTheme.ZOrder" xml:space="preserve">
     <value>9</value>
-  </data>
-  <data name="cbLanguage.Items" xml:space="preserve">
-    <value>Українська</value>
-  </data>
-  <data name="cbLanguage.Items1" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="cbLanguage.Items2" xml:space="preserve">
-    <value>Deutsch</value>
-  </data>
-  <data name="cbLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 151</value>
-  </data>
-  <data name="cbLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 23</value>
-  </data>
-  <data name="cbLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;cbLanguage.Name" xml:space="preserve">
     <value>cbLanguage</value>
@@ -6182,27 +5723,6 @@
   <data name="&gt;&gt;cbLanguage.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="lblLanguage.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblLanguage.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="lblLanguage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 151</value>
-  </data>
-  <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 21</value>
-  </data>
-  <data name="lblLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblLanguage.Text" xml:space="preserve">
-    <value>🌍 Мова інтерфейсу :</value>
-  </data>
   <data name="&gt;&gt;lblLanguage.Name" xml:space="preserve">
     <value>lblLanguage</value>
   </data>
@@ -6214,27 +5734,6 @@
   </data>
   <data name="&gt;&gt;lblLanguage.ZOrder" xml:space="preserve">
     <value>11</value>
-  </data>
-  <data name="lblSettingsTitle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSettingsTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 16pt</value>
-  </data>
-  <data name="lblSettingsTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblSettingsTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>288, 30</value>
-  </data>
-  <data name="lblSettingsTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 30</value>
-  </data>
-  <data name="lblSettingsTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblSettingsTitle.Text" xml:space="preserve">
-    <value>Налаштування</value>
   </data>
   <data name="&gt;&gt;lblSettingsTitle.Name" xml:space="preserve">
     <value>lblSettingsTitle</value>
@@ -6270,97 +5769,250 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelSettings.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="btnDeleteEvent2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnDeleteEvent2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 215</value>
-  </data>
-  <data name="btnDeleteEvent2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 23</value>
-  </data>
-  <data name="btnDeleteEvent2.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="btnDeleteEvent2.Text" xml:space="preserve">
-    <value>Видалити подію</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteEvent2.Name" xml:space="preserve">
-    <value>btnDeleteEvent2</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteEvent2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteEvent2.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteEvent2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="listBoxAllEvents.ItemHeight" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="listBoxAllEvents.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 55</value>
-  </data>
-  <data name="listBoxAllEvents.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 154</value>
-  </data>
-  <data name="listBoxAllEvents.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;listBoxAllEvents.Name" xml:space="preserve">
-    <value>listBoxAllEvents</value>
-  </data>
-  <data name="&gt;&gt;listBoxAllEvents.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listBoxAllEvents.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;listBoxAllEvents.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblAllEventsTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 14pt, style=Bold</value>
-  </data>
-  <data name="lblAllEventsTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnLogout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="lblAllEventsTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 18</value>
+  <data name="btnLogout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>337, 471</value>
   </data>
-  <data name="lblAllEventsTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 23</value>
+  <data name="btnLogout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 23</value>
   </data>
-  <data name="lblAllEventsTitle.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnLogout.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btnLogout.Text" xml:space="preserve">
+    <value>Get out of the account</value>
+  </data>
+  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label12.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="label12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 374</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 21</value>
+  </data>
+  <data name="label12.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>🌙 Night mode:</value>
+  </data>
+  <data name="cbModel.Items" xml:space="preserve">
+    <value>GPT-3.5 (стандартний)</value>
+  </data>
+  <data name="cbModel.Items1" xml:space="preserve">
+    <value> GPT-4</value>
+  </data>
+  <data name="cbModel.Items2" xml:space="preserve">
+    <value> GPT-4o </value>
+  </data>
+  <data name="cbModel.Items3" xml:space="preserve">
+    <value>GPT-o3-mini‑high</value>
+  </data>
+  <data name="cbModel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 100</value>
+  </data>
+  <data name="cbModel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 23</value>
+  </data>
+  <data name="cbModel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 98</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 21</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>🧠 Select the model (AI):</value>
+  </data>
+  <data name="cbSaveHistory.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 11pt</value>
+  </data>
+  <data name="cbSaveHistory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbSaveHistory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>523, 419</value>
+  </data>
+  <data name="cbSaveHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 40</value>
+  </data>
+  <data name="cbSaveHistory.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="cbSaveHistory.Text" xml:space="preserve">
+    <value>💾 Store chat history</value>
+  </data>
+  <data name="cbSpeakResponses.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 11pt</value>
+  </data>
+  <data name="cbSpeakResponses.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbSpeakResponses.Location" type="System.Drawing.Point, System.Drawing">
+    <value>288, 419</value>
+  </data>
+  <data name="cbSpeakResponses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 40</value>
+  </data>
+  <data name="cbSpeakResponses.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="cbSpeakResponses.Text" xml:space="preserve">
+    <value>🎙 voice answers</value>
+  </data>
+  <data name="btnSaveSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSaveSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>288, 514</value>
+  </data>
+  <data name="btnSaveSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 40</value>
+  </data>
+  <data name="btnSaveSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnSaveSettings.Text" xml:space="preserve">
+    <value>Save the settings</value>
+  </data>
+  <data name="cbNotifications.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 11pt</value>
+  </data>
+  <data name="cbNotifications.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cbNotifications.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 419</value>
+  </data>
+  <data name="cbNotifications.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 40</value>
+  </data>
+  <data name="cbNotifications.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="cbNotifications.Text" xml:space="preserve">
+    <value>🔔 To receive notifications</value>
+  </data>
+  <data name="lblTheme.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblTheme.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="lblTheme.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblTheme.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 196</value>
+  </data>
+  <data name="lblTheme.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 21</value>
+  </data>
+  <data name="lblTheme.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="lblAllEventsTitle.Text" xml:space="preserve">
-    <value>Усі події</value>
+  <data name="lblTheme.Text" xml:space="preserve">
+    <value>🎨 The subject of design:</value>
   </data>
-  <data name="&gt;&gt;lblAllEventsTitle.Name" xml:space="preserve">
-    <value>lblAllEventsTitle</value>
+  <data name="cbTheme.Items" xml:space="preserve">
+    <value>Світла</value>
   </data>
-  <data name="&gt;&gt;lblAllEventsTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="cbTheme.Items1" xml:space="preserve">
+    <value> Темна</value>
   </data>
-  <data name="&gt;&gt;lblAllEventsTitle.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="cbTheme.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 193</value>
   </data>
-  <data name="&gt;&gt;lblAllEventsTitle.ZOrder" xml:space="preserve">
+  <data name="cbTheme.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 23</value>
+  </data>
+  <data name="cbTheme.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="cbLanguage.Items" xml:space="preserve">
+    <value>Українська</value>
+  </data>
+  <data name="cbLanguage.Items1" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="cbLanguage.Items2" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="cbLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 151</value>
+  </data>
+  <data name="cbLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 23</value>
+  </data>
+  <data name="cbLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 305</value>
+  <data name="lblLanguage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 250</value>
+  <data name="lblLanguage.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
   </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="lblLanguage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 151</value>
+  </data>
+  <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 21</value>
+  </data>
+  <data name="lblLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>🌍 Interface language:</value>
+  </data>
+  <data name="lblSettingsTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSettingsTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 16pt</value>
+  </data>
+  <data name="lblSettingsTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSettingsTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>288, 30</value>
+  </data>
+  <data name="lblSettingsTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 30</value>
+  </data>
+  <data name="lblSettingsTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblSettingsTitle.Text" xml:space="preserve">
+    <value>Setting up</value>
   </data>
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
@@ -6372,102 +6024,6 @@
     <value>panelCalendar</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnDeleteEvent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnDeleteEvent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>90, 214</value>
-  </data>
-  <data name="btnDeleteEvent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 23</value>
-  </data>
-  <data name="btnDeleteEvent.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="btnDeleteEvent.Text" xml:space="preserve">
-    <value>Видалити подію</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteEvent.Name" xml:space="preserve">
-    <value>btnDeleteEvent</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteEvent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteEvent.Parent" xml:space="preserve">
-    <value>panelEventsWrapper</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteEvent.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblEventsTitle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblEventsTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 14pt, style=Bold</value>
-  </data>
-  <data name="lblEventsTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblEventsTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 20</value>
-  </data>
-  <data name="lblEventsTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 31</value>
-  </data>
-  <data name="lblEventsTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="lblEventsTitle.Text" xml:space="preserve">
-    <value>Події на: [дата]</value>
-  </data>
-  <data name="&gt;&gt;lblEventsTitle.Name" xml:space="preserve">
-    <value>lblEventsTitle</value>
-  </data>
-  <data name="&gt;&gt;lblEventsTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblEventsTitle.Parent" xml:space="preserve">
-    <value>panelEventsWrapper</value>
-  </data>
-  <data name="&gt;&gt;lblEventsTitle.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="listBoxEvents.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
-  </data>
-  <data name="listBoxEvents.ItemHeight" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="listBoxEvents.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 69</value>
-  </data>
-  <data name="listBoxEvents.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 136</value>
-  </data>
-  <data name="listBoxEvents.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;listBoxEvents.Name" xml:space="preserve">
-    <value>listBoxEvents</value>
-  </data>
-  <data name="&gt;&gt;listBoxEvents.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listBoxEvents.Parent" xml:space="preserve">
-    <value>panelEventsWrapper</value>
-  </data>
-  <data name="&gt;&gt;listBoxEvents.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panelEventsWrapper.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 305</value>
-  </data>
-  <data name="panelEventsWrapper.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 250</value>
-  </data>
-  <data name="panelEventsWrapper.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;panelEventsWrapper.Name" xml:space="preserve">
@@ -6482,150 +6038,6 @@
   <data name="&gt;&gt;panelEventsWrapper.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="datePickerEvent.CustomFormat" xml:space="preserve">
-    <value>dd.MM.yyyy</value>
-  </data>
-  <data name="datePickerEvent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 175</value>
-  </data>
-  <data name="datePickerEvent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 23</value>
-  </data>
-  <data name="datePickerEvent.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;datePickerEvent.Name" xml:space="preserve">
-    <value>datePickerEvent</value>
-  </data>
-  <data name="&gt;&gt;datePickerEvent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;datePickerEvent.Parent" xml:space="preserve">
-    <value>panelAddEventWrapper</value>
-  </data>
-  <data name="&gt;&gt;datePickerEvent.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 12pt, style=Bold</value>
-  </data>
-  <data name="label14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>107, 11</value>
-  </data>
-  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 23</value>
-  </data>
-  <data name="label14.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="label14.Text" xml:space="preserve">
-    <value>Напишіть подію</value>
-  </data>
-  <data name="&gt;&gt;label14.Name" xml:space="preserve">
-    <value>label14</value>
-  </data>
-  <data name="&gt;&gt;label14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
-    <value>panelAddEventWrapper</value>
-  </data>
-  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="timePickerEvent.CustomFormat" xml:space="preserve">
-    <value>HH:mm</value>
-  </data>
-  <data name="timePickerEvent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>219, 175</value>
-  </data>
-  <data name="timePickerEvent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 23</value>
-  </data>
-  <data name="timePickerEvent.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;timePickerEvent.Name" xml:space="preserve">
-    <value>timePickerEvent</value>
-  </data>
-  <data name="&gt;&gt;timePickerEvent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;timePickerEvent.Parent" xml:space="preserve">
-    <value>panelAddEventWrapper</value>
-  </data>
-  <data name="&gt;&gt;timePickerEvent.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="buttonAddEvent.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="buttonAddEvent.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
-  </data>
-  <data name="buttonAddEvent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonAddEvent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 205</value>
-  </data>
-  <data name="buttonAddEvent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 32</value>
-  </data>
-  <data name="buttonAddEvent.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="buttonAddEvent.Text" xml:space="preserve">
-    <value>Додати подію</value>
-  </data>
-  <data name="&gt;&gt;buttonAddEvent.Name" xml:space="preserve">
-    <value>buttonAddEvent</value>
-  </data>
-  <data name="&gt;&gt;buttonAddEvent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonAddEvent.Parent" xml:space="preserve">
-    <value>panelAddEventWrapper</value>
-  </data>
-  <data name="&gt;&gt;buttonAddEvent.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="textBoxNewEvent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 44</value>
-  </data>
-  <data name="textBoxNewEvent.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxNewEvent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>313, 112</value>
-  </data>
-  <data name="textBoxNewEvent.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;textBoxNewEvent.Name" xml:space="preserve">
-    <value>textBoxNewEvent</value>
-  </data>
-  <data name="&gt;&gt;textBoxNewEvent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxNewEvent.Parent" xml:space="preserve">
-    <value>panelAddEventWrapper</value>
-  </data>
-  <data name="&gt;&gt;textBoxNewEvent.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="panelAddEventWrapper.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 34</value>
-  </data>
-  <data name="panelAddEventWrapper.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 250</value>
-  </data>
-  <data name="panelAddEventWrapper.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;panelAddEventWrapper.Name" xml:space="preserve">
     <value>panelAddEventWrapper</value>
   </data>
@@ -6637,69 +6049,6 @@
   </data>
   <data name="&gt;&gt;panelAddEventWrapper.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label16.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 14pt, style=Bold</value>
-  </data>
-  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 20</value>
-  </data>
-  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 31</value>
-  </data>
-  <data name="label16.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="label16.Text" xml:space="preserve">
-    <value>Календар</value>
-  </data>
-  <data name="&gt;&gt;label16.Name" xml:space="preserve">
-    <value>label16</value>
-  </data>
-  <data name="&gt;&gt;label16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
-    <value>panelCalendarWrapper</value>
-  </data>
-  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="monthCalendar1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="monthCalendar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 66</value>
-  </data>
-  <data name="monthCalendar1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;monthCalendar1.Name" xml:space="preserve">
-    <value>monthCalendar1</value>
-  </data>
-  <data name="&gt;&gt;monthCalendar1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MonthCalendar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;monthCalendar1.Parent" xml:space="preserve">
-    <value>panelCalendarWrapper</value>
-  </data>
-  <data name="&gt;&gt;monthCalendar1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelCalendarWrapper.Location" type="System.Drawing.Point, System.Drawing">
-    <value>251, 34</value>
-  </data>
-  <data name="panelCalendarWrapper.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 250</value>
-  </data>
-  <data name="panelCalendarWrapper.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
   </data>
   <data name="&gt;&gt;panelCalendarWrapper.Name" xml:space="preserve">
     <value>panelCalendarWrapper</value>
@@ -6740,296 +6089,401 @@
   <data name="&gt;&gt;panelCalendar.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnUpdateAnalytics.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;btnDeleteEvent2.Name" xml:space="preserve">
+    <value>btnDeleteEvent2</value>
   </data>
-  <data name="btnUpdateAnalytics.Location" type="System.Drawing.Point, System.Drawing">
-    <value>251, 233</value>
-  </data>
-  <data name="btnUpdateAnalytics.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 36</value>
-  </data>
-  <data name="btnUpdateAnalytics.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="btnUpdateAnalytics.Text" xml:space="preserve">
-    <value>Відновити</value>
-  </data>
-  <data name="&gt;&gt;btnUpdateAnalytics.Name" xml:space="preserve">
-    <value>btnUpdateAnalytics</value>
-  </data>
-  <data name="&gt;&gt;btnUpdateAnalytics.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnDeleteEvent2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnUpdateAnalytics.Parent" xml:space="preserve">
-    <value>panelAnalytics</value>
+  <data name="&gt;&gt;btnDeleteEvent2.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;btnUpdateAnalytics.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnDeleteEvent2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblLongestChat.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;listBoxAllEvents.Name" xml:space="preserve">
+    <value>listBoxAllEvents</value>
   </data>
-  <data name="lblLongestChat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>407, 196</value>
+  <data name="&gt;&gt;listBoxAllEvents.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblLongestChat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 21</value>
+  <data name="&gt;&gt;listBoxAllEvents.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="lblLongestChat.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="lblLongestChat.Text" xml:space="preserve">
-    <value>—</value>
-  </data>
-  <data name="&gt;&gt;lblLongestChat.Name" xml:space="preserve">
-    <value>lblLongestChat</value>
-  </data>
-  <data name="&gt;&gt;lblLongestChat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblLongestChat.Parent" xml:space="preserve">
-    <value>panelAnalytics</value>
-  </data>
-  <data name="&gt;&gt;lblLongestChat.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;listBoxAllEvents.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lblAvgResponseLength.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;lblAllEventsTitle.Name" xml:space="preserve">
+    <value>lblAllEventsTitle</value>
   </data>
-  <data name="lblAvgResponseLength.Location" type="System.Drawing.Point, System.Drawing">
-    <value>517, 164</value>
-  </data>
-  <data name="lblAvgResponseLength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 21</value>
-  </data>
-  <data name="lblAvgResponseLength.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="lblAvgResponseLength.Text" xml:space="preserve">
-    <value>—</value>
-  </data>
-  <data name="&gt;&gt;lblAvgResponseLength.Name" xml:space="preserve">
-    <value>lblAvgResponseLength</value>
-  </data>
-  <data name="&gt;&gt;lblAvgResponseLength.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblAllEventsTitle.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblAvgResponseLength.Parent" xml:space="preserve">
-    <value>panelAnalytics</value>
+  <data name="&gt;&gt;lblAllEventsTitle.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;lblAvgResponseLength.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblAllEventsTitle.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lblMessagesCount.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>560, 305</value>
   </data>
-  <data name="lblMessagesCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>517, 130</value>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>345, 250</value>
   </data>
-  <data name="lblMessagesCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 21</value>
-  </data>
-  <data name="lblMessagesCount.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="lblMessagesCount.Text" xml:space="preserve">
-    <value>—</value>
-  </data>
-  <data name="&gt;&gt;lblMessagesCount.Name" xml:space="preserve">
-    <value>lblMessagesCount</value>
-  </data>
-  <data name="&gt;&gt;lblMessagesCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblMessagesCount.Parent" xml:space="preserve">
-    <value>panelAnalytics</value>
-  </data>
-  <data name="&gt;&gt;lblMessagesCount.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblChatsCount.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblChatsCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>406, 94</value>
-  </data>
-  <data name="lblChatsCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 21</value>
-  </data>
-  <data name="lblChatsCount.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="lblChatsCount.Text" xml:space="preserve">
-    <value>—</value>
-  </data>
-  <data name="&gt;&gt;lblChatsCount.Name" xml:space="preserve">
-    <value>lblChatsCount</value>
-  </data>
-  <data name="&gt;&gt;lblChatsCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblChatsCount.Parent" xml:space="preserve">
-    <value>panelAnalytics</value>
-  </data>
-  <data name="&gt;&gt;lblChatsCount.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lblLongestChatTitle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblLongestChatTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 12pt, style=Bold</value>
-  </data>
-  <data name="lblLongestChatTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>236, 196</value>
-  </data>
-  <data name="lblLongestChatTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 21</value>
-  </data>
-  <data name="lblLongestChatTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="lblLongestChatTitle.Text" xml:space="preserve">
-    <value>Найдовший діалог:</value>
-  </data>
-  <data name="&gt;&gt;lblLongestChatTitle.Name" xml:space="preserve">
-    <value>lblLongestChatTitle</value>
-  </data>
-  <data name="&gt;&gt;lblLongestChatTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblLongestChatTitle.Parent" xml:space="preserve">
-    <value>panelAnalytics</value>
-  </data>
-  <data name="&gt;&gt;lblLongestChatTitle.ZOrder" xml:space="preserve">
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="lblAvgResponseLengthTitle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="btnDeleteEvent2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="lblAvgResponseLengthTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 12pt, style=Bold</value>
+  <data name="btnDeleteEvent2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>117, 215</value>
   </data>
-  <data name="lblAvgResponseLengthTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>236, 164</value>
+  <data name="btnDeleteEvent2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 23</value>
   </data>
-  <data name="lblAvgResponseLengthTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 21</value>
+  <data name="btnDeleteEvent2.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
   </data>
-  <data name="lblAvgResponseLengthTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+  <data name="btnDeleteEvent2.Text" xml:space="preserve">
+    <value>Remove the event</value>
   </data>
-  <data name="lblAvgResponseLengthTitle.Text" xml:space="preserve">
-    <value>Середня довжина відповіді GPT:</value>
+  <data name="listBoxAllEvents.ItemHeight" type="System.Int32, mscorlib">
+    <value>15</value>
   </data>
-  <data name="&gt;&gt;lblAvgResponseLengthTitle.Name" xml:space="preserve">
-    <value>lblAvgResponseLengthTitle</value>
+  <data name="listBoxAllEvents.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 55</value>
   </data>
-  <data name="&gt;&gt;lblAvgResponseLengthTitle.Type" xml:space="preserve">
+  <data name="listBoxAllEvents.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 154</value>
+  </data>
+  <data name="listBoxAllEvents.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblAllEventsTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 14pt, style=Bold</value>
+  </data>
+  <data name="lblAllEventsTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblAllEventsTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>117, 18</value>
+  </data>
+  <data name="lblAllEventsTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 23</value>
+  </data>
+  <data name="lblAllEventsTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblAllEventsTitle.Text" xml:space="preserve">
+    <value>All events</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteEvent.Name" xml:space="preserve">
+    <value>btnDeleteEvent</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteEvent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteEvent.Parent" xml:space="preserve">
+    <value>panelEventsWrapper</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteEvent.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblEventsTitle.Name" xml:space="preserve">
+    <value>lblEventsTitle</value>
+  </data>
+  <data name="&gt;&gt;lblEventsTitle.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblAvgResponseLengthTitle.Parent" xml:space="preserve">
-    <value>panelAnalytics</value>
+  <data name="&gt;&gt;lblEventsTitle.Parent" xml:space="preserve">
+    <value>panelEventsWrapper</value>
   </data>
-  <data name="&gt;&gt;lblAvgResponseLengthTitle.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblEventsTitle.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;listBoxEvents.Name" xml:space="preserve">
+    <value>listBoxEvents</value>
+  </data>
+  <data name="&gt;&gt;listBoxEvents.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listBoxEvents.Parent" xml:space="preserve">
+    <value>panelEventsWrapper</value>
+  </data>
+  <data name="&gt;&gt;listBoxEvents.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panelEventsWrapper.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 305</value>
+  </data>
+  <data name="panelEventsWrapper.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 250</value>
+  </data>
+  <data name="panelEventsWrapper.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnDeleteEvent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDeleteEvent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 214</value>
+  </data>
+  <data name="btnDeleteEvent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 23</value>
+  </data>
+  <data name="btnDeleteEvent.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="btnDeleteEvent.Text" xml:space="preserve">
+    <value>Remove the event</value>
+  </data>
+  <data name="lblEventsTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblEventsTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 14pt, style=Bold</value>
+  </data>
+  <data name="lblEventsTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblEventsTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>53, 20</value>
+  </data>
+  <data name="lblEventsTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 31</value>
+  </data>
+  <data name="lblEventsTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblEventsTitle.Text" xml:space="preserve">
+    <value>Events on: [Date]</value>
+  </data>
+  <data name="listBoxEvents.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
+  </data>
+  <data name="listBoxEvents.ItemHeight" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="listBoxEvents.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 69</value>
+  </data>
+  <data name="listBoxEvents.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 136</value>
+  </data>
+  <data name="listBoxEvents.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;datePickerEvent.Name" xml:space="preserve">
+    <value>datePickerEvent</value>
+  </data>
+  <data name="&gt;&gt;datePickerEvent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;datePickerEvent.Parent" xml:space="preserve">
+    <value>panelAddEventWrapper</value>
+  </data>
+  <data name="&gt;&gt;datePickerEvent.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label14.Name" xml:space="preserve">
+    <value>label14</value>
+  </data>
+  <data name="&gt;&gt;label14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
+    <value>panelAddEventWrapper</value>
+  </data>
+  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;timePickerEvent.Name" xml:space="preserve">
+    <value>timePickerEvent</value>
+  </data>
+  <data name="&gt;&gt;timePickerEvent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;timePickerEvent.Parent" xml:space="preserve">
+    <value>panelAddEventWrapper</value>
+  </data>
+  <data name="&gt;&gt;timePickerEvent.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;buttonAddEvent.Name" xml:space="preserve">
+    <value>buttonAddEvent</value>
+  </data>
+  <data name="&gt;&gt;buttonAddEvent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonAddEvent.Parent" xml:space="preserve">
+    <value>panelAddEventWrapper</value>
+  </data>
+  <data name="&gt;&gt;buttonAddEvent.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;textBoxNewEvent.Name" xml:space="preserve">
+    <value>textBoxNewEvent</value>
+  </data>
+  <data name="&gt;&gt;textBoxNewEvent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxNewEvent.Parent" xml:space="preserve">
+    <value>panelAddEventWrapper</value>
+  </data>
+  <data name="&gt;&gt;textBoxNewEvent.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="panelAddEventWrapper.Location" type="System.Drawing.Point, System.Drawing">
+    <value>560, 34</value>
+  </data>
+  <data name="panelAddEventWrapper.Size" type="System.Drawing.Size, System.Drawing">
+    <value>345, 250</value>
+  </data>
+  <data name="panelAddEventWrapper.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="datePickerEvent.CustomFormat" xml:space="preserve">
+    <value>dd.MM.yyyy</value>
+  </data>
+  <data name="datePickerEvent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>48, 175</value>
+  </data>
+  <data name="datePickerEvent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 23</value>
+  </data>
+  <data name="datePickerEvent.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="lblMessagesCountTitle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblMessagesCountTitle.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="label14.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Black, 12pt, style=Bold</value>
   </data>
-  <data name="lblMessagesCountTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>236, 130</value>
+  <data name="label14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="lblMessagesCountTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>281, 21</value>
+  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>107, 11</value>
   </data>
-  <data name="lblMessagesCountTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 23</value>
   </data>
-  <data name="lblMessagesCountTitle.Text" xml:space="preserve">
-    <value>Загальна кількість повідомлень:</value>
+  <data name="label14.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;lblMessagesCountTitle.Name" xml:space="preserve">
-    <value>lblMessagesCountTitle</value>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Write an event</value>
   </data>
-  <data name="&gt;&gt;lblMessagesCountTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="timePickerEvent.CustomFormat" xml:space="preserve">
+    <value>HH:mm</value>
   </data>
-  <data name="&gt;&gt;lblMessagesCountTitle.Parent" xml:space="preserve">
-    <value>panelAnalytics</value>
+  <data name="timePickerEvent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 175</value>
   </data>
-  <data name="&gt;&gt;lblMessagesCountTitle.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="timePickerEvent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 23</value>
   </data>
-  <data name="lblChatsCountTitle.AutoSize" type="System.Boolean, mscorlib">
+  <data name="timePickerEvent.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="buttonAddEvent.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonAddEvent.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
+  </data>
+  <data name="buttonAddEvent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonAddEvent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 205</value>
+  </data>
+  <data name="buttonAddEvent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 32</value>
+  </data>
+  <data name="buttonAddEvent.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="buttonAddEvent.Text" xml:space="preserve">
+    <value>Add the event</value>
+  </data>
+  <data name="textBoxNewEvent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 44</value>
+  </data>
+  <data name="textBoxNewEvent.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblChatsCountTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 12pt, style=Bold</value>
+  <data name="textBoxNewEvent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>313, 112</value>
   </data>
-  <data name="lblChatsCountTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>236, 94</value>
+  <data name="textBoxNewEvent.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="lblChatsCountTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 21</value>
+  <data name="&gt;&gt;label16.Name" xml:space="preserve">
+    <value>label16</value>
   </data>
-  <data name="lblChatsCountTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="lblChatsCountTitle.Text" xml:space="preserve">
-    <value>Кількість діалогів:</value>
-  </data>
-  <data name="&gt;&gt;lblChatsCountTitle.Name" xml:space="preserve">
-    <value>lblChatsCountTitle</value>
-  </data>
-  <data name="&gt;&gt;lblChatsCountTitle.Type" xml:space="preserve">
+  <data name="&gt;&gt;label16.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblChatsCountTitle.Parent" xml:space="preserve">
-    <value>panelAnalytics</value>
+  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
+    <value>panelCalendarWrapper</value>
   </data>
-  <data name="&gt;&gt;lblChatsCountTitle.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="lblAnalyticsTitle.AutoSize" type="System.Boolean, mscorlib">
+  <data name="&gt;&gt;monthCalendar1.Name" xml:space="preserve">
+    <value>monthCalendar1</value>
+  </data>
+  <data name="&gt;&gt;monthCalendar1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MonthCalendar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;monthCalendar1.Parent" xml:space="preserve">
+    <value>panelCalendarWrapper</value>
+  </data>
+  <data name="&gt;&gt;monthCalendar1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panelCalendarWrapper.Location" type="System.Drawing.Point, System.Drawing">
+    <value>251, 34</value>
+  </data>
+  <data name="panelCalendarWrapper.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 250</value>
+  </data>
+  <data name="panelCalendarWrapper.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblAnalyticsTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 15pt, style=Bold</value>
+  <data name="label16.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 14pt, style=Bold</value>
   </data>
-  <data name="lblAnalyticsTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>236, 44</value>
+  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="lblAnalyticsTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 28</value>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 20</value>
   </data>
-  <data name="lblAnalyticsTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 31</value>
   </data>
-  <data name="lblAnalyticsTitle.Text" xml:space="preserve">
-    <value>Аналітика користувача</value>
+  <data name="label16.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
   </data>
-  <data name="&gt;&gt;lblAnalyticsTitle.Name" xml:space="preserve">
-    <value>lblAnalyticsTitle</value>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Calendar</value>
   </data>
-  <data name="&gt;&gt;lblAnalyticsTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="monthCalendar1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;lblAnalyticsTitle.Parent" xml:space="preserve">
-    <value>panelAnalytics</value>
+  <data name="monthCalendar1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 66</value>
   </data>
-  <data name="&gt;&gt;lblAnalyticsTitle.ZOrder" xml:space="preserve">
-    <value>9</value>
+  <data name="monthCalendar1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="panelAnalytics.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
-  </data>
-  <data name="panelAnalytics.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 12pt, style=Bold</value>
   </data>
   <data name="panelAnalytics.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -7053,27 +6507,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelAnalytics.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btnSend.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnSend.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnSend.Location" type="System.Drawing.Point, System.Drawing">
-    <value>458, 17</value>
-  </data>
-  <data name="btnSend.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 18</value>
-  </data>
-  <data name="btnSend.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnSend.Text" xml:space="preserve">
-    <value>⬆️
-
-</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;btnSend.Name" xml:space="preserve">
     <value>btnSend</value>
@@ -7085,18 +6519,6 @@
     <value>panelInput</value>
   </data>
   <data name="&gt;&gt;btnSend.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="textBoxInput.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 10pt</value>
-  </data>
-  <data name="textBoxInput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 17</value>
-  </data>
-  <data name="textBoxInput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>446, 18</value>
-  </data>
-  <data name="textBoxInput.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;textBoxInput.Name" xml:space="preserve">
@@ -7132,23 +6554,35 @@
   <data name="&gt;&gt;panelInput.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="label15.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 12pt, style=Bold</value>
+  <data name="btnSend.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="label15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnSend.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>748, 46</value>
+  <data name="btnSend.Location" type="System.Drawing.Point, System.Drawing">
+    <value>458, 17</value>
   </data>
-  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 25</value>
+  <data name="btnSend.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 18</value>
   </data>
-  <data name="label15.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="btnSend.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="label15.Text" xml:space="preserve">
-    <value>Історія проектів</value>
+  <data name="btnSend.Text" xml:space="preserve">
+    <value>⬆️</value>
+  </data>
+  <data name="textBoxInput.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 10pt</value>
+  </data>
+  <data name="textBoxInput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 17</value>
+  </data>
+  <data name="textBoxInput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>446, 18</value>
+  </data>
+  <data name="textBoxInput.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;label15.Name" xml:space="preserve">
     <value>label15</value>
@@ -7162,21 +6596,6 @@
   <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btnClearChat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnClearChat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>723, 523</value>
-  </data>
-  <data name="btnClearChat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 26</value>
-  </data>
-  <data name="btnClearChat.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnClearChat.Text" xml:space="preserve">
-    <value>Очистити чат</value>
-  </data>
   <data name="&gt;&gt;btnClearChat.Name" xml:space="preserve">
     <value>btnClearChat</value>
   </data>
@@ -7188,21 +6607,6 @@
   </data>
   <data name="&gt;&gt;btnClearChat.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="btnNewChat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnNewChat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>723, 490</value>
-  </data>
-  <data name="btnNewChat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 29</value>
-  </data>
-  <data name="btnNewChat.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="btnNewChat.Text" xml:space="preserve">
-    <value>Нова бесіда</value>
   </data>
   <data name="&gt;&gt;btnNewChat.Name" xml:space="preserve">
     <value>btnNewChat</value>
@@ -7216,24 +6620,6 @@
   <data name="&gt;&gt;btnNewChat.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>321, 51</value>
-  </data>
-  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 15</value>
-  </data>
-  <data name="label13.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="label13.Text" xml:space="preserve">
-    <value>"Поставте питання або почніть розмову"</value>
-  </data>
   <data name="&gt;&gt;label13.Name" xml:space="preserve">
     <value>label13</value>
   </data>
@@ -7245,27 +6631,6 @@
   </data>
   <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="labelvivy.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="labelvivy.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 14pt, style=Bold</value>
-  </data>
-  <data name="labelvivy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="labelvivy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>377, 22</value>
-  </data>
-  <data name="labelvivy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 25</value>
-  </data>
-  <data name="labelvivy.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="labelvivy.Text" xml:space="preserve">
-    <value>Чат з Vivy</value>
   </data>
   <data name="&gt;&gt;labelvivy.Name" xml:space="preserve">
     <value>labelvivy</value>
@@ -7279,42 +6644,6 @@
   <data name="&gt;&gt;labelvivy.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="listBoxHistory.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="listBoxHistory.ItemHeight" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="listBoxHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 17</value>
-  </data>
-  <data name="listBoxHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 395</value>
-  </data>
-  <data name="listBoxHistory.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;listBoxHistory.Name" xml:space="preserve">
-    <value>listBoxHistory</value>
-  </data>
-  <data name="&gt;&gt;listBoxHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listBoxHistory.Parent" xml:space="preserve">
-    <value>panelHistory</value>
-  </data>
-  <data name="&gt;&gt;listBoxHistory.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panelHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>723, 62</value>
-  </data>
-  <data name="panelHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 422</value>
-  </data>
-  <data name="panelHistory.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;panelHistory.Name" xml:space="preserve">
     <value>panelHistory</value>
   </data>
@@ -7326,24 +6655,6 @@
   </data>
   <data name="&gt;&gt;panelHistory.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="richTextBox1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="richTextBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 79</value>
-  </data>
-  <data name="richTextBox1.ScrollBars" type="System.Windows.Forms.RichTextBoxScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>507, 450</value>
-  </data>
-  <data name="richTextBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="richTextBox1.Text" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;richTextBox1.Name" xml:space="preserve">
     <value>richTextBox1</value>
@@ -7382,29 +6693,161 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelVivy.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label15.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 12pt, style=Bold</value>
+  </data>
+  <data name="label15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>748, 46</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 25</value>
+  </data>
+  <data name="label15.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Project history</value>
+  </data>
+  <data name="btnClearChat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnClearChat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>723, 523</value>
+  </data>
+  <data name="btnClearChat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 26</value>
+  </data>
+  <data name="btnClearChat.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnClearChat.Text" xml:space="preserve">
+    <value>Clear chat</value>
+  </data>
+  <data name="btnNewChat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnNewChat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>723, 490</value>
+  </data>
+  <data name="btnNewChat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 29</value>
+  </data>
+  <data name="btnNewChat.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnNewChat.Text" xml:space="preserve">
+    <value>New conversation</value>
+  </data>
+  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>321, 51</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 15</value>
+  </data>
+  <data name="label13.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>179, 17</value>
-  </metadata>
-  <metadata name="toolTip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>276, 17</value>
-  </metadata>
-  <metadata name="toolTip3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>373, 17</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>de</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="label13.Text" xml:space="preserve">
+    <value>"Put a question or start a conversation"</value>
+  </data>
+  <data name="labelvivy.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <data name="labelvivy.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 14pt, style=Bold</value>
+  </data>
+  <data name="labelvivy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelvivy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>377, 22</value>
+  </data>
+  <data name="labelvivy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 25</value>
+  </data>
+  <data name="labelvivy.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="labelvivy.Text" xml:space="preserve">
+    <value>Chat with Vivy</value>
+  </data>
+  <data name="&gt;&gt;listBoxHistory.Name" xml:space="preserve">
+    <value>listBoxHistory</value>
+  </data>
+  <data name="&gt;&gt;listBoxHistory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listBoxHistory.Parent" xml:space="preserve">
+    <value>panelHistory</value>
+  </data>
+  <data name="&gt;&gt;listBoxHistory.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panelHistory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>723, 62</value>
+  </data>
+  <data name="panelHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 422</value>
+  </data>
+  <data name="panelHistory.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="listBoxHistory.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="listBoxHistory.ItemHeight" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="listBoxHistory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 17</value>
+  </data>
+  <data name="listBoxHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 395</value>
+  </data>
+  <data name="listBoxHistory.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="richTextBox1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="richTextBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 79</value>
+  </data>
+  <data name="richTextBox1.ScrollBars" type="System.Windows.Forms.RichTextBoxScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>507, 450</value>
+  </data>
+  <data name="richTextBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing">
+    <value>17, 17</value>
+  </data>
+  <data name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing">
+    <value>179, 17</value>
+  </data>
+  <data name="toolTip2.TrayLocation" type="System.Drawing.Point, System.Drawing">
+    <value>276, 17</value>
+  </data>
+  <data name="toolTip3.TrayLocation" type="System.Drawing.Point, System.Drawing">
+    <value>373, 17</value>
+  </data>
+  <data name="$this.TrayHeight" type="System.Int32, mscorlib">
     <value>83</value>
-  </metadata>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>7, 15</value>
   </data>
@@ -7443,5 +6886,8 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
 </root>

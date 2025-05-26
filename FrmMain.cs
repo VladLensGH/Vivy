@@ -118,6 +118,11 @@ namespace Vivy
         private Dictionary<string, List<(string sender, string message)>> chatHistory = new();
         private string currentChatTitle = "";
 
+        public static void SetLanguage(string langCode)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(langCode);
+        }
+
         // Подія завантаження форми
         private void FrmMain_Load(object sender, EventArgs e)
         {
@@ -733,47 +738,33 @@ namespace Vivy
         }
 
 
-        //private void ApplyLocalization()
-        //{
-        //    this.Text = Properties.Strings.MainFormTitle;
-        //    BtnDashboard.Text = Properties.Strings.Dashboard;
-        //    btnAnalytics.Text = Properties.Strings.Analytics;
-        //    btnCalendar.Text = Properties.Strings.Calendar;
-        //    btnContactUs.Text = Properties.Strings.ContactUs;
-        //    btnsettings.Text = Properties.Strings.Settings;
-        //    btnSend.Text = Properties.Strings.Send;
-        //    // ... і так далі для всіх елементів, які повинні перекладатися
-
-        //    // Приклад для ToolTip:
-        //    toolTip1.SetToolTip(cbNotifications, Properties.Strings.TooltipNotifications);
-        //    toolTip1.SetToolTip(cbSpeakResponses, Properties.Strings.TooltipSpeakResponses);
-        //    toolTip1.SetToolTip(cbSaveHistory, Properties.Strings.TooltipSaveHistory);
-
-        //    // Приклад для LinkLabel:
-        //    linkLabel1.Text = Properties.Strings.LinkLabelText;
-        //}
-        private void cbLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        private void ApplyLocalization()
         {
-            if (cbLanguage.SelectedItem is not string selectedCulture || string.IsNullOrWhiteSpace(selectedCulture))
-                return;
 
-            // Преобразуем язык UI в код культуры
-            string cultureCode = selectedCulture switch
-            {
-                "English" => "en",
-                "Deutsch" => "de",
-                "Українська" => "uk",
-                _ => "uk"
-            };
-
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultureCode);
-            Thread.CurrentThread.CurrentCulture = new CultureInfo(cultureCode);
-
-            this.Controls.Clear();
-            InitializeComponent();
-            ApplyTheme(selectedTheme);
-            //ApplyLocalization();
         }
+
+        //private void cbLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (cbLanguage.SelectedItem is not string selectedCulture || string.IsNullOrWhiteSpace(selectedCulture))
+        //        return;
+
+        //    // Преобразуем язык UI в код культуры
+        //    string cultureCode = selectedCulture switch
+        //    {
+        //        "English" => "en",
+        //        "Deutsch" => "de",
+        //        "Українська" => "uk",
+        //        _ => "uk"
+        //    };
+
+        //    Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultureCode);
+        //    Thread.CurrentThread.CurrentCulture = new CultureInfo(cultureCode);
+
+        //    this.Controls.Clear();
+        //    InitializeComponent();
+        //    ApplyTheme(selectedTheme);
+        //    //ApplyLocalization();
+        //}
 
         private void btnNewChat_Click(object sender, EventArgs e)
         {
@@ -1071,6 +1062,37 @@ namespace Vivy
             cbSpeakResponses.BackColor = checkBoxBackColor;
             cbSaveHistory.ForeColor = checkBoxForeColor;
             cbSaveHistory.BackColor = checkBoxBackColor;
+        private void cbLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedLang = cbLanguage.SelectedItem.ToString();
+
+            string langCode = selectedLang switch
+            {
+                "Українська" => "uk",
+                "English" => "en",
+                "Deutsch" => "de",
+                _ => "uk"
+            };
+
+            // Применяем культуру
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(langCode);
+
+            // Перезапускаем главную форму
+            
+            var mainForm = new FrmMain(currentLogin); // можно передать нужные параметры, если надо
+            mainForm.Show();
+            
+        }
+        private void FrmSettings_Load(object sender, EventArgs e)
+        {
+            var lang = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
+            cbLanguage.SelectedItem = lang switch
+            {
+                "uk" => "Українська",
+                "en" => "English",
+                "de" => "Deutsch",
+                _ => "Українська"
+            };
         }
     }
 }
