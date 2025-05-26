@@ -1062,7 +1062,6 @@ namespace Vivy
             cbSpeakResponses.BackColor = checkBoxBackColor;
             cbSaveHistory.ForeColor = checkBoxForeColor;
             cbSaveHistory.BackColor = checkBoxBackColor;
-        }
         private void cbLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedLang = cbLanguage.SelectedItem.ToString();
