@@ -3,10 +3,10 @@ using System.Drawing.Printing;
 using System.Runtime.InteropServices;
 using System.Text.Json;
 using RestSharp;
-using System.Text.Json;
 using Microsoft.VisualBasic.Logging;
 using System.Speech.Synthesis;
-
+using System.Globalization;
+using System.Threading;
 
 namespace Vivy
 {
@@ -86,6 +86,7 @@ namespace Vivy
             toolTip1.SetToolTip(cbSpeakResponses, "Озвучувати відповіді асистента голосом.");
             toolTip1.SetToolTip(cbSaveHistory, "Зберігати історію ваших чатів, поки ви не видалите її вручну.");
 
+            UpdateEventsForDate(monthCalendar1.SelectionStart.Date);
 
         }
 
@@ -205,8 +206,7 @@ namespace Vivy
         // Обробка кліку по посиланню (відкриває у браузері)
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string url = e.Link.LinkData as string;
-            if (!string.IsNullOrEmpty(url))
+            if (e.Link?.LinkData is string url && !string.IsNullOrEmpty(url))
             {
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
                 {
@@ -218,8 +218,7 @@ namespace Vivy
 
         private void linkSupportCard_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string url = e.Link.LinkData as string;
-            if (!string.IsNullOrEmpty(url))
+            if (e.Link?.LinkData is string url && !string.IsNullOrEmpty(url))
             {
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
                 {
@@ -250,7 +249,7 @@ namespace Vivy
                     {
                         if (doc.RootElement.TryGetProperty("content", out var contentElement))
                         {
-                            return contentElement.GetString();
+                            return contentElement.GetString() ?? string.Empty;
                         }
                         else
                         {
@@ -328,7 +327,11 @@ namespace Vivy
         private void listBoxHistory_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listBoxHistory.SelectedItem == null) return;
-            currentChatTitle = listBoxHistory.SelectedItem.ToString();
+            var selected = listBoxHistory.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(selected)) return;
+            currentChatTitle = selected;
+
+            if (!chatHistory.ContainsKey(currentChatTitle)) return;
 
             richTextBox1.Clear();
             foreach (var (senderName, message) in chatHistory[currentChatTitle])
@@ -382,9 +385,12 @@ namespace Vivy
         {
             if (cbTheme.SelectedItem != null && cbModel.SelectedItem != null && cbLanguage.SelectedItem != null)
             {
-                string theme = cbTheme.SelectedItem.ToString();
-                string model = cbModel.SelectedItem.ToString();
-                string interfaceLanguage = cbLanguage.SelectedItem.ToString();
+                string? theme = cbTheme.SelectedItem?.ToString();
+                string? model = cbModel.SelectedItem?.ToString();
+                string? interfaceLanguage = cbLanguage.SelectedItem?.ToString();
+
+                if (theme == null || model == null || interfaceLanguage == null)
+                    return;
 
                 ApplyTheme(theme);
 
@@ -611,5 +617,247 @@ namespace Vivy
 
         }
 
+
+        //private void ApplyLocalization()
+        //{
+        //    this.Text = Properties.Strings.MainFormTitle;
+        //    BtnDashboard.Text = Properties.Strings.Dashboard;
+        //    btnAnalytics.Text = Properties.Strings.Analytics;
+        //    btnCalendar.Text = Properties.Strings.Calendar;
+        //    btnContactUs.Text = Properties.Strings.ContactUs;
+        //    btnsettings.Text = Properties.Strings.Settings;
+        //    btnSend.Text = Properties.Strings.Send;
+        //    // ... і так далі для всіх елементів, які повинні перекладатися
+
+        //    // Приклад для ToolTip:
+        //    toolTip1.SetToolTip(cbNotifications, Properties.Strings.TooltipNotifications);
+        //    toolTip1.SetToolTip(cbSpeakResponses, Properties.Strings.TooltipSpeakResponses);
+        //    toolTip1.SetToolTip(cbSaveHistory, Properties.Strings.TooltipSaveHistory);
+
+        //    // Приклад для LinkLabel:
+        //    linkLabel1.Text = Properties.Strings.LinkLabelText;
+        //}
+        private void cbLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbLanguage.SelectedItem is not string selectedCulture || string.IsNullOrWhiteSpace(selectedCulture))
+                return;
+
+            // Преобразуем язык UI в код культуры
+            string cultureCode = selectedCulture switch
+            {
+                "English" => "en",
+                "Deutsch" => "de",
+                "Українська" => "uk",
+                _ => "uk"
+            };
+
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultureCode);
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(cultureCode);
+
+            this.Controls.Clear();
+            InitializeComponent();
+            ApplyTheme(selectedTheme);
+            //ApplyLocalization();
+        }
+
+        private void btnNewChat_Click(object sender, EventArgs e)
+        {
+            // Очистить поле и сбросить заголовок чата
+            textBoxInput.Clear();
+            richTextBox1.Clear();
+            listBoxHistory.ClearSelected();
+            currentChatTitle = "";
+        }
+
+        private void btnClearChat_Click_1(object sender, EventArgs e)
+        {
+            if (listBoxHistory.SelectedItem != null)
+            {
+                string selectedChat = listBoxHistory.SelectedItem.ToString();
+
+                // Удаляем из истории
+                if (chatHistory.ContainsKey(selectedChat))
+                {
+                    chatHistory.Remove(selectedChat);
+                }
+
+                // Удаляем из списка
+                listBoxHistory.Items.Remove(selectedChat);
+
+                // Очищаем поле сообщений
+                richTextBox1.Clear();
+                currentChatTitle = "";
+            }
+        }
+
+        private Dictionary<DateTime, List<string>> eventsByDate = new(); // помести в начало формы
+
+        private void btnAddEvent_Click(object sender, EventArgs e)
+        {
+            string eventText = textBoxNewEvent.Text.Trim();
+            if (string.IsNullOrEmpty(eventText))
+            {
+                MessageBox.Show("Введіть текст події.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DateTime selectedDate = monthCalendar1.SelectionStart.Date;
+            DateTime selectedTime = timePickerEvent.Value;
+
+            // Объединяем дату и время
+            DateTime fullDateTime = new DateTime(
+                selectedDate.Year, selectedDate.Month, selectedDate.Day,
+                selectedTime.Hour, selectedTime.Minute, 0
+            );
+
+            // Формат отображения
+            string formattedEvent = $"{fullDateTime:HH:mm} — {eventText}";
+
+            // Добавляем событие в словарь
+            if (!eventsByDate.ContainsKey(selectedDate))
+                eventsByDate[selectedDate] = new List<string>();
+
+            eventsByDate[selectedDate].Add(formattedEvent);
+
+            // Обновляем отображение
+            UpdateEventsList(selectedDate);
+
+            textBoxNewEvent.Clear();
+        }
+        private void UpdateEventsList(DateTime date)
+        {
+            listBoxEvents.Items.Clear();
+            lblEventsTitle.Text = $"Події на: [{date:dd.MM.yyyy}]";
+
+            if (eventsByDate.ContainsKey(date))
+            {
+                foreach (string ev in eventsByDate[date])
+                {
+                    listBoxEvents.Items.Add(ev);
+                }
+            }
+        }
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            UpdateEventsList(monthCalendar1.SelectionStart.Date);
+            DateTime selectedDate = e.Start.Date;
+            UpdateEventsForDate(selectedDate);
+        }
+        private void btnDeleteEvent_Click(object sender, EventArgs e)
+        {
+            DateTime selectedDate = monthCalendar1.SelectionStart.Date;
+            if (listBoxEvents.SelectedItem == null || !eventsByDate.ContainsKey(selectedDate)) return;
+
+            string selectedEvent = listBoxEvents.SelectedItem.ToString();
+            eventsByDate[selectedDate].Remove(selectedEvent);
+
+            UpdateEventsList(selectedDate);
+        }
+        private List<(DateTime dateTime, string text)> allEvents = new();
+
+        private void buttonAddEvent_Click(object sender, EventArgs e)
+        {
+            string eventText = textBoxNewEvent.Text.Trim();
+            if (string.IsNullOrEmpty(eventText))
+            {
+                MessageBox.Show("Введіть текст події.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DateTime selectedDate = datePickerEvent.Value.Date; // <-- тут заменили
+            DateTime selectedTime = timePickerEvent.Value;
+
+            DateTime fullDateTime = new DateTime(
+                selectedDate.Year, selectedDate.Month, selectedDate.Day,
+                selectedTime.Hour, selectedTime.Minute, 0
+            );
+
+            allEvents.Add((fullDateTime, eventText));
+            UpdateEventsForDate(monthCalendar1.SelectionStart.Date);
+            UpdateAllEventsList();
+
+            textBoxNewEvent.Clear();
+        }
+
+        private void UpdateAllEventsList()
+        {
+            // Сортируем события по дате и времени
+            var sorted = allEvents.OrderBy(ev => ev.dateTime).ToList();
+
+            listBoxAllEvents.Items.Clear();
+
+            foreach (var ev in sorted)
+            {
+                string formatted = $"{ev.dateTime:dd.MM.yyyy HH:mm} — {ev.text}";
+                listBoxAllEvents.Items.Add(formatted);
+            }
+        }
+
+        private void UpdateEventsForDate(DateTime date)
+        {
+            listBoxEvents.Items.Clear();
+            lblEventsTitle.Text = $"Події на: [{date:dd.MM.yyyy}]";
+
+            var eventsForDate = allEvents
+                .Where(ev => ev.dateTime.Date == date.Date)
+                .OrderBy(ev => ev.dateTime.TimeOfDay)
+                .ToList();
+
+            if (eventsForDate.Count == 0)
+            {
+                listBoxEvents.Items.Add("Немає подій");
+                listBoxEvents.Enabled = false; // блокируем выбор
+                return;
+            }
+
+            listBoxEvents.Enabled = true;
+
+            foreach (var ev in eventsForDate)
+            {
+                listBoxEvents.Items.Add($"{ev.dateTime:HH:mm} — {ev.text}");
+            }
+        }
+
+        private void btnDeleteEvent2_Click(object sender, EventArgs e)
+        {
+            if (listBoxAllEvents.SelectedIndex >= 0)
+            {
+                var selected = listBoxAllEvents.SelectedItem.ToString();
+
+                // Пытаемся найти и удалить
+                var item = allEvents.FirstOrDefault(ev =>
+                    $"{ev.dateTime:dd.MM.yyyy HH:mm} — {ev.text}" == selected);
+
+                if (item != default)
+                {
+                    allEvents.Remove(item);
+                    UpdateAllEventsList();
+                    UpdateEventsForDate(monthCalendar1.SelectionStart.Date); // обновим текущую дату
+                }
+            }
+        }
+
+        private void btnDeleteEvent_Click_1(object sender, EventArgs e)
+        {
+            if (listBoxEvents.SelectedItem == null)
+            {
+                MessageBox.Show("Виберіть подію для видалення.", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string selectedItem = listBoxEvents.SelectedItem.ToString();
+            DateTime selectedDate = monthCalendar1.SelectionStart.Date;
+
+            // Найти и удалить из allEvents
+            var eventToRemove = allEvents
+                .FirstOrDefault(ev => ev.Item1.Date == selectedDate && $"{ev.Item1:HH:mm} — {ev.Item2}" == selectedItem);
+
+            if (eventToRemove != default)
+            {
+                allEvents.Remove(eventToRemove);
+                UpdateEventsForDate(selectedDate);
+                UpdateAllEventsList();
+            }
+        }
     }
 }
