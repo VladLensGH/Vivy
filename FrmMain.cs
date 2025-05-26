@@ -13,6 +13,72 @@ namespace Vivy
     public partial class FrmMain : Form
     {
         private string currentLogin;
+        private Color activeButtonColor;
+        private Color inactiveButtonColor;
+
+        // Внутри класса FrmMain
+        private Color sideButtonTextColor = Color.FromArgb(0, 126, 249); // по умолчанию для тёмной темы
+        private Color panelElementTextColor = Color.White;                // по умолчанию для элементов панелей
+        private Color userNameTextColor = Color.FromArgb(0, 126, 149);   // по умолчанию для имени пользователя
+
+        // Для боковых кнопок
+        private Color sideButtonTextColorDark = Color.FromArgb(0, 126, 249);
+        private Color sideButtonTextColorLight = Color.Black;
+
+        // Для элементов панелей
+        private Color panelElementTextColorDark = Color.White;
+        private Color panelElementTextColorLight = Color.Black;
+
+        // Для имени пользователя
+        private Color userNameTextColorDark = Color.FromArgb(0, 126, 149);
+        private Color userNameTextColorLight = Color.Black;
+
+        // Публичные свойства для изменения из кода
+        public Color SideButtonTextColor
+        {
+            get => sideButtonTextColor;
+            set { sideButtonTextColor = value; ApplyTheme(selectedTheme); }
+        }
+        public Color PanelElementTextColor
+        {
+            get => panelElementTextColor;
+            set { panelElementTextColor = value; ApplyTheme(selectedTheme); }
+        }
+        public Color UserNameTextColor
+        {
+            get => userNameTextColor;
+            set { userNameTextColor = value; ApplyTheme(selectedTheme); }
+        }
+        public Color SideButtonTextColorDark
+        {
+            get => sideButtonTextColorDark;
+            set { sideButtonTextColorDark = value; ApplyTheme(selectedTheme); }
+        }
+        public Color SideButtonTextColorLight
+        {
+            get => sideButtonTextColorLight;
+            set { sideButtonTextColorLight = value; ApplyTheme(selectedTheme); }
+        }
+        public Color PanelElementTextColorDark
+        {
+            get => panelElementTextColorDark;
+            set { panelElementTextColorDark = value; ApplyTheme(selectedTheme); }
+        }
+        public Color PanelElementTextColorLight
+        {
+            get => panelElementTextColorLight;
+            set { panelElementTextColorLight = value; ApplyTheme(selectedTheme); }
+        }
+        public Color UserNameTextColorDark
+        {
+            get => userNameTextColorDark;
+            set { userNameTextColorDark = value; ApplyTheme(selectedTheme); }
+        }
+        public Color UserNameTextColorLight
+        {
+            get => userNameTextColorLight;
+            set { userNameTextColorLight = value; ApplyTheme(selectedTheme); }
+        }
 
         // Імпорт функції для створення області з заокругленими кутами для форми
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -35,7 +101,6 @@ namespace Vivy
 
             AddWindowControlButtons();
 
-
             // Застосовуємо заокруглення кутів до вікна
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             // Встановлюємо положення та розмір панелі-індикатора для кнопки Dashboard
@@ -44,6 +109,10 @@ namespace Vivy
             Pnlscroll.Left = BtnDashboard.Left;
             BtnDashboard.BackColor = Color.FromArgb(46, 51, 73);
 
+            // Apply initial colors
+            SideButtonTextColor = Color.FromArgb(0, 126, 249);
+            PanelElementTextColor = Color.White;
+            UserNameTextColor = Color.FromArgb(0, 126, 149);
         }
         private Dictionary<string, List<(string sender, string message)>> chatHistory = new();
         private string currentChatTitle = "";
@@ -93,13 +162,11 @@ namespace Vivy
         // Обробка натискання на різні кнопки меню для перемикання панелей
         private void BtnDashboard_Click_1(object sender, EventArgs e)
         {
-            // Переміщуємо індикатор до кнопки Dashboard
             Pnlscroll.Height = BtnDashboard.Height;
             Pnlscroll.Top = BtnDashboard.Top;
             Pnlscroll.Left = BtnDashboard.Left;
-            BtnDashboard.BackColor = Color.FromArgb(46, 51, 73);
+            BtnDashboard.BackColor = activeButtonColor;
 
-            // Відображаємо лише панель Vivy
             panelVivy.Visible = true;
             panelAnalytics.Visible = false;
             panelCalendar.Visible = false;
@@ -107,14 +174,17 @@ namespace Vivy
             panelSettings.Visible = false;
         }
 
+        private void BtnDashboard_Leave(object sender, EventArgs e)
+        {
+            BtnDashboard.BackColor = inactiveButtonColor;
+        }
+
         private void btnAnalytics_Click(object sender, EventArgs e)
         {
-            // Переміщуємо індикатор до кнопки Analytics
             Pnlscroll.Height = btnAnalytics.Height;
             Pnlscroll.Top = btnAnalytics.Top;
-            btnAnalytics.BackColor = Color.FromArgb(46, 51, 73);
+            btnAnalytics.BackColor = activeButtonColor;
 
-            // Відображаємо лише панель аналітики
             panelVivy.Visible = false;
             panelAnalytics.Visible = true;
             panelCalendar.Visible = false;
@@ -122,14 +192,17 @@ namespace Vivy
             panelSettings.Visible = false;
         }
 
+        private void btnAnalytics_Leave(object sender, EventArgs e)
+        {
+            btnAnalytics.BackColor = inactiveButtonColor;
+        }
+
         private void btnCalendar_Click(object sender, EventArgs e)
         {
-            // Переміщуємо індикатор до кнопки Calendar
             Pnlscroll.Height = btnCalendar.Height;
             Pnlscroll.Top = btnCalendar.Top;
-            btnCalendar.BackColor = Color.FromArgb(46, 51, 73);
+            btnCalendar.BackColor = activeButtonColor;
 
-            // Відображаємо лише панель календаря
             panelVivy.Visible = false;
             panelAnalytics.Visible = false;
             panelCalendar.Visible = true;
@@ -139,12 +212,10 @@ namespace Vivy
 
         private void btnContactUs_Click(object sender, EventArgs e)
         {
-            // Переміщуємо індикатор до кнопки ContactUs
             Pnlscroll.Height = btnContactUs.Height;
             Pnlscroll.Top = btnContactUs.Top;
-            btnContactUs.BackColor = Color.FromArgb(46, 51, 73);
+            btnContactUs.BackColor = activeButtonColor;
 
-            // Відображаємо лише панель "Про нас"
             panelVivy.Visible = false;
             panelAnalytics.Visible = false;
             panelCalendar.Visible = false;
@@ -154,12 +225,10 @@ namespace Vivy
 
         private void btnsettings_Click(object sender, EventArgs e)
         {
-            // Переміщуємо індикатор до кнопки Settings
             Pnlscroll.Height = btnsettings.Height;
             Pnlscroll.Top = btnsettings.Top;
-            btnsettings.BackColor = Color.FromArgb(46, 51, 73);
+            btnsettings.BackColor = activeButtonColor;
 
-            // Відображаємо лише панель налаштувань
             panelVivy.Visible = false;
             panelAnalytics.Visible = false;
             panelCalendar.Visible = false;
@@ -168,25 +237,17 @@ namespace Vivy
         }
 
         // Відновлення стандартного кольору кнопок при втраті фокусу
-        private void BtnDashboard_Leave(object sender, EventArgs e)
-        {
-            BtnDashboard.BackColor = Color.FromArgb(24, 30, 54);
-        }
-        private void btnAnalytics_Leave(object sender, EventArgs e)
-        {
-            btnAnalytics.BackColor = Color.FromArgb(24, 30, 54);
-        }
         private void btnCalendar_Leave(object sender, EventArgs e)
         {
-            btnCalendar.BackColor = Color.FromArgb(24, 30, 54);
+            btnCalendar.BackColor = inactiveButtonColor;
         }
         private void btnContactUs_Leave(object sender, EventArgs e)
         {
-            btnContactUs.BackColor = Color.FromArgb(24, 30, 54);
+            btnContactUs.BackColor = inactiveButtonColor;
         }
         private void btnsettings_Leave(object sender, EventArgs e)
         {
-            btnsettings.BackColor = Color.FromArgb(24, 30, 54);
+            btnsettings.BackColor = inactiveButtonColor;
         }
 
         // Метод для заокруглення кутів панелі
@@ -231,7 +292,7 @@ namespace Vivy
         // Асинхронний метод для отримання відповіді від GPT API
         private async Task<string> GetGPTResponse(string userMessage)
         {
-            string apiKey = "2f87f79ad7945491793b3d76eb6c874a ";
+            string apiKey = "97e3ea64686bdd7d9f3b656af511707f ";
             string model = "gpt-3.5-turbo";
             string apiUrl = $"http://195.179.229.119/gpt/api.php?prompt={Uri.EscapeDataString(userMessage)}&api_key={Uri.EscapeDataString(apiKey)}&model={Uri.EscapeDataString(model)}";
 
@@ -274,7 +335,6 @@ namespace Vivy
             string userMessage = textBoxInput.Text.Trim();
             if (string.IsNullOrEmpty(userMessage)) return;
 
-            // Определяем название чата
             if (string.IsNullOrEmpty(currentChatTitle))
             {
                 currentChatTitle = userMessage.Length > 30 ? userMessage.Substring(0, 30) + "..." : userMessage;
@@ -282,37 +342,34 @@ namespace Vivy
                 chatHistory[currentChatTitle] = new List<(string, string)>();
             }
 
-            // Сохраняем пользовательское сообщение
             chatHistory[currentChatTitle].Add(("Вы", userMessage));
 
-            // Показываем сообщение пользователя
+            Color mainTextColor = selectedTheme.Trim().StartsWith("Світла", StringComparison.OrdinalIgnoreCase)
+                ? Color.Black
+                : Color.White;
+
             richTextBox1.SelectionColor = Color.DeepSkyBlue;
             richTextBox1.AppendText("Ви: ");
-            richTextBox1.SelectionColor = Color.White;
+            richTextBox1.SelectionColor = mainTextColor;
             richTextBox1.AppendText(userMessage + "\n\n");
 
-            // Очищаємо поле вводу
             textBoxInput.Clear();
 
-            // Отримуємо відповідь від GPT
             string gptResponse = await GetGPTResponse(userMessage);
 
-            // Показываем и сохраняем ответ Vivy
             chatHistory[currentChatTitle].Add(("Vivy", gptResponse));
             richTextBox1.SelectionColor = Color.MediumPurple;
             richTextBox1.AppendText("Vivy: ");
-            richTextBox1.SelectionColor = Color.White;
+            richTextBox1.SelectionColor = mainTextColor;
             richTextBox1.AppendText(gptResponse + "\n\n");
             if (cbSpeakResponses.Checked)
             {
                 synthesizer.SpeakAsync(gptResponse);
             }
 
-            // Прокручуємо чат до останнього повідомлення
             richTextBox1.SelectionStart = richTextBox1.Text.Length;
             richTextBox1.ScrollToCaret();
         }
-
 
         private void panelaboutUs_Paint(object sender, PaintEventArgs e)
         {
@@ -333,14 +390,7 @@ namespace Vivy
 
             if (!chatHistory.ContainsKey(currentChatTitle)) return;
 
-            richTextBox1.Clear();
-            foreach (var (senderName, message) in chatHistory[currentChatTitle])
-            {
-                richTextBox1.SelectionColor = senderName == "Вы" ? Color.DeepSkyBlue : Color.MediumPurple;
-                richTextBox1.AppendText($"{senderName}: ");
-                richTextBox1.SelectionColor = Color.White;
-                richTextBox1.AppendText(message + "\n\n");
-            }
+            RedrawChatHistory();
         }
         private void picUserAvatar_Click(object sender, EventArgs e)
         {
@@ -484,9 +534,6 @@ namespace Vivy
             }
         }
 
-
-
-
         private string selectedTheme = "Темна"; // По умолчанию
 
         private void ApplyTheme(string theme)
@@ -494,85 +541,119 @@ namespace Vivy
             selectedTheme = theme;
             Color backColor, foreColor, buttonBack;
 
+            // Выбор цветов для текущей темы
+            Color sideButtonColor = theme == "Світла" ? sideButtonTextColorLight : sideButtonTextColorDark;
+            Color panelElementColor = theme == "Світла" ? panelElementTextColorLight : panelElementTextColorDark;
+            Color userNameColor = theme == "Світла" ? userNameTextColorLight : userNameTextColorDark;
+
             if (theme == "Світла")
             {
                 backColor = Color.WhiteSmoke;
                 foreColor = Color.Black;
                 buttonBack = Color.LightGray;
+                activeButtonColor = Color.Gainsboro;
+                inactiveButtonColor = Color.LightGray;
             }
             else
             {
                 backColor = Color.FromArgb(46, 51, 73);
                 foreColor = Color.White;
                 buttonBack = Color.FromArgb(24, 30, 54);
+                activeButtonColor = Color.FromArgb(46, 51, 73);
+                inactiveButtonColor = Color.FromArgb(24, 30, 54);
             }
 
             this.BackColor = backColor;
 
             foreach (Control control in this.Controls)
             {
-                ApplyThemeToControl(control, backColor, foreColor, buttonBack);
+                ApplyThemeToControl(control, backColor, foreColor, buttonBack, sideButtonColor, panelElementColor, userNameColor);
             }
 
-            panel2.BackColor = theme == "Світла" ? Color.WhiteSmoke : Color.FromArgb(24, 30, 54);
-            pnlNaw.BackColor = theme == "Світла" ? Color.WhiteSmoke : Color.FromArgb(24, 30, 54);
             panel2.BackColor = theme == "Світла" ? Color.LightGray : Color.FromArgb(24, 30, 54);
             pnlNaw.BackColor = theme == "Світла" ? Color.LightGray : Color.FromArgb(24, 30, 54);
 
+            if (!string.IsNullOrEmpty(currentChatTitle) && chatHistory.ContainsKey(currentChatTitle))
+                RedrawChatHistory();
         }
 
-
-        private void ApplyThemeToControl(Control ctrl, Color backColor, Color foreColor, Color buttonBack)
+        private void ApplyThemeToControl(Control ctrl, Color backColor, Color foreColor, Color buttonBack, Color sideButtonColor, Color panelElementColor, Color userNameColor)
         {
             if (ctrl is Panel panel)
             {
                 panel.BackColor = backColor;
-
-                // Цвет имени пользователя в panel2 при тёмной теме
-                if (panel == panel2 && selectedTheme == "Темна")
-                {
-                    foreach (Control child in panel.Controls)
-                    {
-                        if (child is Label nameLabel && nameLabel.Name == "lblUserName") // замените на фактическое имя элемента
-                        {
-                            nameLabel.ForeColor = Color.FromArgb(0, 126, 149);
-                        }
-                    }
-                }
             }
             else if (ctrl is Label label)
             {
-                label.ForeColor = foreColor;
+                // Имя пользователя (Usder)
+                if (label.Name == "Usder")
+                    label.ForeColor = userNameColor;
+                else
+                    label.ForeColor = panelElementColor;
             }
             else if (ctrl is Button btn)
             {
                 btn.BackColor = buttonBack;
-
-                // Цвет текста кнопок в боковой панели
-                if (pnlNaw.Controls.Contains(btn) && selectedTheme == "Темна")
-                {
-                    btn.ForeColor = Color.FromArgb(0, 126, 249); // ярко-синий
-                }
+                // Боковые кнопки
+                if (pnlNaw.Controls.Contains(btn))
+                    btn.ForeColor = sideButtonColor;
                 else
-                {
-                    btn.ForeColor = foreColor;
-                }
+                    btn.ForeColor = panelElementColor;
             }
             else if (ctrl is ComboBox cb)
             {
                 cb.BackColor = buttonBack;
-                cb.ForeColor = foreColor;
+                cb.ForeColor = panelElementColor;
             }
-            // Цвет ника пользователя (Usder) при тёмной теме
-            if (ctrl == Usder && selectedTheme == "Темна")
+            else if (ctrl is TextBox tb)
             {
-                Usder.ForeColor = Color.FromArgb(0, 126, 149);
+                tb.BackColor = Color.White;
+                tb.ForeColor = Color.Black;
+            }
+            else if (ctrl is RichTextBox rtb)
+            {
+                // Только фон, не трогаем ForeColor!
+                if (rtb == richTextBox1 && panelVivy.Controls.Contains(rtb))
+                {
+                    if (selectedTheme == "Світла")
+                        rtb.BackColor = Color.White;
+                    else
+                        rtb.BackColor = Color.FromArgb(46, 51, 73);
+                    // Не меняем rtb.ForeColor!
+                }
+                else
+                {
+                    rtb.BackColor = backColor;
+                    // Не меняем rtb.ForeColor!
+                }
+            }
+            else if (ctrl is ListBox lb)
+            {
+                // Для listBoxHistory в panelHistory
+                if (lb == listBoxHistory && panelHistory.Controls.Contains(lb))
+                {
+                    if (selectedTheme == "Світла")
+                    {
+                        lb.BackColor = Color.White;
+                        lb.ForeColor = Color.Black;
+                    }
+                    else
+                    {
+                        lb.BackColor = Color.FromArgb(46, 51, 73);
+                        lb.ForeColor = Color.White;
+                    }
+                }
+                else
+                {
+                    lb.BackColor = backColor;
+                    lb.ForeColor = foreColor;
+                }
             }
 
             // Рекурсивно для всех дочерних контролов
             foreach (Control child in ctrl.Controls)
             {
-                ApplyThemeToControl(child, backColor, foreColor, buttonBack);
+                ApplyThemeToControl(child, backColor, foreColor, buttonBack, sideButtonColor, panelElementColor, userNameColor);
             }
         }
 
@@ -606,6 +687,28 @@ namespace Vivy
             }
         }
 
+        private void RedrawChatHistory()
+        {
+            if (string.IsNullOrEmpty(currentChatTitle) || !chatHistory.ContainsKey(currentChatTitle))
+                return;
+
+            richTextBox1.Clear();
+            Color mainTextColor = selectedTheme.Trim().StartsWith("Світла", StringComparison.OrdinalIgnoreCase)
+                ? Color.Black
+                : Color.White;
+
+            foreach (var (senderName, message) in chatHistory[currentChatTitle])
+            {
+                if (senderName == "Вы")
+                    richTextBox1.SelectionColor = Color.DeepSkyBlue;
+                else
+                    richTextBox1.SelectionColor = Color.MediumPurple;
+
+                richTextBox1.AppendText($"{senderName}: ");
+                richTextBox1.SelectionColor = mainTextColor;
+                richTextBox1.AppendText(message + "\n\n");
+            }
+        }
 
         private void cbTheme_SelectedIndexChanged(object sender, EventArgs e)
         {

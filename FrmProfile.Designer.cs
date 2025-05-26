@@ -26,6 +26,7 @@ namespace Vivy
         private void InitializeComponent()
         {
             panelProfile = new Panel();
+            button1 = new Button();
             picAvatar = new PictureBox();
             btnChangeAvatar = new Button();
             lblLogin = new Label();
@@ -35,7 +36,6 @@ namespace Vivy
             lblNewPassword = new Label();
             txtNewPassword = new TextBox();
             btnSave = new Button();
-            button1 = new Button();
             panelProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picAvatar).BeginInit();
             SuspendLayout();
@@ -58,6 +58,20 @@ namespace Vivy
             panelProfile.Name = "panelProfile";
             panelProfile.Size = new Size(460, 200);
             panelProfile.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(46, 51, 73);
+            button1.DialogResult = DialogResult.Abort;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = Color.FromArgb(0, 126, 249);
+            button1.Location = new Point(435, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(25, 25);
+            button1.TabIndex = 9;
+            button1.Text = "X";
+            button1.UseVisualStyleBackColor = false;
             // 
             // picAvatar
             // 
@@ -163,20 +177,6 @@ namespace Vivy
             btnSave.Text = "Зберегти";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(46, 51, 73);
-            button1.DialogResult = DialogResult.Abort;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.FromArgb(0, 126, 249);
-            button1.Location = new Point(382, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 9;
-            button1.Text = "X";
-            button1.UseVisualStyleBackColor = false;
             // 
             // FrmProfile
             // 
