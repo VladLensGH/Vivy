@@ -63,6 +63,26 @@ namespace Vivy.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BackgroundBlack {
+            get {
+                object obj = ResourceManager.GetObject("BackgroundBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BackgroundWhite {
+            get {
+                object obj = ResourceManager.GetObject("BackgroundWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DefaultAvatar {
             get {
                 object obj = ResourceManager.GetObject("DefaultAvatar", resourceCulture);
