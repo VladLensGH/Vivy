@@ -252,24 +252,27 @@
             // 
             // panelContact
             // 
-            panelContact.BackColor = Color.FromArgb(40, 40, 60);
+            panelContact.BackColor = Color.Transparent;
+            panelContact.BackgroundImage = Properties.Resources.BackgroundBlack;
             panelContact.Controls.Add(linkLabel2);
             panelContact.Controls.Add(label9);
             panelContact.Controls.Add(label10);
             resources.ApplyResources(panelContact, "panelContact");
             panelContact.Name = "panelContact";
-            panelContact.Paint += panelContact_Paint;
             // 
             // linkLabel2
             // 
             linkLabel2.ActiveLinkColor = Color.White;
+            linkLabel2.BackColor = Color.Transparent;
             resources.ApplyResources(linkLabel2, "linkLabel2");
+            linkLabel2.LinkBehavior = LinkBehavior.HoverUnderline;
             linkLabel2.LinkColor = Color.LightGray;
             linkLabel2.Name = "linkLabel2";
             linkLabel2.TabStop = true;
             // 
             // label9
             // 
+            label9.BackColor = Color.Transparent;
             resources.ApplyResources(label9, "label9");
             label9.ForeColor = SystemColors.ButtonHighlight;
             label9.Name = "label9";
@@ -277,33 +280,36 @@
             // label10
             // 
             resources.ApplyResources(label10, "label10");
+            label10.BackColor = Color.Transparent;
             label10.ForeColor = Color.White;
             label10.Name = "label10";
             // 
             // panelaboutUs
             // 
-            panelaboutUs.BackColor = Color.FromArgb(40, 40, 60);
+            panelaboutUs.BackColor = Color.Transparent;
+            resources.ApplyResources(panelaboutUs, "panelaboutUs");
             panelaboutUs.Controls.Add(label6);
             panelaboutUs.Controls.Add(label5);
-            resources.ApplyResources(panelaboutUs, "panelaboutUs");
             panelaboutUs.Name = "panelaboutUs";
-            panelaboutUs.Paint += panelaboutUs_Paint;
             // 
             // label6
             // 
+            label6.BackColor = Color.Transparent;
             resources.ApplyResources(label6, "label6");
             label6.ForeColor = SystemColors.ButtonHighlight;
             label6.Name = "label6";
             // 
             // label5
             // 
+            label5.BackColor = Color.Transparent;
             resources.ApplyResources(label5, "label5");
             label5.ForeColor = Color.White;
             label5.Name = "label5";
             // 
             // panelSupport
             // 
-            panelSupport.BackColor = Color.FromArgb(40, 40, 60);
+            panelSupport.BackColor = Color.Transparent;
+            panelSupport.BackgroundImage = Properties.Resources.BackgroundBlack;
             panelSupport.Controls.Add(linkSupportCard);
             panelSupport.Controls.Add(lblSupportCardText);
             panelSupport.Controls.Add(label8);
@@ -315,6 +321,8 @@
             // 
             linkSupportCard.ActiveLinkColor = Color.Black;
             resources.ApplyResources(linkSupportCard, "linkSupportCard");
+            linkSupportCard.BackColor = Color.Transparent;
+            linkSupportCard.LinkBehavior = LinkBehavior.HoverUnderline;
             linkSupportCard.LinkColor = Color.LightBlue;
             linkSupportCard.Name = "linkSupportCard";
             linkSupportCard.TabStop = true;
@@ -323,24 +331,28 @@
             // lblSupportCardText
             // 
             resources.ApplyResources(lblSupportCardText, "lblSupportCardText");
+            lblSupportCardText.BackColor = Color.Transparent;
             lblSupportCardText.ForeColor = Color.LightGray;
             lblSupportCardText.Name = "lblSupportCardText";
             // 
             // label8
             // 
             resources.ApplyResources(label8, "label8");
+            label8.BackColor = Color.Transparent;
             label8.ForeColor = Color.White;
             label8.Name = "label8";
             // 
             // label7
             // 
+            label7.BackColor = Color.Transparent;
             label7.ForeColor = SystemColors.ButtonFace;
             resources.ApplyResources(label7, "label7");
             label7.Name = "label7";
             // 
             // panelProjects
             // 
-            panelProjects.BackColor = Color.FromArgb(40, 40, 60);
+            panelProjects.BackColor = Color.Transparent;
+            panelProjects.BackgroundImage = Properties.Resources.BackgroundBlack;
             panelProjects.Controls.Add(label4);
             panelProjects.Controls.Add(linkLabel1);
             resources.ApplyResources(panelProjects, "panelProjects");
@@ -349,6 +361,7 @@
             // label4
             // 
             resources.ApplyResources(label4, "label4");
+            label4.BackColor = Color.Transparent;
             label4.ForeColor = Color.White;
             label4.Name = "label4";
             label4.UseCompatibleTextRendering = true;
@@ -357,7 +370,9 @@
             // 
             linkLabel1.ActiveLinkColor = Color.LightGray;
             resources.ApplyResources(linkLabel1, "linkLabel1");
+            linkLabel1.BackColor = Color.Transparent;
             linkLabel1.ForeColor = Color.LightGray;
+            linkLabel1.LinkBehavior = LinkBehavior.HoverUnderline;
             linkLabel1.LinkColor = Color.LightGray;
             linkLabel1.Name = "linkLabel1";
             linkLabel1.TabStop = true;
@@ -365,7 +380,8 @@
             // 
             // panelAboutVivy
             // 
-            panelAboutVivy.BackColor = Color.FromArgb(40, 40, 60);
+            panelAboutVivy.BackColor = Color.Transparent;
+            panelAboutVivy.BackgroundImage = Properties.Resources.BackgroundBlack;
             panelAboutVivy.Controls.Add(lblAboutTitle);
             panelAboutVivy.Controls.Add(pictureBox2);
             panelAboutVivy.Controls.Add(lblAboutText);
@@ -377,17 +393,20 @@
             // lblAboutTitle
             // 
             resources.ApplyResources(lblAboutTitle, "lblAboutTitle");
+            lblAboutTitle.BackColor = Color.Transparent;
             lblAboutTitle.ForeColor = Color.White;
             lblAboutTitle.Name = "lblAboutTitle";
             // 
             // pictureBox2
             // 
+            pictureBox2.BackColor = Color.Transparent;
             resources.ApplyResources(pictureBox2, "pictureBox2");
             pictureBox2.Name = "pictureBox2";
             pictureBox2.TabStop = false;
             // 
             // lblAboutText
             // 
+            lblAboutText.BackColor = Color.Transparent;
             resources.ApplyResources(lblAboutText, "lblAboutText");
             lblAboutText.ForeColor = Color.LightGray;
             lblAboutText.Name = "lblAboutText";
@@ -395,12 +414,14 @@
             // label3
             // 
             resources.ApplyResources(label3, "label3");
+            label3.BackColor = Color.Transparent;
             label3.ForeColor = Color.Gray;
             label3.Name = "label3";
             // 
             // label2
             // 
             resources.ApplyResources(label2, "label2");
+            label2.BackColor = Color.Transparent;
             label2.ForeColor = Color.LightGray;
             label2.Name = "label2";
             // 
@@ -855,8 +876,10 @@
             Controls.Add(panelCalendar);
             Controls.Add(panelAnalytics);
             Controls.Add(panelAbout);
+            Controls.Add(panelCalendar);
             Controls.Add(panelSettings);
             Controls.Add(panelVivy);
+            Controls.Add(panelAnalytics);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMain";
             Load += FrmMain_Load;
@@ -868,7 +891,6 @@
             panelContact.ResumeLayout(false);
             panelContact.PerformLayout();
             panelaboutUs.ResumeLayout(false);
-            panelaboutUs.PerformLayout();
             panelSupport.ResumeLayout(false);
             panelSupport.PerformLayout();
             panelProjects.ResumeLayout(false);
@@ -919,27 +941,6 @@
         private Panel panelInput;
         private TextBox textBoxInput;
         private Button btnSend;
-        private Label lblAboutTitle;
-        private Label lblAboutText;
-        private Label label2;
-        private PictureBox pictureBox2;
-        private Label label3;
-        private LinkLabel linkLabel1;
-        private Label label4;
-        private Label label8;
-        private Label label7;
-        private Label label6;
-        private Label label5;
-        private Panel panelAboutVivy;
-        private Panel panelProjects;
-        private Panel panelSupport;
-        private LinkLabel linkSupportCard;
-        private Label lblSupportCardText;
-        private Panel panelaboutUs;
-        private Panel panelContact;
-        private Label label9;
-        private Label label10;
-        private LinkLabel linkLabel2;
         private Panel panelEventsWrapper;
         private Panel panelAddEventWrapper;
         private Panel panelCalendarWrapper;
@@ -991,5 +992,26 @@
         private Label lblMessagesCount;
         private Label lblChatsCount;
         private Button btnUpdateAnalytics;
+        private Panel panelContact;
+        private LinkLabel linkLabel2;
+        private Label label9;
+        private Label label10;
+        private Panel panelaboutUs;
+        private Label label6;
+        private Label label5;
+        private Panel panelSupport;
+        private LinkLabel linkSupportCard;
+        private Label lblSupportCardText;
+        private Label label8;
+        private Label label7;
+        private Panel panelProjects;
+        private Label label4;
+        private LinkLabel linkLabel1;
+        private Panel panelAboutVivy;
+        private Label lblAboutTitle;
+        private PictureBox pictureBox2;
+        private Label lblAboutText;
+        private Label label3;
+        private Label label2;
     }
 }

@@ -158,6 +158,15 @@ namespace Vivy
 
             UpdateEventsForDate(monthCalendar1.SelectionStart.Date);
 
+            RoundPanelCorners(panelAboutVivy, 15);
+            RoundPanelCorners(panelProjects, 15);
+            RoundPanelCorners(panelContact, 15);
+            RoundPanelCorners(panelSupport, 15);
+            RoundPanelCorners(panelaboutUs, 15);
+            // Добавьте все панели, которые должны быть закруглены
+
+            UpdateAboutPanelsTheme();
+            UpdateAboutPanelsTheme();
         }
 
         // Обробка натискання на різні кнопки меню для перемикання панелей
@@ -378,15 +387,6 @@ namespace Vivy
 
         }
 
-        private void panelaboutUs_Paint(object sender, PaintEventArgs e)
-        {
-            RoundPanelCorners(panelAboutVivy, 15);
-        }
-
-        private void panelContact_Paint(object sender, PaintEventArgs e)
-        {
-            RoundPanelCorners(panelAboutVivy, 15);
-        }
 
         private void listBoxHistory_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -585,6 +585,8 @@ namespace Vivy
 
             if (!string.IsNullOrEmpty(currentChatTitle) && chatHistory.ContainsKey(currentChatTitle))
                 RedrawChatHistory();
+
+            UpdateAboutPanelsTheme();
         }
 
         private void ApplyThemeToControl(Control ctrl, Color backColor, Color foreColor, Color buttonBack, Color sideButtonColor, Color panelElementColor, Color userNameColor)
@@ -1032,5 +1034,43 @@ namespace Vivy
             return string.Join(" ", topicWords);
         }
 
+        private void UpdateAboutPanelsTheme()
+        {
+            // Цвета для светлой и темной темы
+            Color checkBoxForeColor = selectedTheme == "Світла" ? Color.Black : Color.White;
+            Color checkBoxBackColor = selectedTheme == "Світла" ? Color.WhiteSmoke : Color.FromArgb(46, 51, 73);
+
+            // Панели и фоновые картинки
+            if (selectedTheme == "Світла")
+            {
+                panelAboutVivy.BackgroundImage = Properties.Resources.BackgroundWhite;
+                panelProjects.BackgroundImage = Properties.Resources.BackgroundWhite;
+                panelaboutUs.BackgroundImage = Properties.Resources.BackgroundWhite;
+                panelContact.BackgroundImage = Properties.Resources.BackgroundWhite;
+                panelSupport.BackgroundImage = Properties.Resources.BackgroundWhite;
+                linkLabel1.LinkColor = Color.Blue;
+                linkLabel2.LinkColor = Color.Blue;
+                linkSupportCard.LinkColor = Color.Blue;
+            }
+            else
+            {
+                panelAboutVivy.BackgroundImage = Properties.Resources.BackgroundBlack;
+                panelProjects.BackgroundImage = Properties.Resources.BackgroundBlack;
+                panelaboutUs.BackgroundImage = Properties.Resources.BackgroundBlack;
+                panelContact.BackgroundImage = Properties.Resources.BackgroundBlack;
+                panelSupport.BackgroundImage = Properties.Resources.BackgroundBlack;
+                linkLabel1.LinkColor = Color.Blue;
+                linkLabel2.LinkColor = Color.Blue;
+                linkSupportCard.LinkColor = Color.Blue;
+            }
+
+            // Чекбоксы — цвет текста и фона
+            cbNotifications.ForeColor = checkBoxForeColor;
+            cbNotifications.BackColor = checkBoxBackColor;
+            cbSpeakResponses.ForeColor = checkBoxForeColor;
+            cbSpeakResponses.BackColor = checkBoxBackColor;
+            cbSaveHistory.ForeColor = checkBoxForeColor;
+            cbSaveHistory.BackColor = checkBoxBackColor;
+        }
     }
 }
