@@ -339,7 +339,10 @@ namespace Vivy
             {
                 currentChatTitle = userMessage.Length > 30 ? userMessage.Substring(0, 30) + "..." : userMessage;
                 listBoxHistory.Items.Add(currentChatTitle);
-                chatHistory[currentChatTitle] = new List<(string, string)>();
+                if (!chatHistory.ContainsKey(currentChatTitle))
+                {
+                    chatHistory[currentChatTitle] = new List<(string, string)>();
+                }
             }
 
             chatHistory[currentChatTitle].Add(("Вы", userMessage));
@@ -388,7 +391,10 @@ namespace Vivy
             if (string.IsNullOrEmpty(selected)) return;
             currentChatTitle = selected;
 
-            if (!chatHistory.ContainsKey(currentChatTitle)) return;
+            if (!chatHistory.ContainsKey(currentChatTitle))
+            {
+                chatHistory[currentChatTitle] = new List<(string, string)>();
+            }
 
             RedrawChatHistory();
         }

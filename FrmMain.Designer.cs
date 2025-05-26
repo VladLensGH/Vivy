@@ -64,7 +64,6 @@
             label8 = new Label();
             label7 = new Label();
             panelSettings = new Panel();
-            numericUpDown1 = new NumericUpDown();
             btnLogout = new Button();
             label12 = new Label();
             cbModel = new ComboBox();
@@ -124,7 +123,6 @@
             panelaboutUs.SuspendLayout();
             panelSupport.SuspendLayout();
             panelSettings.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             panelCalendar.SuspendLayout();
             panel1.SuspendLayout();
             panelEventsWrapper.SuspendLayout();
@@ -519,13 +517,6 @@
             resources.ApplyResources(panelSettings, "panelSettings");
             panelSettings.Name = "panelSettings";
             // 
-            // numericUpDown1
-            // 
-            numericUpDown1.Location = new Point(122, 297);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 23);
-            numericUpDown1.TabIndex = 13;
-            // 
             // btnLogout
             // 
             btnLogout.BackColor = Color.FromArgb(24, 30, 54);
@@ -913,7 +904,6 @@
             panelSupport.PerformLayout();
             panelSettings.ResumeLayout(false);
             panelSettings.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             panelCalendar.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panelEventsWrapper.ResumeLayout(false);
