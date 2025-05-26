@@ -2870,7 +2870,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblAboutTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 21</value>
+    <value>29, 28</value>
   </data>
   <data name="lblAboutTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>215, 30</value>
@@ -2892,9 +2892,6 @@
   </data>
   <data name="&gt;&gt;lblAboutTitle.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="pictureBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
   </data>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5688,7 +5685,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 11</value>
+    <value>269, 11</value>
   </data>
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 64</value>
@@ -7395,9 +7392,6 @@
   </metadata>
   <metadata name="toolTip3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>373, 17</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, System.Private.CoreLib, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
-    <value>de</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
