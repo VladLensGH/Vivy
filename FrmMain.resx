@@ -5724,7 +5724,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelAbout.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="btnLogout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6147,7 +6147,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelSettings.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="btnDeleteEvent2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6615,10 +6615,298 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelCalendar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnUpdateAnalytics.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnUpdateAnalytics.Location" type="System.Drawing.Point, System.Drawing">
+    <value>251, 233</value>
+  </data>
+  <data name="btnUpdateAnalytics.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 36</value>
+  </data>
+  <data name="btnUpdateAnalytics.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="btnUpdateAnalytics.Text" xml:space="preserve">
+    <value>Відновити</value>
+  </data>
+  <data name="&gt;&gt;btnUpdateAnalytics.Name" xml:space="preserve">
+    <value>btnUpdateAnalytics</value>
+  </data>
+  <data name="&gt;&gt;btnUpdateAnalytics.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnUpdateAnalytics.Parent" xml:space="preserve">
+    <value>panelAnalytics</value>
+  </data>
+  <data name="&gt;&gt;btnUpdateAnalytics.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblLongestChat.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblLongestChat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>407, 196</value>
+  </data>
+  <data name="lblLongestChat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 21</value>
+  </data>
+  <data name="lblLongestChat.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="lblLongestChat.Text" xml:space="preserve">
+    <value>—</value>
+  </data>
+  <data name="&gt;&gt;lblLongestChat.Name" xml:space="preserve">
+    <value>lblLongestChat</value>
+  </data>
+  <data name="&gt;&gt;lblLongestChat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLongestChat.Parent" xml:space="preserve">
+    <value>panelAnalytics</value>
+  </data>
+  <data name="&gt;&gt;lblLongestChat.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblAvgResponseLength.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAvgResponseLength.Location" type="System.Drawing.Point, System.Drawing">
+    <value>517, 164</value>
+  </data>
+  <data name="lblAvgResponseLength.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 21</value>
+  </data>
+  <data name="lblAvgResponseLength.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="lblAvgResponseLength.Text" xml:space="preserve">
+    <value>—</value>
+  </data>
+  <data name="&gt;&gt;lblAvgResponseLength.Name" xml:space="preserve">
+    <value>lblAvgResponseLength</value>
+  </data>
+  <data name="&gt;&gt;lblAvgResponseLength.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAvgResponseLength.Parent" xml:space="preserve">
+    <value>panelAnalytics</value>
+  </data>
+  <data name="&gt;&gt;lblAvgResponseLength.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblMessagesCount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblMessagesCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>517, 130</value>
+  </data>
+  <data name="lblMessagesCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 21</value>
+  </data>
+  <data name="lblMessagesCount.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblMessagesCount.Text" xml:space="preserve">
+    <value>—</value>
+  </data>
+  <data name="&gt;&gt;lblMessagesCount.Name" xml:space="preserve">
+    <value>lblMessagesCount</value>
+  </data>
+  <data name="&gt;&gt;lblMessagesCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMessagesCount.Parent" xml:space="preserve">
+    <value>panelAnalytics</value>
+  </data>
+  <data name="&gt;&gt;lblMessagesCount.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblChatsCount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblChatsCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 94</value>
+  </data>
+  <data name="lblChatsCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 21</value>
+  </data>
+  <data name="lblChatsCount.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lblChatsCount.Text" xml:space="preserve">
+    <value>—</value>
+  </data>
+  <data name="&gt;&gt;lblChatsCount.Name" xml:space="preserve">
+    <value>lblChatsCount</value>
+  </data>
+  <data name="&gt;&gt;lblChatsCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblChatsCount.Parent" xml:space="preserve">
+    <value>panelAnalytics</value>
+  </data>
+  <data name="&gt;&gt;lblChatsCount.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblLongestChatTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblLongestChatTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 12pt, style=Bold</value>
+  </data>
+  <data name="lblLongestChatTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>236, 196</value>
+  </data>
+  <data name="lblLongestChatTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 21</value>
+  </data>
+  <data name="lblLongestChatTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblLongestChatTitle.Text" xml:space="preserve">
+    <value>Найдовший діалог:</value>
+  </data>
+  <data name="&gt;&gt;lblLongestChatTitle.Name" xml:space="preserve">
+    <value>lblLongestChatTitle</value>
+  </data>
+  <data name="&gt;&gt;lblLongestChatTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLongestChatTitle.Parent" xml:space="preserve">
+    <value>panelAnalytics</value>
+  </data>
+  <data name="&gt;&gt;lblLongestChatTitle.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="lblAvgResponseLengthTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAvgResponseLengthTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 12pt, style=Bold</value>
+  </data>
+  <data name="lblAvgResponseLengthTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>236, 164</value>
+  </data>
+  <data name="lblAvgResponseLengthTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 21</value>
+  </data>
+  <data name="lblAvgResponseLengthTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblAvgResponseLengthTitle.Text" xml:space="preserve">
+    <value>Середня довжина відповіді GPT:</value>
+  </data>
+  <data name="&gt;&gt;lblAvgResponseLengthTitle.Name" xml:space="preserve">
+    <value>lblAvgResponseLengthTitle</value>
+  </data>
+  <data name="&gt;&gt;lblAvgResponseLengthTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAvgResponseLengthTitle.Parent" xml:space="preserve">
+    <value>panelAnalytics</value>
+  </data>
+  <data name="&gt;&gt;lblAvgResponseLengthTitle.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblMessagesCountTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblMessagesCountTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 12pt, style=Bold</value>
+  </data>
+  <data name="lblMessagesCountTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>236, 130</value>
+  </data>
+  <data name="lblMessagesCountTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 21</value>
+  </data>
+  <data name="lblMessagesCountTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lblMessagesCountTitle.Text" xml:space="preserve">
+    <value>Загальна кількість повідомлень:</value>
+  </data>
+  <data name="&gt;&gt;lblMessagesCountTitle.Name" xml:space="preserve">
+    <value>lblMessagesCountTitle</value>
+  </data>
+  <data name="&gt;&gt;lblMessagesCountTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMessagesCountTitle.Parent" xml:space="preserve">
+    <value>panelAnalytics</value>
+  </data>
+  <data name="&gt;&gt;lblMessagesCountTitle.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblChatsCountTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblChatsCountTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 12pt, style=Bold</value>
+  </data>
+  <data name="lblChatsCountTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>236, 94</value>
+  </data>
+  <data name="lblChatsCountTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 21</value>
+  </data>
+  <data name="lblChatsCountTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblChatsCountTitle.Text" xml:space="preserve">
+    <value>Кількість діалогів:</value>
+  </data>
+  <data name="&gt;&gt;lblChatsCountTitle.Name" xml:space="preserve">
+    <value>lblChatsCountTitle</value>
+  </data>
+  <data name="&gt;&gt;lblChatsCountTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblChatsCountTitle.Parent" xml:space="preserve">
+    <value>panelAnalytics</value>
+  </data>
+  <data name="&gt;&gt;lblChatsCountTitle.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblAnalyticsTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAnalyticsTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 15pt, style=Bold</value>
+  </data>
+  <data name="lblAnalyticsTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>236, 44</value>
+  </data>
+  <data name="lblAnalyticsTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 28</value>
+  </data>
+  <data name="lblAnalyticsTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblAnalyticsTitle.Text" xml:space="preserve">
+    <value>Аналітика користувача</value>
+  </data>
+  <data name="&gt;&gt;lblAnalyticsTitle.Name" xml:space="preserve">
+    <value>lblAnalyticsTitle</value>
+  </data>
+  <data name="&gt;&gt;lblAnalyticsTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAnalyticsTitle.Parent" xml:space="preserve">
+    <value>panelAnalytics</value>
+  </data>
+  <data name="&gt;&gt;lblAnalyticsTitle.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="panelAnalytics.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
+  </data>
+  <data name="panelAnalytics.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 12pt, style=Bold</value>
   </data>
   <data name="panelAnalytics.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -6642,7 +6930,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelAnalytics.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="btnSend.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -6926,7 +7214,7 @@
     <value>Vertical</value>
   </data>
   <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>510, 422</value>
+    <value>507, 450</value>
   </data>
   <data name="richTextBox1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -6971,7 +7259,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelVivy.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -6996,9 +7284,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>951, 577</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

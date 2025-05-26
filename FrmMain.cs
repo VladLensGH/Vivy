@@ -1,11 +1,12 @@
+using Microsoft.VisualBasic.Logging;
+using RestSharp;
 using System.Drawing.Drawing2D;
 using System.Drawing.Printing;
-using System.Runtime.InteropServices;
-using System.Text.Json;
-using RestSharp;
-using Microsoft.VisualBasic.Logging;
-using System.Speech.Synthesis;
 using System.Globalization;
+using System.Runtime.InteropServices;
+using System.Speech.Synthesis;
+using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading;
 
 namespace Vivy
@@ -372,6 +373,9 @@ namespace Vivy
 
             richTextBox1.SelectionStart = richTextBox1.Text.Length;
             richTextBox1.ScrollToCaret();
+
+            UpdateAnalytics();
+
         }
 
         private void panelaboutUs_Paint(object sender, PaintEventArgs e)
@@ -968,5 +972,65 @@ namespace Vivy
                 UpdateAllEventsList();
             }
         }
+
+        private void UpdateAnalytics()
+        {
+            if (chatHistory == null || chatHistory.Count == 0)
+                return;
+
+            int totalChats = chatHistory.Count;
+            int totalMessages = 0;
+            int totalGptResponsesLength = 0;
+            int gptResponsesCount = 0;
+            string longestChatTitle = "";
+            int longestChatMessages = 0;
+
+            foreach (var chat in chatHistory)
+            {
+                totalMessages += chat.Value.Count;
+
+                int currentChatMessageCount = chat.Value.Count;
+                if (currentChatMessageCount > longestChatMessages)
+                {
+                    longestChatMessages = currentChatMessageCount;
+                    longestChatTitle = chat.Key;
+                }
+
+                foreach (var (sender, message) in chat.Value)
+                {
+                    if (sender == "Vivy") // или другой тег, который ты используешь
+                    {
+                        totalGptResponsesLength += message.Length;
+                        gptResponsesCount++;
+                    }
+                }
+            }
+
+            int avgLength = gptResponsesCount > 0 ? totalGptResponsesLength / gptResponsesCount : 0;
+
+            // Обновление UI
+            lblChatsCount.Text = totalChats.ToString();
+            lblMessagesCount.Text = totalMessages.ToString();
+            lblAvgResponseLength.Text = $"{avgLength} символів";
+            lblLongestChat.Text = longestChatTitle;
+        }
+        private void btnUpdateAnalytics_Click(object sender, EventArgs e)
+        {
+            UpdateAnalytics();
+        }
+        private string ExtractChatTopic(string message)
+        {
+            // Удалим знаки препинания и лишние пробелы
+            string cleaned = Regex.Replace(message.ToLower(), @"[^\w\s]", "").Trim();
+
+            // Разобьём на слова
+            var words = cleaned.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+            // Возьмём максимум 2–4 слова с конца (они часто самые важные)
+            var topicWords = words.Skip(Math.Max(0, words.Length - 4)).ToArray();
+
+            return string.Join(" ", topicWords);
+        }
+
     }
 }

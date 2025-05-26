@@ -42,15 +42,6 @@
             Usder = new Label();
             picUserAvatar = new PictureBox();
             panelAbout = new Panel();
-            panelAboutVivy = new Panel();
-            lblAboutTitle = new Label();
-            pictureBox2 = new PictureBox();
-            lblAboutText = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            panelProjects = new Panel();
-            label4 = new Label();
-            linkLabel1 = new LinkLabel();
             panelContact = new Panel();
             linkLabel2 = new LinkLabel();
             label9 = new Label();
@@ -63,6 +54,15 @@
             lblSupportCardText = new Label();
             label8 = new Label();
             label7 = new Label();
+            panelProjects = new Panel();
+            label4 = new Label();
+            linkLabel1 = new LinkLabel();
+            panelAboutVivy = new Panel();
+            lblAboutTitle = new Label();
+            pictureBox2 = new PictureBox();
+            lblAboutText = new Label();
+            label3 = new Label();
+            label2 = new Label();
             panelSettings = new Panel();
             btnLogout = new Button();
             label12 = new Label();
@@ -96,6 +96,16 @@
             label16 = new Label();
             monthCalendar1 = new MonthCalendar();
             panelAnalytics = new Panel();
+            btnUpdateAnalytics = new Button();
+            lblLongestChat = new Label();
+            lblAvgResponseLength = new Label();
+            lblMessagesCount = new Label();
+            lblChatsCount = new Label();
+            lblLongestChatTitle = new Label();
+            lblAvgResponseLengthTitle = new Label();
+            lblMessagesCountTitle = new Label();
+            lblChatsCountTitle = new Label();
+            lblAnalyticsTitle = new Label();
             panelInput = new Panel();
             btnSend = new Button();
             textBoxInput = new TextBox();
@@ -116,18 +126,19 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picUserAvatar).BeginInit();
             panelAbout.SuspendLayout();
-            panelAboutVivy.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panelProjects.SuspendLayout();
             panelContact.SuspendLayout();
             panelaboutUs.SuspendLayout();
             panelSupport.SuspendLayout();
+            panelProjects.SuspendLayout();
+            panelAboutVivy.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panelSettings.SuspendLayout();
             panelCalendar.SuspendLayout();
             panel1.SuspendLayout();
             panelEventsWrapper.SuspendLayout();
             panelAddEventWrapper.SuspendLayout();
             panelCalendarWrapper.SuspendLayout();
+            panelAnalytics.SuspendLayout();
             panelInput.SuspendLayout();
             panelVivy.SuspendLayout();
             panelHistory.SuspendLayout();
@@ -231,118 +242,13 @@
             // 
             // panelAbout
             // 
-            panelAbout.Controls.Add(panelAboutVivy);
-            panelAbout.Controls.Add(panelProjects);
             panelAbout.Controls.Add(panelContact);
             panelAbout.Controls.Add(panelaboutUs);
             panelAbout.Controls.Add(panelSupport);
             panelAbout.Controls.Add(panelProjects);
             panelAbout.Controls.Add(panelAboutVivy);
             resources.ApplyResources(panelAbout, "panelAbout");
-            panelAbout.Dock = DockStyle.Fill;
-            panelAbout.Location = new Point(0, 0);
             panelAbout.Name = "panelAbout";
-            // 
-            // panelAboutVivy
-            // 
-            panelAboutVivy.BackColor = Color.FromArgb(40, 40, 60);
-            panelAboutVivy.Controls.Add(lblAboutTitle);
-            panelAboutVivy.Controls.Add(pictureBox2);
-            panelAboutVivy.Controls.Add(lblAboutText);
-            panelAboutVivy.Controls.Add(label3);
-            panelAboutVivy.Controls.Add(label2);
-            panelAboutVivy.Location = new Point(207, 51);
-            panelAboutVivy.Name = "panelAboutVivy";
-            panelAboutVivy.Size = new Size(364, 187);
-            panelAboutVivy.TabIndex = 18;
-            // 
-            // lblAboutTitle
-            // 
-            lblAboutTitle.AutoSize = true;
-            lblAboutTitle.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            lblAboutTitle.ForeColor = Color.White;
-            lblAboutTitle.Location = new Point(29, 28);
-            lblAboutTitle.Name = "lblAboutTitle";
-            lblAboutTitle.Size = new Size(215, 30);
-            lblAboutTitle.TabIndex = 0;
-            lblAboutTitle.Text = "Про програму Vivy";
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(269, 11);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(64, 64);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 4;
-            pictureBox2.TabStop = false;
-            // 
-            // lblAboutText
-            // 
-            lblAboutText.Font = new Font("Segoe UI", 10F);
-            lblAboutText.ForeColor = Color.LightGray;
-            lblAboutText.Location = new Point(29, 78);
-            lblAboutText.Name = "lblAboutText";
-            lblAboutText.Size = new Size(284, 67);
-            lblAboutText.TabIndex = 1;
-            lblAboutText.Text = "Vivy - ваш інтелектуальний помічник, створений для підтримки, натхнення та продуктивної роботи.";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 8F);
-            label3.ForeColor = Color.Gray;
-            label3.Location = new Point(29, 161);
-            label3.Name = "label3";
-            label3.Size = new Size(75, 13);
-            label3.TabIndex = 3;
-            label3.Text = "Версия: 1.0.0";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.ForeColor = Color.LightGray;
-            label2.Location = new Point(173, 159);
-            label2.Name = "label2";
-            label2.Size = new Size(163, 15);
-            label2.TabIndex = 2;
-            label2.Text = " Поддержка: support@vivy.ai";
-            // 
-            // panelProjects
-            // 
-            panelProjects.BackColor = Color.FromArgb(40, 40, 60);
-            panelProjects.Controls.Add(label4);
-            panelProjects.Controls.Add(linkLabel1);
-            panelProjects.Location = new Point(598, 51);
-            panelProjects.Name = "panelProjects";
-            panelProjects.Size = new Size(328, 187);
-            panelProjects.TabIndex = 19;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Black", 15.75F, FontStyle.Bold);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(86, 28);
-            label4.Name = "label4";
-            label4.Size = new Size(172, 34);
-            label4.TabIndex = 12;
-            label4.Text = "Наши проекты";
-            label4.UseCompatibleTextRendering = true;
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.ActiveLinkColor = Color.LightGray;
-            linkLabel1.AutoSize = true;
-            linkLabel1.ForeColor = Color.LightGray;
-            linkLabel1.LinkColor = Color.LightGray;
-            linkLabel1.Location = new Point(23, 78);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(288, 60);
-            linkLabel1.TabIndex = 13;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "• CrossLang — мультиязычный переводчик с ИИ\n• StreamMind — генерация сценариев для YouTube\n• ZenNote — минималистичный трекер привычек\n • SportBet — сайт букмекерська контора";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // panelContact
             // 
@@ -768,8 +674,80 @@
             // 
             // panelAnalytics
             // 
+            panelAnalytics.Controls.Add(btnUpdateAnalytics);
+            panelAnalytics.Controls.Add(lblLongestChat);
+            panelAnalytics.Controls.Add(lblAvgResponseLength);
+            panelAnalytics.Controls.Add(lblMessagesCount);
+            panelAnalytics.Controls.Add(lblChatsCount);
+            panelAnalytics.Controls.Add(lblLongestChatTitle);
+            panelAnalytics.Controls.Add(lblAvgResponseLengthTitle);
+            panelAnalytics.Controls.Add(lblMessagesCountTitle);
+            panelAnalytics.Controls.Add(lblChatsCountTitle);
+            panelAnalytics.Controls.Add(lblAnalyticsTitle);
             resources.ApplyResources(panelAnalytics, "panelAnalytics");
             panelAnalytics.Name = "panelAnalytics";
+            // 
+            // btnUpdateAnalytics
+            // 
+            btnUpdateAnalytics.BackColor = Color.FromArgb(24, 30, 54);
+            btnUpdateAnalytics.ForeColor = Color.White;
+            resources.ApplyResources(btnUpdateAnalytics, "btnUpdateAnalytics");
+            btnUpdateAnalytics.Name = "btnUpdateAnalytics";
+            btnUpdateAnalytics.UseVisualStyleBackColor = false;
+            // 
+            // lblLongestChat
+            // 
+            resources.ApplyResources(lblLongestChat, "lblLongestChat");
+            lblLongestChat.ForeColor = Color.White;
+            lblLongestChat.Name = "lblLongestChat";
+            // 
+            // lblAvgResponseLength
+            // 
+            resources.ApplyResources(lblAvgResponseLength, "lblAvgResponseLength");
+            lblAvgResponseLength.ForeColor = Color.White;
+            lblAvgResponseLength.Name = "lblAvgResponseLength";
+            // 
+            // lblMessagesCount
+            // 
+            resources.ApplyResources(lblMessagesCount, "lblMessagesCount");
+            lblMessagesCount.ForeColor = Color.White;
+            lblMessagesCount.Name = "lblMessagesCount";
+            // 
+            // lblChatsCount
+            // 
+            resources.ApplyResources(lblChatsCount, "lblChatsCount");
+            lblChatsCount.ForeColor = Color.White;
+            lblChatsCount.Name = "lblChatsCount";
+            // 
+            // lblLongestChatTitle
+            // 
+            resources.ApplyResources(lblLongestChatTitle, "lblLongestChatTitle");
+            lblLongestChatTitle.ForeColor = Color.White;
+            lblLongestChatTitle.Name = "lblLongestChatTitle";
+            // 
+            // lblAvgResponseLengthTitle
+            // 
+            resources.ApplyResources(lblAvgResponseLengthTitle, "lblAvgResponseLengthTitle");
+            lblAvgResponseLengthTitle.ForeColor = Color.White;
+            lblAvgResponseLengthTitle.Name = "lblAvgResponseLengthTitle";
+            // 
+            // lblMessagesCountTitle
+            // 
+            resources.ApplyResources(lblMessagesCountTitle, "lblMessagesCountTitle");
+            lblMessagesCountTitle.ForeColor = Color.White;
+            lblMessagesCountTitle.Name = "lblMessagesCountTitle";
+            // 
+            // lblChatsCountTitle
+            // 
+            resources.ApplyResources(lblChatsCountTitle, "lblChatsCountTitle");
+            lblChatsCountTitle.ForeColor = Color.White;
+            lblChatsCountTitle.Name = "lblChatsCountTitle";
+            // 
+            // lblAnalyticsTitle
+            // 
+            resources.ApplyResources(lblAnalyticsTitle, "lblAnalyticsTitle");
+            lblAnalyticsTitle.ForeColor = Color.White;
+            lblAnalyticsTitle.Name = "lblAnalyticsTitle";
             // 
             // panelInput
             // 
@@ -867,10 +845,6 @@
             richTextBox1.ForeColor = Color.White;
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ReadOnly = true;
-            richTextBox1.ScrollBars = RichTextBoxScrollBars.Vertical;
-            richTextBox1.Size = new Size(507, 450);
-            richTextBox1.TabIndex = 2;
-            richTextBox1.Text = "";
             // 
             // FrmMain
             // 
@@ -878,11 +852,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             Controls.Add(pnlNaw);
+            Controls.Add(panelCalendar);
+            Controls.Add(panelAnalytics);
             Controls.Add(panelAbout);
             Controls.Add(panelSettings);
             Controls.Add(panelVivy);
-            Controls.Add(panelAnalytics);
-            Controls.Add(panelCalendar);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMain";
             Load += FrmMain_Load;
@@ -891,17 +865,17 @@
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picUserAvatar).EndInit();
             panelAbout.ResumeLayout(false);
-            panelAboutVivy.ResumeLayout(false);
-            panelAboutVivy.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panelProjects.ResumeLayout(false);
-            panelProjects.PerformLayout();
             panelContact.ResumeLayout(false);
             panelContact.PerformLayout();
             panelaboutUs.ResumeLayout(false);
             panelaboutUs.PerformLayout();
             panelSupport.ResumeLayout(false);
             panelSupport.PerformLayout();
+            panelProjects.ResumeLayout(false);
+            panelProjects.PerformLayout();
+            panelAboutVivy.ResumeLayout(false);
+            panelAboutVivy.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panelSettings.ResumeLayout(false);
             panelSettings.PerformLayout();
             panelCalendar.ResumeLayout(false);
@@ -912,6 +886,8 @@
             panelAddEventWrapper.PerformLayout();
             panelCalendarWrapper.ResumeLayout(false);
             panelCalendarWrapper.PerformLayout();
+            panelAnalytics.ResumeLayout(false);
+            panelAnalytics.PerformLayout();
             panelInput.ResumeLayout(false);
             panelInput.PerformLayout();
             panelVivy.ResumeLayout(false);
@@ -1005,5 +981,15 @@
         private Label label16;
         private Button btnDeleteEvent2;
         private DateTimePicker datePickerEvent;
+        private Label lblLongestChatTitle;
+        private Label lblAvgResponseLengthTitle;
+        private Label lblMessagesCountTitle;
+        private Label lblChatsCountTitle;
+        private Label lblAnalyticsTitle;
+        private Label lblLongestChat;
+        private Label lblAvgResponseLength;
+        private Label lblMessagesCount;
+        private Label lblChatsCount;
+        private Button btnUpdateAnalytics;
     }
 }
