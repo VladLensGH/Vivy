@@ -517,6 +517,36 @@ namespace Vivy
                 if (theme == null || model == null || interfaceLanguage == null)
                     return;
 
+                // Применяем тему
+                ApplyTheme(theme);
+
+                // Применяем язык интерфейса
+                string langCode = interfaceLanguage switch
+                {
+                    "Українська" => "uk",
+                    "English" => "en",
+                    "Deutsch" => "de",
+                    _ => "uk"
+                };
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(langCode);
+
+                // Пересоздаём элементы управления для применения языка
+                var selectedTheme = cbTheme.SelectedItem;
+                var selectedModel = cbModel.SelectedItem;
+                var selectedNotifications = cbNotifications.Checked;
+                var selectedSpeak = cbSpeakResponses.Checked;
+                var selectedHistory = cbSaveHistory.Checked;
+
+                this.Controls.Clear();
+                InitializeComponent();
+
+                cbTheme.SelectedItem = selectedTheme;
+                cbModel.SelectedItem = selectedModel;
+                cbNotifications.Checked = selectedNotifications;
+                cbSpeakResponses.Checked = selectedSpeak;
+                cbSaveHistory.Checked = selectedHistory;
+                cbLanguage.SelectedItem = interfaceLanguage;
+
                 ApplyTheme(theme);
 
                 // Сохраняем настройки в БД
@@ -1020,6 +1050,7 @@ namespace Vivy
             lblLongestChat.Text = longestChatTitle;
         }
         private void btnUpdateAnalytics_Click(object sender, EventArgs e)
+        private void FrmSettings_Load(object sender, EventArgs e)
         {
             UpdateAnalytics();
         }
