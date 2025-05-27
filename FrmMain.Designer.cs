@@ -135,6 +135,7 @@
             // 
             // pnlNaw
             // 
+            resources.ApplyResources(pnlNaw, "pnlNaw");
             pnlNaw.BackColor = Color.FromArgb(24, 30, 54);
             pnlNaw.Controls.Add(Pnlscroll);
             pnlNaw.Controls.Add(btnsettings);
@@ -143,21 +144,29 @@
             pnlNaw.Controls.Add(btnAnalytics);
             pnlNaw.Controls.Add(BtnDashboard);
             pnlNaw.Controls.Add(panel2);
-            resources.ApplyResources(pnlNaw, "pnlNaw");
             pnlNaw.Name = "pnlNaw";
+            toolTip3.SetToolTip(pnlNaw, resources.GetString("pnlNaw.ToolTip"));
+            toolTip2.SetToolTip(pnlNaw, resources.GetString("pnlNaw.ToolTip1"));
+            toolTip1.SetToolTip(pnlNaw, resources.GetString("pnlNaw.ToolTip2"));
             // 
             // Pnlscroll
             // 
-            Pnlscroll.BackColor = Color.FromArgb(0, 126, 249);
             resources.ApplyResources(Pnlscroll, "Pnlscroll");
+            Pnlscroll.BackColor = Color.FromArgb(0, 126, 249);
             Pnlscroll.Name = "Pnlscroll";
+            toolTip3.SetToolTip(Pnlscroll, resources.GetString("Pnlscroll.ToolTip"));
+            toolTip2.SetToolTip(Pnlscroll, resources.GetString("Pnlscroll.ToolTip1"));
+            toolTip1.SetToolTip(Pnlscroll, resources.GetString("Pnlscroll.ToolTip2"));
             // 
             // btnsettings
             // 
-            btnsettings.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(btnsettings, "btnsettings");
+            btnsettings.FlatAppearance.BorderSize = 0;
             btnsettings.ForeColor = Color.FromArgb(0, 126, 249);
             btnsettings.Name = "btnsettings";
+            toolTip2.SetToolTip(btnsettings, resources.GetString("btnsettings.ToolTip"));
+            toolTip1.SetToolTip(btnsettings, resources.GetString("btnsettings.ToolTip1"));
+            toolTip3.SetToolTip(btnsettings, resources.GetString("btnsettings.ToolTip2"));
             btnsettings.UseVisualStyleBackColor = true;
             btnsettings.Click += btnsettings_Click;
             btnsettings.Leave += btnsettings_Leave;
@@ -168,6 +177,9 @@
             btnContactUs.FlatAppearance.BorderSize = 0;
             btnContactUs.ForeColor = Color.FromArgb(0, 126, 249);
             btnContactUs.Name = "btnContactUs";
+            toolTip2.SetToolTip(btnContactUs, resources.GetString("btnContactUs.ToolTip"));
+            toolTip1.SetToolTip(btnContactUs, resources.GetString("btnContactUs.ToolTip1"));
+            toolTip3.SetToolTip(btnContactUs, resources.GetString("btnContactUs.ToolTip2"));
             btnContactUs.UseVisualStyleBackColor = true;
             btnContactUs.Click += btnContactUs_Click;
             btnContactUs.Leave += btnContactUs_Leave;
@@ -178,6 +190,9 @@
             btnCalendar.FlatAppearance.BorderSize = 0;
             btnCalendar.ForeColor = Color.FromArgb(0, 126, 249);
             btnCalendar.Name = "btnCalendar";
+            toolTip2.SetToolTip(btnCalendar, resources.GetString("btnCalendar.ToolTip"));
+            toolTip1.SetToolTip(btnCalendar, resources.GetString("btnCalendar.ToolTip1"));
+            toolTip3.SetToolTip(btnCalendar, resources.GetString("btnCalendar.ToolTip2"));
             btnCalendar.UseVisualStyleBackColor = true;
             btnCalendar.Click += btnCalendar_Click;
             btnCalendar.Leave += btnCalendar_Leave;
@@ -188,6 +203,9 @@
             btnAnalytics.FlatAppearance.BorderSize = 0;
             btnAnalytics.ForeColor = Color.FromArgb(0, 126, 249);
             btnAnalytics.Name = "btnAnalytics";
+            toolTip2.SetToolTip(btnAnalytics, resources.GetString("btnAnalytics.ToolTip"));
+            toolTip1.SetToolTip(btnAnalytics, resources.GetString("btnAnalytics.ToolTip1"));
+            toolTip3.SetToolTip(btnAnalytics, resources.GetString("btnAnalytics.ToolTip2"));
             btnAnalytics.UseVisualStyleBackColor = true;
             btnAnalytics.Click += btnAnalytics_Click;
             btnAnalytics.Leave += btnAnalytics_Leave;
@@ -198,84 +216,117 @@
             BtnDashboard.FlatAppearance.BorderSize = 0;
             BtnDashboard.ForeColor = Color.FromArgb(0, 126, 249);
             BtnDashboard.Name = "BtnDashboard";
+            toolTip2.SetToolTip(BtnDashboard, resources.GetString("BtnDashboard.ToolTip"));
+            toolTip1.SetToolTip(BtnDashboard, resources.GetString("BtnDashboard.ToolTip1"));
+            toolTip3.SetToolTip(BtnDashboard, resources.GetString("BtnDashboard.ToolTip2"));
             BtnDashboard.UseVisualStyleBackColor = true;
             BtnDashboard.Click += BtnDashboard_Click_1;
             BtnDashboard.Leave += BtnDashboard_Leave;
             // 
             // panel2
             // 
+            resources.ApplyResources(panel2, "panel2");
             panel2.Controls.Add(label1);
             panel2.Controls.Add(Usder);
             panel2.Controls.Add(picUserAvatar);
-            resources.ApplyResources(panel2, "panel2");
             panel2.Name = "panel2";
+            toolTip3.SetToolTip(panel2, resources.GetString("panel2.ToolTip"));
+            toolTip2.SetToolTip(panel2, resources.GetString("panel2.ToolTip1"));
+            toolTip1.SetToolTip(panel2, resources.GetString("panel2.ToolTip2"));
             // 
             // label1
             // 
             resources.ApplyResources(label1, "label1");
             label1.ForeColor = Color.FromArgb(158, 161, 178);
             label1.Name = "label1";
+            toolTip2.SetToolTip(label1, resources.GetString("label1.ToolTip"));
+            toolTip3.SetToolTip(label1, resources.GetString("label1.ToolTip1"));
+            toolTip1.SetToolTip(label1, resources.GetString("label1.ToolTip2"));
             // 
             // Usder
             // 
             resources.ApplyResources(Usder, "Usder");
             Usder.ForeColor = Color.FromArgb(0, 126, 149);
             Usder.Name = "Usder";
+            toolTip2.SetToolTip(Usder, resources.GetString("Usder.ToolTip"));
+            toolTip3.SetToolTip(Usder, resources.GetString("Usder.ToolTip1"));
+            toolTip1.SetToolTip(Usder, resources.GetString("Usder.ToolTip2"));
             // 
             // picUserAvatar
             // 
             resources.ApplyResources(picUserAvatar, "picUserAvatar");
             picUserAvatar.Name = "picUserAvatar";
             picUserAvatar.TabStop = false;
+            toolTip1.SetToolTip(picUserAvatar, resources.GetString("picUserAvatar.ToolTip"));
+            toolTip2.SetToolTip(picUserAvatar, resources.GetString("picUserAvatar.ToolTip1"));
+            toolTip3.SetToolTip(picUserAvatar, resources.GetString("picUserAvatar.ToolTip2"));
             picUserAvatar.Click += picUserAvatar_Click;
             // 
             // panelAbout
             // 
+            resources.ApplyResources(panelAbout, "panelAbout");
             panelAbout.Controls.Add(panelContact);
             panelAbout.Controls.Add(panelaboutUs);
             panelAbout.Controls.Add(panelSupport);
             panelAbout.Controls.Add(panelProjects);
             panelAbout.Controls.Add(panelAboutVivy);
-            resources.ApplyResources(panelAbout, "panelAbout");
             panelAbout.Name = "panelAbout";
+            toolTip3.SetToolTip(panelAbout, resources.GetString("panelAbout.ToolTip"));
+            toolTip2.SetToolTip(panelAbout, resources.GetString("panelAbout.ToolTip1"));
+            toolTip1.SetToolTip(panelAbout, resources.GetString("panelAbout.ToolTip2"));
             // 
             // panelContact
             // 
+            resources.ApplyResources(panelContact, "panelContact");
             panelContact.BackColor = Color.FromArgb(40, 40, 60);
             panelContact.Controls.Add(linkLabel2);
             panelContact.Controls.Add(label9);
             panelContact.Controls.Add(label10);
-            resources.ApplyResources(panelContact, "panelContact");
             panelContact.Name = "panelContact";
+            toolTip3.SetToolTip(panelContact, resources.GetString("panelContact.ToolTip"));
+            toolTip2.SetToolTip(panelContact, resources.GetString("panelContact.ToolTip1"));
+            toolTip1.SetToolTip(panelContact, resources.GetString("panelContact.ToolTip2"));
             panelContact.Paint += panelContact_Paint;
             // 
             // linkLabel2
             // 
-            linkLabel2.ActiveLinkColor = Color.White;
             resources.ApplyResources(linkLabel2, "linkLabel2");
+            linkLabel2.ActiveLinkColor = Color.White;
             linkLabel2.LinkColor = Color.LightGray;
             linkLabel2.Name = "linkLabel2";
             linkLabel2.TabStop = true;
+            toolTip2.SetToolTip(linkLabel2, resources.GetString("linkLabel2.ToolTip"));
+            toolTip1.SetToolTip(linkLabel2, resources.GetString("linkLabel2.ToolTip1"));
+            toolTip3.SetToolTip(linkLabel2, resources.GetString("linkLabel2.ToolTip2"));
             // 
             // label9
             // 
             resources.ApplyResources(label9, "label9");
             label9.ForeColor = SystemColors.ButtonHighlight;
             label9.Name = "label9";
+            toolTip2.SetToolTip(label9, resources.GetString("label9.ToolTip"));
+            toolTip3.SetToolTip(label9, resources.GetString("label9.ToolTip1"));
+            toolTip1.SetToolTip(label9, resources.GetString("label9.ToolTip2"));
             // 
             // label10
             // 
             resources.ApplyResources(label10, "label10");
             label10.ForeColor = Color.White;
             label10.Name = "label10";
+            toolTip2.SetToolTip(label10, resources.GetString("label10.ToolTip"));
+            toolTip3.SetToolTip(label10, resources.GetString("label10.ToolTip1"));
+            toolTip1.SetToolTip(label10, resources.GetString("label10.ToolTip2"));
             // 
             // panelaboutUs
             // 
+            resources.ApplyResources(panelaboutUs, "panelaboutUs");
             panelaboutUs.BackColor = Color.FromArgb(40, 40, 60);
             panelaboutUs.Controls.Add(label6);
             panelaboutUs.Controls.Add(label5);
-            resources.ApplyResources(panelaboutUs, "panelaboutUs");
             panelaboutUs.Name = "panelaboutUs";
+            toolTip3.SetToolTip(panelaboutUs, resources.GetString("panelaboutUs.ToolTip"));
+            toolTip2.SetToolTip(panelaboutUs, resources.GetString("panelaboutUs.ToolTip1"));
+            toolTip1.SetToolTip(panelaboutUs, resources.GetString("panelaboutUs.ToolTip2"));
             panelaboutUs.Paint += panelaboutUs_Paint;
             // 
             // label6
@@ -283,30 +334,42 @@
             resources.ApplyResources(label6, "label6");
             label6.ForeColor = SystemColors.ButtonHighlight;
             label6.Name = "label6";
+            toolTip2.SetToolTip(label6, resources.GetString("label6.ToolTip"));
+            toolTip3.SetToolTip(label6, resources.GetString("label6.ToolTip1"));
+            toolTip1.SetToolTip(label6, resources.GetString("label6.ToolTip2"));
             // 
             // label5
             // 
             resources.ApplyResources(label5, "label5");
             label5.ForeColor = Color.White;
             label5.Name = "label5";
+            toolTip2.SetToolTip(label5, resources.GetString("label5.ToolTip"));
+            toolTip3.SetToolTip(label5, resources.GetString("label5.ToolTip1"));
+            toolTip1.SetToolTip(label5, resources.GetString("label5.ToolTip2"));
             // 
             // panelSupport
             // 
+            resources.ApplyResources(panelSupport, "panelSupport");
             panelSupport.BackColor = Color.FromArgb(40, 40, 60);
             panelSupport.Controls.Add(linkSupportCard);
             panelSupport.Controls.Add(lblSupportCardText);
             panelSupport.Controls.Add(label8);
             panelSupport.Controls.Add(label7);
-            resources.ApplyResources(panelSupport, "panelSupport");
             panelSupport.Name = "panelSupport";
+            toolTip3.SetToolTip(panelSupport, resources.GetString("panelSupport.ToolTip"));
+            toolTip2.SetToolTip(panelSupport, resources.GetString("panelSupport.ToolTip1"));
+            toolTip1.SetToolTip(panelSupport, resources.GetString("panelSupport.ToolTip2"));
             // 
             // linkSupportCard
             // 
-            linkSupportCard.ActiveLinkColor = Color.Black;
             resources.ApplyResources(linkSupportCard, "linkSupportCard");
+            linkSupportCard.ActiveLinkColor = Color.Black;
             linkSupportCard.LinkColor = Color.LightBlue;
             linkSupportCard.Name = "linkSupportCard";
             linkSupportCard.TabStop = true;
+            toolTip2.SetToolTip(linkSupportCard, resources.GetString("linkSupportCard.ToolTip"));
+            toolTip1.SetToolTip(linkSupportCard, resources.GetString("linkSupportCard.ToolTip1"));
+            toolTip3.SetToolTip(linkSupportCard, resources.GetString("linkSupportCard.ToolTip2"));
             linkSupportCard.LinkClicked += linkSupportCard_LinkClicked;
             // 
             // lblSupportCardText
@@ -314,87 +377,124 @@
             resources.ApplyResources(lblSupportCardText, "lblSupportCardText");
             lblSupportCardText.ForeColor = Color.LightGray;
             lblSupportCardText.Name = "lblSupportCardText";
+            toolTip2.SetToolTip(lblSupportCardText, resources.GetString("lblSupportCardText.ToolTip"));
+            toolTip3.SetToolTip(lblSupportCardText, resources.GetString("lblSupportCardText.ToolTip1"));
+            toolTip1.SetToolTip(lblSupportCardText, resources.GetString("lblSupportCardText.ToolTip2"));
             // 
             // label8
             // 
             resources.ApplyResources(label8, "label8");
             label8.ForeColor = Color.White;
             label8.Name = "label8";
+            toolTip2.SetToolTip(label8, resources.GetString("label8.ToolTip"));
+            toolTip3.SetToolTip(label8, resources.GetString("label8.ToolTip1"));
+            toolTip1.SetToolTip(label8, resources.GetString("label8.ToolTip2"));
             // 
             // label7
             // 
-            label7.ForeColor = SystemColors.ButtonFace;
             resources.ApplyResources(label7, "label7");
+            label7.ForeColor = SystemColors.ButtonFace;
             label7.Name = "label7";
+            toolTip2.SetToolTip(label7, resources.GetString("label7.ToolTip"));
+            toolTip3.SetToolTip(label7, resources.GetString("label7.ToolTip1"));
+            toolTip1.SetToolTip(label7, resources.GetString("label7.ToolTip2"));
             // 
             // panelProjects
             // 
+            resources.ApplyResources(panelProjects, "panelProjects");
             panelProjects.BackColor = Color.FromArgb(40, 40, 60);
             panelProjects.Controls.Add(label4);
             panelProjects.Controls.Add(linkLabel1);
-            resources.ApplyResources(panelProjects, "panelProjects");
             panelProjects.Name = "panelProjects";
+            toolTip3.SetToolTip(panelProjects, resources.GetString("panelProjects.ToolTip"));
+            toolTip2.SetToolTip(panelProjects, resources.GetString("panelProjects.ToolTip1"));
+            toolTip1.SetToolTip(panelProjects, resources.GetString("panelProjects.ToolTip2"));
             // 
             // label4
             // 
             resources.ApplyResources(label4, "label4");
             label4.ForeColor = Color.White;
             label4.Name = "label4";
+            toolTip2.SetToolTip(label4, resources.GetString("label4.ToolTip"));
+            toolTip3.SetToolTip(label4, resources.GetString("label4.ToolTip1"));
+            toolTip1.SetToolTip(label4, resources.GetString("label4.ToolTip2"));
             label4.UseCompatibleTextRendering = true;
             // 
             // linkLabel1
             // 
-            linkLabel1.ActiveLinkColor = Color.LightGray;
             resources.ApplyResources(linkLabel1, "linkLabel1");
+            linkLabel1.ActiveLinkColor = Color.LightGray;
             linkLabel1.ForeColor = Color.LightGray;
             linkLabel1.LinkColor = Color.LightGray;
             linkLabel1.Name = "linkLabel1";
             linkLabel1.TabStop = true;
+            toolTip2.SetToolTip(linkLabel1, resources.GetString("linkLabel1.ToolTip"));
+            toolTip1.SetToolTip(linkLabel1, resources.GetString("linkLabel1.ToolTip1"));
+            toolTip3.SetToolTip(linkLabel1, resources.GetString("linkLabel1.ToolTip2"));
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // panelAboutVivy
             // 
+            resources.ApplyResources(panelAboutVivy, "panelAboutVivy");
             panelAboutVivy.BackColor = Color.FromArgb(40, 40, 60);
             panelAboutVivy.Controls.Add(lblAboutTitle);
             panelAboutVivy.Controls.Add(pictureBox2);
             panelAboutVivy.Controls.Add(lblAboutText);
             panelAboutVivy.Controls.Add(label3);
             panelAboutVivy.Controls.Add(label2);
-            resources.ApplyResources(panelAboutVivy, "panelAboutVivy");
             panelAboutVivy.Name = "panelAboutVivy";
+            toolTip3.SetToolTip(panelAboutVivy, resources.GetString("panelAboutVivy.ToolTip"));
+            toolTip2.SetToolTip(panelAboutVivy, resources.GetString("panelAboutVivy.ToolTip1"));
+            toolTip1.SetToolTip(panelAboutVivy, resources.GetString("panelAboutVivy.ToolTip2"));
             // 
             // lblAboutTitle
             // 
             resources.ApplyResources(lblAboutTitle, "lblAboutTitle");
             lblAboutTitle.ForeColor = Color.White;
             lblAboutTitle.Name = "lblAboutTitle";
+            toolTip2.SetToolTip(lblAboutTitle, resources.GetString("lblAboutTitle.ToolTip"));
+            toolTip3.SetToolTip(lblAboutTitle, resources.GetString("lblAboutTitle.ToolTip1"));
+            toolTip1.SetToolTip(lblAboutTitle, resources.GetString("lblAboutTitle.ToolTip2"));
             // 
             // pictureBox2
             // 
             resources.ApplyResources(pictureBox2, "pictureBox2");
             pictureBox2.Name = "pictureBox2";
             pictureBox2.TabStop = false;
+            toolTip1.SetToolTip(pictureBox2, resources.GetString("pictureBox2.ToolTip"));
+            toolTip2.SetToolTip(pictureBox2, resources.GetString("pictureBox2.ToolTip1"));
+            toolTip3.SetToolTip(pictureBox2, resources.GetString("pictureBox2.ToolTip2"));
             // 
             // lblAboutText
             // 
             resources.ApplyResources(lblAboutText, "lblAboutText");
             lblAboutText.ForeColor = Color.LightGray;
             lblAboutText.Name = "lblAboutText";
+            toolTip2.SetToolTip(lblAboutText, resources.GetString("lblAboutText.ToolTip"));
+            toolTip3.SetToolTip(lblAboutText, resources.GetString("lblAboutText.ToolTip1"));
+            toolTip1.SetToolTip(lblAboutText, resources.GetString("lblAboutText.ToolTip2"));
             // 
             // label3
             // 
             resources.ApplyResources(label3, "label3");
             label3.ForeColor = Color.Gray;
             label3.Name = "label3";
+            toolTip2.SetToolTip(label3, resources.GetString("label3.ToolTip"));
+            toolTip3.SetToolTip(label3, resources.GetString("label3.ToolTip1"));
+            toolTip1.SetToolTip(label3, resources.GetString("label3.ToolTip2"));
             // 
             // label2
             // 
             resources.ApplyResources(label2, "label2");
             label2.ForeColor = Color.LightGray;
             label2.Name = "label2";
+            toolTip2.SetToolTip(label2, resources.GetString("label2.ToolTip"));
+            toolTip3.SetToolTip(label2, resources.GetString("label2.ToolTip1"));
+            toolTip1.SetToolTip(label2, resources.GetString("label2.ToolTip2"));
             // 
             // panelSettings
             // 
+            resources.ApplyResources(panelSettings, "panelSettings");
             panelSettings.BackColor = Color.FromArgb(46, 51, 72);
             panelSettings.Controls.Add(btnLogout);
             panelSettings.Controls.Add(label12);
@@ -409,15 +509,20 @@
             panelSettings.Controls.Add(cbLanguage);
             panelSettings.Controls.Add(lblLanguage);
             panelSettings.Controls.Add(lblSettingsTitle);
-            resources.ApplyResources(panelSettings, "panelSettings");
             panelSettings.Name = "panelSettings";
+            toolTip3.SetToolTip(panelSettings, resources.GetString("panelSettings.ToolTip"));
+            toolTip2.SetToolTip(panelSettings, resources.GetString("panelSettings.ToolTip1"));
+            toolTip1.SetToolTip(panelSettings, resources.GetString("panelSettings.ToolTip2"));
             // 
             // btnLogout
             // 
+            resources.ApplyResources(btnLogout, "btnLogout");
             btnLogout.BackColor = Color.FromArgb(24, 30, 54);
             btnLogout.ForeColor = Color.White;
-            resources.ApplyResources(btnLogout, "btnLogout");
             btnLogout.Name = "btnLogout";
+            toolTip2.SetToolTip(btnLogout, resources.GetString("btnLogout.ToolTip"));
+            toolTip1.SetToolTip(btnLogout, resources.GetString("btnLogout.ToolTip1"));
+            toolTip3.SetToolTip(btnLogout, resources.GetString("btnLogout.ToolTip2"));
             btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
             // 
@@ -426,55 +531,76 @@
             resources.ApplyResources(label12, "label12");
             label12.ForeColor = Color.White;
             label12.Name = "label12";
+            toolTip2.SetToolTip(label12, resources.GetString("label12.ToolTip"));
+            toolTip3.SetToolTip(label12, resources.GetString("label12.ToolTip1"));
+            toolTip1.SetToolTip(label12, resources.GetString("label12.ToolTip2"));
             // 
             // cbModel
             // 
+            resources.ApplyResources(cbModel, "cbModel");
             cbModel.DropDownStyle = ComboBoxStyle.DropDownList;
             cbModel.FormattingEnabled = true;
             cbModel.Items.AddRange(new object[] { resources.GetString("cbModel.Items"), resources.GetString("cbModel.Items1"), resources.GetString("cbModel.Items2"), resources.GetString("cbModel.Items3") });
-            resources.ApplyResources(cbModel, "cbModel");
             cbModel.Name = "cbModel";
+            toolTip2.SetToolTip(cbModel, resources.GetString("cbModel.ToolTip"));
+            toolTip1.SetToolTip(cbModel, resources.GetString("cbModel.ToolTip1"));
+            toolTip3.SetToolTip(cbModel, resources.GetString("cbModel.ToolTip2"));
             // 
             // label11
             // 
             resources.ApplyResources(label11, "label11");
             label11.ForeColor = Color.White;
             label11.Name = "label11";
+            toolTip2.SetToolTip(label11, resources.GetString("label11.ToolTip"));
+            toolTip3.SetToolTip(label11, resources.GetString("label11.ToolTip1"));
+            toolTip1.SetToolTip(label11, resources.GetString("label11.ToolTip2"));
             // 
             // cbSaveHistory
             // 
+            resources.ApplyResources(cbSaveHistory, "cbSaveHistory");
             cbSaveHistory.Checked = true;
             cbSaveHistory.CheckState = CheckState.Checked;
-            resources.ApplyResources(cbSaveHistory, "cbSaveHistory");
             cbSaveHistory.ForeColor = Color.White;
             cbSaveHistory.Name = "cbSaveHistory";
+            toolTip2.SetToolTip(cbSaveHistory, resources.GetString("cbSaveHistory.ToolTip"));
+            toolTip1.SetToolTip(cbSaveHistory, resources.GetString("cbSaveHistory.ToolTip1"));
+            toolTip3.SetToolTip(cbSaveHistory, resources.GetString("cbSaveHistory.ToolTip2"));
             cbSaveHistory.UseVisualStyleBackColor = true;
             // 
             // cbSpeakResponses
             // 
+            resources.ApplyResources(cbSpeakResponses, "cbSpeakResponses");
             cbSpeakResponses.Checked = true;
             cbSpeakResponses.CheckState = CheckState.Checked;
-            resources.ApplyResources(cbSpeakResponses, "cbSpeakResponses");
             cbSpeakResponses.ForeColor = Color.White;
             cbSpeakResponses.Name = "cbSpeakResponses";
+            toolTip2.SetToolTip(cbSpeakResponses, resources.GetString("cbSpeakResponses.ToolTip"));
+            toolTip1.SetToolTip(cbSpeakResponses, resources.GetString("cbSpeakResponses.ToolTip1"));
+            toolTip3.SetToolTip(cbSpeakResponses, resources.GetString("cbSpeakResponses.ToolTip2"));
             cbSpeakResponses.UseVisualStyleBackColor = true;
             // 
             // btnSaveSettings
             // 
+            resources.ApplyResources(btnSaveSettings, "btnSaveSettings");
             btnSaveSettings.BackColor = Color.FromArgb(24, 30, 54);
             btnSaveSettings.ForeColor = Color.White;
-            resources.ApplyResources(btnSaveSettings, "btnSaveSettings");
             btnSaveSettings.Name = "btnSaveSettings";
+            toolTip2.SetToolTip(btnSaveSettings, resources.GetString("btnSaveSettings.ToolTip"));
+            toolTip1.SetToolTip(btnSaveSettings, resources.GetString("btnSaveSettings.ToolTip1"));
+            toolTip3.SetToolTip(btnSaveSettings, resources.GetString("btnSaveSettings.ToolTip2"));
             btnSaveSettings.UseVisualStyleBackColor = false;
             btnSaveSettings.Click += btnSaveSettings_Click;
             // 
             // cbNotifications
             // 
+            resources.ApplyResources(cbNotifications, "cbNotifications");
             cbNotifications.Checked = true;
             cbNotifications.CheckState = CheckState.Checked;
-            resources.ApplyResources(cbNotifications, "cbNotifications");
             cbNotifications.ForeColor = Color.White;
             cbNotifications.Name = "cbNotifications";
+            toolTip2.SetToolTip(cbNotifications, resources.GetString("cbNotifications.ToolTip"));
+            toolTip1.SetToolTip(cbNotifications, resources.GetString("cbNotifications.ToolTip1"));
+            toolTip3.SetToolTip(cbNotifications, resources.GetString("cbNotifications.ToolTip2"));
             cbNotifications.UseVisualStyleBackColor = true;
             // 
             // lblTheme
@@ -482,24 +608,32 @@
             resources.ApplyResources(lblTheme, "lblTheme");
             lblTheme.ForeColor = Color.White;
             lblTheme.Name = "lblTheme";
+            toolTip2.SetToolTip(lblTheme, resources.GetString("lblTheme.ToolTip"));
+            toolTip3.SetToolTip(lblTheme, resources.GetString("lblTheme.ToolTip1"));
+            toolTip1.SetToolTip(lblTheme, resources.GetString("lblTheme.ToolTip2"));
             lblTheme.Click += lblTheme_Click;
             // 
             // cbTheme
             // 
+            resources.ApplyResources(cbTheme, "cbTheme");
             cbTheme.DropDownStyle = ComboBoxStyle.DropDownList;
             cbTheme.FormattingEnabled = true;
             cbTheme.Items.AddRange(new object[] { resources.GetString("cbTheme.Items"), resources.GetString("cbTheme.Items1") });
-            resources.ApplyResources(cbTheme, "cbTheme");
             cbTheme.Name = "cbTheme";
+            toolTip2.SetToolTip(cbTheme, resources.GetString("cbTheme.ToolTip"));
+            toolTip1.SetToolTip(cbTheme, resources.GetString("cbTheme.ToolTip1"));
+            toolTip3.SetToolTip(cbTheme, resources.GetString("cbTheme.ToolTip2"));
             // 
             // cbLanguage
             // 
+            resources.ApplyResources(cbLanguage, "cbLanguage");
             cbLanguage.DropDownStyle = ComboBoxStyle.DropDownList;
             cbLanguage.FormattingEnabled = true;
             cbLanguage.Items.AddRange(new object[] { resources.GetString("cbLanguage.Items"), resources.GetString("cbLanguage.Items1"), resources.GetString("cbLanguage.Items2") });
-            resources.ApplyResources(cbLanguage, "cbLanguage");
             cbLanguage.Name = "cbLanguage";
-            cbLanguage.SelectedIndexChanged += cbLanguage_SelectedIndexChanged;
+            toolTip2.SetToolTip(cbLanguage, resources.GetString("cbLanguage.ToolTip"));
+            toolTip1.SetToolTip(cbLanguage, resources.GetString("cbLanguage.ToolTip1"));
+            toolTip3.SetToolTip(cbLanguage, resources.GetString("cbLanguage.ToolTip2"));
             // 
             // lblLanguage
             // 
@@ -507,68 +641,95 @@
             lblLanguage.ForeColor = Color.White;
             lblLanguage.Name = "lblLanguage";
             lblLanguage.Tag = " ";
+            toolTip2.SetToolTip(lblLanguage, resources.GetString("lblLanguage.ToolTip"));
+            toolTip3.SetToolTip(lblLanguage, resources.GetString("lblLanguage.ToolTip1"));
+            toolTip1.SetToolTip(lblLanguage, resources.GetString("lblLanguage.ToolTip2"));
             // 
             // lblSettingsTitle
             // 
             resources.ApplyResources(lblSettingsTitle, "lblSettingsTitle");
             lblSettingsTitle.ForeColor = Color.White;
             lblSettingsTitle.Name = "lblSettingsTitle";
+            toolTip2.SetToolTip(lblSettingsTitle, resources.GetString("lblSettingsTitle.ToolTip"));
+            toolTip3.SetToolTip(lblSettingsTitle, resources.GetString("lblSettingsTitle.ToolTip1"));
+            toolTip1.SetToolTip(lblSettingsTitle, resources.GetString("lblSettingsTitle.ToolTip2"));
             // 
             // panelCalendar
             // 
+            resources.ApplyResources(panelCalendar, "panelCalendar");
             panelCalendar.Controls.Add(panel1);
             panelCalendar.Controls.Add(panelEventsWrapper);
             panelCalendar.Controls.Add(panelAddEventWrapper);
             panelCalendar.Controls.Add(panelCalendarWrapper);
-            resources.ApplyResources(panelCalendar, "panelCalendar");
             panelCalendar.Name = "panelCalendar";
+            toolTip3.SetToolTip(panelCalendar, resources.GetString("panelCalendar.ToolTip"));
+            toolTip2.SetToolTip(panelCalendar, resources.GetString("panelCalendar.ToolTip1"));
+            toolTip1.SetToolTip(panelCalendar, resources.GetString("panelCalendar.ToolTip2"));
             // 
             // panel1
             // 
+            resources.ApplyResources(panel1, "panel1");
             panel1.BackColor = Color.FromArgb(30, 35, 60);
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(btnDeleteEvent2);
             panel1.Controls.Add(listBoxAllEvents);
             panel1.Controls.Add(lblAllEventsTitle);
             panel1.ForeColor = Color.White;
-            resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
+            toolTip3.SetToolTip(panel1, resources.GetString("panel1.ToolTip"));
+            toolTip2.SetToolTip(panel1, resources.GetString("panel1.ToolTip1"));
+            toolTip1.SetToolTip(panel1, resources.GetString("panel1.ToolTip2"));
             // 
             // btnDeleteEvent2
             // 
             resources.ApplyResources(btnDeleteEvent2, "btnDeleteEvent2");
             btnDeleteEvent2.Name = "btnDeleteEvent2";
+            toolTip2.SetToolTip(btnDeleteEvent2, resources.GetString("btnDeleteEvent2.ToolTip"));
+            toolTip1.SetToolTip(btnDeleteEvent2, resources.GetString("btnDeleteEvent2.ToolTip1"));
+            toolTip3.SetToolTip(btnDeleteEvent2, resources.GetString("btnDeleteEvent2.ToolTip2"));
             btnDeleteEvent2.UseVisualStyleBackColor = true;
             btnDeleteEvent2.Click += btnDeleteEvent2_Click;
             // 
             // listBoxAllEvents
             // 
+            resources.ApplyResources(listBoxAllEvents, "listBoxAllEvents");
             listBoxAllEvents.BackColor = Color.FromArgb(24, 30, 54);
             listBoxAllEvents.ForeColor = Color.White;
             listBoxAllEvents.FormattingEnabled = true;
-            resources.ApplyResources(listBoxAllEvents, "listBoxAllEvents");
             listBoxAllEvents.Name = "listBoxAllEvents";
+            toolTip3.SetToolTip(listBoxAllEvents, resources.GetString("listBoxAllEvents.ToolTip"));
+            toolTip2.SetToolTip(listBoxAllEvents, resources.GetString("listBoxAllEvents.ToolTip1"));
+            toolTip1.SetToolTip(listBoxAllEvents, resources.GetString("listBoxAllEvents.ToolTip2"));
             // 
             // lblAllEventsTitle
             // 
             resources.ApplyResources(lblAllEventsTitle, "lblAllEventsTitle");
             lblAllEventsTitle.ForeColor = Color.White;
             lblAllEventsTitle.Name = "lblAllEventsTitle";
+            toolTip2.SetToolTip(lblAllEventsTitle, resources.GetString("lblAllEventsTitle.ToolTip"));
+            toolTip3.SetToolTip(lblAllEventsTitle, resources.GetString("lblAllEventsTitle.ToolTip1"));
+            toolTip1.SetToolTip(lblAllEventsTitle, resources.GetString("lblAllEventsTitle.ToolTip2"));
             // 
             // panelEventsWrapper
             // 
+            resources.ApplyResources(panelEventsWrapper, "panelEventsWrapper");
             panelEventsWrapper.BackColor = Color.FromArgb(30, 35, 60);
             panelEventsWrapper.BorderStyle = BorderStyle.FixedSingle;
             panelEventsWrapper.Controls.Add(btnDeleteEvent);
             panelEventsWrapper.Controls.Add(lblEventsTitle);
             panelEventsWrapper.Controls.Add(listBoxEvents);
-            resources.ApplyResources(panelEventsWrapper, "panelEventsWrapper");
             panelEventsWrapper.Name = "panelEventsWrapper";
+            toolTip3.SetToolTip(panelEventsWrapper, resources.GetString("panelEventsWrapper.ToolTip"));
+            toolTip2.SetToolTip(panelEventsWrapper, resources.GetString("panelEventsWrapper.ToolTip1"));
+            toolTip1.SetToolTip(panelEventsWrapper, resources.GetString("panelEventsWrapper.ToolTip2"));
             // 
             // btnDeleteEvent
             // 
             resources.ApplyResources(btnDeleteEvent, "btnDeleteEvent");
             btnDeleteEvent.Name = "btnDeleteEvent";
+            toolTip2.SetToolTip(btnDeleteEvent, resources.GetString("btnDeleteEvent.ToolTip"));
+            toolTip1.SetToolTip(btnDeleteEvent, resources.GetString("btnDeleteEvent.ToolTip1"));
+            toolTip3.SetToolTip(btnDeleteEvent, resources.GetString("btnDeleteEvent.ToolTip2"));
             btnDeleteEvent.UseVisualStyleBackColor = true;
             btnDeleteEvent.Click += btnDeleteEvent_Click_1;
             // 
@@ -577,19 +738,26 @@
             resources.ApplyResources(lblEventsTitle, "lblEventsTitle");
             lblEventsTitle.ForeColor = Color.White;
             lblEventsTitle.Name = "lblEventsTitle";
+            toolTip2.SetToolTip(lblEventsTitle, resources.GetString("lblEventsTitle.ToolTip"));
+            toolTip3.SetToolTip(lblEventsTitle, resources.GetString("lblEventsTitle.ToolTip1"));
+            toolTip1.SetToolTip(lblEventsTitle, resources.GetString("lblEventsTitle.ToolTip2"));
             lblEventsTitle.UseCompatibleTextRendering = true;
             // 
             // listBoxEvents
             // 
+            resources.ApplyResources(listBoxEvents, "listBoxEvents");
             listBoxEvents.BackColor = Color.FromArgb(24, 30, 54);
             listBoxEvents.BorderStyle = BorderStyle.None;
-            resources.ApplyResources(listBoxEvents, "listBoxEvents");
             listBoxEvents.ForeColor = Color.White;
             listBoxEvents.FormattingEnabled = true;
             listBoxEvents.Name = "listBoxEvents";
+            toolTip3.SetToolTip(listBoxEvents, resources.GetString("listBoxEvents.ToolTip"));
+            toolTip2.SetToolTip(listBoxEvents, resources.GetString("listBoxEvents.ToolTip1"));
+            toolTip1.SetToolTip(listBoxEvents, resources.GetString("listBoxEvents.ToolTip2"));
             // 
             // panelAddEventWrapper
             // 
+            resources.ApplyResources(panelAddEventWrapper, "panelAddEventWrapper");
             panelAddEventWrapper.BackColor = Color.FromArgb(30, 35, 60);
             panelAddEventWrapper.BorderStyle = BorderStyle.FixedSingle;
             panelAddEventWrapper.Controls.Add(datePickerEvent);
@@ -597,20 +765,28 @@
             panelAddEventWrapper.Controls.Add(timePickerEvent);
             panelAddEventWrapper.Controls.Add(buttonAddEvent);
             panelAddEventWrapper.Controls.Add(textBoxNewEvent);
-            resources.ApplyResources(panelAddEventWrapper, "panelAddEventWrapper");
             panelAddEventWrapper.Name = "panelAddEventWrapper";
+            toolTip3.SetToolTip(panelAddEventWrapper, resources.GetString("panelAddEventWrapper.ToolTip"));
+            toolTip2.SetToolTip(panelAddEventWrapper, resources.GetString("panelAddEventWrapper.ToolTip1"));
+            toolTip1.SetToolTip(panelAddEventWrapper, resources.GetString("panelAddEventWrapper.ToolTip2"));
             // 
             // datePickerEvent
             // 
             resources.ApplyResources(datePickerEvent, "datePickerEvent");
             datePickerEvent.Format = DateTimePickerFormat.Custom;
             datePickerEvent.Name = "datePickerEvent";
+            toolTip2.SetToolTip(datePickerEvent, resources.GetString("datePickerEvent.ToolTip"));
+            toolTip3.SetToolTip(datePickerEvent, resources.GetString("datePickerEvent.ToolTip1"));
+            toolTip1.SetToolTip(datePickerEvent, resources.GetString("datePickerEvent.ToolTip2"));
             // 
             // label14
             // 
             resources.ApplyResources(label14, "label14");
             label14.ForeColor = Color.White;
             label14.Name = "label14";
+            toolTip2.SetToolTip(label14, resources.GetString("label14.ToolTip"));
+            toolTip3.SetToolTip(label14, resources.GetString("label14.ToolTip1"));
+            toolTip1.SetToolTip(label14, resources.GetString("label14.ToolTip2"));
             // 
             // timePickerEvent
             // 
@@ -618,82 +794,113 @@
             timePickerEvent.Format = DateTimePickerFormat.Custom;
             timePickerEvent.Name = "timePickerEvent";
             timePickerEvent.ShowUpDown = true;
+            toolTip2.SetToolTip(timePickerEvent, resources.GetString("timePickerEvent.ToolTip"));
+            toolTip3.SetToolTip(timePickerEvent, resources.GetString("timePickerEvent.ToolTip1"));
+            toolTip1.SetToolTip(timePickerEvent, resources.GetString("timePickerEvent.ToolTip2"));
             // 
             // buttonAddEvent
             // 
+            resources.ApplyResources(buttonAddEvent, "buttonAddEvent");
             buttonAddEvent.BackColor = Color.FromArgb(24, 30, 54);
             buttonAddEvent.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(buttonAddEvent, "buttonAddEvent");
             buttonAddEvent.ForeColor = Color.White;
             buttonAddEvent.Name = "buttonAddEvent";
+            toolTip2.SetToolTip(buttonAddEvent, resources.GetString("buttonAddEvent.ToolTip"));
+            toolTip1.SetToolTip(buttonAddEvent, resources.GetString("buttonAddEvent.ToolTip1"));
+            toolTip3.SetToolTip(buttonAddEvent, resources.GetString("buttonAddEvent.ToolTip2"));
             buttonAddEvent.UseVisualStyleBackColor = false;
             buttonAddEvent.Click += buttonAddEvent_Click;
             // 
             // textBoxNewEvent
             // 
+            resources.ApplyResources(textBoxNewEvent, "textBoxNewEvent");
             textBoxNewEvent.BackColor = Color.FromArgb(24, 30, 54);
             textBoxNewEvent.BorderStyle = BorderStyle.FixedSingle;
             textBoxNewEvent.ForeColor = Color.White;
-            resources.ApplyResources(textBoxNewEvent, "textBoxNewEvent");
             textBoxNewEvent.Name = "textBoxNewEvent";
+            toolTip2.SetToolTip(textBoxNewEvent, resources.GetString("textBoxNewEvent.ToolTip"));
+            toolTip3.SetToolTip(textBoxNewEvent, resources.GetString("textBoxNewEvent.ToolTip1"));
+            toolTip1.SetToolTip(textBoxNewEvent, resources.GetString("textBoxNewEvent.ToolTip2"));
             // 
             // panelCalendarWrapper
             // 
+            resources.ApplyResources(panelCalendarWrapper, "panelCalendarWrapper");
             panelCalendarWrapper.BackColor = Color.FromArgb(30, 35, 60);
             panelCalendarWrapper.BorderStyle = BorderStyle.FixedSingle;
             panelCalendarWrapper.Controls.Add(label16);
             panelCalendarWrapper.Controls.Add(monthCalendar1);
             panelCalendarWrapper.ForeColor = Color.White;
-            resources.ApplyResources(panelCalendarWrapper, "panelCalendarWrapper");
             panelCalendarWrapper.Name = "panelCalendarWrapper";
+            toolTip3.SetToolTip(panelCalendarWrapper, resources.GetString("panelCalendarWrapper.ToolTip"));
+            toolTip2.SetToolTip(panelCalendarWrapper, resources.GetString("panelCalendarWrapper.ToolTip1"));
+            toolTip1.SetToolTip(panelCalendarWrapper, resources.GetString("panelCalendarWrapper.ToolTip2"));
             // 
             // label16
             // 
             resources.ApplyResources(label16, "label16");
             label16.ForeColor = Color.White;
             label16.Name = "label16";
+            toolTip2.SetToolTip(label16, resources.GetString("label16.ToolTip"));
+            toolTip3.SetToolTip(label16, resources.GetString("label16.ToolTip1"));
+            toolTip1.SetToolTip(label16, resources.GetString("label16.ToolTip2"));
             label16.UseCompatibleTextRendering = true;
             // 
             // monthCalendar1
             // 
-            monthCalendar1.BackColor = Color.Black;
             resources.ApplyResources(monthCalendar1, "monthCalendar1");
+            monthCalendar1.BackColor = Color.Black;
             monthCalendar1.MaxSelectionCount = 1;
             monthCalendar1.Name = "monthCalendar1";
+            toolTip2.SetToolTip(monthCalendar1, resources.GetString("monthCalendar1.ToolTip"));
+            toolTip1.SetToolTip(monthCalendar1, resources.GetString("monthCalendar1.ToolTip1"));
+            toolTip3.SetToolTip(monthCalendar1, resources.GetString("monthCalendar1.ToolTip2"));
             monthCalendar1.DateChanged += monthCalendar1_DateChanged;
             // 
             // panelAnalytics
             // 
             resources.ApplyResources(panelAnalytics, "panelAnalytics");
             panelAnalytics.Name = "panelAnalytics";
+            toolTip3.SetToolTip(panelAnalytics, resources.GetString("panelAnalytics.ToolTip"));
+            toolTip2.SetToolTip(panelAnalytics, resources.GetString("panelAnalytics.ToolTip1"));
+            toolTip1.SetToolTip(panelAnalytics, resources.GetString("panelAnalytics.ToolTip2"));
             // 
             // panelInput
             // 
+            resources.ApplyResources(panelInput, "panelInput");
             panelInput.BackColor = Color.FromArgb(40, 40, 40);
             panelInput.Controls.Add(btnSend);
             panelInput.Controls.Add(textBoxInput);
-            resources.ApplyResources(panelInput, "panelInput");
             panelInput.Name = "panelInput";
+            toolTip3.SetToolTip(panelInput, resources.GetString("panelInput.ToolTip"));
+            toolTip2.SetToolTip(panelInput, resources.GetString("panelInput.ToolTip1"));
+            toolTip1.SetToolTip(panelInput, resources.GetString("panelInput.ToolTip2"));
             // 
             // btnSend
             // 
-            btnSend.BackColor = Color.FromArgb(60, 60, 60);
             resources.ApplyResources(btnSend, "btnSend");
+            btnSend.BackColor = Color.FromArgb(60, 60, 60);
             btnSend.ForeColor = Color.White;
             btnSend.Name = "btnSend";
+            toolTip2.SetToolTip(btnSend, resources.GetString("btnSend.ToolTip"));
+            toolTip1.SetToolTip(btnSend, resources.GetString("btnSend.ToolTip1"));
+            toolTip3.SetToolTip(btnSend, resources.GetString("btnSend.ToolTip2"));
             btnSend.UseVisualStyleBackColor = false;
             btnSend.Click += btnSend_Click;
             // 
             // textBoxInput
             // 
+            resources.ApplyResources(textBoxInput, "textBoxInput");
             textBoxInput.BackColor = SystemColors.WindowFrame;
             textBoxInput.BorderStyle = BorderStyle.None;
-            resources.ApplyResources(textBoxInput, "textBoxInput");
             textBoxInput.ForeColor = Color.White;
             textBoxInput.Name = "textBoxInput";
+            toolTip2.SetToolTip(textBoxInput, resources.GetString("textBoxInput.ToolTip"));
+            toolTip3.SetToolTip(textBoxInput, resources.GetString("textBoxInput.ToolTip1"));
+            toolTip1.SetToolTip(textBoxInput, resources.GetString("textBoxInput.ToolTip2"));
             // 
             // panelVivy
             // 
+            resources.ApplyResources(panelVivy, "panelVivy");
             panelVivy.Controls.Add(label15);
             panelVivy.Controls.Add(btnClearChat);
             panelVivy.Controls.Add(btnNewChat);
@@ -702,30 +909,41 @@
             panelVivy.Controls.Add(panelHistory);
             panelVivy.Controls.Add(panelInput);
             panelVivy.Controls.Add(richTextBox1);
-            resources.ApplyResources(panelVivy, "panelVivy");
             panelVivy.Name = "panelVivy";
+            toolTip3.SetToolTip(panelVivy, resources.GetString("panelVivy.ToolTip"));
+            toolTip2.SetToolTip(panelVivy, resources.GetString("panelVivy.ToolTip1"));
+            toolTip1.SetToolTip(panelVivy, resources.GetString("panelVivy.ToolTip2"));
             // 
             // label15
             // 
             resources.ApplyResources(label15, "label15");
             label15.ForeColor = Color.White;
             label15.Name = "label15";
+            toolTip2.SetToolTip(label15, resources.GetString("label15.ToolTip"));
+            toolTip3.SetToolTip(label15, resources.GetString("label15.ToolTip1"));
+            toolTip1.SetToolTip(label15, resources.GetString("label15.ToolTip2"));
             // 
             // btnClearChat
             // 
+            resources.ApplyResources(btnClearChat, "btnClearChat");
             btnClearChat.BackColor = Color.FromArgb(24, 30, 54);
             btnClearChat.ForeColor = Color.White;
-            resources.ApplyResources(btnClearChat, "btnClearChat");
             btnClearChat.Name = "btnClearChat";
+            toolTip2.SetToolTip(btnClearChat, resources.GetString("btnClearChat.ToolTip"));
+            toolTip1.SetToolTip(btnClearChat, resources.GetString("btnClearChat.ToolTip1"));
+            toolTip3.SetToolTip(btnClearChat, resources.GetString("btnClearChat.ToolTip2"));
             btnClearChat.UseVisualStyleBackColor = false;
             btnClearChat.Click += btnClearChat_Click_1;
             // 
             // btnNewChat
             // 
+            resources.ApplyResources(btnNewChat, "btnNewChat");
             btnNewChat.BackColor = Color.FromArgb(24, 30, 54);
             btnNewChat.ForeColor = Color.White;
-            resources.ApplyResources(btnNewChat, "btnNewChat");
             btnNewChat.Name = "btnNewChat";
+            toolTip2.SetToolTip(btnNewChat, resources.GetString("btnNewChat.ToolTip"));
+            toolTip1.SetToolTip(btnNewChat, resources.GetString("btnNewChat.ToolTip1"));
+            toolTip3.SetToolTip(btnNewChat, resources.GetString("btnNewChat.ToolTip2"));
             btnNewChat.UseVisualStyleBackColor = false;
             btnNewChat.Click += btnNewChat_Click;
             // 
@@ -734,35 +952,50 @@
             resources.ApplyResources(label13, "label13");
             label13.ForeColor = Color.White;
             label13.Name = "label13";
+            toolTip2.SetToolTip(label13, resources.GetString("label13.ToolTip"));
+            toolTip3.SetToolTip(label13, resources.GetString("label13.ToolTip1"));
+            toolTip1.SetToolTip(label13, resources.GetString("label13.ToolTip2"));
             // 
             // labelvivy
             // 
             resources.ApplyResources(labelvivy, "labelvivy");
             labelvivy.ForeColor = Color.White;
             labelvivy.Name = "labelvivy";
+            toolTip2.SetToolTip(labelvivy, resources.GetString("labelvivy.ToolTip"));
+            toolTip3.SetToolTip(labelvivy, resources.GetString("labelvivy.ToolTip1"));
+            toolTip1.SetToolTip(labelvivy, resources.GetString("labelvivy.ToolTip2"));
             // 
             // panelHistory
             // 
-            panelHistory.Controls.Add(listBoxHistory);
             resources.ApplyResources(panelHistory, "panelHistory");
+            panelHistory.Controls.Add(listBoxHistory);
             panelHistory.Name = "panelHistory";
+            toolTip3.SetToolTip(panelHistory, resources.GetString("panelHistory.ToolTip"));
+            toolTip2.SetToolTip(panelHistory, resources.GetString("panelHistory.ToolTip1"));
+            toolTip1.SetToolTip(panelHistory, resources.GetString("panelHistory.ToolTip2"));
             // 
             // listBoxHistory
             // 
-            listBoxHistory.BackColor = Color.FromArgb(46, 51, 73);
             resources.ApplyResources(listBoxHistory, "listBoxHistory");
+            listBoxHistory.BackColor = Color.FromArgb(46, 51, 73);
             listBoxHistory.ForeColor = Color.White;
             listBoxHistory.FormattingEnabled = true;
             listBoxHistory.Name = "listBoxHistory";
+            toolTip3.SetToolTip(listBoxHistory, resources.GetString("listBoxHistory.ToolTip"));
+            toolTip2.SetToolTip(listBoxHistory, resources.GetString("listBoxHistory.ToolTip1"));
+            toolTip1.SetToolTip(listBoxHistory, resources.GetString("listBoxHistory.ToolTip2"));
             listBoxHistory.SelectedIndexChanged += listBoxHistory_SelectedIndexChanged;
             // 
             // richTextBox1
             // 
-            richTextBox1.BackColor = Color.FromArgb(46, 51, 73);
             resources.ApplyResources(richTextBox1, "richTextBox1");
+            richTextBox1.BackColor = Color.FromArgb(46, 51, 73);
             richTextBox1.ForeColor = Color.White;
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ReadOnly = true;
+            toolTip2.SetToolTip(richTextBox1, resources.GetString("richTextBox1.ToolTip"));
+            toolTip1.SetToolTip(richTextBox1, resources.GetString("richTextBox1.ToolTip1"));
+            toolTip3.SetToolTip(richTextBox1, resources.GetString("richTextBox1.ToolTip2"));
             // 
             // FrmMain
             // 
@@ -770,13 +1003,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             Controls.Add(pnlNaw);
+            Controls.Add(panelCalendar);
             Controls.Add(panelAbout);
             Controls.Add(panelSettings);
             Controls.Add(panelVivy);
             Controls.Add(panelAnalytics);
-            Controls.Add(panelCalendar);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMain";
+            toolTip2.SetToolTip(this, resources.GetString("$this.ToolTip"));
+            toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip1"));
+            toolTip3.SetToolTip(this, resources.GetString("$this.ToolTip2"));
             Load += FrmMain_Load;
             pnlNaw.ResumeLayout(false);
             panel2.ResumeLayout(false);

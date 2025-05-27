@@ -453,6 +453,36 @@ namespace Vivy
                 if (theme == null || model == null || interfaceLanguage == null)
                     return;
 
+                // Применяем тему
+                ApplyTheme(theme);
+
+                // Применяем язык интерфейса
+                string langCode = interfaceLanguage switch
+                {
+                    "Українська" => "uk",
+                    "English" => "en",
+                    "Deutsch" => "de",
+                    _ => "uk"
+                };
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(langCode);
+
+                // Пересоздаём элементы управления для применения языка
+                var selectedTheme = cbTheme.SelectedItem;
+                var selectedModel = cbModel.SelectedItem;
+                var selectedNotifications = cbNotifications.Checked;
+                var selectedSpeak = cbSpeakResponses.Checked;
+                var selectedHistory = cbSaveHistory.Checked;
+
+                this.Controls.Clear();
+                InitializeComponent();
+
+                cbTheme.SelectedItem = selectedTheme;
+                cbModel.SelectedItem = selectedModel;
+                cbNotifications.Checked = selectedNotifications;
+                cbSpeakResponses.Checked = selectedSpeak;
+                cbSaveHistory.Checked = selectedHistory;
+                cbLanguage.SelectedItem = interfaceLanguage;
+
                 ApplyTheme(theme);
 
                 // Сохраняем настройки в БД
@@ -958,27 +988,6 @@ namespace Vivy
                 UpdateEventsForDate(selectedDate);
                 UpdateAllEventsList();
             }
-        }
-        private void cbLanguage_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedLang = cbLanguage.SelectedItem.ToString();
-
-            string langCode = selectedLang switch
-            {
-                "Українська" => "uk",
-                "English" => "en",
-                "Deutsch" => "de",
-                _ => "uk"
-            };
-
-            // Применяем культуру
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(langCode);
-
-            // Перезапускаем главную форму
-            
-            var mainForm = new FrmMain(currentLogin); // можно передать нужные параметры, если надо
-            mainForm.Show();
-            
         }
         private void FrmSettings_Load(object sender, EventArgs e)
         {
