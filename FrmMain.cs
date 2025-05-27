@@ -1050,6 +1050,9 @@ namespace Vivy
             lblLongestChat.Text = longestChatTitle;
         }
         private void btnUpdateAnalytics_Click(object sender, EventArgs e)
+        {
+
+        }
         private void FrmSettings_Load(object sender, EventArgs e)
         {
             UpdateAnalytics();
