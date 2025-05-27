@@ -79,6 +79,8 @@
             lblSettingsTitle = new Label();
             panelCalendar = new Panel();
             panel1 = new Panel();
+            btnMarkAsDone = new Button();
+            cbEventFilter = new ComboBox();
             btnDeleteEvent2 = new Button();
             listBoxAllEvents = new ListBox();
             lblAllEventsTitle = new Label();
@@ -96,16 +98,29 @@
             label16 = new Label();
             monthCalendar1 = new MonthCalendar();
             panelAnalytics = new Panel();
+            panel4 = new Panel();
+            groupBoxCalendarStats = new GroupBox();
+            lblOverdueEvents2 = new Label();
+            lblOverdueEvents = new Label();
+            lblNextEvent = new Label();
+            lblPlannedEvents = new Label();
+            lblDoneEvents = new Label();
+            lblTotalEvents = new Label();
+            lblTotalEvents2 = new Label();
+            lblPlannedEvents2 = new Label();
+            lblDoneEvents2 = new Label();
+            lblNextEvent2 = new Label();
+            panel3 = new Panel();
             btnUpdateAnalytics = new Button();
             lblLongestChat = new Label();
-            lblAvgResponseLength = new Label();
-            lblMessagesCount = new Label();
-            lblChatsCount = new Label();
-            lblLongestChatTitle = new Label();
-            lblAvgResponseLengthTitle = new Label();
-            lblMessagesCountTitle = new Label();
-            lblChatsCountTitle = new Label();
             lblAnalyticsTitle = new Label();
+            lblAvgResponseLength = new Label();
+            lblChatsCountTitle = new Label();
+            lblMessagesCount = new Label();
+            lblMessagesCountTitle = new Label();
+            lblChatsCount = new Label();
+            lblAvgResponseLengthTitle = new Label();
+            lblLongestChatTitle = new Label();
             panelInput = new Panel();
             btnSend = new Button();
             textBoxInput = new TextBox();
@@ -139,6 +154,9 @@
             panelAddEventWrapper.SuspendLayout();
             panelCalendarWrapper.SuspendLayout();
             panelAnalytics.SuspendLayout();
+            panel4.SuspendLayout();
+            groupBoxCalendarStats.SuspendLayout();
+            panel3.SuspendLayout();
             panelInput.SuspendLayout();
             panelVivy.SuspendLayout();
             panelHistory.SuspendLayout();
@@ -558,12 +576,27 @@
             // 
             panel1.BackColor = Color.FromArgb(30, 35, 60);
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(btnMarkAsDone);
+            panel1.Controls.Add(cbEventFilter);
             panel1.Controls.Add(btnDeleteEvent2);
             panel1.Controls.Add(listBoxAllEvents);
             panel1.Controls.Add(lblAllEventsTitle);
             panel1.ForeColor = Color.White;
             resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
+            // 
+            // btnMarkAsDone
+            // 
+            resources.ApplyResources(btnMarkAsDone, "btnMarkAsDone");
+            btnMarkAsDone.Name = "btnMarkAsDone";
+            btnMarkAsDone.UseVisualStyleBackColor = true;
+            btnMarkAsDone.Click += btnMarkAsDone_Click;
+            // 
+            // cbEventFilter
+            // 
+            cbEventFilter.FormattingEnabled = true;
+            resources.ApplyResources(cbEventFilter, "cbEventFilter");
+            cbEventFilter.Name = "cbEventFilter";
             // 
             // btnDeleteEvent2
             // 
@@ -695,18 +728,103 @@
             // 
             // panelAnalytics
             // 
-            panelAnalytics.Controls.Add(btnUpdateAnalytics);
-            panelAnalytics.Controls.Add(lblLongestChat);
-            panelAnalytics.Controls.Add(lblAvgResponseLength);
-            panelAnalytics.Controls.Add(lblMessagesCount);
-            panelAnalytics.Controls.Add(lblChatsCount);
-            panelAnalytics.Controls.Add(lblLongestChatTitle);
-            panelAnalytics.Controls.Add(lblAvgResponseLengthTitle);
-            panelAnalytics.Controls.Add(lblMessagesCountTitle);
-            panelAnalytics.Controls.Add(lblChatsCountTitle);
-            panelAnalytics.Controls.Add(lblAnalyticsTitle);
+            panelAnalytics.Controls.Add(panel4);
+            panelAnalytics.Controls.Add(panel3);
             resources.ApplyResources(panelAnalytics, "panelAnalytics");
             panelAnalytics.Name = "panelAnalytics";
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.Transparent;
+            panel4.BackgroundImage = Properties.Resources.BackgroundBlack;
+            panel4.Controls.Add(groupBoxCalendarStats);
+            resources.ApplyResources(panel4, "panel4");
+            panel4.Name = "panel4";
+            // 
+            // groupBoxCalendarStats
+            // 
+            groupBoxCalendarStats.BackColor = Color.FromArgb(46, 51, 73);
+            groupBoxCalendarStats.Controls.Add(lblTotalEvents);
+            groupBoxCalendarStats.Controls.Add(lblTotalEvents2);
+            groupBoxCalendarStats.Controls.Add(lblPlannedEvents);
+            groupBoxCalendarStats.Controls.Add(lblPlannedEvents2);
+            groupBoxCalendarStats.Controls.Add(lblDoneEvents);
+            groupBoxCalendarStats.Controls.Add(lblDoneEvents2);
+            groupBoxCalendarStats.Controls.Add(lblOverdueEvents);
+            groupBoxCalendarStats.Controls.Add(lblOverdueEvents2);
+            groupBoxCalendarStats.Controls.Add(lblNextEvent);
+            groupBoxCalendarStats.Controls.Add(lblNextEvent2);
+            groupBoxCalendarStats.ForeColor = Color.White;
+            resources.ApplyResources(groupBoxCalendarStats, "groupBoxCalendarStats");
+            groupBoxCalendarStats.Name = "groupBoxCalendarStats";
+            groupBoxCalendarStats.TabStop = false;
+            // 
+            // lblOverdueEvents2
+            // 
+            resources.ApplyResources(lblOverdueEvents2, "lblOverdueEvents2");
+            lblOverdueEvents2.Name = "lblOverdueEvents2";
+            // 
+            // lblOverdueEvents
+            // 
+            resources.ApplyResources(lblOverdueEvents, "lblOverdueEvents");
+            lblOverdueEvents.Name = "lblOverdueEvents";
+            // 
+            // lblNextEvent
+            // 
+            resources.ApplyResources(lblNextEvent, "lblNextEvent");
+            lblNextEvent.Name = "lblNextEvent";
+            // 
+            // lblPlannedEvents
+            // 
+            resources.ApplyResources(lblPlannedEvents, "lblPlannedEvents");
+            lblPlannedEvents.Name = "lblPlannedEvents";
+            // 
+            // lblDoneEvents
+            // 
+            resources.ApplyResources(lblDoneEvents, "lblDoneEvents");
+            lblDoneEvents.Name = "lblDoneEvents";
+            // 
+            // lblTotalEvents
+            // 
+            resources.ApplyResources(lblTotalEvents, "lblTotalEvents");
+            lblTotalEvents.Name = "lblTotalEvents";
+            // 
+            // lblTotalEvents2
+            // 
+            resources.ApplyResources(lblTotalEvents2, "lblTotalEvents2");
+            lblTotalEvents2.Name = "lblTotalEvents2";
+            // 
+            // lblPlannedEvents2
+            // 
+            resources.ApplyResources(lblPlannedEvents2, "lblPlannedEvents2");
+            lblPlannedEvents2.Name = "lblPlannedEvents2";
+            // 
+            // lblDoneEvents2
+            // 
+            resources.ApplyResources(lblDoneEvents2, "lblDoneEvents2");
+            lblDoneEvents2.Name = "lblDoneEvents2";
+            // 
+            // lblNextEvent2
+            // 
+            resources.ApplyResources(lblNextEvent2, "lblNextEvent2");
+            lblNextEvent2.Name = "lblNextEvent2";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Transparent;
+            panel3.BackgroundImage = Properties.Resources.BackgroundBlack;
+            panel3.Controls.Add(btnUpdateAnalytics);
+            panel3.Controls.Add(lblLongestChat);
+            panel3.Controls.Add(lblAnalyticsTitle);
+            panel3.Controls.Add(lblAvgResponseLength);
+            panel3.Controls.Add(lblChatsCountTitle);
+            panel3.Controls.Add(lblMessagesCount);
+            panel3.Controls.Add(lblMessagesCountTitle);
+            panel3.Controls.Add(lblChatsCount);
+            panel3.Controls.Add(lblAvgResponseLengthTitle);
+            panel3.Controls.Add(lblLongestChatTitle);
+            resources.ApplyResources(panel3, "panel3");
+            panel3.Name = "panel3";
             // 
             // btnUpdateAnalytics
             // 
@@ -722,41 +840,17 @@
             lblLongestChat.ForeColor = Color.White;
             lblLongestChat.Name = "lblLongestChat";
             // 
+            // lblAnalyticsTitle
+            // 
+            resources.ApplyResources(lblAnalyticsTitle, "lblAnalyticsTitle");
+            lblAnalyticsTitle.ForeColor = Color.White;
+            lblAnalyticsTitle.Name = "lblAnalyticsTitle";
+            // 
             // lblAvgResponseLength
             // 
             resources.ApplyResources(lblAvgResponseLength, "lblAvgResponseLength");
             lblAvgResponseLength.ForeColor = Color.White;
             lblAvgResponseLength.Name = "lblAvgResponseLength";
-            // 
-            // lblMessagesCount
-            // 
-            resources.ApplyResources(lblMessagesCount, "lblMessagesCount");
-            lblMessagesCount.ForeColor = Color.White;
-            lblMessagesCount.Name = "lblMessagesCount";
-            // 
-            // lblChatsCount
-            // 
-            resources.ApplyResources(lblChatsCount, "lblChatsCount");
-            lblChatsCount.ForeColor = Color.White;
-            lblChatsCount.Name = "lblChatsCount";
-            // 
-            // lblLongestChatTitle
-            // 
-            resources.ApplyResources(lblLongestChatTitle, "lblLongestChatTitle");
-            lblLongestChatTitle.ForeColor = Color.White;
-            lblLongestChatTitle.Name = "lblLongestChatTitle";
-            // 
-            // lblAvgResponseLengthTitle
-            // 
-            resources.ApplyResources(lblAvgResponseLengthTitle, "lblAvgResponseLengthTitle");
-            lblAvgResponseLengthTitle.ForeColor = Color.White;
-            lblAvgResponseLengthTitle.Name = "lblAvgResponseLengthTitle";
-            // 
-            // lblMessagesCountTitle
-            // 
-            resources.ApplyResources(lblMessagesCountTitle, "lblMessagesCountTitle");
-            lblMessagesCountTitle.ForeColor = Color.White;
-            lblMessagesCountTitle.Name = "lblMessagesCountTitle";
             // 
             // lblChatsCountTitle
             // 
@@ -764,11 +858,35 @@
             lblChatsCountTitle.ForeColor = Color.White;
             lblChatsCountTitle.Name = "lblChatsCountTitle";
             // 
-            // lblAnalyticsTitle
+            // lblMessagesCount
             // 
-            resources.ApplyResources(lblAnalyticsTitle, "lblAnalyticsTitle");
-            lblAnalyticsTitle.ForeColor = Color.White;
-            lblAnalyticsTitle.Name = "lblAnalyticsTitle";
+            resources.ApplyResources(lblMessagesCount, "lblMessagesCount");
+            lblMessagesCount.ForeColor = Color.White;
+            lblMessagesCount.Name = "lblMessagesCount";
+            // 
+            // lblMessagesCountTitle
+            // 
+            resources.ApplyResources(lblMessagesCountTitle, "lblMessagesCountTitle");
+            lblMessagesCountTitle.ForeColor = Color.White;
+            lblMessagesCountTitle.Name = "lblMessagesCountTitle";
+            // 
+            // lblChatsCount
+            // 
+            resources.ApplyResources(lblChatsCount, "lblChatsCount");
+            lblChatsCount.ForeColor = Color.White;
+            lblChatsCount.Name = "lblChatsCount";
+            // 
+            // lblAvgResponseLengthTitle
+            // 
+            resources.ApplyResources(lblAvgResponseLengthTitle, "lblAvgResponseLengthTitle");
+            lblAvgResponseLengthTitle.ForeColor = Color.White;
+            lblAvgResponseLengthTitle.Name = "lblAvgResponseLengthTitle";
+            // 
+            // lblLongestChatTitle
+            // 
+            resources.ApplyResources(lblLongestChatTitle, "lblLongestChatTitle");
+            lblLongestChatTitle.ForeColor = Color.White;
+            lblLongestChatTitle.Name = "lblLongestChatTitle";
             // 
             // panelInput
             // 
@@ -873,13 +991,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             Controls.Add(pnlNaw);
-            Controls.Add(panelCalendar);
             Controls.Add(panelAnalytics);
             Controls.Add(panelAbout);
             Controls.Add(panelCalendar);
             Controls.Add(panelSettings);
             Controls.Add(panelVivy);
-            Controls.Add(panelAnalytics);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMain";
             Load += FrmMain_Load;
@@ -909,7 +1025,11 @@
             panelCalendarWrapper.ResumeLayout(false);
             panelCalendarWrapper.PerformLayout();
             panelAnalytics.ResumeLayout(false);
-            panelAnalytics.PerformLayout();
+            panel4.ResumeLayout(false);
+            groupBoxCalendarStats.ResumeLayout(false);
+            groupBoxCalendarStats.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             panelInput.ResumeLayout(false);
             panelInput.PerformLayout();
             panelVivy.ResumeLayout(false);
@@ -1013,5 +1133,20 @@
         private Label lblAboutText;
         private Label label3;
         private Label label2;
+        private Panel panel3;
+        private Panel panel4;
+        private GroupBox groupBoxCalendarStats;
+        private Label lblNextEvent;
+        private Label lblPlannedEvents;
+        private Label lblDoneEvents;
+        private Label lblTotalEvents;
+        private Label lblTotalEvents2;
+        private Label lblPlannedEvents2;
+        private Label lblDoneEvents2;
+        private Label lblNextEvent2;
+        private ComboBox cbEventFilter;
+        private Button btnMarkAsDone;
+        private Label lblOverdueEvents2;
+        private Label lblOverdueEvents;
     }
 }

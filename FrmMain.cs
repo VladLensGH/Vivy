@@ -9,6 +9,7 @@ using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
 
+
 namespace Vivy
 {
     public partial class FrmMain : Form
@@ -166,7 +167,17 @@ namespace Vivy
             // Добавьте все панели, которые должны быть закруглены
 
             UpdateAboutPanelsTheme();
-            UpdateAboutPanelsTheme();
+
+            UpdateCalendarStats();
+
+            cbEventFilter.Items.AddRange(new[] {
+              "Усі події",
+              "Заплановані",
+              "Виконані",
+              "Прострочені"
+             });
+            cbEventFilter.SelectedIndex = 0;
+            cbEventFilter.SelectedIndexChanged += (s, e) => ApplyEventFilter();
         }
 
         // Обробка натискання на різні кнопки меню для перемикання панелей
@@ -347,13 +358,16 @@ namespace Vivy
 
             if (string.IsNullOrEmpty(currentChatTitle))
             {
-                currentChatTitle = userMessage.Length > 30 ? userMessage.Substring(0, 30) + "..." : userMessage;
+                string topic = ExtractChatTopic(userMessage);
+                currentChatTitle = topic.Length > 30 ? topic.Substring(0, 30) + "..." : topic;
+
                 listBoxHistory.Items.Add(currentChatTitle);
                 if (!chatHistory.ContainsKey(currentChatTitle))
                 {
                     chatHistory[currentChatTitle] = new List<(string, string)>();
                 }
             }
+
 
             chatHistory[currentChatTitle].Add(("Вы", userMessage));
 
@@ -384,6 +398,14 @@ namespace Vivy
             richTextBox1.ScrollToCaret();
 
             UpdateAnalytics();
+
+            string topic = await ClassifyMessageTopic(userMessage);
+            if (!string.IsNullOrWhiteSpace(topic))
+            {
+                if (!topicFrequency.ContainsKey(topic))
+                    topicFrequency[topic] = 0;
+                topicFrequency[topic]++;
+            }
 
         }
 
@@ -805,70 +827,12 @@ namespace Vivy
             }
         }
 
-        private Dictionary<DateTime, List<string>> eventsByDate = new(); // помести в начало формы
-
-        private void btnAddEvent_Click(object sender, EventArgs e)
-        {
-            string eventText = textBoxNewEvent.Text.Trim();
-            if (string.IsNullOrEmpty(eventText))
-            {
-                MessageBox.Show("Введіть текст події.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            DateTime selectedDate = monthCalendar1.SelectionStart.Date;
-            DateTime selectedTime = timePickerEvent.Value;
-
-            // Объединяем дату и время
-            DateTime fullDateTime = new DateTime(
-                selectedDate.Year, selectedDate.Month, selectedDate.Day,
-                selectedTime.Hour, selectedTime.Minute, 0
-            );
-
-            // Формат отображения
-            string formattedEvent = $"{fullDateTime:HH:mm} — {eventText}";
-
-            // Добавляем событие в словарь
-            if (!eventsByDate.ContainsKey(selectedDate))
-                eventsByDate[selectedDate] = new List<string>();
-
-            eventsByDate[selectedDate].Add(formattedEvent);
-
-            // Обновляем отображение
-            UpdateEventsList(selectedDate);
-
-            textBoxNewEvent.Clear();
-        }
-        private void UpdateEventsList(DateTime date)
-        {
-            listBoxEvents.Items.Clear();
-            lblEventsTitle.Text = $"Події на: [{date:dd.MM.yyyy}]";
-
-            if (eventsByDate.ContainsKey(date))
-            {
-                foreach (string ev in eventsByDate[date])
-                {
-                    listBoxEvents.Items.Add(ev);
-                }
-            }
-        }
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            UpdateEventsList(monthCalendar1.SelectionStart.Date);
             DateTime selectedDate = e.Start.Date;
             UpdateEventsForDate(selectedDate);
         }
-        private void btnDeleteEvent_Click(object sender, EventArgs e)
-        {
-            DateTime selectedDate = monthCalendar1.SelectionStart.Date;
-            if (listBoxEvents.SelectedItem == null || !eventsByDate.ContainsKey(selectedDate)) return;
-
-            string selectedEvent = listBoxEvents.SelectedItem.ToString();
-            eventsByDate[selectedDate].Remove(selectedEvent);
-
-            UpdateEventsList(selectedDate);
-        }
-        private List<(DateTime dateTime, string text)> allEvents = new();
+        private List<Event> allEvents = new();
 
         private void buttonAddEvent_Click(object sender, EventArgs e)
         {
@@ -887,25 +851,12 @@ namespace Vivy
                 selectedTime.Hour, selectedTime.Minute, 0
             );
 
-            allEvents.Add((fullDateTime, eventText));
+            allEvents.Add(new Event(fullDateTime, eventText));
             UpdateEventsForDate(monthCalendar1.SelectionStart.Date);
-            UpdateAllEventsList();
+            ApplyEventFilter();
 
+            UpdateCalendarStats();
             textBoxNewEvent.Clear();
-        }
-
-        private void UpdateAllEventsList()
-        {
-            // Сортируем события по дате и времени
-            var sorted = allEvents.OrderBy(ev => ev.dateTime).ToList();
-
-            listBoxAllEvents.Items.Clear();
-
-            foreach (var ev in sorted)
-            {
-                string formatted = $"{ev.dateTime:dd.MM.yyyy HH:mm} — {ev.text}";
-                listBoxAllEvents.Items.Add(formatted);
-            }
         }
 
         private void UpdateEventsForDate(DateTime date)
@@ -914,24 +865,30 @@ namespace Vivy
             lblEventsTitle.Text = $"Події на: [{date:dd.MM.yyyy}]";
 
             var eventsForDate = allEvents
-                .Where(ev => ev.dateTime.Date == date.Date)
-                .OrderBy(ev => ev.dateTime.TimeOfDay)
+                .Where(ev => ev.Date.Date == date.Date)
+                .OrderBy(ev => ev.Date.TimeOfDay)
                 .ToList();
 
             if (eventsForDate.Count == 0)
             {
                 listBoxEvents.Items.Add("Немає подій");
-                listBoxEvents.Enabled = false; // блокируем выбор
-                return;
+                listBoxEvents.Enabled = false;
             }
-
-            listBoxEvents.Enabled = true;
-
-            foreach (var ev in eventsForDate)
+            else
             {
-                listBoxEvents.Items.Add($"{ev.dateTime:HH:mm} — {ev.text}");
+                listBoxEvents.Enabled = true;
+
+                foreach (var ev in eventsForDate)
+                {
+                    string prefix = ev.IsDone ? "✅" : "";
+                    listBoxEvents.Items.Add($"{prefix}{ev.Date:HH:mm} — {ev.Text}");
+                }
             }
+
+            
+            UpdateCalendarStats();
         }
+
 
         private void btnDeleteEvent2_Click(object sender, EventArgs e)
         {
@@ -941,13 +898,15 @@ namespace Vivy
 
                 // Пытаемся найти и удалить
                 var item = allEvents.FirstOrDefault(ev =>
-                    $"{ev.dateTime:dd.MM.yyyy HH:mm} — {ev.text}" == selected);
+                    $"{ev.Date:dd.MM.yyyy HH:mm} — {ev.Text}" == selected);
+
 
                 if (item != default)
                 {
                     allEvents.Remove(item);
-                    UpdateAllEventsList();
+                    ApplyEventFilter();
                     UpdateEventsForDate(monthCalendar1.SelectionStart.Date); // обновим текущую дату
+                    UpdateCalendarStats();
                 }
             }
         }
@@ -965,13 +924,14 @@ namespace Vivy
 
             // Найти и удалить из allEvents
             var eventToRemove = allEvents
-                .FirstOrDefault(ev => ev.Item1.Date == selectedDate && $"{ev.Item1:HH:mm} — {ev.Item2}" == selectedItem);
+                .FirstOrDefault(ev => ev.Date.Date == selectedDate && $"{ev.Date:HH:mm} — {ev.Text}" == selectedItem);
 
             if (eventToRemove != default)
             {
                 allEvents.Remove(eventToRemove);
                 UpdateEventsForDate(selectedDate);
-                UpdateAllEventsList();
+                ApplyEventFilter();
+                UpdateCalendarStats();
             }
         }
 
@@ -1072,5 +1032,150 @@ namespace Vivy
             cbSaveHistory.ForeColor = checkBoxForeColor;
             cbSaveHistory.BackColor = checkBoxBackColor;
         }
+        private void UpdateCalendarStats()
+        {
+            if (allEvents == null || allEvents.Count == 0)
+            {
+                lblTotalEvents2.Text = "0";
+                lblPlannedEvents2.Text = "0";
+                lblDoneEvents2.Text = "0";
+                lblOverdueEvents2.Text = "0";
+                lblNextEvent2.Text = "—";
+                return;
+            }
+
+            int total = allEvents.Count;
+            int completed = allEvents.Count(ev => ev.IsDone);
+            int planned = allEvents.Count(ev => !ev.IsDone && ev.Date >= DateTime.Now);
+            int overdue = allEvents.Count(ev => !ev.IsDone && ev.Date < DateTime.Now);
+
+            var next = allEvents
+                .Where(ev => !ev.IsDone && ev.Date >= DateTime.Now)
+                .OrderBy(ev => ev.Date)
+                .FirstOrDefault();
+
+            lblTotalEvents2.Text = total.ToString();
+            lblPlannedEvents2.Text = planned.ToString();
+            lblDoneEvents2.Text = completed.ToString();
+            lblOverdueEvents2.Text = overdue.ToString();
+            lblNextEvent2.Text = next != default
+                ? $"{next.Date:dd.MM.yyyy HH:mm} — {next.Text}"
+                : "—";
+        }
+
+
+        public class Event
+        {
+            public DateTime Date { get; set; }
+            public string Text { get; set; }
+            public bool IsDone { get; set; }
+
+            public Event(DateTime date, string text, bool isDone = false)
+            {
+                Date = date;
+                Text = text;
+                IsDone = isDone;
+            }
+        }
+
+        private void ApplyEventFilter()
+        {
+            string selectedFilter = cbEventFilter.SelectedItem?.ToString();
+            listBoxAllEvents.Items.Clear();
+
+            IEnumerable<Event> filtered = allEvents;
+
+            switch (selectedFilter)
+            {
+                case "Усі події":
+                    break;
+
+                case "Заплановані":
+                    filtered = allEvents.Where(ev => !ev.IsDone && ev.Date >= DateTime.Now);
+                    break;
+
+                case "Виконані":
+                    filtered = allEvents.Where(ev => ev.IsDone);
+                    break;
+
+                case "Прострочені":
+                    filtered = allEvents.Where(ev => !ev.IsDone && ev.Date < DateTime.Now);
+                    break;
+            }
+
+            foreach (var ev in filtered.OrderBy(ev => ev.Date))
+            {
+                string status = ev.IsDone ? "✅" : ev.Date < DateTime.Now ? "⏰" : "";
+                listBoxAllEvents.Items.Add($"{ev.Date:dd.MM.yyyy HH:mm} — {ev.Text} {status}");
+            }
+        }
+        private void btnMarkAsDone_Click(object sender, EventArgs e)
+        {
+            if (listBoxAllEvents.SelectedItem == null) return;
+
+            string selectedText = listBoxAllEvents.SelectedItem.ToString();
+
+            var ev = allEvents.FirstOrDefault(ev =>
+                selectedText.StartsWith($"{ev.Date:dd.MM.yyyy HH:mm} — {ev.Text}"));
+
+            if (ev != null)
+            {
+                ev.IsDone = true;
+                ApplyEventFilter();
+                UpdateCalendarStats();
+            }
+        }
+
+        private void UpdateCalendarAnalytics()
+        {
+            int total = allEvents.Count;
+            int planned = allEvents.Count(ev => ev.Date >= DateTime.Now && !ev.IsDone);
+            int done = allEvents.Count(ev => ev.IsDone);
+            int overdue = allEvents.Count(ev => ev.Date < DateTime.Now && !ev.IsDone);
+
+            lblTotalEvents.Text = total.ToString();
+            lblPlannedEvents.Text = planned.ToString();
+            lblDoneEvents.Text = done.ToString();
+            lblOverdueEvents.Text = overdue.ToString();
+
+            // Найближча подія
+            var next = allEvents
+                .Where(ev => ev.Date >= DateTime.Now && !ev.IsDone)
+                .OrderBy(ev => ev.Date)
+                .FirstOrDefault();
+
+            lblNextEvent.Text = next != null
+                ? $"{next.Date:dd.MM.yyyy HH:mm} — {next.Text}"
+                : "—";
+        }
+
+        private Dictionary<string, int> topicFrequency = new();
+
+        private async Task<string> ClassifyMessageTopic(string message)
+        {
+            string prompt = $"Определи основную тему этого сообщения (1-2 слова, без объяснений): \"{message}\"";
+
+            string response = await GetGPTResponse(prompt);
+
+            return response.Trim().Split('\n').FirstOrDefault()?.Trim() ?? "";
+        }
+
+        private void UpdateTopicChart()
+        {
+            chartTopics.Series.Clear();
+            var series = new Series("Темы")
+            {
+                ChartType = SeriesChartType.Pie
+            };
+
+            foreach (var kvp in topicFrequency)
+            {
+                series.Points.AddXY(kvp.Key, kvp.Value);
+            }
+
+            chartTopics.Series.Add(series);
+        }
+
+
     }
 }

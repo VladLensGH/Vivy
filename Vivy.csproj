@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="HIC.System.Windows.Forms.DataVisualization" Version="1.0.1" />
     <PackageReference Include="Krypton.Docking" Version="95.25.4.111" />
     <PackageReference Include="Krypton.Navigator" Version="95.25.4.111" />
     <PackageReference Include="Krypton.Ribbon" Version="95.25.4.111" />
