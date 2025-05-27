@@ -22,6 +22,8 @@ namespace Vivy
 {
     public partial class FrmMain : Form
     {
+        private List<DateTime> messageTimestamps = new List<DateTime>();
+
         private string currentLogin;
         private Color activeButtonColor;
         private Color inactiveButtonColor;
@@ -411,6 +413,7 @@ namespace Vivy
             }
 
             chatHistory[currentChatTitle].Add(("Вы", userMessage));
+            messageTimestamps.Add(DateTime.Now);
 
             Color mainTextColor = selectedTheme.Trim().StartsWith("Світла", StringComparison.OrdinalIgnoreCase)
                 ? Color.Black
@@ -440,6 +443,7 @@ namespace Vivy
             richTextBox1.ScrollToCaret();
 
             UpdateAnalytics();
+            UpdateTimeChart();
 
             // Обрабатываем тему для аналитики отдельно
             string classifiedTopic = await ClassifyMessageTopic(userMessage);
@@ -1249,6 +1253,51 @@ namespace Vivy
             pieChartTopics.Series = pieSeries;
         }
 
+        private void UpdateTimeChart()
+        {
+            var hourlyGroups = messageTimestamps
+                .GroupBy(t => t.Hour)
+                .OrderBy(g => g.Key)
+                .Select(g => new
+                {
+                    Hour = g.Key,
+                    Count = g.Count()
+                })
+                .ToList();
+
+            var columnSeries = new ColumnSeries<double>
+            {
+                Values = hourlyGroups.Select(g => (double)g.Count).ToList(),
+                Name = "Активность",
+                DataLabelsSize = 14,
+                DataLabelsPaint = new SolidColorPaint(SKColors.White),
+                DataLabelsFormatter = (point) =>
+                    $"Час: {hourlyGroups[point.Index].Hour}\nСообщений: {point.Model}"
+            };
+
+
+
+            chartTopics.Series = new List<ISeries> { columnSeries };
+
+            chartTopics.XAxes = new Axis[]
+            {
+        new Axis
+        {
+            Labels = hourlyGroups.Select(g => g.Hour.ToString()).ToArray(),
+            LabelsPaint = new SolidColorPaint(SKColors.White),
+            TextSize = 16
+        }
+            };
+
+            chartTopics.YAxes = new Axis[]
+            {
+        new Axis
+        {
+            LabelsPaint = new SolidColorPaint(SKColors.White),
+            TextSize = 16
+        }
+            };
+        }
 
 
     }
