@@ -1,5 +1,9 @@
+using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView;
+using LiveChartsCore.SkiaSharpView.WinForms;
 using Microsoft.VisualBasic.Logging;
 using RestSharp;
+using SkiaSharp;
 using System.Drawing.Drawing2D;
 using System.Drawing.Printing;
 using System.Globalization;
@@ -8,7 +12,11 @@ using System.Speech.Synthesis;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
-
+using SkiaSharp;
+using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView;
+using LiveChartsCore.SkiaSharpView.WinForms;
+using LiveChartsCore.SkiaSharpView.Painting;
 
 namespace Vivy
 {
@@ -94,11 +102,14 @@ namespace Vivy
             int nHeightEllipse
         );
 
-        // Конструктор головної форми
+        // Похоже, что ошибка возникает из-за того, что метод UpdateTopicChart вызывается в конструкторе FrmMain ДО вызова InitializeComponent().
+        // В этот момент pieChartTopics ещё не инициализирован, поэтому возникает NullReferenceException.
+        // Исправьте порядок вызова: сначала InitializeComponent(), потом UpdateTopicChart().
+
         public FrmMain(string login)
         {
+            InitializeComponent(); // Сначала инициализация компонентов
 
-            InitializeComponent();
             currentLogin = login;
 
             AddWindowControlButtons();
@@ -115,6 +126,8 @@ namespace Vivy
             SideButtonTextColor = Color.FromArgb(0, 126, 249);
             PanelElementTextColor = Color.White;
             UserNameTextColor = Color.FromArgb(0, 126, 149);
+
+            UpdateTopicChart(); // Только после инициализации компонентов!
         }
         private Dictionary<string, List<(string sender, string message)>> chatHistory = new();
         private string currentChatTitle = "";
@@ -122,6 +135,8 @@ namespace Vivy
         // Подія завантаження форми
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            
+
             LoadAndApplyUserSettings();
 
             // Заокруглюємо кути панелі вводу
@@ -178,6 +193,33 @@ namespace Vivy
              });
             cbEventFilter.SelectedIndex = 0;
             cbEventFilter.SelectedIndexChanged += (s, e) => ApplyEventFilter();
+
+            var darkBackground = SKColors.Transparent; // Или SKColors.DarkSlateGray
+            var darkText = SKColors.White;
+
+            chartTopics.DrawMarginFrame = new DrawMarginFrame
+            {
+                Stroke = null,
+                Fill = new SolidColorPaint(darkBackground)
+            };
+
+            chartTopics.XAxes = new Axis[]
+            {
+        new Axis
+        {
+            LabelsPaint = new SolidColorPaint(darkText),
+            TextSize = 16
+        }
+            };
+
+            chartTopics.YAxes = new Axis[]
+            {
+        new Axis
+        {
+            LabelsPaint = new SolidColorPaint(darkText),
+            TextSize = 16
+        }
+            };
         }
 
         // Обробка натискання на різні кнопки меню для перемикання панелей
@@ -358,8 +400,8 @@ namespace Vivy
 
             if (string.IsNullOrEmpty(currentChatTitle))
             {
-                string topic = ExtractChatTopic(userMessage);
-                currentChatTitle = topic.Length > 30 ? topic.Substring(0, 30) + "..." : topic;
+                string extractedTopic = ExtractChatTopic(userMessage);
+                currentChatTitle = extractedTopic.Length > 30 ? extractedTopic.Substring(0, 30) + "..." : extractedTopic;
 
                 listBoxHistory.Items.Add(currentChatTitle);
                 if (!chatHistory.ContainsKey(currentChatTitle))
@@ -367,7 +409,6 @@ namespace Vivy
                     chatHistory[currentChatTitle] = new List<(string, string)>();
                 }
             }
-
 
             chatHistory[currentChatTitle].Add(("Вы", userMessage));
 
@@ -389,6 +430,7 @@ namespace Vivy
             richTextBox1.AppendText("Vivy: ");
             richTextBox1.SelectionColor = mainTextColor;
             richTextBox1.AppendText(gptResponse + "\n\n");
+
             if (cbSpeakResponses.Checked)
             {
                 synthesizer.SpeakAsync(gptResponse);
@@ -399,15 +441,16 @@ namespace Vivy
 
             UpdateAnalytics();
 
-            string topic = await ClassifyMessageTopic(userMessage);
-            if (!string.IsNullOrWhiteSpace(topic))
+            // Обрабатываем тему для аналитики отдельно
+            string classifiedTopic = await ClassifyMessageTopic(userMessage);
+            if (!string.IsNullOrWhiteSpace(classifiedTopic))
             {
-                if (!topicFrequency.ContainsKey(topic))
-                    topicFrequency[topic] = 0;
-                topicFrequency[topic]++;
+                if (!topicFrequency.ContainsKey(classifiedTopic))
+                    topicFrequency[classifiedTopic] = 0;
+                topicFrequency[classifiedTopic]++;
             }
-
         }
+
 
 
         private void listBoxHistory_SelectedIndexChanged(object sender, EventArgs e)
@@ -885,7 +928,7 @@ namespace Vivy
                 }
             }
 
-            
+
             UpdateCalendarStats();
         }
 
@@ -1162,19 +1205,16 @@ namespace Vivy
 
         private void UpdateTopicChart()
         {
-            chartTopics.Series.Clear();
-            var series = new Series("Темы")
-            {
-                ChartType = SeriesChartType.Pie
-            };
+            var pieSeries = topicFrequency.Select(kvp =>
+                new PieSeries<double>
+                {
+                    Values = new[] { (double)kvp.Value },
+                    Name = kvp.Key
+                }).ToList<ISeries>();
 
-            foreach (var kvp in topicFrequency)
-            {
-                series.Points.AddXY(kvp.Key, kvp.Value);
-            }
-
-            chartTopics.Series.Add(series);
+            pieChartTopics.Series = pieSeries;
         }
+
 
 
     }

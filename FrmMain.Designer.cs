@@ -98,17 +98,21 @@
             label16 = new Label();
             monthCalendar1 = new MonthCalendar();
             panelAnalytics = new Panel();
+            panel6 = new Panel();
+            pieChartTopics = new LiveChartsCore.SkiaSharpView.WinForms.PieChart();
+            panel5 = new Panel();
+            chartTopics = new LiveChartsCore.SkiaSharpView.WinForms.CartesianChart();
             panel4 = new Panel();
             groupBoxCalendarStats = new GroupBox();
-            lblOverdueEvents2 = new Label();
-            lblOverdueEvents = new Label();
-            lblNextEvent = new Label();
-            lblPlannedEvents = new Label();
-            lblDoneEvents = new Label();
             lblTotalEvents = new Label();
             lblTotalEvents2 = new Label();
+            lblPlannedEvents = new Label();
             lblPlannedEvents2 = new Label();
+            lblDoneEvents = new Label();
             lblDoneEvents2 = new Label();
+            lblOverdueEvents = new Label();
+            lblOverdueEvents2 = new Label();
+            lblNextEvent = new Label();
             lblNextEvent2 = new Label();
             panel3 = new Panel();
             btnUpdateAnalytics = new Button();
@@ -154,6 +158,8 @@
             panelAddEventWrapper.SuspendLayout();
             panelCalendarWrapper.SuspendLayout();
             panelAnalytics.SuspendLayout();
+            panel6.SuspendLayout();
+            panel5.SuspendLayout();
             panel4.SuspendLayout();
             groupBoxCalendarStats.SuspendLayout();
             panel3.SuspendLayout();
@@ -728,10 +734,44 @@
             // 
             // panelAnalytics
             // 
+            panelAnalytics.Controls.Add(panel6);
+            panelAnalytics.Controls.Add(panel5);
             panelAnalytics.Controls.Add(panel4);
             panelAnalytics.Controls.Add(panel3);
             resources.ApplyResources(panelAnalytics, "panelAnalytics");
             panelAnalytics.Name = "panelAnalytics";
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Transparent;
+            panel6.BackgroundImage = Properties.Resources.BackgroundBlack;
+            panel6.Controls.Add(pieChartTopics);
+            resources.ApplyResources(panel6, "panel6");
+            panel6.Name = "panel6";
+            // 
+            // pieChartTopics
+            // 
+            pieChartTopics.InitialRotation = 0D;
+            pieChartTopics.IsClockwise = true;
+            resources.ApplyResources(pieChartTopics, "pieChartTopics");
+            pieChartTopics.MaxAngle = 360D;
+            pieChartTopics.MaxValue = double.NaN;
+            pieChartTopics.MinValue = 0D;
+            pieChartTopics.Name = "pieChartTopics";
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.Transparent;
+            panel5.BackgroundImage = Properties.Resources.BackgroundBlack;
+            panel5.Controls.Add(chartTopics);
+            resources.ApplyResources(panel5, "panel5");
+            panel5.Name = "panel5";
+            // 
+            // chartTopics
+            // 
+            resources.ApplyResources(chartTopics, "chartTopics");
+            chartTopics.MatchAxesScreenDataRatio = false;
+            chartTopics.Name = "chartTopics";
             // 
             // panel4
             // 
@@ -759,31 +799,6 @@
             groupBoxCalendarStats.Name = "groupBoxCalendarStats";
             groupBoxCalendarStats.TabStop = false;
             // 
-            // lblOverdueEvents2
-            // 
-            resources.ApplyResources(lblOverdueEvents2, "lblOverdueEvents2");
-            lblOverdueEvents2.Name = "lblOverdueEvents2";
-            // 
-            // lblOverdueEvents
-            // 
-            resources.ApplyResources(lblOverdueEvents, "lblOverdueEvents");
-            lblOverdueEvents.Name = "lblOverdueEvents";
-            // 
-            // lblNextEvent
-            // 
-            resources.ApplyResources(lblNextEvent, "lblNextEvent");
-            lblNextEvent.Name = "lblNextEvent";
-            // 
-            // lblPlannedEvents
-            // 
-            resources.ApplyResources(lblPlannedEvents, "lblPlannedEvents");
-            lblPlannedEvents.Name = "lblPlannedEvents";
-            // 
-            // lblDoneEvents
-            // 
-            resources.ApplyResources(lblDoneEvents, "lblDoneEvents");
-            lblDoneEvents.Name = "lblDoneEvents";
-            // 
             // lblTotalEvents
             // 
             resources.ApplyResources(lblTotalEvents, "lblTotalEvents");
@@ -794,15 +809,40 @@
             resources.ApplyResources(lblTotalEvents2, "lblTotalEvents2");
             lblTotalEvents2.Name = "lblTotalEvents2";
             // 
+            // lblPlannedEvents
+            // 
+            resources.ApplyResources(lblPlannedEvents, "lblPlannedEvents");
+            lblPlannedEvents.Name = "lblPlannedEvents";
+            // 
             // lblPlannedEvents2
             // 
             resources.ApplyResources(lblPlannedEvents2, "lblPlannedEvents2");
             lblPlannedEvents2.Name = "lblPlannedEvents2";
             // 
+            // lblDoneEvents
+            // 
+            resources.ApplyResources(lblDoneEvents, "lblDoneEvents");
+            lblDoneEvents.Name = "lblDoneEvents";
+            // 
             // lblDoneEvents2
             // 
             resources.ApplyResources(lblDoneEvents2, "lblDoneEvents2");
             lblDoneEvents2.Name = "lblDoneEvents2";
+            // 
+            // lblOverdueEvents
+            // 
+            resources.ApplyResources(lblOverdueEvents, "lblOverdueEvents");
+            lblOverdueEvents.Name = "lblOverdueEvents";
+            // 
+            // lblOverdueEvents2
+            // 
+            resources.ApplyResources(lblOverdueEvents2, "lblOverdueEvents2");
+            lblOverdueEvents2.Name = "lblOverdueEvents2";
+            // 
+            // lblNextEvent
+            // 
+            resources.ApplyResources(lblNextEvent, "lblNextEvent");
+            lblNextEvent.Name = "lblNextEvent";
             // 
             // lblNextEvent2
             // 
@@ -991,11 +1031,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             Controls.Add(pnlNaw);
-            Controls.Add(panelAnalytics);
-            Controls.Add(panelAbout);
             Controls.Add(panelCalendar);
             Controls.Add(panelSettings);
             Controls.Add(panelVivy);
+            Controls.Add(panelAnalytics);
+            Controls.Add(panelAbout);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMain";
             Load += FrmMain_Load;
@@ -1025,6 +1065,8 @@
             panelCalendarWrapper.ResumeLayout(false);
             panelCalendarWrapper.PerformLayout();
             panelAnalytics.ResumeLayout(false);
+            panel6.ResumeLayout(false);
+            panel5.ResumeLayout(false);
             panel4.ResumeLayout(false);
             groupBoxCalendarStats.ResumeLayout(false);
             groupBoxCalendarStats.PerformLayout();
@@ -1148,5 +1190,9 @@
         private Button btnMarkAsDone;
         private Label lblOverdueEvents2;
         private Label lblOverdueEvents;
+        private LiveChartsCore.SkiaSharpView.WinForms.CartesianChart chartTopics;
+        private LiveChartsCore.SkiaSharpView.WinForms.PieChart pieChartTopics;
+        private Panel panel5;
+        private Panel panel6;
     }
 }
