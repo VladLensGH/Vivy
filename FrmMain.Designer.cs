@@ -797,6 +797,7 @@
             resources.ApplyResources(groupBoxCalendarStats, "groupBoxCalendarStats");
             groupBoxCalendarStats.Name = "groupBoxCalendarStats";
             groupBoxCalendarStats.TabStop = false;
+            groupBoxCalendarStats.Enter += groupBoxCalendarStats_Enter;
             // 
             // lblTotalEvents
             // 
@@ -1030,11 +1031,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             Controls.Add(pnlNaw);
+            Controls.Add(panelVivy);
+            Controls.Add(panelAnalytics);
             Controls.Add(panelAbout);
             Controls.Add(panelCalendar);
             Controls.Add(panelSettings);
-            Controls.Add(panelVivy);
-            Controls.Add(panelAnalytics);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMain";
             Load += FrmMain_Load;

@@ -5850,7 +5850,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelAbout.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="btnLogout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6273,7 +6273,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelSettings.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="btnMarkAsDone.Location" type="System.Drawing.Point, System.Drawing">
     <value>34, 222</value>
@@ -6786,7 +6786,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelCalendar.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="pieChartTopics.Location" type="System.Drawing.Point, System.Drawing">
     <value>39, 31</value>
@@ -7545,7 +7545,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelAnalytics.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="btnSend.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -7718,13 +7718,13 @@
     <value>321, 51</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 15</value>
+    <value>223, 15</value>
   </data>
   <data name="label13.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
-    <value>"Поставте питання або почніть розмову"</value>
+    <value>Поставте питання або почніть розмову</value>
   </data>
   <data name="&gt;&gt;label13.Name" xml:space="preserve">
     <value>label13</value>
@@ -7874,7 +7874,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelVivy.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>1</value>
   </data>
   <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

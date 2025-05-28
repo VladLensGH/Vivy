@@ -128,6 +128,14 @@ namespace Vivy
             UserNameTextColor = Color.FromArgb(0, 126, 149);
 
             UpdateTopicChart(); // Только после инициализации компонентов!
+
+            RestoreCustomUI();
+
+            LoadChatHistoryFromDb();
+            LoadCalendarEventsFromDb();
+
+            // В конструкторе или методе инициализации формы:
+            textBoxInput.KeyDown += textBoxInput_KeyDown;
         }
         private Dictionary<string, List<(string sender, string message)>> chatHistory = new();
         private string currentChatTitle = "";
@@ -135,7 +143,7 @@ namespace Vivy
         // Подія завантаження форми
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            
+
 
             LoadAndApplyUserSettings();
 
@@ -449,6 +457,8 @@ namespace Vivy
                     topicFrequency[classifiedTopic] = 0;
                 topicFrequency[classifiedTopic]++;
             }
+
+            SaveChatHistoryToDb();
         }
 
 
@@ -469,7 +479,7 @@ namespace Vivy
         }
         private void picUserAvatar_Click(object sender, EventArgs e)
         {
-            using (var profileForm = new FrmProfile(currentLogin))
+            using (var profileForm = new FrmProfile(currentLogin, selectedTheme))
             {
                 if (profileForm.ShowDialog() == DialogResult.OK)
                 {
@@ -539,13 +549,17 @@ namespace Vivy
 
                 this.Controls.Clear();
                 InitializeComponent();
-
+                RestoreCustomUI();
                 cbTheme.SelectedItem = selectedTheme;
                 cbModel.SelectedItem = selectedModel;
                 cbNotifications.Checked = selectedNotifications;
                 cbSpeakResponses.Checked = selectedSpeak;
                 cbSaveHistory.Checked = selectedHistory;
                 cbLanguage.SelectedItem = interfaceLanguage;
+
+
+                Usder.Text = currentLogin;
+                LoadUserAvatar();
 
                 ApplyTheme(theme);
 
@@ -682,6 +696,7 @@ namespace Vivy
                 RedrawChatHistory();
 
             UpdateAboutPanelsTheme();
+            ApplyAnalyticsTheme(theme);
         }
 
         private void ApplyThemeToControl(Control ctrl, Color backColor, Color foreColor, Color buttonBack, Color sideButtonColor, Color panelElementColor, Color userNameColor)
@@ -804,14 +819,20 @@ namespace Vivy
                 ? Color.Black
                 : Color.White;
 
-            foreach (var (senderName, message) in chatHistory[currentChatTitle])
+            var messages = chatHistory[currentChatTitle];
+            for (int i = 0; i < messages.Count; i++)
             {
-                if (senderName == "Вы")
-                    richTextBox1.SelectionColor = Color.DeepSkyBlue;
-                else
+                var (senderName, message) = messages[i];
+                if (i % 2 == 1) // каждое второе сообщение — Vivy
+                {
                     richTextBox1.SelectionColor = Color.MediumPurple;
-
-                richTextBox1.AppendText($"{senderName}: ");
+                    richTextBox1.AppendText("Vivy: ");
+                }
+                else // каждое первое — пользователь
+                {
+                    richTextBox1.SelectionColor = Color.DeepSkyBlue;
+                    richTextBox1.AppendText($"{currentLogin}: ");
+                }
                 richTextBox1.SelectionColor = mainTextColor;
                 richTextBox1.AppendText(message + "\n\n");
             }
@@ -827,26 +848,6 @@ namespace Vivy
 
         }
 
-
-        //private void ApplyLocalization()
-        //{
-        //    this.Text = Properties.Strings.MainFormTitle;
-        //    BtnDashboard.Text = Properties.Strings.Dashboard;
-        //    btnAnalytics.Text = Properties.Strings.Analytics;
-        //    btnCalendar.Text = Properties.Strings.Calendar;
-        //    btnContactUs.Text = Properties.Strings.ContactUs;
-        //    btnsettings.Text = Properties.Strings.Settings;
-        //    btnSend.Text = Properties.Strings.Send;
-        //    // ... і так далі для всіх елементів, які повинні перекладатися
-
-        //    // Приклад для ToolTip:
-        //    toolTip1.SetToolTip(cbNotifications, Properties.Strings.TooltipNotifications);
-        //    toolTip1.SetToolTip(cbSpeakResponses, Properties.Strings.TooltipSpeakResponses);
-        //    toolTip1.SetToolTip(cbSaveHistory, Properties.Strings.TooltipSaveHistory);
-
-        //    // Приклад для LinkLabel:
-        //    linkLabel1.Text = Properties.Strings.LinkLabelText;
-        //}
         private void cbLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbLanguage.SelectedItem is not string selectedCulture || string.IsNullOrWhiteSpace(selectedCulture))
@@ -866,6 +867,11 @@ namespace Vivy
 
             this.Controls.Clear();
             InitializeComponent();
+            RestoreCustomUI();
+
+            Usder.Text = currentLogin;
+            LoadUserAvatar();
+
             ApplyTheme(selectedTheme);
             //ApplyLocalization();
         }
@@ -884,6 +890,43 @@ namespace Vivy
             if (listBoxHistory.SelectedItem != null)
             {
                 string selectedChat = listBoxHistory.SelectedItem.ToString();
+
+                // Удаляем из базы данных
+                int userId = GetUserIdByLogin(currentLogin);
+                if (userId != -1)
+                {
+                    string connectionString = "Data Source=vivy.db";
+                    using var connection = new Microsoft.Data.Sqlite.SqliteConnection(connectionString);
+                    connection.Open();
+
+                    // Получаем Id чата по названию и пользователю
+                    string selectChatId = "SELECT Id FROM Chats WHERE Title = @title AND (User1Id = @userId OR User2Id = @userId)";
+                    using var cmdSelect = new Microsoft.Data.Sqlite.SqliteCommand(selectChatId, connection);
+                    cmdSelect.Parameters.AddWithValue("@title", selectedChat);
+                    cmdSelect.Parameters.AddWithValue("@userId", userId);
+                    var chatIdObj = cmdSelect.ExecuteScalar();
+
+                    if (chatIdObj != null)
+                    {
+                        int chatId = Convert.ToInt32(chatIdObj);
+
+                        // Удаляем сообщения этого чата
+                        string deleteMessages = "DELETE FROM Messages WHERE ChatId = @chatId";
+                        using (var cmdDelMsg = new Microsoft.Data.Sqlite.SqliteCommand(deleteMessages, connection))
+                        {
+                            cmdDelMsg.Parameters.AddWithValue("@chatId", chatId);
+                            cmdDelMsg.ExecuteNonQuery();
+                        }
+
+                        // Удаляем сам чат
+                        string deleteChat = "DELETE FROM Chats WHERE Id = @chatId";
+                        using (var cmdDelChat = new Microsoft.Data.Sqlite.SqliteCommand(deleteChat, connection))
+                        {
+                            cmdDelChat.Parameters.AddWithValue("@chatId", chatId);
+                            cmdDelChat.ExecuteNonQuery();
+                        }
+                    }
+                }
 
                 // Удаляем из истории
                 if (chatHistory.ContainsKey(selectedChat))
@@ -925,6 +968,7 @@ namespace Vivy
             );
 
             allEvents.Add(new Event(fullDateTime, eventText));
+            SaveCalendarEventsToDb();
             UpdateEventsForDate(monthCalendar1.SelectionStart.Date);
             ApplyEventFilter();
 
@@ -1249,7 +1293,289 @@ namespace Vivy
             pieChartTopics.Series = pieSeries;
         }
 
+        private void RestoreCustomUI()
+        {
+            linkLabel1.Links.Clear();
+            linkLabel1.Links.Add(2, 9, "https://crosslang.com");
+            linkLabel1.Links.Add(44, 11, "https://streammind.com");
+            linkLabel1.Links.Add(92, 8, "https://zennote.com");
+
+            // Восстановить закруглённость формы
+            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+
+            // Добавить кастомные кнопки управления окном
+            AddWindowControlButtons();
+
+            // Закруглить панели (повторно)
+            RoundPanelCorners(panelInput, 10);
+            RoundPanelCorners(panelAboutVivy, 15);
+            RoundPanelCorners(panelProjects, 15);
+            RoundPanelCorners(panelContact, 15);
+            RoundPanelCorners(panelSupport, 15);
+            RoundPanelCorners(panelaboutUs, 15);
+            // Добавьте сюда все панели, которые должны быть закруглены
+        }
+
+        private void ApplyAnalyticsTheme(string theme)
+        {
+            Color analyticsBack, analyticsFore, analyticsButtonBack, analyticsTextBoxBack, analyticsTextBoxFore;
+            Image analyticsBackgroundImage;
+            analyticsBack = Color.Transparent;
+            if (theme == "Світла")
+            {
+                analyticsFore = Color.Black;
+                analyticsButtonBack = Color.WhiteSmoke;
+                analyticsTextBoxBack = Color.White;
+                analyticsTextBoxFore = Color.Black;
+                analyticsBackgroundImage = Properties.Resources.BackgroundWhite;
+            }
+            else
+            {
+                analyticsFore = Color.White;
+                analyticsButtonBack = Color.FromArgb(24, 30, 54);
+                analyticsTextBoxBack = Color.FromArgb(46, 51, 73);
+                analyticsTextBoxFore = Color.White;
+                analyticsBackgroundImage = Properties.Resources.BackgroundBlack;
+            }
+
+            // НЕ меняем фон panelAnalytics!
+            // panelAnalytics.BackgroundImage = ...; // Удалено
+
+            // Рекурсивно меняем фон только у вложенных панелей
+            void SetPanelBackgrounds(Control parent)
+            {
+                foreach (Control ctrl in parent.Controls)
+                {
+                    if (ctrl is Panel p)
+                        p.BackgroundImage = analyticsBackgroundImage;
+                    if (ctrl.HasChildren)
+                        SetPanelBackgrounds(ctrl);
+                }
+            }
+            SetPanelBackgrounds(panelAnalytics);
+
+            // Рекурсивная функция для применения темы ко всем контролам
+            void ApplyToAllControls(Control parent)
+            {
+                foreach (Control ctrl in parent.Controls)
+                {
+                    if (ctrl is Panel || ctrl is GroupBox)
+                        ctrl.BackColor = analyticsBack;
+                    if (ctrl is Label l)
+                        l.ForeColor = analyticsFore;
+                    if (ctrl is Button b)
+                    {
+                        b.BackColor = analyticsButtonBack;
+                        b.ForeColor = analyticsFore;
+                    }
+                    if (ctrl is TextBox t)
+                    {
+                        t.BackColor = analyticsTextBoxBack;
+                        t.ForeColor = analyticsTextBoxFore;
+                    }
+                    if (ctrl is ListBox lb)
+                    {
+                        lb.BackColor = analyticsTextBoxBack;
+                        lb.ForeColor = analyticsTextBoxFore;
+                    }
+                    if (ctrl is LiveChartsCore.SkiaSharpView.WinForms.CartesianChart chart)
+                    {
+                        chart.BackColor = analyticsBack;
+                    }
+                    if (ctrl.HasChildren)
+                        ApplyToAllControls(ctrl);
+                }
+            }
+
+            ApplyToAllControls(panelAnalytics);
+        }
+
+        private void groupBoxCalendarStats_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private int GetUserIdByLogin(string login)
+        {
+            string connectionString = "Data Source=vivy.db";
+            using var connection = new Microsoft.Data.Sqlite.SqliteConnection(connectionString);
+            connection.Open();
+            string selectCmd = "SELECT Id FROM Users WHERE Login = @login";
+            using var cmd = new Microsoft.Data.Sqlite.SqliteCommand(selectCmd, connection);
+            cmd.Parameters.AddWithValue("@login", login);
+            var result = cmd.ExecuteScalar();
+            return result != null ? Convert.ToInt32(result) : -1;
+        }
+
+        private void LoadCalendarEventsFromDb()
+        {
+            allEvents.Clear();
+            int userId = GetUserIdByLogin(currentLogin);
+            if (userId == -1) return;
+
+            string connectionString = "Data Source=vivy.db";
+            using var connection = new Microsoft.Data.Sqlite.SqliteConnection(connectionString);
+            connection.Open();
+
+            string selectCmd = "SELECT Date, Title, Description, IsDone FROM Events WHERE OwnerId = @userId";
+            using var cmd = new Microsoft.Data.Sqlite.SqliteCommand(selectCmd, connection);
+            cmd.Parameters.AddWithValue("@userId", userId);
+
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                DateTime date = reader.GetDateTime(0);
+                string text = reader.GetString(1);
+                // string description = reader.IsDBNull(2) ? "" : reader.GetString(2); // если нужно описание
+                bool isDone = !reader.IsDBNull(3) && reader.GetInt32(3) == 1;
+                allEvents.Add(new Event(date, text, isDone));
+            }
+        }
+
+        private void SaveCalendarEventsToDb()
+        {
+            int userId = GetUserIdByLogin(currentLogin);
+            if (userId == -1) return;
+
+            string connectionString = "Data Source=vivy.db";
+            using var connection = new Microsoft.Data.Sqlite.SqliteConnection(connectionString);
+            connection.Open();
+
+            // Удаляем старые события пользователя
+            string deleteCmd = "DELETE FROM Events WHERE OwnerId = @userId";
+            using (var cmd = new Microsoft.Data.Sqlite.SqliteCommand(deleteCmd, connection))
+            {
+                cmd.Parameters.AddWithValue("@userId", userId);
+                cmd.ExecuteNonQuery();
+            }
+
+            // Сохраняем все события
+            foreach (var ev in allEvents)
+            {
+                string insertCmd = @"
+            INSERT INTO Events (Title, Date, OwnerId, IsDone)
+            VALUES (@title, @date, @ownerId, @isDone)";
+                using var cmd = new Microsoft.Data.Sqlite.SqliteCommand(insertCmd, connection);
+                cmd.Parameters.AddWithValue("@title", ev.Text);
+                cmd.Parameters.AddWithValue("@date", ev.Date);
+                cmd.Parameters.AddWithValue("@ownerId", userId);
+                cmd.Parameters.AddWithValue("@isDone", ev.IsDone ? 1 : 0);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void LoadChatHistoryFromDb()
+        {
+            chatHistory.Clear();
+            listBoxHistory.Items.Clear();
+            int userId = GetUserIdByLogin(currentLogin);
+            if (userId == -1) return;
+
+            string connectionString = "Data Source=vivy.db";
+            using var connection = new Microsoft.Data.Sqlite.SqliteConnection(connectionString);
+            connection.Open();
+
+            // Получаем все чаты пользователя (где он User1 или User2)
+            string selectChats = "SELECT Id, Title FROM Chats WHERE User1Id = @userId OR User2Id = @userId";
+            using var cmdChats = new Microsoft.Data.Sqlite.SqliteCommand(selectChats, connection);
+            cmdChats.Parameters.AddWithValue("@userId", userId);
+
+            using var readerChats = cmdChats.ExecuteReader();
+            while (readerChats.Read())
+            {
+                int chatId = readerChats.GetInt32(0);
+                string chatTitle = readerChats.IsDBNull(1) ? $"Чат {chatId}" : readerChats.GetString(1);
+
+                // Загружаем сообщения для этого чата
+                var messages = new List<(string, string)>();
+                string selectMessages = @"
+                    SELECT m.Text, u.Login
+                    FROM Messages m
+                    JOIN Users u ON m.SenderId = u.Id
+                    WHERE m.ChatId = @chatId
+                    ORDER BY m.SentAt";
+                using var cmdMsg = new Microsoft.Data.Sqlite.SqliteCommand(selectMessages, connection);
+                cmdMsg.Parameters.AddWithValue("@chatId", chatId);
+                using var readerMsg = cmdMsg.ExecuteReader();
+                while (readerMsg.Read())
+                {
+                    string text = readerMsg.GetString(0);
+                    string sender = readerMsg.GetString(1);
+                    messages.Add((sender, text));
+                }
+                if (messages.Count > 0)
+                {
+                    chatHistory[chatTitle] = messages;
+                    listBoxHistory.Items.Add(chatTitle);
+                }
+            }
+        }
+
+        private void SaveChatHistoryToDb()
+        {
+            int userId = GetUserIdByLogin(currentLogin);
+            if (userId == -1) return;
+
+            string connectionString = "Data Source=vivy.db";
+            using var connection = new Microsoft.Data.Sqlite.SqliteConnection(connectionString);
+            connection.Open();
+
+            // Для простоты: удаляем все чаты пользователя, сохраняем заново
+            string selectChats = "SELECT Id FROM Chats WHERE User1Id = @userId OR User2Id = @userId";
+            using (var cmd = new Microsoft.Data.Sqlite.SqliteCommand(selectChats, connection))
+            {
+                cmd.Parameters.AddWithValue("@userId", userId);
+                using var reader = cmd.ExecuteReader();
+                var chatIds = new List<int>();
+                while (reader.Read()) chatIds.Add(reader.GetInt32(0));
+                reader.Close();
+
+                foreach (var chatId in chatIds)
+                {
+                    using var delMsg = new Microsoft.Data.Sqlite.SqliteCommand("DELETE FROM Messages WHERE ChatId = @chatId", connection);
+                    delMsg.Parameters.AddWithValue("@chatId", chatId);
+                    delMsg.ExecuteNonQuery();
+
+                    using var delChat = new Microsoft.Data.Sqlite.SqliteCommand("DELETE FROM Chats WHERE Id = @chatId", connection);
+                    delChat.Parameters.AddWithValue("@chatId", chatId);
+                    delChat.ExecuteNonQuery();
+                }
+            }
+
+            // Сохраняем чаты и сообщения
+            foreach (var chat in chatHistory)
+            {
+                // Вставляем чат
+                string insertChat = "INSERT INTO Chats (User1Id, User2Id, Title) VALUES (@u1, @u2, @title); SELECT last_insert_rowid();";
+                using var cmdChat = new Microsoft.Data.Sqlite.SqliteCommand(insertChat, connection);
+                cmdChat.Parameters.AddWithValue("@u1", userId);
+                cmdChat.Parameters.AddWithValue("@u2", userId); // если только пользователь и Vivy, можно userId дважды
+                cmdChat.Parameters.AddWithValue("@title", chat.Key);
+                long chatId = (long)cmdChat.ExecuteScalar();
+
+                // Вставляем сообщения
+                foreach (var (sender, text) in chat.Value)
+                {
+                    int senderId = GetUserIdByLogin(sender) != -1 ? GetUserIdByLogin(sender) : userId;
+                    string insertMsg = "INSERT INTO Messages (ChatId, SenderId, Text, SentAt) VALUES (@chatId, @senderId, @text, @sentAt)";
+                    using var cmdMsg = new Microsoft.Data.Sqlite.SqliteCommand(insertMsg, connection);
+                    cmdMsg.Parameters.AddWithValue("@chatId", chatId);
+                    cmdMsg.Parameters.AddWithValue("@senderId", senderId);
+                    cmdMsg.Parameters.AddWithValue("@text", text);
+                    cmdMsg.Parameters.AddWithValue("@sentAt", DateTime.Now);
+                    cmdMsg.ExecuteNonQuery();
+                }
+            }
+        }
 
 
+        private void textBoxInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // чтобы не добавлялся перевод строки
+                btnSend.PerformClick();    // имитируем нажатие кнопки "Отправить"
+            }
+        }
     }
 }
