@@ -1341,6 +1341,8 @@ namespace Vivy
             TextSize = 16
         }
             };
+
+        }
         private void RestoreCustomUI()
         {
             linkLabel1.Links.Clear();

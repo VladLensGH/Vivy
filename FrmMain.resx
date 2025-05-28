@@ -6537,6 +6537,7 @@
   </data>
   <data name="&gt;&gt;panelSettings.ZOrder" xml:space="preserve">
     <value>4</value>
+	    </data>
   <data name="&gt;&gt;panelAbout.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
@@ -7013,6 +7014,7 @@
   </data>
   <data name="&gt;&gt;panelCalendar.ZOrder" xml:space="preserve">
     <value>3</value>
+	  </data>
   <data name="&gt;&gt;panelSettings.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
