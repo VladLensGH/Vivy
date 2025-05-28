@@ -75,7 +75,7 @@ namespace Vivy
             // 
             // picAvatar
             // 
-            picAvatar.BackColor = Color.FromArgb(46, 51, 73);
+            picAvatar.BackColor = Color.Transparent;
             picAvatar.BorderStyle = BorderStyle.FixedSingle;
             picAvatar.Location = new Point(30, 30);
             picAvatar.Name = "picAvatar";

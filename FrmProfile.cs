@@ -10,12 +10,15 @@ namespace Vivy
     {
         private string currentLogin;
         private string avatarPath;
+        private string selectedTheme = "Темна"; // По умолчанию
         public string NewLogin => txtLogin.Text;
 
 
-        public FrmProfile(string login)
+        public FrmProfile(string login, string theme = "Темна")
         {
             InitializeComponent();
+            selectedTheme = theme;
+            ApplyTheme(selectedTheme);
             currentLogin = login;
             LoadUserProfile();
         }
@@ -118,7 +121,70 @@ namespace Vivy
             this.Close();
         }
 
+        // Застосування теми
+        private void ApplyTheme(string theme)
+        {
+            selectedTheme = theme;
+            Color backColor, foreColor, buttonBack, textBoxBack, textBoxFore;
 
+            if (theme == "Світла")
+            {
+                backColor = Color.WhiteSmoke;
+                foreColor = Color.Black;
+                buttonBack = Color.Gainsboro;
+                textBoxBack = Color.White;
+                textBoxFore = Color.Black;
+            }
+            else
+            {
+                backColor = Color.FromArgb(46, 51, 73);
+                foreColor = Color.White;
+                buttonBack = Color.FromArgb(24, 30, 54);
+                textBoxBack = Color.FromArgb(46, 51, 73);
+                textBoxFore = Color.White;
+            }
+
+            this.BackColor = backColor;
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is Panel panel)
+                    panel.BackColor = backColor;
+                else if (ctrl is Label label)
+                    label.ForeColor = foreColor;
+                else if (ctrl is Button btn)
+                {
+                    btn.BackColor = buttonBack;
+                    btn.ForeColor = foreColor;
+                }
+                else if (ctrl is TextBox tb)
+                {
+                    tb.BackColor = textBoxBack;
+                    tb.ForeColor = textBoxFore;
+                }
+                else if (ctrl is PictureBox pb)
+                {
+                    pb.BackColor = backColor;
+                }
+
+                // Рекурсивно для вложенных контролов
+                foreach (Control child in ctrl.Controls)
+                {
+                    if (child is Label l) l.ForeColor = foreColor;
+                    if (child is Button b)
+                    {
+                        b.BackColor = buttonBack;
+                        b.ForeColor = foreColor;
+                    }
+                    if (child is TextBox t)
+                    {
+                        t.BackColor = textBoxBack;
+                        t.ForeColor = textBoxFore;
+                    }
+                    if (child is Panel p) p.BackColor = backColor;
+                }
+            }
+        }
 
         // Хешування пароля (аналогічно FrmLogin)
         private static (string hash, string salt) HashPassword(string password)

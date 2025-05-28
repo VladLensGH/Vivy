@@ -6537,6 +6537,8 @@
   </data>
   <data name="&gt;&gt;panelSettings.ZOrder" xml:space="preserve">
     <value>4</value>
+  <data name="&gt;&gt;panelAbout.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="btnLogout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -7011,6 +7013,8 @@
   </data>
   <data name="&gt;&gt;panelCalendar.ZOrder" xml:space="preserve">
     <value>3</value>
+  <data name="&gt;&gt;panelSettings.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;btnMarkAsDone.Name" xml:space="preserve">
     <value>btnMarkAsDone</value>
@@ -9067,13 +9071,13 @@
     <value>321, 51</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 15</value>
+    <value>223, 15</value>
   </data>
   <data name="label13.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
-    <value>"Поставте питання або почніть розмову"</value>
+    <value>Поставте питання або почніть розмову</value>
   </data>
   <data name="&gt;&gt;label13.Name" xml:space="preserve">
     <value>label13</value>
@@ -9209,6 +9213,33 @@
   </data>
   <data name="&gt;&gt;richTextBox1.ZOrder" xml:space="preserve">
     <value>7</value>
+  </data>
+  <data name="panelVivy.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelVivy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panelVivy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>951, 577</value>
+  </data>
+  <data name="panelVivy.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="panelVivy.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;panelVivy.Name" xml:space="preserve">
+    <value>panelVivy</value>
+  </data>
+  <data name="&gt;&gt;panelVivy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelVivy.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelVivy.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
