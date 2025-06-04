@@ -17,6 +17,8 @@ using LiveChartsCore;
 using LiveChartsCore.SkiaSharpView;
 using LiveChartsCore.SkiaSharpView.WinForms;
 using LiveChartsCore.SkiaSharpView.Painting;
+using LiveChartsCore.Kernel.Drawing;
+using LiveChartsCore.SkiaSharpView.Painting;
 
 namespace Vivy
 {
@@ -145,6 +147,13 @@ namespace Vivy
         // Подія завантаження форми
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            
+
+            chartTopics.DrawMarginFrame = new DrawMarginFrame
+            {
+                Stroke = null,
+                Fill = new SolidColorPaint(new SKColor(30, 35, 60)) // твой цвет
+            };
 
 
             LoadAndApplyUserSettings();
@@ -1366,6 +1375,73 @@ namespace Vivy
             // Добавьте сюда все панели, которые должны быть закруглены
         }
 
+        private void UpdateTimeChart(string mode = "hours")
+        {
+            List<string> labels;
+            List<double> values;
+
+            if (mode == "days")
+            {
+                var days = messageTimestamps
+                    .GroupBy(t => t.DayOfWeek)
+                    .OrderBy(g => (int)g.Key)
+                    .Select(g => new
+                    {
+                        Day = g.Key.ToString(),
+                        Count = g.Count()
+                    })
+                    .ToList();
+
+                labels = days.Select(d => d.Day).ToList();
+                values = days.Select(d => (double)d.Count).ToList();
+            }
+            else // по часам
+            {
+                var hours = messageTimestamps
+                    .GroupBy(t => t.Hour)
+                    .OrderBy(g => g.Key)
+                    .Select(g => new
+                    {
+                        Hour = g.Key.ToString(),
+                        Count = g.Count()
+                    })
+                    .ToList();
+
+                labels = hours.Select(h => h.Hour).ToList();
+                values = hours.Select(h => (double)h.Count).ToList();
+            }
+
+            var columnSeries = new ColumnSeries<double>
+            {
+                Values = values,
+                Name = "Активность",
+                DataLabelsSize = 14,
+                DataLabelsPaint = new SolidColorPaint(SKColors.White),
+                DataLabelsFormatter = (point) =>
+                    $"{labels[point.Index]}: {point.Model}"
+            };
+
+            chartTopics.Series = new List<ISeries> { columnSeries };
+            chartTopics.XAxes = new Axis[]
+            {
+        new Axis
+        {
+            Labels = labels.ToArray(),
+            LabelsPaint = new SolidColorPaint(SKColors.White),
+            TextSize = 16
+        }
+            };
+            chartTopics.YAxes = new Axis[]
+            {
+        new Axis
+        {
+            LabelsPaint = new SolidColorPaint(SKColors.White),
+            TextSize = 16
+        }
+            };
+        }
+
+
         private void ApplyAnalyticsTheme(string theme)
         {
             Color analyticsBack, analyticsFore, analyticsButtonBack, analyticsTextBoxBack, analyticsTextBoxFore;
@@ -1626,6 +1702,15 @@ namespace Vivy
                 e.SuppressKeyPress = true; // чтобы не добавлялся перевод строки
                 btnSend.PerformClick();    // имитируем нажатие кнопки "Отправить"
             }
+        }
+
+        private void cbTimeViewMode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selected = cbTimeViewMode.SelectedItem?.ToString();
+            if (selected == "По дням недели")
+                UpdateTimeChart("days");
+            else
+                UpdateTimeChart("hours");
         }
     }
 }

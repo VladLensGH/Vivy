@@ -117,123 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;Pnlscroll.Name" xml:space="preserve">
-    <value>Pnlscroll</value>
-  </data>
-  <data name="&gt;&gt;Pnlscroll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Pnlscroll.Parent" xml:space="preserve">
-    <value>pnlNaw</value>
-  </data>
-  <data name="&gt;&gt;Pnlscroll.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnsettings.Name" xml:space="preserve">
-    <value>btnsettings</value>
-  </data>
-  <data name="&gt;&gt;btnsettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnsettings.Parent" xml:space="preserve">
-    <value>pnlNaw</value>
-  </data>
-  <data name="&gt;&gt;btnsettings.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnContactUs.Name" xml:space="preserve">
-    <value>btnContactUs</value>
-  </data>
-  <data name="&gt;&gt;btnContactUs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnContactUs.Parent" xml:space="preserve">
-    <value>pnlNaw</value>
-  </data>
-  <data name="&gt;&gt;btnContactUs.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnCalendar.Name" xml:space="preserve">
-    <value>btnCalendar</value>
-  </data>
-  <data name="&gt;&gt;btnCalendar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCalendar.Parent" xml:space="preserve">
-    <value>pnlNaw</value>
-  </data>
-  <data name="&gt;&gt;btnCalendar.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;btnAnalytics.Name" xml:space="preserve">
-    <value>btnAnalytics</value>
-  </data>
-  <data name="&gt;&gt;btnAnalytics.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAnalytics.Parent" xml:space="preserve">
-    <value>pnlNaw</value>
-  </data>
-  <data name="&gt;&gt;btnAnalytics.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;BtnDashboard.Name" xml:space="preserve">
-    <value>BtnDashboard</value>
-  </data>
-  <data name="&gt;&gt;BtnDashboard.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BtnDashboard.Parent" xml:space="preserve">
-    <value>pnlNaw</value>
-  </data>
-  <data name="&gt;&gt;BtnDashboard.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
-    <value>pnlNaw</value>
-  </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pnlNaw.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pnlNaw.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="pnlNaw.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 577</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pnlNaw.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pnlNaw.Name" xml:space="preserve">
-    <value>pnlNaw</value>
-  </data>
-  <data name="&gt;&gt;pnlNaw.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlNaw.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pnlNaw.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="Pnlscroll.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 193</value>
   </data>
   <data name="Pnlscroll.Size" type="System.Drawing.Size, System.Drawing">
     <value>3, 100</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Pnlscroll.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
@@ -249,6 +140,7 @@
   <data name="&gt;&gt;Pnlscroll.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnsettings.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -669,69 +561,6 @@
   </data>
   <data name="&gt;&gt;BtnDashboard.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <metadata name="Usder.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Usder.Name" xml:space="preserve">
-    <value>Usder</value>
-  </data>
-  <data name="&gt;&gt;Usder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Usder.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;Usder.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;picUserAvatar.Name" xml:space="preserve">
-    <value>picUserAvatar</value>
-  </data>
-  <data name="&gt;&gt;picUserAvatar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;picUserAvatar.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;picUserAvatar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 175</value>
-  </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
-    <value>pnlNaw</value>
-  </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2542,145 +2371,52 @@
   <data name="&gt;&gt;picUserAvatar.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;panelContact.Name" xml:space="preserve">
-    <value>panelContact</value>
+  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
-  <data name="&gt;&gt;panelContact.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelContact.Parent" xml:space="preserve">
-    <value>panelAbout</value>
-  </data>
-  <data name="&gt;&gt;panelContact.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panelaboutUs.Name" xml:space="preserve">
-    <value>panelaboutUs</value>
-  </data>
-  <data name="&gt;&gt;panelaboutUs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelaboutUs.Parent" xml:space="preserve">
-    <value>panelAbout</value>
-  </data>
-  <data name="&gt;&gt;panelaboutUs.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panelSupport.Name" xml:space="preserve">
-    <value>panelSupport</value>
-  </data>
-  <data name="&gt;&gt;panelSupport.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelSupport.Parent" xml:space="preserve">
-    <value>panelAbout</value>
-  </data>
-  <data name="&gt;&gt;panelSupport.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;panelProjects.Name" xml:space="preserve">
-    <value>panelProjects</value>
-  </data>
-  <data name="&gt;&gt;panelProjects.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelProjects.Parent" xml:space="preserve">
-    <value>panelAbout</value>
-  </data>
-  <data name="&gt;&gt;panelProjects.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;panelAboutVivy.Name" xml:space="preserve">
-    <value>panelAboutVivy</value>
-  </data>
-  <data name="&gt;&gt;panelAboutVivy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelAboutVivy.Parent" xml:space="preserve">
-    <value>panelAbout</value>
-  </data>
-  <data name="&gt;&gt;panelAboutVivy.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="panelAbout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panelAbout.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="panelAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>951, 577</value>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 175</value>
   </data>
-  <data name="panelAbout.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;panelAbout.Name" xml:space="preserve">
-    <value>panelAbout</value>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
   </data>
-  <data name="&gt;&gt;panelAbout.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelAbout.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>pnlNaw</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="pnlNaw.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="pnlNaw.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pnlNaw.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 577</value>
+  </data>
+  <data name="pnlNaw.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pnlNaw.Name" xml:space="preserve">
+    <value>pnlNaw</value>
+  </data>
+  <data name="&gt;&gt;pnlNaw.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlNaw.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;panelAbout.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;linkLabel2.Name" xml:space="preserve">
-    <value>linkLabel2</value>
-  </data>
-  <data name="&gt;&gt;linkLabel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;linkLabel2.Parent" xml:space="preserve">
-    <value>panelContact</value>
-  </data>
-  <data name="&gt;&gt;linkLabel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>panelContact</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>panelContact</value>
-  </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panelContact.Location" type="System.Drawing.Point, System.Drawing">
-    <value>598, 261</value>
-  </data>
-  <data name="panelContact.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 134</value>
-  </data>
-  <data name="panelContact.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panelContact.Name" xml:space="preserve">
-    <value>panelContact</value>
-  </data>
-  <data name="&gt;&gt;panelContact.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelContact.Parent" xml:space="preserve">
-    <value>panelAbout</value>
-  </data>
-  <data name="&gt;&gt;panelContact.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pnlNaw.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="linkLabel2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -2773,6 +2509,27 @@
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="panelContact.Location" type="System.Drawing.Point, System.Drawing">
+    <value>598, 261</value>
+  </data>
+  <data name="panelContact.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 134</value>
+  </data>
+  <data name="panelContact.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panelContact.Name" xml:space="preserve">
+    <value>panelContact</value>
+  </data>
+  <data name="&gt;&gt;panelContact.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelContact.Parent" xml:space="preserve">
+    <value>panelAbout</value>
+  </data>
+  <data name="&gt;&gt;panelContact.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="panelaboutUs.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABDoAAAJaCAYAAADOCSfZAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -2844,51 +2601,6 @@
         gg==
 </value>
   </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>panelaboutUs</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>panelaboutUs</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelaboutUs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 261</value>
-  </data>
-  <data name="panelaboutUs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 134</value>
-  </data>
-  <data name="panelaboutUs.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;panelaboutUs.Name" xml:space="preserve">
-    <value>panelaboutUs</value>
-  </data>
-  <data name="&gt;&gt;panelaboutUs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelaboutUs.Parent" xml:space="preserve">
-    <value>panelAbout</value>
-  </data>
-  <data name="&gt;&gt;panelaboutUs.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.1pt</value>
   </data>
@@ -2953,74 +2665,26 @@
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;linkSupportCard.Name" xml:space="preserve">
-    <value>linkSupportCard</value>
+  <data name="panelaboutUs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 261</value>
   </data>
-  <data name="&gt;&gt;linkSupportCard.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panelaboutUs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>364, 134</value>
   </data>
-  <data name="&gt;&gt;linkSupportCard.Parent" xml:space="preserve">
-    <value>panelSupport</value>
+  <data name="panelaboutUs.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
   </data>
-  <data name="&gt;&gt;linkSupportCard.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;panelaboutUs.Name" xml:space="preserve">
+    <value>panelaboutUs</value>
   </data>
-  <data name="&gt;&gt;lblSupportCardText.Name" xml:space="preserve">
-    <value>lblSupportCardText</value>
-  </data>
-  <data name="&gt;&gt;lblSupportCardText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSupportCardText.Parent" xml:space="preserve">
-    <value>panelSupport</value>
-  </data>
-  <data name="&gt;&gt;lblSupportCardText.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>panelSupport</value>
-  </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>panelSupport</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="panelSupport.Location" type="System.Drawing.Point, System.Drawing">
-    <value>259, 428</value>
-  </data>
-  <data name="panelSupport.Size" type="System.Drawing.Size, System.Drawing">
-    <value>630, 114</value>
-  </data>
-  <data name="panelSupport.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;panelSupport.Name" xml:space="preserve">
-    <value>panelSupport</value>
-  </data>
-  <data name="&gt;&gt;panelSupport.Type" xml:space="preserve">
+  <data name="&gt;&gt;panelaboutUs.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelSupport.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panelaboutUs.Parent" xml:space="preserve">
     <value>panelAbout</value>
   </data>
-  <data name="&gt;&gt;panelSupport.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;panelaboutUs.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="linkSupportCard.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3145,50 +2809,26 @@
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
+  <data name="panelSupport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 428</value>
   </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panelSupport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>630, 114</value>
   </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>panelProjects</value>
+  <data name="panelSupport.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
   </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;panelSupport.Name" xml:space="preserve">
+    <value>panelSupport</value>
   </data>
-  <data name="&gt;&gt;linkLabel1.Name" xml:space="preserve">
-    <value>linkLabel1</value>
-  </data>
-  <data name="&gt;&gt;linkLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;linkLabel1.Parent" xml:space="preserve">
-    <value>panelProjects</value>
-  </data>
-  <data name="&gt;&gt;linkLabel1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelProjects.Location" type="System.Drawing.Point, System.Drawing">
-    <value>598, 51</value>
-  </data>
-  <data name="panelProjects.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 187</value>
-  </data>
-  <data name="panelProjects.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;panelProjects.Name" xml:space="preserve">
-    <value>panelProjects</value>
-  </data>
-  <data name="&gt;&gt;panelProjects.Type" xml:space="preserve">
+  <data name="&gt;&gt;panelSupport.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelProjects.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panelSupport.Parent" xml:space="preserve">
     <value>panelAbout</value>
   </data>
-  <data name="&gt;&gt;panelProjects.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;panelSupport.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3256,86 +2896,26 @@
   <data name="&gt;&gt;linkLabel1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;lblAboutTitle.Name" xml:space="preserve">
-    <value>lblAboutTitle</value>
+  <data name="panelProjects.Location" type="System.Drawing.Point, System.Drawing">
+    <value>598, 51</value>
   </data>
-  <data name="&gt;&gt;lblAboutTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panelProjects.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 187</value>
   </data>
-  <data name="&gt;&gt;lblAboutTitle.Parent" xml:space="preserve">
-    <value>panelAboutVivy</value>
+  <data name="panelProjects.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
   </data>
-  <data name="&gt;&gt;lblAboutTitle.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;panelProjects.Name" xml:space="preserve">
+    <value>panelProjects</value>
   </data>
-  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
-    <value>pictureBox2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
-    <value>panelAboutVivy</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblAboutText.Name" xml:space="preserve">
-    <value>lblAboutText</value>
-  </data>
-  <data name="&gt;&gt;lblAboutText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAboutText.Parent" xml:space="preserve">
-    <value>panelAboutVivy</value>
-  </data>
-  <data name="&gt;&gt;lblAboutText.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>panelAboutVivy</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>panelAboutVivy</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="panelAboutVivy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 51</value>
-  </data>
-  <data name="panelAboutVivy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 187</value>
-  </data>
-  <data name="panelAboutVivy.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;panelAboutVivy.Name" xml:space="preserve">
-    <value>panelAboutVivy</value>
-  </data>
-  <data name="&gt;&gt;panelAboutVivy.Type" xml:space="preserve">
+  <data name="&gt;&gt;panelProjects.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelAboutVivy.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panelProjects.Parent" xml:space="preserve">
     <value>panelAbout</value>
   </data>
-  <data name="&gt;&gt;panelAboutVivy.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;panelProjects.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="lblAboutTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6358,188 +5938,50 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;btnLogout.Name" xml:space="preserve">
-    <value>btnLogout</value>
+  <data name="panelAboutVivy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 51</value>
   </data>
-  <data name="&gt;&gt;btnLogout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panelAboutVivy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>364, 187</value>
   </data>
-  <data name="&gt;&gt;btnLogout.Parent" xml:space="preserve">
-    <value>panelSettings</value>
+  <data name="panelAboutVivy.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
   </data>
-  <data name="&gt;&gt;btnLogout.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;panelAboutVivy.Name" xml:space="preserve">
+    <value>panelAboutVivy</value>
   </data>
-  <data name="&gt;&gt;label12.Name" xml:space="preserve">
-    <value>label12</value>
-  </data>
-  <data name="&gt;&gt;label12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
-    <value>panelSettings</value>
-  </data>
-  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cbModel.Name" xml:space="preserve">
-    <value>cbModel</value>
-  </data>
-  <data name="&gt;&gt;cbModel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbModel.Parent" xml:space="preserve">
-    <value>panelSettings</value>
-  </data>
-  <data name="&gt;&gt;cbModel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>panelSettings</value>
-  </data>
-  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;cbSaveHistory.Name" xml:space="preserve">
-    <value>cbSaveHistory</value>
-  </data>
-  <data name="&gt;&gt;cbSaveHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbSaveHistory.Parent" xml:space="preserve">
-    <value>panelSettings</value>
-  </data>
-  <data name="&gt;&gt;cbSaveHistory.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;cbSpeakResponses.Name" xml:space="preserve">
-    <value>cbSpeakResponses</value>
-  </data>
-  <data name="&gt;&gt;cbSpeakResponses.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbSpeakResponses.Parent" xml:space="preserve">
-    <value>panelSettings</value>
-  </data>
-  <data name="&gt;&gt;cbSpeakResponses.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;btnSaveSettings.Name" xml:space="preserve">
-    <value>btnSaveSettings</value>
-  </data>
-  <data name="&gt;&gt;btnSaveSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSaveSettings.Parent" xml:space="preserve">
-    <value>panelSettings</value>
-  </data>
-  <data name="&gt;&gt;btnSaveSettings.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;cbNotifications.Name" xml:space="preserve">
-    <value>cbNotifications</value>
-  </data>
-  <data name="&gt;&gt;cbNotifications.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbNotifications.Parent" xml:space="preserve">
-    <value>panelSettings</value>
-  </data>
-  <data name="&gt;&gt;cbNotifications.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;lblTheme.Name" xml:space="preserve">
-    <value>lblTheme</value>
-  </data>
-  <data name="&gt;&gt;lblTheme.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblTheme.Parent" xml:space="preserve">
-    <value>panelSettings</value>
-  </data>
-  <data name="&gt;&gt;lblTheme.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;cbTheme.Name" xml:space="preserve">
-    <value>cbTheme</value>
-  </data>
-  <data name="&gt;&gt;cbTheme.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbTheme.Parent" xml:space="preserve">
-    <value>panelSettings</value>
-  </data>
-  <data name="&gt;&gt;cbTheme.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;cbLanguage.Name" xml:space="preserve">
-    <value>cbLanguage</value>
-  </data>
-  <data name="&gt;&gt;cbLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbLanguage.Parent" xml:space="preserve">
-    <value>panelSettings</value>
-  </data>
-  <data name="&gt;&gt;cbLanguage.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;lblLanguage.Name" xml:space="preserve">
-    <value>lblLanguage</value>
-  </data>
-  <data name="&gt;&gt;lblLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblLanguage.Parent" xml:space="preserve">
-    <value>panelSettings</value>
-  </data>
-  <data name="&gt;&gt;lblLanguage.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsTitle.Name" xml:space="preserve">
-    <value>lblSettingsTitle</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsTitle.Parent" xml:space="preserve">
-    <value>panelSettings</value>
-  </data>
-  <data name="&gt;&gt;lblSettingsTitle.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="panelSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>186, 0</value>
-  </data>
-  <data name="panelSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>765, 577</value>
-  </data>
-  <data name="panelSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="panelSettings.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;panelSettings.Name" xml:space="preserve">
-    <value>panelSettings</value>
-  </data>
-  <data name="&gt;&gt;panelSettings.Type" xml:space="preserve">
+  <data name="&gt;&gt;panelAboutVivy.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelSettings.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panelAboutVivy.Parent" xml:space="preserve">
+    <value>panelAbout</value>
+  </data>
+  <data name="&gt;&gt;panelAboutVivy.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="panelAbout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelAbout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panelAbout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>951, 577</value>
+  </data>
+  <data name="panelAbout.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;panelAbout.Name" xml:space="preserve">
+    <value>panelAbout</value>
+  </data>
+  <data name="&gt;&gt;panelAbout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelAbout.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;panelSettings.ZOrder" xml:space="preserve">
-    <value>4</value>
-	    </data>
   <data name="&gt;&gt;panelAbout.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="btnLogout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6940,164 +6382,29 @@
   <data name="&gt;&gt;lblSettingsTitle.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
+  <data name="panelSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>186, 0</value>
   </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panelSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>765, 577</value>
   </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>panelCalendar</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+  <data name="panelSettings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;panelEventsWrapper.Name" xml:space="preserve">
-    <value>panelEventsWrapper</value>
-  </data>
-  <data name="&gt;&gt;panelEventsWrapper.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelEventsWrapper.Parent" xml:space="preserve">
-    <value>panelCalendar</value>
-  </data>
-  <data name="&gt;&gt;panelEventsWrapper.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panelAddEventWrapper.Name" xml:space="preserve">
-    <value>panelAddEventWrapper</value>
-  </data>
-  <data name="&gt;&gt;panelAddEventWrapper.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelAddEventWrapper.Parent" xml:space="preserve">
-    <value>panelCalendar</value>
-  </data>
-  <data name="&gt;&gt;panelAddEventWrapper.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;panelCalendarWrapper.Name" xml:space="preserve">
-    <value>panelCalendarWrapper</value>
-  </data>
-  <data name="&gt;&gt;panelCalendarWrapper.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelCalendarWrapper.Parent" xml:space="preserve">
-    <value>panelCalendar</value>
-  </data>
-  <data name="&gt;&gt;panelCalendarWrapper.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="panelCalendar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panelCalendar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panelCalendar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>951, 577</value>
-  </data>
-  <data name="panelCalendar.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="panelCalendar.Visible" type="System.Boolean, mscorlib">
+  <data name="panelSettings.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;panelCalendar.Name" xml:space="preserve">
-    <value>panelCalendar</value>
+  <data name="&gt;&gt;panelSettings.Name" xml:space="preserve">
+    <value>panelSettings</value>
   </data>
-  <data name="&gt;&gt;panelCalendar.Type" xml:space="preserve">
+  <data name="&gt;&gt;panelSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelCalendar.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panelSettings.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;panelCalendar.ZOrder" xml:space="preserve">
-    <value>3</value>
-	  </data>
   <data name="&gt;&gt;panelSettings.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;btnMarkAsDone.Name" xml:space="preserve">
-    <value>btnMarkAsDone</value>
-  </data>
-  <data name="&gt;&gt;btnMarkAsDone.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnMarkAsDone.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;btnMarkAsDone.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;cbEventFilter.Name" xml:space="preserve">
-    <value>cbEventFilter</value>
-  </data>
-  <data name="&gt;&gt;cbEventFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbEventFilter.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;cbEventFilter.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteEvent2.Name" xml:space="preserve">
-    <value>btnDeleteEvent2</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteEvent2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteEvent2.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteEvent2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;listBoxAllEvents.Name" xml:space="preserve">
-    <value>listBoxAllEvents</value>
-  </data>
-  <data name="&gt;&gt;listBoxAllEvents.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listBoxAllEvents.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;listBoxAllEvents.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblAllEventsTitle.Name" xml:space="preserve">
-    <value>lblAllEventsTitle</value>
-  </data>
-  <data name="&gt;&gt;lblAllEventsTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAllEventsTitle.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;lblAllEventsTitle.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 305</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 250</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>panelCalendar</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="btnMarkAsDone.Location" type="System.Drawing.Point, System.Drawing">
     <value>34, 222</value>
@@ -7225,62 +6532,26 @@
   <data name="&gt;&gt;lblAllEventsTitle.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;btnDeleteEvent.Name" xml:space="preserve">
-    <value>btnDeleteEvent</value>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>560, 305</value>
   </data>
-  <data name="&gt;&gt;btnDeleteEvent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>345, 250</value>
   </data>
-  <data name="&gt;&gt;btnDeleteEvent.Parent" xml:space="preserve">
-    <value>panelEventsWrapper</value>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;btnDeleteEvent.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;lblEventsTitle.Name" xml:space="preserve">
-    <value>lblEventsTitle</value>
-  </data>
-  <data name="&gt;&gt;lblEventsTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblEventsTitle.Parent" xml:space="preserve">
-    <value>panelEventsWrapper</value>
-  </data>
-  <data name="&gt;&gt;lblEventsTitle.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;listBoxEvents.Name" xml:space="preserve">
-    <value>listBoxEvents</value>
-  </data>
-  <data name="&gt;&gt;listBoxEvents.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listBoxEvents.Parent" xml:space="preserve">
-    <value>panelEventsWrapper</value>
-  </data>
-  <data name="&gt;&gt;listBoxEvents.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panelEventsWrapper.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 305</value>
-  </data>
-  <data name="panelEventsWrapper.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 250</value>
-  </data>
-  <data name="panelEventsWrapper.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panelEventsWrapper.Name" xml:space="preserve">
-    <value>panelEventsWrapper</value>
-  </data>
-  <data name="&gt;&gt;panelEventsWrapper.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelEventsWrapper.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>panelCalendar</value>
   </data>
-  <data name="&gt;&gt;panelEventsWrapper.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="btnDeleteEvent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -7369,86 +6640,26 @@
   <data name="&gt;&gt;listBoxEvents.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;datePickerEvent.Name" xml:space="preserve">
-    <value>datePickerEvent</value>
+  <data name="panelEventsWrapper.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 305</value>
   </data>
-  <data name="&gt;&gt;datePickerEvent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panelEventsWrapper.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 250</value>
   </data>
-  <data name="&gt;&gt;datePickerEvent.Parent" xml:space="preserve">
-    <value>panelAddEventWrapper</value>
-  </data>
-  <data name="&gt;&gt;datePickerEvent.ZOrder" xml:space="preserve">
+  <data name="panelEventsWrapper.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;label14.Name" xml:space="preserve">
-    <value>label14</value>
+  <data name="&gt;&gt;panelEventsWrapper.Name" xml:space="preserve">
+    <value>panelEventsWrapper</value>
   </data>
-  <data name="&gt;&gt;label14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
-    <value>panelAddEventWrapper</value>
-  </data>
-  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;timePickerEvent.Name" xml:space="preserve">
-    <value>timePickerEvent</value>
-  </data>
-  <data name="&gt;&gt;timePickerEvent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;timePickerEvent.Parent" xml:space="preserve">
-    <value>panelAddEventWrapper</value>
-  </data>
-  <data name="&gt;&gt;timePickerEvent.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;buttonAddEvent.Name" xml:space="preserve">
-    <value>buttonAddEvent</value>
-  </data>
-  <data name="&gt;&gt;buttonAddEvent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonAddEvent.Parent" xml:space="preserve">
-    <value>panelAddEventWrapper</value>
-  </data>
-  <data name="&gt;&gt;buttonAddEvent.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;textBoxNewEvent.Name" xml:space="preserve">
-    <value>textBoxNewEvent</value>
-  </data>
-  <data name="&gt;&gt;textBoxNewEvent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxNewEvent.Parent" xml:space="preserve">
-    <value>panelAddEventWrapper</value>
-  </data>
-  <data name="&gt;&gt;textBoxNewEvent.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="panelAddEventWrapper.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 34</value>
-  </data>
-  <data name="panelAddEventWrapper.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 250</value>
-  </data>
-  <data name="panelAddEventWrapper.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panelAddEventWrapper.Name" xml:space="preserve">
-    <value>panelAddEventWrapper</value>
-  </data>
-  <data name="&gt;&gt;panelAddEventWrapper.Type" xml:space="preserve">
+  <data name="&gt;&gt;panelEventsWrapper.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelAddEventWrapper.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panelEventsWrapper.Parent" xml:space="preserve">
     <value>panelCalendar</value>
   </data>
-  <data name="&gt;&gt;panelAddEventWrapper.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;panelEventsWrapper.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="datePickerEvent.CustomFormat" xml:space="preserve">
     <value>dd.MM.yyyy</value>
@@ -7585,50 +6796,26 @@
   <data name="&gt;&gt;textBoxNewEvent.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;label16.Name" xml:space="preserve">
-    <value>label16</value>
+  <data name="panelAddEventWrapper.Location" type="System.Drawing.Point, System.Drawing">
+    <value>560, 34</value>
   </data>
-  <data name="&gt;&gt;label16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panelAddEventWrapper.Size" type="System.Drawing.Size, System.Drawing">
+    <value>345, 250</value>
   </data>
-  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
-    <value>panelCalendarWrapper</value>
-  </data>
-  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
+  <data name="panelAddEventWrapper.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;monthCalendar1.Name" xml:space="preserve">
-    <value>monthCalendar1</value>
+  <data name="&gt;&gt;panelAddEventWrapper.Name" xml:space="preserve">
+    <value>panelAddEventWrapper</value>
   </data>
-  <data name="&gt;&gt;monthCalendar1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MonthCalendar, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;monthCalendar1.Parent" xml:space="preserve">
-    <value>panelCalendarWrapper</value>
-  </data>
-  <data name="&gt;&gt;monthCalendar1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelCalendarWrapper.Location" type="System.Drawing.Point, System.Drawing">
-    <value>251, 34</value>
-  </data>
-  <data name="panelCalendarWrapper.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 250</value>
-  </data>
-  <data name="panelCalendarWrapper.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panelCalendarWrapper.Name" xml:space="preserve">
-    <value>panelCalendarWrapper</value>
-  </data>
-  <data name="&gt;&gt;panelCalendarWrapper.Type" xml:space="preserve">
+  <data name="&gt;&gt;panelAddEventWrapper.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelCalendarWrapper.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panelAddEventWrapper.Parent" xml:space="preserve">
     <value>panelCalendar</value>
   </data>
-  <data name="&gt;&gt;panelCalendarWrapper.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;panelAddEventWrapper.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="label16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7684,116 +6871,53 @@
   <data name="&gt;&gt;monthCalendar1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;panel6.Name" xml:space="preserve">
-    <value>panel6</value>
+  <data name="panelCalendarWrapper.Location" type="System.Drawing.Point, System.Drawing">
+    <value>251, 34</value>
   </data>
-  <data name="&gt;&gt;panel6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panelCalendarWrapper.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 250</value>
   </data>
-  <data name="&gt;&gt;panel6.Parent" xml:space="preserve">
-    <value>panelAnalytics</value>
-  </data>
-  <data name="&gt;&gt;panel6.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
-    <value>panel5</value>
-  </data>
-  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel5.Parent" xml:space="preserve">
-    <value>panelAnalytics</value>
-  </data>
-  <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
+  <data name="panelCalendarWrapper.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;panel4.Name" xml:space="preserve">
-    <value>panel4</value>
+  <data name="&gt;&gt;panelCalendarWrapper.Name" xml:space="preserve">
+    <value>panelCalendarWrapper</value>
   </data>
-  <data name="&gt;&gt;panel4.Type" xml:space="preserve">
+  <data name="&gt;&gt;panelCalendarWrapper.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
-    <value>panelAnalytics</value>
+  <data name="&gt;&gt;panelCalendarWrapper.Parent" xml:space="preserve">
+    <value>panelCalendar</value>
   </data>
-  <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
-    <value>panelAnalytics</value>
-  </data>
-  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panelCalendarWrapper.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="panelAnalytics.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="panelCalendar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="panelAnalytics.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Black, 12pt, style=Bold</value>
-  </data>
-  <data name="panelAnalytics.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="panelCalendar.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="panelAnalytics.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="panelCalendar.Size" type="System.Drawing.Size, System.Drawing">
     <value>951, 577</value>
   </data>
-  <data name="panelAnalytics.TabIndex" type="System.Int32, mscorlib">
+  <data name="panelCalendar.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="panelAnalytics.Visible" type="System.Boolean, mscorlib">
+  <data name="panelCalendar.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;panelAnalytics.Name" xml:space="preserve">
-    <value>panelAnalytics</value>
+  <data name="&gt;&gt;panelCalendar.Name" xml:space="preserve">
+    <value>panelCalendar</value>
   </data>
-  <data name="&gt;&gt;panelAnalytics.Type" xml:space="preserve">
+  <data name="&gt;&gt;panelCalendar.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelAnalytics.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panelCalendar.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;panelAnalytics.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;pieChartTopics.Name" xml:space="preserve">
-    <value>pieChartTopics</value>
-  </data>
-  <data name="&gt;&gt;pieChartTopics.Type" xml:space="preserve">
-    <value>LiveChartsCore.SkiaSharpView.WinForms.PieChart, LiveChartsCore.SkiaSharpView.WinForms, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;pieChartTopics.Parent" xml:space="preserve">
-    <value>panel6</value>
-  </data>
-  <data name="&gt;&gt;pieChartTopics.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>592, 301</value>
-  </data>
-  <data name="panel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>334, 250</value>
-  </data>
-  <data name="panel6.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="&gt;&gt;panel6.Name" xml:space="preserve">
-    <value>panel6</value>
-  </data>
-  <data name="&gt;&gt;panel6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel6.Parent" xml:space="preserve">
-    <value>panelAnalytics</value>
-  </data>
-  <data name="&gt;&gt;panel6.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;panelCalendar.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="pieChartTopics.Location" type="System.Drawing.Point, System.Drawing">
     <value>39, 31</value>
@@ -7819,6 +6943,102 @@
   <data name="&gt;&gt;pieChartTopics.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="panel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>588, 326</value>
+  </data>
+  <data name="panel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>317, 225</value>
+  </data>
+  <data name="panel6.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;panel6.Name" xml:space="preserve">
+    <value>panel6</value>
+  </data>
+  <data name="&gt;&gt;panel6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel6.Parent" xml:space="preserve">
+    <value>panelAnalytics</value>
+  </data>
+  <data name="&gt;&gt;panel6.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label17.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label17.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 15pt, style=Bold</value>
+  </data>
+  <data name="label17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 7</value>
+  </data>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 28</value>
+  </data>
+  <data name="label17.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Активності користувача</value>
+  </data>
+  <data name="&gt;&gt;label17.Name" xml:space="preserve">
+    <value>label17</value>
+  </data>
+  <data name="&gt;&gt;label17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbTimeViewMode.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 8pt, style=Bold</value>
+  </data>
+  <data name="cbTimeViewMode.Items" xml:space="preserve">
+    <value> • По часам</value>
+  </data>
+  <data name="cbTimeViewMode.Items1" xml:space="preserve">
+    <value> • По дням недели</value>
+  </data>
+  <data name="cbTimeViewMode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>223, 32</value>
+  </data>
+  <data name="cbTimeViewMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <data name="cbTimeViewMode.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;cbTimeViewMode.Name" xml:space="preserve">
+    <value>cbTimeViewMode</value>
+  </data>
+  <data name="&gt;&gt;cbTimeViewMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTimeViewMode.Parent" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;cbTimeViewMode.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chartTopics.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 54</value>
+  </data>
+  <data name="chartTopics.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="chartTopics.Size" type="System.Drawing.Size, System.Drawing">
+    <value>327, 234</value>
+  </data>
+  <data name="chartTopics.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
   <data name="&gt;&gt;chartTopics.Name" xml:space="preserve">
     <value>chartTopics</value>
   </data>
@@ -7829,13 +7049,13 @@
     <value>panel5</value>
   </data>
   <data name="&gt;&gt;chartTopics.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>584, 23</value>
+    <value>564, 23</value>
   </data>
   <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>334, 265</value>
+    <value>354, 297</value>
   </data>
   <data name="panel5.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -7851,207 +7071,6 @@
   </data>
   <data name="&gt;&gt;panel5.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="chartTopics.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 6</value>
-  </data>
-  <data name="chartTopics.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
-  </data>
-  <data name="chartTopics.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 248</value>
-  </data>
-  <data name="chartTopics.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;chartTopics.Name" xml:space="preserve">
-    <value>chartTopics</value>
-  </data>
-  <data name="&gt;&gt;chartTopics.Type" xml:space="preserve">
-    <value>LiveChartsCore.SkiaSharpView.WinForms.CartesianChart, LiveChartsCore.SkiaSharpView.WinForms, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;chartTopics.Parent" xml:space="preserve">
-    <value>panel5</value>
-  </data>
-  <data name="&gt;&gt;chartTopics.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;groupBoxCalendarStats.Name" xml:space="preserve">
-    <value>groupBoxCalendarStats</value>
-  </data>
-  <data name="&gt;&gt;groupBoxCalendarStats.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxCalendarStats.Parent" xml:space="preserve">
-    <value>panel4</value>
-  </data>
-  <data name="&gt;&gt;groupBoxCalendarStats.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 294</value>
-  </data>
-  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>334, 250</value>
-  </data>
-  <data name="panel4.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="&gt;&gt;panel4.Name" xml:space="preserve">
-    <value>panel4</value>
-  </data>
-  <data name="&gt;&gt;panel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
-    <value>panelAnalytics</value>
-  </data>
-  <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblTotalEvents.Name" xml:space="preserve">
-    <value>lblTotalEvents</value>
-  </data>
-  <data name="&gt;&gt;lblTotalEvents.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblTotalEvents.Parent" xml:space="preserve">
-    <value>groupBoxCalendarStats</value>
-  </data>
-  <data name="&gt;&gt;lblTotalEvents.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblTotalEvents2.Name" xml:space="preserve">
-    <value>lblTotalEvents2</value>
-  </data>
-  <data name="&gt;&gt;lblTotalEvents2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblTotalEvents2.Parent" xml:space="preserve">
-    <value>groupBoxCalendarStats</value>
-  </data>
-  <data name="&gt;&gt;lblTotalEvents2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblPlannedEvents.Name" xml:space="preserve">
-    <value>lblPlannedEvents</value>
-  </data>
-  <data name="&gt;&gt;lblPlannedEvents.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblPlannedEvents.Parent" xml:space="preserve">
-    <value>groupBoxCalendarStats</value>
-  </data>
-  <data name="&gt;&gt;lblPlannedEvents.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblPlannedEvents2.Name" xml:space="preserve">
-    <value>lblPlannedEvents2</value>
-  </data>
-  <data name="&gt;&gt;lblPlannedEvents2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblPlannedEvents2.Parent" xml:space="preserve">
-    <value>groupBoxCalendarStats</value>
-  </data>
-  <data name="&gt;&gt;lblPlannedEvents2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblDoneEvents.Name" xml:space="preserve">
-    <value>lblDoneEvents</value>
-  </data>
-  <data name="&gt;&gt;lblDoneEvents.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblDoneEvents.Parent" xml:space="preserve">
-    <value>groupBoxCalendarStats</value>
-  </data>
-  <data name="&gt;&gt;lblDoneEvents.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lblDoneEvents2.Name" xml:space="preserve">
-    <value>lblDoneEvents2</value>
-  </data>
-  <data name="&gt;&gt;lblDoneEvents2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblDoneEvents2.Parent" xml:space="preserve">
-    <value>groupBoxCalendarStats</value>
-  </data>
-  <data name="&gt;&gt;lblDoneEvents2.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;lblOverdueEvents.Name" xml:space="preserve">
-    <value>lblOverdueEvents</value>
-  </data>
-  <data name="&gt;&gt;lblOverdueEvents.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblOverdueEvents.Parent" xml:space="preserve">
-    <value>groupBoxCalendarStats</value>
-  </data>
-  <data name="&gt;&gt;lblOverdueEvents.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;lblOverdueEvents2.Name" xml:space="preserve">
-    <value>lblOverdueEvents2</value>
-  </data>
-  <data name="&gt;&gt;lblOverdueEvents2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblOverdueEvents2.Parent" xml:space="preserve">
-    <value>groupBoxCalendarStats</value>
-  </data>
-  <data name="&gt;&gt;lblOverdueEvents2.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;lblNextEvent.Name" xml:space="preserve">
-    <value>lblNextEvent</value>
-  </data>
-  <data name="&gt;&gt;lblNextEvent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNextEvent.Parent" xml:space="preserve">
-    <value>groupBoxCalendarStats</value>
-  </data>
-  <data name="&gt;&gt;lblNextEvent.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;lblNextEvent2.Name" xml:space="preserve">
-    <value>lblNextEvent2</value>
-  </data>
-  <data name="&gt;&gt;lblNextEvent2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblNextEvent2.Parent" xml:space="preserve">
-    <value>groupBoxCalendarStats</value>
-  </data>
-  <data name="&gt;&gt;lblNextEvent2.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="groupBoxCalendarStats.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 15</value>
-  </data>
-  <data name="groupBoxCalendarStats.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 206</value>
-  </data>
-  <data name="groupBoxCalendarStats.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="groupBoxCalendarStats.Text" xml:space="preserve">
-    <value>Статистика календаря</value>
-  </data>
-  <data name="&gt;&gt;groupBoxCalendarStats.Name" xml:space="preserve">
-    <value>groupBoxCalendarStats</value>
-  </data>
-  <data name="&gt;&gt;groupBoxCalendarStats.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxCalendarStats.Parent" xml:space="preserve">
-    <value>panel4</value>
-  </data>
-  <data name="&gt;&gt;groupBoxCalendarStats.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="lblTotalEvents.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8341,146 +7360,50 @@
   <data name="&gt;&gt;lblNextEvent2.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;btnUpdateAnalytics.Name" xml:space="preserve">
-    <value>btnUpdateAnalytics</value>
+  <data name="groupBoxCalendarStats.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 15</value>
   </data>
-  <data name="&gt;&gt;btnUpdateAnalytics.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="groupBoxCalendarStats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>276, 206</value>
   </data>
-  <data name="&gt;&gt;btnUpdateAnalytics.Parent" xml:space="preserve">
-    <value>panel3</value>
+  <data name="groupBoxCalendarStats.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
-  <data name="&gt;&gt;btnUpdateAnalytics.ZOrder" xml:space="preserve">
+  <data name="groupBoxCalendarStats.Text" xml:space="preserve">
+    <value>Статистика календаря</value>
+  </data>
+  <data name="&gt;&gt;groupBoxCalendarStats.Name" xml:space="preserve">
+    <value>groupBoxCalendarStats</value>
+  </data>
+  <data name="&gt;&gt;groupBoxCalendarStats.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxCalendarStats.Parent" xml:space="preserve">
+    <value>panel4</value>
+  </data>
+  <data name="&gt;&gt;groupBoxCalendarStats.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;lblLongestChat.Name" xml:space="preserve">
-    <value>lblLongestChat</value>
+  <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 294</value>
   </data>
-  <data name="&gt;&gt;lblLongestChat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblLongestChat.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;lblLongestChat.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblAnalyticsTitle.Name" xml:space="preserve">
-    <value>lblAnalyticsTitle</value>
-  </data>
-  <data name="&gt;&gt;lblAnalyticsTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAnalyticsTitle.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;lblAnalyticsTitle.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblAvgResponseLength.Name" xml:space="preserve">
-    <value>lblAvgResponseLength</value>
-  </data>
-  <data name="&gt;&gt;lblAvgResponseLength.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAvgResponseLength.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;lblAvgResponseLength.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblChatsCountTitle.Name" xml:space="preserve">
-    <value>lblChatsCountTitle</value>
-  </data>
-  <data name="&gt;&gt;lblChatsCountTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblChatsCountTitle.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;lblChatsCountTitle.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lblMessagesCount.Name" xml:space="preserve">
-    <value>lblMessagesCount</value>
-  </data>
-  <data name="&gt;&gt;lblMessagesCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblMessagesCount.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;lblMessagesCount.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;lblMessagesCountTitle.Name" xml:space="preserve">
-    <value>lblMessagesCountTitle</value>
-  </data>
-  <data name="&gt;&gt;lblMessagesCountTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblMessagesCountTitle.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;lblMessagesCountTitle.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;lblChatsCount.Name" xml:space="preserve">
-    <value>lblChatsCount</value>
-  </data>
-  <data name="&gt;&gt;lblChatsCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblChatsCount.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;lblChatsCount.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;lblAvgResponseLengthTitle.Name" xml:space="preserve">
-    <value>lblAvgResponseLengthTitle</value>
-  </data>
-  <data name="&gt;&gt;lblAvgResponseLengthTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAvgResponseLengthTitle.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;lblAvgResponseLengthTitle.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;lblLongestChatTitle.Name" xml:space="preserve">
-    <value>lblLongestChatTitle</value>
-  </data>
-  <data name="&gt;&gt;lblLongestChatTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblLongestChatTitle.Parent" xml:space="preserve">
-    <value>panel3</value>
-  </data>
-  <data name="&gt;&gt;lblLongestChatTitle.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 22</value>
-  </data>
-  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
     <value>334, 250</value>
   </data>
-  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+  <data name="panel4.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
   </data>
-  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
-    <value>panel3</value>
+  <data name="&gt;&gt;panel4.Name" xml:space="preserve">
+    <value>panel4</value>
   </data>
-  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel4.Parent" xml:space="preserve">
     <value>panelAnalytics</value>
   </data>
-  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;panel4.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="btnUpdateAnalytics.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -8767,50 +7690,56 @@
   <data name="&gt;&gt;lblLongestChatTitle.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;btnSend.Name" xml:space="preserve">
-    <value>btnSend</value>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 22</value>
   </data>
-  <data name="&gt;&gt;btnSend.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>334, 250</value>
   </data>
-  <data name="&gt;&gt;btnSend.Parent" xml:space="preserve">
-    <value>panelInput</value>
+  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
   </data>
-  <data name="&gt;&gt;btnSend.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
+    <value>panel3</value>
   </data>
-  <data name="&gt;&gt;textBoxInput.Name" xml:space="preserve">
-    <value>textBoxInput</value>
-  </data>
-  <data name="&gt;&gt;textBoxInput.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxInput.Parent" xml:space="preserve">
-    <value>panelInput</value>
-  </data>
-  <data name="&gt;&gt;textBoxInput.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panelInput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 504</value>
-  </data>
-  <data name="panelInput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>507, 45</value>
-  </data>
-  <data name="panelInput.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panelInput.Name" xml:space="preserve">
-    <value>panelInput</value>
-  </data>
-  <data name="&gt;&gt;panelInput.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelInput.Parent" xml:space="preserve">
-    <value>panelVivy</value>
+  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+    <value>panelAnalytics</value>
   </data>
-  <data name="&gt;&gt;panelInput.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panelAnalytics.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelAnalytics.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 12pt, style=Bold</value>
+  </data>
+  <data name="panelAnalytics.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panelAnalytics.Size" type="System.Drawing.Size, System.Drawing">
+    <value>951, 577</value>
+  </data>
+  <data name="panelAnalytics.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="panelAnalytics.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;panelAnalytics.Name" xml:space="preserve">
+    <value>panelAnalytics</value>
+  </data>
+  <data name="&gt;&gt;panelAnalytics.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelAnalytics.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelAnalytics.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="btnSend.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -8868,116 +7797,26 @@
   <data name="&gt;&gt;textBoxInput.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;label15.Name" xml:space="preserve">
-    <value>label15</value>
+  <data name="panelInput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 504</value>
   </data>
-  <data name="&gt;&gt;label15.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="panelInput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>507, 45</value>
   </data>
-  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
-    <value>panelVivy</value>
-  </data>
-  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
+  <data name="panelInput.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;btnClearChat.Name" xml:space="preserve">
-    <value>btnClearChat</value>
+  <data name="&gt;&gt;panelInput.Name" xml:space="preserve">
+    <value>panelInput</value>
   </data>
-  <data name="&gt;&gt;btnClearChat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnClearChat.Parent" xml:space="preserve">
-    <value>panelVivy</value>
-  </data>
-  <data name="&gt;&gt;btnClearChat.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnNewChat.Name" xml:space="preserve">
-    <value>btnNewChat</value>
-  </data>
-  <data name="&gt;&gt;btnNewChat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnNewChat.Parent" xml:space="preserve">
-    <value>panelVivy</value>
-  </data>
-  <data name="&gt;&gt;btnNewChat.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label13.Name" xml:space="preserve">
-    <value>label13</value>
-  </data>
-  <data name="&gt;&gt;label13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
-    <value>panelVivy</value>
-  </data>
-  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;labelvivy.Name" xml:space="preserve">
-    <value>labelvivy</value>
-  </data>
-  <data name="&gt;&gt;labelvivy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelvivy.Parent" xml:space="preserve">
-    <value>panelVivy</value>
-  </data>
-  <data name="&gt;&gt;labelvivy.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;panelHistory.Name" xml:space="preserve">
-    <value>panelHistory</value>
-  </data>
-  <data name="&gt;&gt;panelHistory.Type" xml:space="preserve">
+  <data name="&gt;&gt;panelInput.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelHistory.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panelInput.Parent" xml:space="preserve">
     <value>panelVivy</value>
   </data>
-  <data name="&gt;&gt;panelHistory.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.Name" xml:space="preserve">
-    <value>richTextBox1</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.Parent" xml:space="preserve">
-    <value>panelVivy</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="panelVivy.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panelVivy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panelVivy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>951, 577</value>
-  </data>
-  <data name="panelVivy.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="panelVivy.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;panelVivy.Name" xml:space="preserve">
-    <value>panelVivy</value>
-  </data>
-  <data name="&gt;&gt;panelVivy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelVivy.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panelVivy.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;panelInput.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="label15.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Black, 12pt, style=Bold</value>
@@ -9126,6 +7965,21 @@
   <data name="&gt;&gt;labelvivy.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="listBoxHistory.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="listBoxHistory.ItemHeight" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="listBoxHistory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 17</value>
+  </data>
+  <data name="listBoxHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 395</value>
+  </data>
+  <data name="listBoxHistory.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;listBoxHistory.Name" xml:space="preserve">
     <value>listBoxHistory</value>
   </data>
@@ -9158,33 +8012,6 @@
   </data>
   <data name="&gt;&gt;panelHistory.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="listBoxHistory.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
-  <data name="listBoxHistory.ItemHeight" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="listBoxHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 17</value>
-  </data>
-  <data name="listBoxHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 395</value>
-  </data>
-  <data name="listBoxHistory.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;listBoxHistory.Name" xml:space="preserve">
-    <value>listBoxHistory</value>
-  </data>
-  <data name="&gt;&gt;listBoxHistory.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listBoxHistory.Parent" xml:space="preserve">
-    <value>panelHistory</value>
-  </data>
-  <data name="&gt;&gt;listBoxHistory.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="richTextBox1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -9241,7 +8068,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelVivy.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
