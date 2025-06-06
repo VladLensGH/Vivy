@@ -539,7 +539,6 @@
             resources.ApplyResources(lblTheme, "lblTheme");
             lblTheme.ForeColor = Color.White;
             lblTheme.Name = "lblTheme";
-            lblTheme.Click += lblTheme_Click;
             // 
             // cbTheme
             // 
@@ -782,7 +781,7 @@
             cbTimeViewMode.DropDownStyle = ComboBoxStyle.DropDownList;
             resources.ApplyResources(cbTimeViewMode, "cbTimeViewMode");
             cbTimeViewMode.FormattingEnabled = true;
-            cbTimeViewMode.Items.AddRange(new object[] { resources.GetString("cbTimeViewMode.Items"), resources.GetString("cbTimeViewMode.Items1") });
+            cbTimeViewMode.Items.AddRange(new object[] { resources.GetString("cbTimeViewMode.Items"), resources.GetString("cbTimeViewMode.Items1"), resources.GetString("cbTimeViewMode.Items2"), resources.GetString("cbTimeViewMode.Items3") });
             cbTimeViewMode.Name = "cbTimeViewMode";
             cbTimeViewMode.SelectedIndexChanged += cbTimeViewMode_SelectedIndexChanged;
             // 
@@ -818,7 +817,6 @@
             resources.ApplyResources(groupBoxCalendarStats, "groupBoxCalendarStats");
             groupBoxCalendarStats.Name = "groupBoxCalendarStats";
             groupBoxCalendarStats.TabStop = false;
-            groupBoxCalendarStats.Enter += groupBoxCalendarStats_Enter;
             // 
             // lblTotalEvents
             // 

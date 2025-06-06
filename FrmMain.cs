@@ -1,8 +1,9 @@
 using LiveChartsCore;
 using LiveChartsCore.SkiaSharpView;
+using LiveChartsCore.SkiaSharpView.Painting;
 using LiveChartsCore.SkiaSharpView.WinForms;
+using Microsoft.Data.Sqlite;
 using Microsoft.VisualBasic.Logging;
-using RestSharp;
 using SkiaSharp;
 using System.Drawing.Drawing2D;
 using System.Drawing.Printing;
@@ -12,13 +13,6 @@ using System.Speech.Synthesis;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
-using SkiaSharp;
-using LiveChartsCore;
-using LiveChartsCore.SkiaSharpView;
-using LiveChartsCore.SkiaSharpView.WinForms;
-using LiveChartsCore.SkiaSharpView.Painting;
-using LiveChartsCore.Kernel.Drawing;
-using LiveChartsCore.SkiaSharpView.Painting;
 
 namespace Vivy
 {
@@ -141,20 +135,20 @@ namespace Vivy
             // В конструкторе или методе инициализации формы:
             textBoxInput.KeyDown += textBoxInput_KeyDown;
         }
-        private Dictionary<string, List<(string sender, string message)>> chatHistory = new();
+        private Dictionary<string, List<(string sender, string text, DateTime sentAt)>> chatHistory = new();
         private string currentChatTitle = "";
 
         // Подія завантаження форми
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            
+
 
             chartTopics.DrawMarginFrame = new DrawMarginFrame
             {
                 Stroke = null,
                 Fill = new SolidColorPaint(new SKColor(30, 35, 60)) // твой цвет
             };
-
+            chartTopics.BackColor = Color.FromArgb(30, 35, 60);
 
             LoadAndApplyUserSettings();
 
@@ -216,11 +210,10 @@ namespace Vivy
             var darkBackground = SKColors.Transparent; // Или SKColors.DarkSlateGray
             var darkText = SKColors.White;
 
-            chartTopics.DrawMarginFrame = new DrawMarginFrame
-            {
-                Stroke = null,
-                Fill = new SolidColorPaint(darkBackground)
-            };
+            var analyticsBackgroundColor = selectedTheme == "Світла"
+    ? new SKColor(245, 245, 245) // светлый
+    : new SKColor(30, 35, 60);   // тёмный
+
 
             chartTopics.XAxes = new Axis[]
             {
@@ -239,6 +232,8 @@ namespace Vivy
             TextSize = 16
         }
             };
+            cbTimeViewMode.SelectedIndexChanged += cbTimeViewMode_SelectedIndexChanged;
+
         }
 
         // Обробка натискання на різні кнопки меню для перемикання панелей
@@ -425,12 +420,15 @@ namespace Vivy
                 listBoxHistory.Items.Add(currentChatTitle);
                 if (!chatHistory.ContainsKey(currentChatTitle))
                 {
-                    chatHistory[currentChatTitle] = new List<(string, string)>();
+                    chatHistory[currentChatTitle] = new List<(string sender, string text, DateTime sentAt)>();
                 }
             }
 
-            chatHistory[currentChatTitle].Add(("Вы", userMessage));
-            messageTimestamps.Add(DateTime.Now);
+            string gptResponse = await GetGPTResponse(userMessage);
+            DateTime sentAt = DateTime.Now;
+            chatHistory[currentChatTitle].Add(("Vivy", gptResponse, sentAt));
+            messageTimestamps.Add(sentAt);
+
 
             Color mainTextColor = selectedTheme.Trim().StartsWith("Світла", StringComparison.OrdinalIgnoreCase)
                 ? Color.Black
@@ -443,9 +441,12 @@ namespace Vivy
 
             textBoxInput.Clear();
 
-            string gptResponse = await GetGPTResponse(userMessage);
+            var now = DateTime.Now;
+            chatHistory[currentChatTitle].Add(("Vivy", gptResponse, now));
+            SaveSingleMessageToDb(currentChatTitle, "Vivy", gptResponse, now);
 
-            chatHistory[currentChatTitle].Add(("Vivy", gptResponse));
+            messageTimestamps.Add(now);
+
             richTextBox1.SelectionColor = Color.MediumPurple;
             richTextBox1.AppendText("Vivy: ");
             richTextBox1.SelectionColor = mainTextColor;
@@ -460,7 +461,8 @@ namespace Vivy
             richTextBox1.ScrollToCaret();
 
             UpdateAnalytics();
-            UpdateTimeChart();
+            UpdateTimeChart("days");
+
 
             // Обрабатываем тему для аналитики отдельно
             string classifiedTopic = await ClassifyMessageTopic(userMessage);
@@ -470,10 +472,54 @@ namespace Vivy
                     topicFrequency[classifiedTopic] = 0;
                 topicFrequency[classifiedTopic]++;
             }
-
+            MessageBox.Show("Сохраняем историю чата в БД...");
             SaveChatHistoryToDb();
+
         }
 
+        private void SaveSingleMessageToDb(string chatTitle, string sender, string text, DateTime sentAt)
+        {
+            int userId = GetUserIdByLogin(currentLogin);
+            if (userId == -1) return;
+
+            string connectionString = "Data Source=vivy.db";
+            using var connection = new SqliteConnection(connectionString);
+            connection.Open();
+
+            // Найти ID чата
+            string selectChatId = "SELECT Id FROM Chats WHERE Title = @title AND (User1Id = @userId OR User2Id = @userId)";
+            using var cmdChat = new SqliteCommand(selectChatId, connection);
+            cmdChat.Parameters.AddWithValue("@title", chatTitle);
+            cmdChat.Parameters.AddWithValue("@userId", userId);
+            object result = cmdChat.ExecuteScalar();
+
+            int chatId;
+            if (result == null)
+            {
+                // Чат не найден — создаём
+                string insertChat = "INSERT INTO Chats (User1Id, User2Id, Title) VALUES (@u1, @u2, @title); SELECT last_insert_rowid();";
+                using var insertCmd = new SqliteCommand(insertChat, connection);
+                insertCmd.Parameters.AddWithValue("@u1", userId);
+                insertCmd.Parameters.AddWithValue("@u2", userId);
+                insertCmd.Parameters.AddWithValue("@title", chatTitle);
+                chatId = Convert.ToInt32(insertCmd.ExecuteScalar());
+            }
+            else
+            {
+                chatId = Convert.ToInt32(result);
+            }
+
+            int senderId = GetUserIdByLogin(sender) != -1 ? GetUserIdByLogin(sender) : userId;
+
+            // Добавляем сообщение
+            string insertMsg = "INSERT INTO Messages (ChatId, SenderId, Text, SentAt) VALUES (@chatId, @senderId, @text, @sentAt)";
+            using var cmdMsg = new SqliteCommand(insertMsg, connection);
+            cmdMsg.Parameters.AddWithValue("@chatId", chatId);
+            cmdMsg.Parameters.AddWithValue("@senderId", senderId);
+            cmdMsg.Parameters.AddWithValue("@text", text);
+            cmdMsg.Parameters.AddWithValue("@sentAt", sentAt);
+            cmdMsg.ExecuteNonQuery();
+        }
 
 
         private void listBoxHistory_SelectedIndexChanged(object sender, EventArgs e)
@@ -485,7 +531,8 @@ namespace Vivy
 
             if (!chatHistory.ContainsKey(currentChatTitle))
             {
-                chatHistory[currentChatTitle] = new List<(string, string)>();
+                chatHistory[currentChatTitle] = new List<(string sender, string text, DateTime sentAt)>();
+
             }
 
             RedrawChatHistory();
@@ -835,7 +882,7 @@ namespace Vivy
             var messages = chatHistory[currentChatTitle];
             for (int i = 0; i < messages.Count; i++)
             {
-                var (senderName, message) = messages[i];
+                var (senderName, message, sentAt) = messages[i];
                 if (i % 2 == 1) // каждое второе сообщение — Vivy
                 {
                     richTextBox1.SelectionColor = Color.MediumPurple;
@@ -849,16 +896,6 @@ namespace Vivy
                 richTextBox1.SelectionColor = mainTextColor;
                 richTextBox1.AppendText(message + "\n\n");
             }
-        }
-
-        private void cbTheme_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTheme_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void cbLanguage_SelectedIndexChanged(object sender, EventArgs e)
@@ -1088,7 +1125,7 @@ namespace Vivy
                     longestChatTitle = chat.Key;
                 }
 
-                foreach (var (sender, message) in chat.Value)
+                foreach (var (sender, message, sentAt) in chatHistory[currentChatTitle])
                 {
                     if (sender == "Vivy") // или другой тег, который ты используешь
                     {
@@ -1105,10 +1142,6 @@ namespace Vivy
             lblMessagesCount.Text = totalMessages.ToString();
             lblAvgResponseLength.Text = $"{avgLength} символів";
             lblLongestChat.Text = longestChatTitle;
-        }
-        private void btnUpdateAnalytics_Click(object sender, EventArgs e)
-        {
-
         }
         private void FrmSettings_Load(object sender, EventArgs e)
         {
@@ -1306,52 +1339,6 @@ namespace Vivy
             pieChartTopics.Series = pieSeries;
         }
 
-        private void UpdateTimeChart()
-        {
-            var hourlyGroups = messageTimestamps
-                .GroupBy(t => t.Hour)
-                .OrderBy(g => g.Key)
-                .Select(g => new
-                {
-                    Hour = g.Key,
-                    Count = g.Count()
-                })
-                .ToList();
-
-            var columnSeries = new ColumnSeries<double>
-            {
-                Values = hourlyGroups.Select(g => (double)g.Count).ToList(),
-                Name = "Активность",
-                DataLabelsSize = 14,
-                DataLabelsPaint = new SolidColorPaint(SKColors.White),
-                DataLabelsFormatter = (point) =>
-                    $"Час: {hourlyGroups[point.Index].Hour}\nСообщений: {point.Model}"
-            };
-
-
-
-            chartTopics.Series = new List<ISeries> { columnSeries };
-
-            chartTopics.XAxes = new Axis[]
-            {
-        new Axis
-        {
-            Labels = hourlyGroups.Select(g => g.Hour.ToString()).ToArray(),
-            LabelsPaint = new SolidColorPaint(SKColors.White),
-            TextSize = 16
-        }
-            };
-
-            chartTopics.YAxes = new Axis[]
-            {
-        new Axis
-        {
-            LabelsPaint = new SolidColorPaint(SKColors.White),
-            TextSize = 16
-        }
-            };
-
-        }
         private void RestoreCustomUI()
         {
             linkLabel1.Links.Clear();
@@ -1375,50 +1362,84 @@ namespace Vivy
             // Добавьте сюда все панели, которые должны быть закруглены
         }
 
-        private void UpdateTimeChart(string mode = "hours")
+        private void UpdateTimeChart(string mode = "all")
         {
             List<string> labels;
             List<double> values;
 
-            if (mode == "days")
-            {
-                var days = messageTimestamps
-                    .GroupBy(t => t.DayOfWeek)
-                    .OrderBy(g => (int)g.Key)
-                    .Select(g => new
-                    {
-                        Day = g.Key.ToString(),
-                        Count = g.Count()
-                    })
-                    .ToList();
+            DateTime now = DateTime.Now;
+            IEnumerable<DateTime> filtered = messageTimestamps;
 
-                labels = days.Select(d => d.Day).ToList();
-                values = days.Select(d => (double)d.Count).ToList();
-            }
-            else // по часам
+            if (mode == "day")
             {
-                var hours = messageTimestamps
+                filtered = messageTimestamps.Where(t => t.Date == now.Date);
+                var hours = filtered
                     .GroupBy(t => t.Hour)
                     .OrderBy(g => g.Key)
                     .Select(g => new
                     {
-                        Hour = g.Key.ToString(),
+                        Hour = $"{g.Key:00}:00",
                         Count = g.Count()
-                    })
-                    .ToList();
+                    }).ToList();
 
                 labels = hours.Select(h => h.Hour).ToList();
                 values = hours.Select(h => (double)h.Count).ToList();
+            }
+            else if (mode == "week")
+            {
+                DateTime weekStart = now.Date.AddDays(-(int)now.DayOfWeek + 1); // Пн как начало недели
+                filtered = messageTimestamps.Where(t => t.Date >= weekStart && t.Date <= now.Date);
+
+                var days = filtered
+                    .GroupBy(t => t.Date.DayOfWeek)
+                    .OrderBy(g => (int)g.Key)
+                    .Select(g => new
+                    {
+                        Day = CultureInfo.GetCultureInfo("uk-UA").DateTimeFormat.GetDayName(g.Key),
+                        Count = g.Count()
+                    }).ToList();
+
+                labels = days.Select(d => d.Day).ToList();
+                values = days.Select(d => (double)d.Count).ToList();
+            }
+            else if (mode == "month")
+            {
+                filtered = messageTimestamps.Where(t => t.Date >= now.AddDays(-29).Date && t.Date <= now.Date);
+                var dates = filtered
+                    .GroupBy(t => t.Date)
+                    .OrderBy(g => g.Key)
+                    .Select(g => new
+                    {
+                        Date = g.Key.ToString("dd.MM"),
+                        Count = g.Count()
+                    }).ToList();
+
+                labels = dates.Select(d => d.Date).ToList();
+                values = dates.Select(d => (double)d.Count).ToList();
+            }
+            else // "all"
+            {
+                var dates = filtered
+                    .GroupBy(t => t.Date)
+                    .OrderBy(g => g.Key)
+                    .Select(g => new
+                    {
+                        Date = g.Key.ToString("dd.MM"),
+                        Count = g.Count()
+                    }).ToList();
+
+                labels = dates.Select(d => d.Date).ToList();
+                values = dates.Select(d => (double)d.Count).ToList();
             }
 
             var columnSeries = new ColumnSeries<double>
             {
                 Values = values,
-                Name = "Активность",
+                Name = "Активність",
                 DataLabelsSize = 14,
                 DataLabelsPaint = new SolidColorPaint(SKColors.White),
-                DataLabelsFormatter = (point) =>
-                    $"{labels[point.Index]}: {point.Model}"
+                DataLabelsFormatter = (point) => $"{point.Model}"
+
             };
 
             chartTopics.Series = new List<ISeries> { columnSeries };
@@ -1440,6 +1461,8 @@ namespace Vivy
         }
             };
         }
+
+
 
 
         private void ApplyAnalyticsTheme(string theme)
@@ -1507,6 +1530,8 @@ namespace Vivy
                     if (ctrl is LiveChartsCore.SkiaSharpView.WinForms.CartesianChart chart)
                     {
                         chart.BackColor = analyticsBack;
+                        chartTopics.BackColor = Color.FromArgb(30, 35, 60);
+
                     }
                     if (ctrl.HasChildren)
                         ApplyToAllControls(ctrl);
@@ -1516,10 +1541,6 @@ namespace Vivy
             ApplyToAllControls(panelAnalytics);
         }
 
-        private void groupBoxCalendarStats_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private int GetUserIdByLogin(string login)
         {
@@ -1594,48 +1615,54 @@ namespace Vivy
         {
             chatHistory.Clear();
             listBoxHistory.Items.Clear();
-            int userId = GetUserIdByLogin(currentLogin);
-            if (userId == -1) return;
+            messageTimestamps.Clear();
 
             string connectionString = "Data Source=vivy.db";
             using var connection = new Microsoft.Data.Sqlite.SqliteConnection(connectionString);
             connection.Open();
 
-            // Получаем все чаты пользователя (где он User1 или User2)
-            string selectChats = "SELECT Id, Title FROM Chats WHERE User1Id = @userId OR User2Id = @userId";
-            using var cmdChats = new Microsoft.Data.Sqlite.SqliteCommand(selectChats, connection);
-            cmdChats.Parameters.AddWithValue("@userId", userId);
+            // Загружаем все сообщения текущего пользователя с привязкой к чатам
+            string selectMessages = @"
+        SELECT m.Text, u.Login, m.SentAt, c.Title
+        FROM Messages m
+        JOIN Users u ON m.SenderId = u.Id
+        JOIN Chats c ON m.ChatId = c.Id
+        WHERE u.Login = @login
+        ORDER BY m.SentAt;
+    ";
 
-            using var readerChats = cmdChats.ExecuteReader();
-            while (readerChats.Read())
+            using var cmd = new Microsoft.Data.Sqlite.SqliteCommand(selectMessages, connection);
+            cmd.Parameters.AddWithValue("@login", currentLogin);
+
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
             {
-                int chatId = readerChats.GetInt32(0);
-                string chatTitle = readerChats.IsDBNull(1) ? $"Чат {chatId}" : readerChats.GetString(1);
+                string text = reader.GetString(0);
+                string sender = reader.GetString(1);
+                DateTime timestamp = reader.GetDateTime(2); // Надёжный способ
+                string title = reader.IsDBNull(3) ? "Без названия" : reader.GetString(3);
 
-                // Загружаем сообщения для этого чата
-                var messages = new List<(string, string)>();
-                string selectMessages = @"
-                    SELECT m.Text, u.Login
-                    FROM Messages m
-                    JOIN Users u ON m.SenderId = u.Id
-                    WHERE m.ChatId = @chatId
-                    ORDER BY m.SentAt";
-                using var cmdMsg = new Microsoft.Data.Sqlite.SqliteCommand(selectMessages, connection);
-                cmdMsg.Parameters.AddWithValue("@chatId", chatId);
-                using var readerMsg = cmdMsg.ExecuteReader();
-                while (readerMsg.Read())
-                {
-                    string text = readerMsg.GetString(0);
-                    string sender = readerMsg.GetString(1);
-                    messages.Add((sender, text));
-                }
-                if (messages.Count > 0)
-                {
-                    chatHistory[chatTitle] = messages;
-                    listBoxHistory.Items.Add(chatTitle);
-                }
+                // Добавляем в словарь чата
+                if (!chatHistory.ContainsKey(title))
+                    chatHistory[title] = new List<(string sender, string text, DateTime sentAt)>();
+
+
+                chatHistory[title].Add((sender, text, timestamp));
+                messageTimestamps.Add(timestamp);
+
+ 
+
+
+                // Добавляем в список истории, если ещё нет
+                if (!listBoxHistory.Items.Contains(title))
+                    listBoxHistory.Items.Add(title);
             }
+
         }
+
+
+
+
 
         private void SaveChatHistoryToDb()
         {
@@ -1680,7 +1707,7 @@ namespace Vivy
                 long chatId = (long)cmdChat.ExecuteScalar();
 
                 // Вставляем сообщения
-                foreach (var (sender, text) in chat.Value)
+                foreach (var (sender, text, sentAt) in chat.Value)
                 {
                     int senderId = GetUserIdByLogin(sender) != -1 ? GetUserIdByLogin(sender) : userId;
                     string insertMsg = "INSERT INTO Messages (ChatId, SenderId, Text, SentAt) VALUES (@chatId, @senderId, @text, @sentAt)";
@@ -1688,7 +1715,8 @@ namespace Vivy
                     cmdMsg.Parameters.AddWithValue("@chatId", chatId);
                     cmdMsg.Parameters.AddWithValue("@senderId", senderId);
                     cmdMsg.Parameters.AddWithValue("@text", text);
-                    cmdMsg.Parameters.AddWithValue("@sentAt", DateTime.Now);
+                    cmdMsg.Parameters.AddWithValue("@sentAt", sentAt);
+
                     cmdMsg.ExecuteNonQuery();
                 }
             }
@@ -1706,11 +1734,21 @@ namespace Vivy
 
         private void cbTimeViewMode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selected = cbTimeViewMode.SelectedItem?.ToString();
-            if (selected == "По дням недели")
-                UpdateTimeChart("days");
-            else
-                UpdateTimeChart("hours");
+            string selectedRaw = cbTimeViewMode.SelectedItem?.ToString() ?? "За весь час";
+            string selected = selectedRaw.TrimStart('•', ' ').Trim();
+
+            string mode = selected switch
+            {
+                "За день" => "day",
+                "За тиждень" => "week",
+                "За місяць" => "month",
+                "За весь час" => "all",
+                _ => "all"
+            };
+  
+            UpdateTimeChart(mode);
         }
+
+
     }
 }
