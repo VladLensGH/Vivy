@@ -65,7 +65,6 @@
             label2 = new Label();
             panelSettings = new Panel();
             btnLogout = new Button();
-            label12 = new Label();
             cbModel = new ComboBox();
             label11 = new Label();
             cbSaveHistory = new CheckBox();
@@ -141,6 +140,7 @@
             toolTip1 = new ToolTip(components);
             toolTip2 = new ToolTip(components);
             toolTip3 = new ToolTip(components);
+            checkBox1 = new CheckBox();
             pnlNaw.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picUserAvatar).BeginInit();
@@ -451,8 +451,8 @@
             // panelSettings
             // 
             panelSettings.BackColor = Color.FromArgb(46, 51, 72);
+            panelSettings.Controls.Add(checkBox1);
             panelSettings.Controls.Add(btnLogout);
-            panelSettings.Controls.Add(label12);
             panelSettings.Controls.Add(cbModel);
             panelSettings.Controls.Add(label11);
             panelSettings.Controls.Add(cbSaveHistory);
@@ -475,12 +475,6 @@
             btnLogout.Name = "btnLogout";
             btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
-            // 
-            // label12
-            // 
-            resources.ApplyResources(label12, "label12");
-            label12.ForeColor = Color.White;
-            label12.Name = "label12";
             // 
             // cbModel
             // 
@@ -1025,17 +1019,26 @@
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ReadOnly = true;
             // 
+            // checkBox1
+            // 
+            checkBox1.Checked = true;
+            checkBox1.CheckState = CheckState.Checked;
+            resources.ApplyResources(checkBox1, "checkBox1");
+            checkBox1.ForeColor = Color.White;
+            checkBox1.Name = "checkBox1";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
             // FrmMain
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             Controls.Add(pnlNaw);
+            Controls.Add(panelCalendar);
+            Controls.Add(panelSettings);
             Controls.Add(panelVivy);
             Controls.Add(panelAnalytics);
             Controls.Add(panelAbout);
-            Controls.Add(panelCalendar);
-            Controls.Add(panelSettings);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMain";
             Load += FrmMain_Load;
@@ -1129,7 +1132,6 @@
         private ToolTip toolTip3;
         private ComboBox cbModel;
         private Label label11;
-        private Label label12;
         private Button btnLogout;
         private Label label13;
         private Label labelvivy;
@@ -1195,5 +1197,6 @@
         private LiveChartsCore.SkiaSharpView.WinForms.PieChart pieChartTopics;
         private Panel panel5;
         private Panel panel6;
+        private CheckBox checkBox1;
     }
 }

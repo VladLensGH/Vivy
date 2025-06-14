@@ -554,18 +554,17 @@ namespace Vivy
                 this.Controls.Clear();
                 InitializeComponent();
                 RestoreCustomUI();
+                textBoxInput.KeyDown += textBoxInput_KeyDown; // <-- добавьте эту строку
+                Usder.Text = currentLogin;
+                LoadUserAvatar();
+                ApplyTheme(selectedTheme?.ToString() ?? string.Empty);
+
                 cbTheme.SelectedItem = selectedTheme;
                 cbModel.SelectedItem = selectedModel;
                 cbNotifications.Checked = selectedNotifications;
                 cbSpeakResponses.Checked = selectedSpeak;
                 cbSaveHistory.Checked = selectedHistory;
                 cbLanguage.SelectedItem = interfaceLanguage;
-
-
-                Usder.Text = currentLogin;
-                LoadUserAvatar();
-
-                ApplyTheme(theme);
 
                 // Сохраняем настройки в БД
                 string connectionString = "Data Source=vivy.db";
@@ -872,6 +871,7 @@ namespace Vivy
             this.Controls.Clear();
             InitializeComponent();
             RestoreCustomUI();
+            textBoxInput.KeyDown += textBoxInput_KeyDown; // <-- добавьте эту строку
 
             Usder.Text = currentLogin;
             LoadUserAvatar();
