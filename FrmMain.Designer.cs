@@ -547,6 +547,7 @@
             cbTheme.Items.AddRange(new object[] { resources.GetString("cbTheme.Items"), resources.GetString("cbTheme.Items1") });
             resources.ApplyResources(cbTheme, "cbTheme");
             cbTheme.Name = "cbTheme";
+            cbTheme.SelectedIndexChanged += cbTimeViewMode_SelectedIndexChanged;
             // 
             // cbLanguage
             // 
@@ -555,6 +556,7 @@
             cbLanguage.Items.AddRange(new object[] { resources.GetString("cbLanguage.Items"), resources.GetString("cbLanguage.Items1"), resources.GetString("cbLanguage.Items2") });
             resources.ApplyResources(cbLanguage, "cbLanguage");
             cbLanguage.Name = "cbLanguage";
+            cbLanguage.SelectedIndexChanged += cbLanguage_SelectedIndexChanged;
             // 
             // lblLanguage
             // 
@@ -751,6 +753,7 @@
             // 
             // pieChartTopics
             // 
+            pieChartTopics.BackColor = Color.FromArgb(46, 51, 73);
             pieChartTopics.InitialRotation = 0D;
             pieChartTopics.IsClockwise = true;
             resources.ApplyResources(pieChartTopics, "pieChartTopics");
@@ -1050,11 +1053,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             Controls.Add(pnlNaw);
+            Controls.Add(panelSettings);
+            Controls.Add(panelVivy);
             Controls.Add(panelAnalytics);
             Controls.Add(panelAbout);
             Controls.Add(panelCalendar);
-            Controls.Add(panelSettings);
-            Controls.Add(panelVivy);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMain";
             Load += FrmMain_Load;

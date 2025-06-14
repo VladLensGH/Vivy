@@ -10,6 +10,7 @@ using System.Drawing.Printing;
 using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Speech.Synthesis;
+using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -24,24 +25,24 @@ namespace Vivy
         private Color activeButtonColor;
         private Color inactiveButtonColor;
 
-        // Внутри класса FrmMain
-        private Color sideButtonTextColor = Color.FromArgb(0, 126, 249); // по умолчанию для тёмной темы
-        private Color panelElementTextColor = Color.White;                // по умолчанию для элементов панелей
-        private Color userNameTextColor = Color.FromArgb(0, 126, 149);   // по умолчанию для имени пользователя
+        // Усередині класу FrmMain
+        private Color sideButtonTextColor = Color.FromArgb(0, 126, 249); // за промовчанням для темної теми
+        private Color panelElementTextColor = Color.White;                // за замовчуванням для елементів панелей
+        private Color userNameTextColor = Color.FromArgb(0, 126, 149);   // за промовчанням для імені користувача
 
-        // Для боковых кнопок
+        // Для бічних кнопок
         private Color sideButtonTextColorDark = Color.FromArgb(0, 126, 249);
         private Color sideButtonTextColorLight = Color.Black;
 
-        // Для элементов панелей
+        
         private Color panelElementTextColorDark = Color.White;
         private Color panelElementTextColorLight = Color.Black;
 
-        // Для имени пользователя
+        
         private Color userNameTextColorDark = Color.FromArgb(0, 126, 149);
         private Color userNameTextColorLight = Color.Black;
 
-        // Публичные свойства для изменения из кода
+        // Громадські властивості зміни з коду
         public Color SideButtonTextColor
         {
             get => sideButtonTextColor;
@@ -99,14 +100,21 @@ namespace Vivy
             int nWidthEllipse,
             int nHeightEllipse
         );
+        private static CultureInfo GetCultureFromLanguage(string language)
+        {
+            return language switch
+            {
+                "English" => new CultureInfo("en"),
+                "Deutsch" => new CultureInfo("de"),
+                "Українська" => new CultureInfo("uk"),
+                _ => new CultureInfo("uk")
+            };
+        }
 
-        // Похоже, что ошибка возникает из-за того, что метод UpdateTopicChart вызывается в конструкторе FrmMain ДО вызова InitializeComponent().
-        // В этот момент pieChartTopics ещё не инициализирован, поэтому возникает NullReferenceException.
-        // Исправьте порядок вызова: сначала InitializeComponent(), потом UpdateTopicChart().
 
         public FrmMain(string login)
         {
-            InitializeComponent(); // Сначала инициализация компонентов
+            InitializeComponent(); // Спочатку ініціалізація компонентів
 
             currentLogin = login;
 
@@ -125,14 +133,14 @@ namespace Vivy
             PanelElementTextColor = Color.White;
             UserNameTextColor = Color.FromArgb(0, 126, 149);
 
-            UpdateTopicChart(); // Только после инициализации компонентов!
+            UpdateTopicChart(); 
 
             RestoreCustomUI();
 
             LoadChatHistoryFromDb();
             LoadCalendarEventsFromDb();
 
-            // В конструкторе или методе инициализации формы:
+           
             textBoxInput.KeyDown += textBoxInput_KeyDown;
         }
         private Dictionary<string, List<(string sender, string text, DateTime sentAt)>> chatHistory = new();
@@ -146,7 +154,7 @@ namespace Vivy
             chartTopics.DrawMarginFrame = new DrawMarginFrame
             {
                 Stroke = null,
-                Fill = new SolidColorPaint(new SKColor(30, 35, 60)) // твой цвет
+                Fill = new SolidColorPaint(new SKColor(30, 35, 60)) 
             };
             chartTopics.BackColor = Color.FromArgb(30, 35, 60);
 
@@ -155,7 +163,7 @@ namespace Vivy
             // Заокруглюємо кути панелі вводу
             RoundPanelCorners(panelInput, 10);
 
-            // Встановлюємо текст для LinkLabel українською
+            // Встановлюємо текст для LinkLabel 
             linkLabel1.Text =
                 "• CrossLang — багатомовний перекладач з ІІ\n" +
                 "• StreamMind — генерація сценаріїв для YouTube\n" +
@@ -177,7 +185,7 @@ namespace Vivy
 
             // Додаємо посилання для підтримки
             linkSupportCard.Links.Clear();
-            linkSupportCard.Links.Add(0, linkSupportCard.Text.Length, "https://send.monobank.ua/jar/4441114498935962"); // ← замініть на своє посилання
+            linkSupportCard.Links.Add(0, linkSupportCard.Text.Length, "https://send.monobank.ua/jar/4441114498935962"); 
             Usder.Text = currentLogin;
             LoadUserAvatar();
 
@@ -192,7 +200,7 @@ namespace Vivy
             RoundPanelCorners(panelContact, 15);
             RoundPanelCorners(panelSupport, 15);
             RoundPanelCorners(panelaboutUs, 15);
-            // Добавьте все панели, которые должны быть закруглены
+            //  всі панелі, які мають бути закруглені
 
             UpdateAboutPanelsTheme();
 
@@ -207,12 +215,12 @@ namespace Vivy
             cbEventFilter.SelectedIndex = 0;
             cbEventFilter.SelectedIndexChanged += (s, e) => ApplyEventFilter();
 
-            var darkBackground = SKColors.Transparent; // Или SKColors.DarkSlateGray
+            var darkBackground = SKColors.Transparent; 
             var darkText = SKColors.White;
 
             var analyticsBackgroundColor = selectedTheme == "Світла"
-    ? new SKColor(245, 245, 245) // светлый
-    : new SKColor(30, 35, 60);   // тёмный
+    ? new SKColor(245, 245, 245) // світлий
+    : new SKColor(30, 35, 60);   // Темний
 
 
             chartTopics.XAxes = new Axis[]
@@ -232,7 +240,6 @@ namespace Vivy
             TextSize = 16
         }
             };
-            cbTimeViewMode.SelectedIndexChanged += cbTimeViewMode_SelectedIndexChanged;
 
         }
 
@@ -369,42 +376,53 @@ namespace Vivy
         // Асинхронний метод для отримання відповіді від GPT API
         private async Task<string> GetGPTResponse(string userMessage)
         {
-            string apiKey = "97e3ea64686bdd7d9f3b656af511707f ";
-            string model = "gpt-3.5-turbo";
-            string apiUrl = $"http://195.179.229.119/gpt/api.php?prompt={Uri.EscapeDataString(userMessage)}&api_key={Uri.EscapeDataString(apiKey)}&model={Uri.EscapeDataString(model)}";
+            string apiKey = "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";
+            string apiUrl = "https://openrouter.ai/api/v1/chat/completions";
+
+            var requestBody = new
+            {
+                model = "nous-hermes-2-mistral", // бесплатная мощная модель
+                messages = new[]
+                {
+            new { role = "user", content = userMessage }
+        }
+            };
 
             using (HttpClient client = new HttpClient())
             {
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
+                client.DefaultRequestHeaders.Add("HTTP-Referer", "https://your-app.com"); // можно оставить заглушку
+                client.DefaultRequestHeaders.Add("X-Title", "Vivy AI");
+
+                var content = new StringContent(
+                    JsonSerializer.Serialize(requestBody),
+                    Encoding.UTF8,
+                    "application/json"
+                );
+
                 try
                 {
-                    // Відправляємо GET-запит до API
-                    HttpResponseMessage response = await client.GetAsync(apiUrl);
+                    var response = await client.PostAsync(apiUrl, content);
                     response.EnsureSuccessStatusCode();
                     string responseBody = await response.Content.ReadAsStringAsync();
 
-                    // Парсимо JSON і повертаємо лише поле content
                     using (JsonDocument doc = JsonDocument.Parse(responseBody))
                     {
-                        if (doc.RootElement.TryGetProperty("content", out var contentElement))
-                        {
-                            return contentElement.GetString() ?? string.Empty;
-                        }
-                        else
-                        {
-                            return "Помилка: поле content не знайдено у відповіді.";
-                        }
+                        var root = doc.RootElement;
+                        var message = root.GetProperty("choices")[0]
+                                          .GetProperty("message")
+                                          .GetProperty("content")
+                                          .GetString();
+                        return message ?? "Пустой ответ от модели.";
                     }
                 }
-                catch (HttpRequestException e)
+                catch (Exception ex)
                 {
-                    return $"Помилка запиту: {e.Message}";
-                }
-                catch (JsonException)
-                {
-                    return "Помилка парсингу відповіді від сервера.";
+                    return $"Ошибка: {ex.Message}";
                 }
             }
         }
+
 
         // Обробка натискання кнопки "Відправити" (Send)
         private async void btnSend_Click(object sender, EventArgs e)
@@ -464,13 +482,15 @@ namespace Vivy
             UpdateTimeChart("days");
 
 
-            // Обрабатываем тему для аналитики отдельно
+            // Обробляємо тему для аналітики окремо
             string classifiedTopic = await ClassifyMessageTopic(userMessage);
             if (!string.IsNullOrWhiteSpace(classifiedTopic))
             {
                 if (!topicFrequency.ContainsKey(classifiedTopic))
                     topicFrequency[classifiedTopic] = 0;
                 topicFrequency[classifiedTopic]++;
+                UpdateTopicChart();
+
             }
             MessageBox.Show("Сохраняем историю чата в БД...");
             SaveChatHistoryToDb();
@@ -486,17 +506,18 @@ namespace Vivy
             using var connection = new SqliteConnection(connectionString);
             connection.Open();
 
-            // Найти ID чата
+            // Знайти ID чату
             string selectChatId = "SELECT Id FROM Chats WHERE Title = @title AND (User1Id = @userId OR User2Id = @userId)";
             using var cmdChat = new SqliteCommand(selectChatId, connection);
             cmdChat.Parameters.AddWithValue("@title", chatTitle);
             cmdChat.Parameters.AddWithValue("@userId", userId);
-            object result = cmdChat.ExecuteScalar();
 
+            object result = cmdChat.ExecuteScalar();
             int chatId;
+
             if (result == null)
             {
-                // Чат не найден — создаём
+                // Чат не знайдено - створюємо
                 string insertChat = "INSERT INTO Chats (User1Id, User2Id, Title) VALUES (@u1, @u2, @title); SELECT last_insert_rowid();";
                 using var insertCmd = new SqliteCommand(insertChat, connection);
                 insertCmd.Parameters.AddWithValue("@u1", userId);
@@ -509,9 +530,10 @@ namespace Vivy
                 chatId = Convert.ToInt32(result);
             }
 
-            int senderId = GetUserIdByLogin(sender) != -1 ? GetUserIdByLogin(sender) : userId;
+            int senderId = GetUserIdByLogin(sender);
+            if (senderId == -1) senderId = userId;
 
-            // Добавляем сообщение
+            // Додаємо повідомлення
             string insertMsg = "INSERT INTO Messages (ChatId, SenderId, Text, SentAt) VALUES (@chatId, @senderId, @text, @sentAt)";
             using var cmdMsg = new SqliteCommand(insertMsg, connection);
             cmdMsg.Parameters.AddWithValue("@chatId", chatId);
@@ -521,6 +543,7 @@ namespace Vivy
             cmdMsg.ExecuteNonQuery();
         }
 
+ 
 
         private void listBoxHistory_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -568,7 +591,7 @@ namespace Vivy
             }
             else
             {
-                // Используем стандартный аватар из ресурсов
+                // Використовуємо стандартний аватар із ресурсів
                 picUserAvatar.Image = Properties.Resources.DefaultAvatar;
             }
 
@@ -587,10 +610,10 @@ namespace Vivy
                 if (theme == null || model == null || interfaceLanguage == null)
                     return;
 
-                // Применяем тему
+                // Застосовуємо тему
                 ApplyTheme(theme);
 
-                // Применяем язык интерфейса
+                // Застосовуємо мову інтерфейсу
                 string langCode = interfaceLanguage switch
                 {
                     "Українська" => "uk",
@@ -600,7 +623,7 @@ namespace Vivy
                 };
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo(langCode);
 
-                // Пересоздаём элементы управления для применения языка
+                // Перестворюємо елементи керування для застосування мови
                 var selectedTheme = cbTheme.SelectedItem;
                 var selectedModel = cbModel.SelectedItem;
                 var selectedNotifications = cbNotifications.Checked;
@@ -623,7 +646,7 @@ namespace Vivy
 
                 ApplyTheme(theme);
 
-                // Сохраняем настройки в БД
+                // Зберігаємо налаштування в БД
                 string connectionString = "Data Source=vivy.db";
                 using var connection = new Microsoft.Data.Sqlite.SqliteConnection(connectionString);
                 connection.Open();
@@ -654,7 +677,7 @@ namespace Vivy
 
         private void AddWindowControlButtons()
         {
-            // Создание кнопки "Свернуть"
+            // Створення кнопки "Згорнути"
             Button btnMinimize = new Button
             {
                 Text = "–",
@@ -669,7 +692,7 @@ namespace Vivy
             btnMinimize.FlatAppearance.BorderSize = 0;
             btnMinimize.Click += (s, e) => this.WindowState = FormWindowState.Minimized;
 
-            // Создание кнопки "Закрыть"
+            // Створення кнопки "закрити"
             Button btnClose = new Button
             {
                 Text = "×",
@@ -684,7 +707,7 @@ namespace Vivy
             btnClose.FlatAppearance.BorderSize = 0;
             btnClose.Click += (s, e) => this.Close();
 
-            // Добавляем кнопки на форму (будут поверх всех панелей)
+            // Додаємо кнопки на форму (будуть поверх усіх панелей)
             this.Controls.Add(btnMinimize);
             this.Controls.Add(btnClose);
             btnMinimize.BringToFront();
@@ -694,7 +717,7 @@ namespace Vivy
         private SpeechSynthesizer synthesizer = new SpeechSynthesizer();
 
 
-        // В FrmMain.cs
+        
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -704,7 +727,7 @@ namespace Vivy
                 currentLogin = loginForm.UserLogin;
                 Usder.Text = currentLogin;
                 LoadUserAvatar();
-                LoadAndApplyUserSettings(); // <--- добавьте этот вызов
+                LoadAndApplyUserSettings(); 
                 this.Show();
             }
             else
@@ -713,14 +736,14 @@ namespace Vivy
             }
         }
 
-        private string selectedTheme = "Темна"; // По умолчанию
+        private string selectedTheme = "Темна"; // За замовчуванням
 
         private void ApplyTheme(string theme)
         {
             selectedTheme = theme;
             Color backColor, foreColor, buttonBack;
 
-            // Выбор цветов для текущей темы
+            // Вибір кольорів для поточної теми
             Color sideButtonColor = theme == "Світла" ? sideButtonTextColorLight : sideButtonTextColorDark;
             Color panelElementColor = theme == "Світла" ? panelElementTextColorLight : panelElementTextColorDark;
             Color userNameColor = theme == "Світла" ? userNameTextColorLight : userNameTextColorDark;
@@ -767,7 +790,7 @@ namespace Vivy
             }
             else if (ctrl is Label label)
             {
-                // Имя пользователя (Usder)
+                // Ім'я користувача (Usder)
                 if (label.Name == "Usder")
                     label.ForeColor = userNameColor;
                 else
@@ -776,7 +799,7 @@ namespace Vivy
             else if (ctrl is Button btn)
             {
                 btn.BackColor = buttonBack;
-                // Боковые кнопки
+                // Бічні кнопки
                 if (pnlNaw.Controls.Contains(btn))
                     btn.ForeColor = sideButtonColor;
                 else
@@ -794,19 +817,19 @@ namespace Vivy
             }
             else if (ctrl is RichTextBox rtb)
             {
-                // Только фон, не трогаем ForeColor!
+                // Тільки фон, без ForeColor!
                 if (rtb == richTextBox1 && panelVivy.Controls.Contains(rtb))
                 {
                     if (selectedTheme == "Світла")
                         rtb.BackColor = Color.White;
                     else
                         rtb.BackColor = Color.FromArgb(46, 51, 73);
-                    // Не меняем rtb.ForeColor!
+                    // Не змінюємо rtb.ForeColor!
                 }
                 else
                 {
                     rtb.BackColor = backColor;
-                    // Не меняем rtb.ForeColor!
+                    // Не змінюємо rtb.ForeColor!
                 }
             }
             else if (ctrl is ListBox lb)
@@ -832,7 +855,7 @@ namespace Vivy
                 }
             }
 
-            // Рекурсивно для всех дочерних контролов
+            // Рекурсивно всім дочірніх контролів
             foreach (Control child in ctrl.Controls)
             {
                 ApplyThemeToControl(child, backColor, foreColor, buttonBack, sideButtonColor, panelElementColor, userNameColor);
@@ -857,17 +880,30 @@ namespace Vivy
                 bool speak = !reader.IsDBNull(2) && reader.GetInt32(2) == 1;
                 bool saveHistory = !reader.IsDBNull(3) && reader.GetInt32(3) == 1;
                 string model = reader.IsDBNull(4) ? "gpt-3.5-turbo" : reader.GetString(4);
-                string interfaceLanguage = reader.IsDBNull(5) ? "uk-UA" : reader.GetString(5);
+                string interfaceLanguage = reader.IsDBNull(5) ? "Українська" : reader.GetString(5);
 
                 cbTheme.SelectedItem = theme;
                 cbNotifications.Checked = notifications;
                 cbSpeakResponses.Checked = speak;
                 cbSaveHistory.Checked = saveHistory;
                 cbModel.SelectedItem = model;
-                cbLanguage.SelectedItem = interfaceLanguage;
+
+                cbLanguage.SelectedItem = interfaceLanguage switch
+                {
+                    "uk" or "uk-UA" => "Українська",
+                    "en" => "English",
+                    "de" => "Deutsch",
+                    _ => "Українська"
+                };
+
+                var culture = GetCultureFromLanguage(interfaceLanguage);
+                Thread.CurrentThread.CurrentUICulture = culture;
+                Thread.CurrentThread.CurrentCulture = culture;
+
                 ApplyTheme(theme);
             }
         }
+
 
         private void RedrawChatHistory()
         {
@@ -883,12 +919,12 @@ namespace Vivy
             for (int i = 0; i < messages.Count; i++)
             {
                 var (senderName, message, sentAt) = messages[i];
-                if (i % 2 == 1) // каждое второе сообщение — Vivy
+                if (i % 2 == 1) // кожне друге повідомлення - Vivy
                 {
                     richTextBox1.SelectionColor = Color.MediumPurple;
                     richTextBox1.AppendText("Vivy: ");
                 }
-                else // каждое первое — пользователь
+                else // кожне перше - користувач
                 {
                     richTextBox1.SelectionColor = Color.DeepSkyBlue;
                     richTextBox1.AppendText($"{currentLogin}: ");
@@ -903,17 +939,10 @@ namespace Vivy
             if (cbLanguage.SelectedItem is not string selectedCulture || string.IsNullOrWhiteSpace(selectedCulture))
                 return;
 
-            // Преобразуем язык UI в код культуры
-            string cultureCode = selectedCulture switch
-            {
-                "English" => "en",
-                "Deutsch" => "de",
-                "Українська" => "uk",
-                _ => "uk"
-            };
+            var culture = GetCultureFromLanguage(selectedCulture);
+            Thread.CurrentThread.CurrentUICulture = culture;
+            Thread.CurrentThread.CurrentCulture = culture;
 
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(cultureCode);
-            Thread.CurrentThread.CurrentCulture = new CultureInfo(cultureCode);
 
             this.Controls.Clear();
             InitializeComponent();
@@ -923,12 +952,24 @@ namespace Vivy
             LoadUserAvatar();
 
             ApplyTheme(selectedTheme);
-            //ApplyLocalization();
+
+            // зберігає вибір відразу
+            string connectionString = "Data Source=vivy.db";
+
+            using var connection = new SqliteConnection(connectionString);
+            connection.Open();
+
+            using var cmd = new SqliteCommand("UPDATE Users SET InterfaceLanguage = @lang WHERE Login = @login", connection);
+            cmd.Parameters.AddWithValue("@lang", culture.Name);
+            cmd.Parameters.AddWithValue("@login", currentLogin);
+            //cmd.ExecuteNonQuery();
+
+
         }
 
         private void btnNewChat_Click(object sender, EventArgs e)
         {
-            // Очистить поле и сбросить заголовок чата
+            // Очистити поле та скинути заголовок чату
             textBoxInput.Clear();
             richTextBox1.Clear();
             listBoxHistory.ClearSelected();
@@ -941,7 +982,7 @@ namespace Vivy
             {
                 string selectedChat = listBoxHistory.SelectedItem.ToString();
 
-                // Удаляем из базы данных
+                // Видаляємо з бази даних
                 int userId = GetUserIdByLogin(currentLogin);
                 if (userId != -1)
                 {
@@ -949,7 +990,7 @@ namespace Vivy
                     using var connection = new Microsoft.Data.Sqlite.SqliteConnection(connectionString);
                     connection.Open();
 
-                    // Получаем Id чата по названию и пользователю
+                    // Отримуємо Id чату за назвою та користувачем
                     string selectChatId = "SELECT Id FROM Chats WHERE Title = @title AND (User1Id = @userId OR User2Id = @userId)";
                     using var cmdSelect = new Microsoft.Data.Sqlite.SqliteCommand(selectChatId, connection);
                     cmdSelect.Parameters.AddWithValue("@title", selectedChat);
@@ -960,7 +1001,7 @@ namespace Vivy
                     {
                         int chatId = Convert.ToInt32(chatIdObj);
 
-                        // Удаляем сообщения этого чата
+                        // Видаляємо повідомлення цього чату
                         string deleteMessages = "DELETE FROM Messages WHERE ChatId = @chatId";
                         using (var cmdDelMsg = new Microsoft.Data.Sqlite.SqliteCommand(deleteMessages, connection))
                         {
@@ -968,7 +1009,7 @@ namespace Vivy
                             cmdDelMsg.ExecuteNonQuery();
                         }
 
-                        // Удаляем сам чат
+                        // Видаляємо сам чат
                         string deleteChat = "DELETE FROM Chats WHERE Id = @chatId";
                         using (var cmdDelChat = new Microsoft.Data.Sqlite.SqliteCommand(deleteChat, connection))
                         {
@@ -978,16 +1019,16 @@ namespace Vivy
                     }
                 }
 
-                // Удаляем из истории
+                // Видаляємо з історії
                 if (chatHistory.ContainsKey(selectedChat))
                 {
                     chatHistory.Remove(selectedChat);
                 }
 
-                // Удаляем из списка
+                // Видаляємо зі списку
                 listBoxHistory.Items.Remove(selectedChat);
 
-                // Очищаем поле сообщений
+                // Очищаємо поле повідомлень
                 richTextBox1.Clear();
                 currentChatTitle = "";
             }
@@ -1009,7 +1050,7 @@ namespace Vivy
                 return;
             }
 
-            DateTime selectedDate = datePickerEvent.Value.Date; // <-- тут заменили
+            DateTime selectedDate = datePickerEvent.Value.Date; 
             DateTime selectedTime = timePickerEvent.Value;
 
             DateTime fullDateTime = new DateTime(
@@ -1063,7 +1104,7 @@ namespace Vivy
             {
                 var selected = listBoxAllEvents.SelectedItem.ToString();
 
-                // Пытаемся найти и удалить
+                
                 var item = allEvents.FirstOrDefault(ev =>
                     $"{ev.Date:dd.MM.yyyy HH:mm} — {ev.Text}" == selected);
 
@@ -1072,7 +1113,7 @@ namespace Vivy
                 {
                     allEvents.Remove(item);
                     ApplyEventFilter();
-                    UpdateEventsForDate(monthCalendar1.SelectionStart.Date); // обновим текущую дату
+                    UpdateEventsForDate(monthCalendar1.SelectionStart.Date); // оновимо поточну дату
                     UpdateCalendarStats();
                 }
             }
@@ -1089,7 +1130,7 @@ namespace Vivy
             string selectedItem = listBoxEvents.SelectedItem.ToString();
             DateTime selectedDate = monthCalendar1.SelectionStart.Date;
 
-            // Найти и удалить из allEvents
+            
             var eventToRemove = allEvents
                 .FirstOrDefault(ev => ev.Date.Date == selectedDate && $"{ev.Date:HH:mm} — {ev.Text}" == selectedItem);
 
@@ -1127,7 +1168,7 @@ namespace Vivy
 
                 foreach (var (sender, message, sentAt) in chatHistory[currentChatTitle])
                 {
-                    if (sender == "Vivy") // или другой тег, который ты используешь
+                    if (sender == "Vivy") 
                     {
                         totalGptResponsesLength += message.Length;
                         gptResponsesCount++;
@@ -1137,7 +1178,7 @@ namespace Vivy
 
             int avgLength = gptResponsesCount > 0 ? totalGptResponsesLength / gptResponsesCount : 0;
 
-            // Обновление UI
+            // Оновлення UI
             lblChatsCount.Text = totalChats.ToString();
             lblMessagesCount.Text = totalMessages.ToString();
             lblAvgResponseLength.Text = $"{avgLength} символів";
@@ -1149,13 +1190,13 @@ namespace Vivy
         }
         private string ExtractChatTopic(string message)
         {
-            // Удалим знаки препинания и лишние пробелы
+            // Видалимо розділові знаки і зайві прогалини
             string cleaned = Regex.Replace(message.ToLower(), @"[^\w\s]", "").Trim();
 
-            // Разобьём на слова
+            // Розіб'ємо на слова
             var words = cleaned.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
-            // Возьмём максимум 2–4 слова с конца (они часто самые важные)
+            // Візьмемо максимум 2-4 слова з кінця (вони часто найважливіші)
             var topicWords = words.Skip(Math.Max(0, words.Length - 4)).ToArray();
 
             return string.Join(" ", topicWords);
@@ -1163,11 +1204,11 @@ namespace Vivy
 
         private void UpdateAboutPanelsTheme()
         {
-            // Цвета для светлой и темной темы
+            // Кольори для світлої та темної теми
             Color checkBoxForeColor = selectedTheme == "Світла" ? Color.Black : Color.White;
             Color checkBoxBackColor = selectedTheme == "Світла" ? Color.WhiteSmoke : Color.FromArgb(46, 51, 73);
 
-            // Панели и фоновые картинки
+            // Панелі та фонові картинки
             if (selectedTheme == "Світла")
             {
                 panelAboutVivy.BackgroundImage = Properties.Resources.BackgroundWhite;
@@ -1191,7 +1232,7 @@ namespace Vivy
                 linkSupportCard.LinkColor = Color.Blue;
             }
 
-            // Чекбоксы — цвет текста и фона
+            // Чекбокси - колір тексту та фону
             cbNotifications.ForeColor = checkBoxForeColor;
             cbNotifications.BackColor = checkBoxBackColor;
             cbSpeakResponses.ForeColor = checkBoxForeColor;
@@ -1329,15 +1370,37 @@ namespace Vivy
 
         private void UpdateTopicChart()
         {
-            var pieSeries = topicFrequency.Select(kvp =>
-                new PieSeries<double>
+            var textColor = selectedTheme == "Світла" ? SKColors.Black : SKColors.White;
+
+            var topTopics = topicFrequency
+                .OrderByDescending(kvp => kvp.Value)
+                .Take(6)
+                .ToList();
+
+            double total = topTopics.Sum(kvp => kvp.Value);
+
+            pieChartTopics.Series = topTopics
+                .Select(kvp => new PieSeries<double>
                 {
                     Values = new[] { (double)kvp.Value },
-                    Name = kvp.Key
-                }).ToList<ISeries>();
+                    Name = kvp.Key,
+                    DataLabelsPosition = LiveChartsCore.Measure.PolarLabelsPosition.Middle,
+                    DataLabelsPaint = new SolidColorPaint(textColor),
+                    DataLabelsSize = 14,
+                    DataLabelsFormatter = point =>
+                    {
+                        double percent = total > 0 ? (point.Model / total) * 100 : 0;
+                        return $"{point.Model} ({percent:F0}%)";
+                    }
+                })
+                .ToList<ISeries>();
+            
+            if (topicFrequency.Count == 0) ;
 
-            pieChartTopics.Series = pieSeries;
+
         }
+
+
 
         private void RestoreCustomUI()
         {
@@ -1346,20 +1409,20 @@ namespace Vivy
             linkLabel1.Links.Add(44, 11, "https://streammind.com");
             linkLabel1.Links.Add(92, 8, "https://zennote.com");
 
-            // Восстановить закруглённость формы
+            // Відновити закругленість форми
             this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
 
-            // Добавить кастомные кнопки управления окном
+            // Додати кастомні кнопки керування вікном
             AddWindowControlButtons();
 
-            // Закруглить панели (повторно)
+            // Закруглити панелі (повторно)
             RoundPanelCorners(panelInput, 10);
             RoundPanelCorners(panelAboutVivy, 15);
             RoundPanelCorners(panelProjects, 15);
             RoundPanelCorners(panelContact, 15);
             RoundPanelCorners(panelSupport, 15);
             RoundPanelCorners(panelaboutUs, 15);
-            // Добавьте сюда все панели, которые должны быть закруглены
+            // Додайте сюди всі панелі, які мають бути закруглені
         }
 
         private void UpdateTimeChart(string mode = "all")
@@ -1387,7 +1450,7 @@ namespace Vivy
             }
             else if (mode == "week")
             {
-                DateTime weekStart = now.Date.AddDays(-(int)now.DayOfWeek + 1); // Пн как начало недели
+                DateTime weekStart = now.Date.AddDays(-(int)now.DayOfWeek + 1); // Понеділок як початок тижня
                 filtered = messageTimestamps.Where(t => t.Date >= weekStart && t.Date <= now.Date);
 
                 var days = filtered
@@ -1444,14 +1507,18 @@ namespace Vivy
 
             chartTopics.Series = new List<ISeries> { columnSeries };
             chartTopics.XAxes = new Axis[]
-            {
-        new Axis
-        {
-            Labels = labels.ToArray(),
-            LabelsPaint = new SolidColorPaint(SKColors.White),
-            TextSize = 16
-        }
-            };
+ {
+    new Axis
+    {
+        Labels = labels.ToArray(),                    // Дати під кожним стовпцем
+        LabelsPaint = new SolidColorPaint(SKColors.White),
+        TextSize = 16,
+        NamePaint = null,
+        SeparatorsPaint = null,
+        TicksPaint = null
+    }
+ };
+
             chartTopics.YAxes = new Axis[]
             {
         new Axis
@@ -1487,10 +1554,7 @@ namespace Vivy
                 analyticsBackgroundImage = Properties.Resources.BackgroundBlack;
             }
 
-            // НЕ меняем фон panelAnalytics!
-            // panelAnalytics.BackgroundImage = ...; // Удалено
-
-            // Рекурсивно меняем фон только у вложенных панелей
+            // Рекурсивно змінюємо фон лише у вкладених панелей
             void SetPanelBackgrounds(Control parent)
             {
                 foreach (Control ctrl in parent.Controls)
@@ -1503,7 +1567,7 @@ namespace Vivy
             }
             SetPanelBackgrounds(panelAnalytics);
 
-            // Рекурсивная функция для применения темы ко всем контролам
+            // Рекурсивна функція для застосування теми до всіх контролів
             void ApplyToAllControls(Control parent)
             {
                 foreach (Control ctrl in parent.Controls)
@@ -1547,12 +1611,14 @@ namespace Vivy
             string connectionString = "Data Source=vivy.db";
             using var connection = new Microsoft.Data.Sqlite.SqliteConnection(connectionString);
             connection.Open();
-            string selectCmd = "SELECT Id FROM Users WHERE Login = @login";
-            using var cmd = new Microsoft.Data.Sqlite.SqliteCommand(selectCmd, connection);
+
+            using var cmd = new Microsoft.Data.Sqlite.SqliteCommand("SELECT Id FROM Users WHERE Login = @login", connection);
             cmd.Parameters.AddWithValue("@login", login);
+
             var result = cmd.ExecuteScalar();
             return result != null ? Convert.ToInt32(result) : -1;
         }
+
 
         private void LoadCalendarEventsFromDb()
         {
@@ -1573,7 +1639,7 @@ namespace Vivy
             {
                 DateTime date = reader.GetDateTime(0);
                 string text = reader.GetString(1);
-                // string description = reader.IsDBNull(2) ? "" : reader.GetString(2); // если нужно описание
+                
                 bool isDone = !reader.IsDBNull(3) && reader.GetInt32(3) == 1;
                 allEvents.Add(new Event(date, text, isDone));
             }
@@ -1588,7 +1654,7 @@ namespace Vivy
             using var connection = new Microsoft.Data.Sqlite.SqliteConnection(connectionString);
             connection.Open();
 
-            // Удаляем старые события пользователя
+            // Видаляємо старі події користувача
             string deleteCmd = "DELETE FROM Events WHERE OwnerId = @userId";
             using (var cmd = new Microsoft.Data.Sqlite.SqliteCommand(deleteCmd, connection))
             {
@@ -1596,7 +1662,7 @@ namespace Vivy
                 cmd.ExecuteNonQuery();
             }
 
-            // Сохраняем все события
+            // Зберігаємо всі події
             foreach (var ev in allEvents)
             {
                 string insertCmd = @"
@@ -1620,8 +1686,8 @@ namespace Vivy
             string connectionString = "Data Source=vivy.db";
             using var connection = new Microsoft.Data.Sqlite.SqliteConnection(connectionString);
             connection.Open();
-
-            // Загружаем все сообщения текущего пользователя с привязкой к чатам
+            
+            // Завантажуємо всі повідомлення поточного користувача з прив'язкою до чату
             string selectMessages = @"
         SELECT m.Text, u.Login, m.SentAt, c.Title
         FROM Messages m
@@ -1639,30 +1705,23 @@ namespace Vivy
             {
                 string text = reader.GetString(0);
                 string sender = reader.GetString(1);
-                DateTime timestamp = reader.GetDateTime(2); // Надёжный способ
+                DateTime timestamp = reader.GetDateTime(2);
                 string title = reader.IsDBNull(3) ? "Без названия" : reader.GetString(3);
 
-                // Добавляем в словарь чата
+                // Додаємо до словника чату
                 if (!chatHistory.ContainsKey(title))
                     chatHistory[title] = new List<(string sender, string text, DateTime sentAt)>();
-
 
                 chatHistory[title].Add((sender, text, timestamp));
                 messageTimestamps.Add(timestamp);
 
- 
-
-
-                // Добавляем в список истории, если ещё нет
+                // Додаємо до списку історії, якщо ще немає
                 if (!listBoxHistory.Items.Contains(title))
                     listBoxHistory.Items.Add(title);
             }
 
+            RebuildTopicFrequencyFromHistory();
         }
-
-
-
-
 
         private void SaveChatHistoryToDb()
         {
@@ -1673,7 +1732,7 @@ namespace Vivy
             using var connection = new Microsoft.Data.Sqlite.SqliteConnection(connectionString);
             connection.Open();
 
-            // Для простоты: удаляем все чаты пользователя, сохраняем заново
+            // Для простоти: видаляємо всі чати користувача, зберігаємо заново
             string selectChats = "SELECT Id FROM Chats WHERE User1Id = @userId OR User2Id = @userId";
             using (var cmd = new Microsoft.Data.Sqlite.SqliteCommand(selectChats, connection))
             {
@@ -1695,18 +1754,18 @@ namespace Vivy
                 }
             }
 
-            // Сохраняем чаты и сообщения
+            // Зберігаємо чати та повідомлення
             foreach (var chat in chatHistory)
             {
-                // Вставляем чат
+                // Вставляємо чат
                 string insertChat = "INSERT INTO Chats (User1Id, User2Id, Title) VALUES (@u1, @u2, @title); SELECT last_insert_rowid();";
                 using var cmdChat = new Microsoft.Data.Sqlite.SqliteCommand(insertChat, connection);
                 cmdChat.Parameters.AddWithValue("@u1", userId);
-                cmdChat.Parameters.AddWithValue("@u2", userId); // если только пользователь и Vivy, можно userId дважды
+                cmdChat.Parameters.AddWithValue("@u2", userId); // якщо користувач і Vivy, можна userId двічі
                 cmdChat.Parameters.AddWithValue("@title", chat.Key);
                 long chatId = (long)cmdChat.ExecuteScalar();
 
-                // Вставляем сообщения
+                // Вставляємо повідомлення
                 foreach (var (sender, text, sentAt) in chat.Value)
                 {
                     int senderId = GetUserIdByLogin(sender) != -1 ? GetUserIdByLogin(sender) : userId;
@@ -1727,8 +1786,8 @@ namespace Vivy
         {
             if (e.KeyCode == Keys.Enter)
             {
-                e.SuppressKeyPress = true; // чтобы не добавлялся перевод строки
-                btnSend.PerformClick();    // имитируем нажатие кнопки "Отправить"
+                e.SuppressKeyPress = true; // щоб не додавався переклад рядка
+                btnSend.PerformClick();    // імітуємо натискання кнопки "Надіслати"
             }
         }
 
@@ -1745,8 +1804,31 @@ namespace Vivy
                 "За весь час" => "all",
                 _ => "all"
             };
-  
+
             UpdateTimeChart(mode);
+        }
+        private async void RebuildTopicFrequencyFromHistory()
+        {
+            var tempFrequency = new Dictionary<string, int>();
+
+            foreach (var chat in chatHistory.Values.ToList()) 
+            {
+                foreach (var (sender, message, sentAt) in chat.ToList()) 
+                {
+                    if (sender != currentLogin) continue;
+
+                    string topic = await ClassifyMessageTopic(message);
+                    if (string.IsNullOrWhiteSpace(topic)) continue;
+
+                    if (!tempFrequency.ContainsKey(topic))
+                        tempFrequency[topic] = 0;
+
+                    tempFrequency[topic]++;
+                }
+            }
+
+            topicFrequency = tempFrequency; 
+            UpdateTopicChart(); // Оновлюємо графік
         }
 
 
