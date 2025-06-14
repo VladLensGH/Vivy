@@ -64,6 +64,7 @@
             label3 = new Label();
             label2 = new Label();
             panelSettings = new Panel();
+            checkBox1 = new CheckBox();
             btnLogout = new Button();
             cbModel = new ComboBox();
             label11 = new Label();
@@ -142,7 +143,6 @@
             toolTip1 = new ToolTip(components);
             toolTip2 = new ToolTip(components);
             toolTip3 = new ToolTip(components);
-            checkBox1 = new CheckBox();
             pnlNaw.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picUserAvatar).BeginInit();
@@ -468,6 +468,15 @@
             panelSettings.Controls.Add(lblSettingsTitle);
             resources.ApplyResources(panelSettings, "panelSettings");
             panelSettings.Name = "panelSettings";
+            // 
+            // checkBox1
+            // 
+            checkBox1.Checked = true;
+            checkBox1.CheckState = CheckState.Checked;
+            resources.ApplyResources(checkBox1, "checkBox1");
+            checkBox1.ForeColor = Color.White;
+            checkBox1.Name = "checkBox1";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // btnLogout
             // 
@@ -1041,23 +1050,14 @@
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ReadOnly = true;
             // 
-            // checkBox1
-            // 
-            checkBox1.Checked = true;
-            checkBox1.CheckState = CheckState.Checked;
-            resources.ApplyResources(checkBox1, "checkBox1");
-            checkBox1.ForeColor = Color.White;
-            checkBox1.Name = "checkBox1";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
             // FrmMain
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             Controls.Add(pnlNaw);
-            Controls.Add(panelCalendar);
             Controls.Add(panelSettings);
+            Controls.Add(panelCalendar);
             Controls.Add(panelVivy);
             Controls.Add(panelAnalytics);
             Controls.Add(panelAbout);

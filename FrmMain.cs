@@ -677,6 +677,7 @@ namespace Vivy
             }
 
             MessageBox.Show("Налаштування збережено!", "Vivy", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LoadChatHistoryFromDb();
         }
 
 

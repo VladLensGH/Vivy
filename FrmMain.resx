@@ -6270,7 +6270,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelSettings.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="btnMarkAsDone.Location" type="System.Drawing.Point, System.Drawing">
     <value>34, 222</value>
@@ -6783,7 +6783,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelCalendar.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="pieChartTopics.Location" type="System.Drawing.Point, System.Drawing">
     <value>39, 31</value>
