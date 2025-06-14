@@ -633,6 +633,11 @@ namespace Vivy
                 this.Controls.Clear();
                 InitializeComponent();
                 RestoreCustomUI();
+                textBoxInput.KeyDown += textBoxInput_KeyDown; // <-- добавьте эту строку
+                Usder.Text = currentLogin;
+                LoadUserAvatar();
+                ApplyTheme(selectedTheme?.ToString() ?? string.Empty);
+
                 cbTheme.SelectedItem = selectedTheme;
                 cbModel.SelectedItem = selectedModel;
                 cbNotifications.Checked = selectedNotifications;
@@ -947,6 +952,7 @@ namespace Vivy
             this.Controls.Clear();
             InitializeComponent();
             RestoreCustomUI();
+            textBoxInput.KeyDown += textBoxInput_KeyDown; // <-- добавьте эту строку
 
             Usder.Text = currentLogin;
             LoadUserAvatar();
