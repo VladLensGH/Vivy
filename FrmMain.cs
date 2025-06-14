@@ -376,12 +376,12 @@ namespace Vivy
         // Асинхронний метод для отримання відповіді від GPT API
         private async Task<string> GetGPTResponse(string userMessage)
         {
-            string apiKey = "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";
-            string apiUrl = "https://openrouter.ai/api/v1/chat/completions";
+            string apiKey = "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"; // твой ключ
+            string apiUrl = "https://api.openrouter.ai/v1/chat/completions";
 
             var requestBody = new
             {
-                model = "nous-hermes-2-mistral", // бесплатная мощная модель
+                model = "openchat/openchat-3.5-0106", // бесплатная модель
                 messages = new[]
                 {
             new { role = "user", content = userMessage }
@@ -391,7 +391,7 @@ namespace Vivy
             using (HttpClient client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
-                client.DefaultRequestHeaders.Add("HTTP-Referer", "https://your-app.com"); // можно оставить заглушку
+                client.DefaultRequestHeaders.Add("HTTP-Referer", "https://yourapp.github.io"); // обязательно
                 client.DefaultRequestHeaders.Add("X-Title", "Vivy AI");
 
                 var content = new StringContent(
@@ -413,7 +413,7 @@ namespace Vivy
                                           .GetProperty("message")
                                           .GetProperty("content")
                                           .GetString();
-                        return message ?? "Пустой ответ от модели.";
+                        return message ?? "Пустой ответ.";
                     }
                 }
                 catch (Exception ex)
