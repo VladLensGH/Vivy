@@ -376,22 +376,24 @@ namespace Vivy
         // Асинхронний метод для отримання відповіді від GPT API
         private async Task<string> GetGPTResponse(string userMessage)
         {
-            string apiKey = "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"; // твой ключ
-            string apiUrl = "https://api.openrouter.ai/v1/chat/completions";
+            string apiKey = "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"; 
+            string apiUrl = "https://openrouter.ai/api/v1/chat/completions";
 
             var requestBody = new
             {
-                model = "openchat/openchat-3.5-0106", // бесплатная модель
+                model = "mistralai/mistral-7b-instruct", // можно заменить на другую модель
                 messages = new[]
                 {
             new { role = "user", content = userMessage }
-        }
+        },
+                temperature = 0.7,
+                max_tokens = 500
             };
 
             using (HttpClient client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
-                client.DefaultRequestHeaders.Add("HTTP-Referer", "https://yourapp.github.io"); // обязательно
+                client.DefaultRequestHeaders.Add("HTTP-Referer", "https://yourapp.github.io"); // обязателен для OpenRouter
                 client.DefaultRequestHeaders.Add("X-Title", "Vivy AI");
 
                 var content = new StringContent(
@@ -409,11 +411,18 @@ namespace Vivy
                     using (JsonDocument doc = JsonDocument.Parse(responseBody))
                     {
                         var root = doc.RootElement;
-                        var message = root.GetProperty("choices")[0]
-                                          .GetProperty("message")
-                                          .GetProperty("content")
-                                          .GetString();
-                        return message ?? "Пустой ответ.";
+
+                        // Проверка на наличие поля "message"
+                        if (root.TryGetProperty("choices", out JsonElement choices) &&
+                            choices[0].TryGetProperty("message", out JsonElement message) &&
+                            message.TryGetProperty("content", out JsonElement contentValue))
+                        {
+                            return contentValue.GetString() ?? "Пустой ответ.";
+                        }
+                        else
+                        {
+                            return "Ошибка: ответ не содержит текст.";
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -422,6 +431,8 @@ namespace Vivy
                 }
             }
         }
+
+
 
 
         // Обробка натискання кнопки "Відправити" (Send)
@@ -633,7 +644,7 @@ namespace Vivy
                 this.Controls.Clear();
                 InitializeComponent();
                 RestoreCustomUI();
-                textBoxInput.KeyDown += textBoxInput_KeyDown; // <-- добавьте эту строку
+                textBoxInput.KeyDown += textBoxInput_KeyDown; 
                 Usder.Text = currentLogin;
                 LoadUserAvatar();
                 ApplyTheme(selectedTheme?.ToString() ?? string.Empty);
@@ -953,7 +964,7 @@ namespace Vivy
             this.Controls.Clear();
             InitializeComponent();
             RestoreCustomUI();
-            textBoxInput.KeyDown += textBoxInput_KeyDown; // <-- добавьте эту строку
+            textBoxInput.KeyDown += textBoxInput_KeyDown; 
 
             Usder.Text = currentLogin;
             LoadUserAvatar();
