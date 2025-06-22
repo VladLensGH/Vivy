@@ -14,6 +14,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Diagnostics;
 
 namespace Vivy
 {
@@ -1704,16 +1705,16 @@ namespace Vivy
             string connectionString = "Data Source=vivy.db";
             using var connection = new Microsoft.Data.Sqlite.SqliteConnection(connectionString);
             connection.Open();
-            
+
             // Завантажуємо всі повідомлення поточного користувача з прив'язкою до чату
             string selectMessages = @"
-        SELECT m.Text, u.Login, m.SentAt, c.Title
-        FROM Messages m
-        JOIN Users u ON m.SenderId = u.Id
-        JOIN Chats c ON m.ChatId = c.Id
-        WHERE u.Login = @login
-        ORDER BY m.SentAt;
-    ";
+    SELECT m.Text, u.Login, m.SentAt, c.Title
+    FROM Messages m
+    JOIN Users u ON m.SenderId = u.Id
+    JOIN Chats c ON m.ChatId = c.Id
+    WHERE u.Login = @login
+    ORDER BY m.SentAt;
+";
 
             using var cmd = new Microsoft.Data.Sqlite.SqliteCommand(selectMessages, connection);
             cmd.Parameters.AddWithValue("@login", currentLogin);
@@ -1725,6 +1726,12 @@ namespace Vivy
                 string sender = reader.GetString(1);
                 DateTime timestamp = reader.GetDateTime(2);
                 string title = reader.IsDBNull(3) ? "Без названия" : reader.GetString(3);
+
+                string debugMessage = $"[DEBUG] Чат: '{title}' | Від: {sender} | Текст: {text} | Час: {timestamp}";
+
+                // Лог в консоль и Output окна
+                Console.WriteLine(debugMessage);
+                Debug.WriteLine(debugMessage);
 
                 // Додаємо до словника чату
                 if (!chatHistory.ContainsKey(title))
@@ -1740,6 +1747,8 @@ namespace Vivy
 
             RebuildTopicFrequencyFromHistory();
         }
+
+
 
         private void SaveChatHistoryToDb()
         {
