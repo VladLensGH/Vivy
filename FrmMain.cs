@@ -1298,51 +1298,108 @@ namespace Vivy
             pieChartTopics.Series = pieSeries;
         }
 
-        private void UpdateTimeChart()
+        private void UpdateTimeChart(string mode = "all")
         {
-            var hourlyGroups = messageTimestamps
-                .GroupBy(t => t.Hour)
-                .OrderBy(g => g.Key)
-                .Select(g => new
-                {
-                    Hour = g.Key,
-                    Count = g.Count()
-                })
-                .ToList();
+            List<string> labels;
+            List<double> values;
+
+            DateTime now = DateTime.Now;
+            IEnumerable<DateTime> filtered = messageTimestamps;
+
+            if (mode == "day")
+            {
+                filtered = messageTimestamps.Where(t => t.Date == now.Date);
+                var hours = filtered
+                    .GroupBy(t => t.Hour)
+                    .OrderBy(g => g.Key)
+                    .Select(g => new
+                    {
+                        Hour = $"{g.Key:00}:00",
+                        Count = g.Count()
+                    }).ToList();
+
+                labels = hours.Select(h => h.Hour).ToList();
+                values = hours.Select(h => (double)h.Count).ToList();
+            }
+            else if (mode == "week")
+            {
+                DateTime weekStart = now.Date.AddDays(-(int)now.DayOfWeek + 1); // Понеділок як початок тижня
+                filtered = messageTimestamps.Where(t => t.Date >= weekStart && t.Date <= now.Date);
+
+                var days = filtered
+                    .GroupBy(t => t.Date.DayOfWeek)
+                    .OrderBy(g => (int)g.Key)
+                    .Select(g => new
+                    {
+                        Day = CultureInfo.GetCultureInfo("uk-UA").DateTimeFormat.GetDayName(g.Key),
+                        Count = g.Count()
+                    }).ToList();
+
+                labels = days.Select(d => d.Day).ToList();
+                values = days.Select(d => (double)d.Count).ToList();
+            }
+            else if (mode == "month")
+            {
+                filtered = messageTimestamps.Where(t => t.Date >= now.AddDays(-29).Date && t.Date <= now.Date);
+                var dates = filtered
+                    .GroupBy(t => t.Date)
+                    .OrderBy(g => g.Key)
+                    .Select(g => new
+                    {
+                        Date = g.Key.ToString("dd.MM"),
+                        Count = g.Count()
+                    }).ToList();
+
+                labels = dates.Select(d => d.Date).ToList();
+                values = dates.Select(d => (double)d.Count).ToList();
+            }
+            else // "all"
+            {
+                var dates = filtered
+                    .GroupBy(t => t.Date)
+                    .OrderBy(g => g.Key)
+                    .Select(g => new
+                    {
+                        Date = g.Key.ToString("dd.MM"),
+                        Count = g.Count()
+                    }).ToList();
+
+                labels = dates.Select(d => d.Date).ToList();
+                values = dates.Select(d => (double)d.Count).ToList();
+            }
 
             var columnSeries = new ColumnSeries<double>
             {
-                Values = hourlyGroups.Select(g => (double)g.Count).ToList(),
-                Name = "Активность",
+                Values = values,
+                Name = "Активність",
                 DataLabelsSize = 14,
                 DataLabelsPaint = new SolidColorPaint(SKColors.White),
-                DataLabelsFormatter = (point) =>
-                    $"Час: {hourlyGroups[point.Index].Hour}\nСообщений: {point.Model}"
+                DataLabelsFormatter = (point) => $"{point.Model}"
+
             };
-
-
 
             chartTopics.Series = new List<ISeries> { columnSeries };
-
             chartTopics.XAxes = new Axis[]
-            {
-        new Axis
-        {
-            Labels = hourlyGroups.Select(g => g.Hour.ToString()).ToArray(),
-            LabelsPaint = new SolidColorPaint(SKColors.White),
-            TextSize = 16
-        }
-            };
+ {
+   new Axis
+   {
+       Labels = labels.ToArray(),                    // Дати під кожним стовпцем
+       LabelsPaint = new SolidColorPaint(SKColors.White),
+       TextSize = 16,
+       NamePaint = null,
+       SeparatorsPaint = null,
+       TicksPaint = null
+   }
+ };
 
             chartTopics.YAxes = new Axis[]
             {
-        new Axis
-        {
-            LabelsPaint = new SolidColorPaint(SKColors.White),
-            TextSize = 16
-        }
+       new Axis
+       {
+           LabelsPaint = new SolidColorPaint(SKColors.White),
+           TextSize = 16
+       }
             };
-
         }
         private void RestoreCustomUI()
         {
@@ -1627,6 +1684,23 @@ namespace Vivy
                 e.SuppressKeyPress = true; // чтобы не добавлялся перевод строки
                 btnSend.PerformClick();    // имитируем нажатие кнопки "Отправить"
             }
+        }
+
+        private void cbTimeViewMode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedRaw = cbTimeViewMode.SelectedItem?.ToString() ?? "За весь час";
+            string selected = selectedRaw.TrimStart('•', ' ').Trim();
+
+            string mode = selected switch
+            {
+                "За день" => "day",
+                "За тиждень" => "week",
+                "За місяць" => "month",
+                "За весь час" => "all",
+                _ => "all"
+            };
+
+            UpdateTimeChart(mode);
         }
     }
 }

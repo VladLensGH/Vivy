@@ -64,8 +64,8 @@
             label3 = new Label();
             label2 = new Label();
             panelSettings = new Panel();
-            checkBox1 = new CheckBox();
             btnLogout = new Button();
+            label12 = new Label();
             cbModel = new ComboBox();
             label11 = new Label();
             cbSaveHistory = new CheckBox();
@@ -101,6 +101,8 @@
             panel6 = new Panel();
             pieChartTopics = new LiveChartsCore.SkiaSharpView.WinForms.PieChart();
             panel5 = new Panel();
+            label17 = new Label();
+            cbTimeViewMode = new ComboBox();
             chartTopics = new LiveChartsCore.SkiaSharpView.WinForms.CartesianChart();
             panel4 = new Panel();
             groupBoxCalendarStats = new GroupBox();
@@ -451,8 +453,8 @@
             // panelSettings
             // 
             panelSettings.BackColor = Color.FromArgb(46, 51, 72);
-            panelSettings.Controls.Add(checkBox1);
             panelSettings.Controls.Add(btnLogout);
+            panelSettings.Controls.Add(label12);
             panelSettings.Controls.Add(cbModel);
             panelSettings.Controls.Add(label11);
             panelSettings.Controls.Add(cbSaveHistory);
@@ -467,15 +469,6 @@
             resources.ApplyResources(panelSettings, "panelSettings");
             panelSettings.Name = "panelSettings";
             // 
-            // checkBox1
-            // 
-            checkBox1.Checked = true;
-            checkBox1.CheckState = CheckState.Checked;
-            resources.ApplyResources(checkBox1, "checkBox1");
-            checkBox1.ForeColor = Color.White;
-            checkBox1.Name = "checkBox1";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
             // btnLogout
             // 
             btnLogout.BackColor = Color.FromArgb(24, 30, 54);
@@ -484,6 +477,12 @@
             btnLogout.Name = "btnLogout";
             btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
+            // 
+            // label12
+            // 
+            resources.ApplyResources(label12, "label12");
+            label12.ForeColor = Color.White;
+            label12.Name = "label12";
             // 
             // cbModel
             // 
@@ -540,7 +539,6 @@
             resources.ApplyResources(lblTheme, "lblTheme");
             lblTheme.ForeColor = Color.White;
             lblTheme.Name = "lblTheme";
-            lblTheme.Click += lblTheme_Click;
             // 
             // cbTheme
             // 
@@ -549,6 +547,7 @@
             cbTheme.Items.AddRange(new object[] { resources.GetString("cbTheme.Items"), resources.GetString("cbTheme.Items1") });
             resources.ApplyResources(cbTheme, "cbTheme");
             cbTheme.Name = "cbTheme";
+            cbTheme.SelectedIndexChanged += cbTimeViewMode_SelectedIndexChanged;
             // 
             // cbLanguage
             // 
@@ -557,6 +556,7 @@
             cbLanguage.Items.AddRange(new object[] { resources.GetString("cbLanguage.Items"), resources.GetString("cbLanguage.Items1"), resources.GetString("cbLanguage.Items2") });
             resources.ApplyResources(cbLanguage, "cbLanguage");
             cbLanguage.Name = "cbLanguage";
+            cbLanguage.SelectedIndexChanged += cbLanguage_SelectedIndexChanged;
             // 
             // lblLanguage
             // 
@@ -753,6 +753,7 @@
             // 
             // pieChartTopics
             // 
+            pieChartTopics.BackColor = Color.FromArgb(46, 51, 73);
             pieChartTopics.InitialRotation = 0D;
             pieChartTopics.IsClockwise = true;
             resources.ApplyResources(pieChartTopics, "pieChartTopics");
@@ -765,12 +766,31 @@
             // 
             panel5.BackColor = Color.Transparent;
             panel5.BackgroundImage = Properties.Resources.BackgroundBlack;
+            panel5.Controls.Add(label17);
+            panel5.Controls.Add(cbTimeViewMode);
             panel5.Controls.Add(chartTopics);
             resources.ApplyResources(panel5, "panel5");
             panel5.Name = "panel5";
             // 
+            // label17
+            // 
+            resources.ApplyResources(label17, "label17");
+            label17.ForeColor = Color.White;
+            label17.Name = "label17";
+            // 
+            // cbTimeViewMode
+            // 
+            cbTimeViewMode.BackColor = Color.FromArgb(24, 30, 54);
+            cbTimeViewMode.DropDownStyle = ComboBoxStyle.DropDownList;
+            resources.ApplyResources(cbTimeViewMode, "cbTimeViewMode");
+            cbTimeViewMode.FormattingEnabled = true;
+            cbTimeViewMode.Items.AddRange(new object[] { resources.GetString("cbTimeViewMode.Items"), resources.GetString("cbTimeViewMode.Items1"), resources.GetString("cbTimeViewMode.Items2"), resources.GetString("cbTimeViewMode.Items3") });
+            cbTimeViewMode.Name = "cbTimeViewMode";
+            cbTimeViewMode.SelectedIndexChanged += cbTimeViewMode_SelectedIndexChanged;
+            // 
             // chartTopics
             // 
+            chartTopics.BackColor = Color.FromArgb(46, 51, 73);
             resources.ApplyResources(chartTopics, "chartTopics");
             chartTopics.MatchAxesScreenDataRatio = false;
             chartTopics.Name = "chartTopics";
@@ -800,7 +820,6 @@
             resources.ApplyResources(groupBoxCalendarStats, "groupBoxCalendarStats");
             groupBoxCalendarStats.Name = "groupBoxCalendarStats";
             groupBoxCalendarStats.TabStop = false;
-            groupBoxCalendarStats.Enter += groupBoxCalendarStats_Enter;
             // 
             // lblTotalEvents
             // 
@@ -1034,11 +1053,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             Controls.Add(pnlNaw);
-            Controls.Add(panelSettings);
-            Controls.Add(panelCalendar);
-            Controls.Add(panelVivy);
             Controls.Add(panelAnalytics);
             Controls.Add(panelAbout);
+            Controls.Add(panelCalendar);
+            Controls.Add(panelSettings);
+            Controls.Add(panelVivy);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMain";
             Load += FrmMain_Load;
@@ -1071,6 +1090,7 @@
             panelAnalytics.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             panel4.ResumeLayout(false);
             groupBoxCalendarStats.ResumeLayout(false);
             groupBoxCalendarStats.PerformLayout();
@@ -1132,6 +1152,7 @@
         private ToolTip toolTip3;
         private ComboBox cbModel;
         private Label label11;
+        private Label label12;
         private Button btnLogout;
         private Label label13;
         private Label labelvivy;
@@ -1197,6 +1218,7 @@
         private LiveChartsCore.SkiaSharpView.WinForms.PieChart pieChartTopics;
         private Panel panel5;
         private Panel panel6;
-        private CheckBox checkBox1;
+        private ComboBox cbTimeViewMode;
+        private Label label17;
     }
 }
