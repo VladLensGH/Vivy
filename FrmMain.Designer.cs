@@ -64,6 +64,10 @@
             label3 = new Label();
             label2 = new Label();
             panelSettings = new Panel();
+            label19 = new Label();
+            label18 = new Label();
+            endTimePicker = new DateTimePicker();
+            startTimePicker = new DateTimePicker();
             pictureBox3 = new PictureBox();
             pictureBox1 = new PictureBox();
             checkBox1 = new CheckBox();
@@ -147,7 +151,6 @@
             toolTip1 = new ToolTip(components);
             toolTip2 = new ToolTip(components);
             toolTip3 = new ToolTip(components);
-            dateTimePicker1 = new DateTimePicker();
             pnlNaw.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picUserAvatar).BeginInit();
@@ -460,7 +463,10 @@
             // panelSettings
             // 
             panelSettings.BackColor = Color.FromArgb(46, 51, 72);
-            panelSettings.Controls.Add(dateTimePicker1);
+            panelSettings.Controls.Add(label19);
+            panelSettings.Controls.Add(label18);
+            panelSettings.Controls.Add(endTimePicker);
+            panelSettings.Controls.Add(startTimePicker);
             panelSettings.Controls.Add(pictureBox3);
             panelSettings.Controls.Add(pictureBox1);
             panelSettings.Controls.Add(checkBox1);
@@ -478,6 +484,30 @@
             panelSettings.Controls.Add(lblSettingsTitle);
             resources.ApplyResources(panelSettings, "panelSettings");
             panelSettings.Name = "panelSettings";
+            // 
+            // label19
+            // 
+            resources.ApplyResources(label19, "label19");
+            label19.Name = "label19";
+            // 
+            // label18
+            // 
+            resources.ApplyResources(label18, "label18");
+            label18.ForeColor = Color.Black;
+            label18.Name = "label18";
+            // 
+            // endTimePicker
+            // 
+            endTimePicker.Format = DateTimePickerFormat.Time;
+            resources.ApplyResources(endTimePicker, "endTimePicker");
+            endTimePicker.Name = "endTimePicker";
+            // 
+            // startTimePicker
+            // 
+            startTimePicker.Format = DateTimePickerFormat.Time;
+            resources.ApplyResources(startTimePicker, "startTimePicker");
+            startTimePicker.Name = "startTimePicker";
+            startTimePicker.Value = new DateTime(2025, 6, 23, 23, 57, 0, 0);
             // 
             // pictureBox3
             // 
@@ -1094,13 +1124,6 @@
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ReadOnly = true;
             // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Format = DateTimePickerFormat.Time;
-            resources.ApplyResources(dateTimePicker1, "dateTimePicker1");
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Value = new DateTime(2025, 6, 23, 23, 57, 0, 0);
-            // 
             // FrmMain
             // 
             resources.ApplyResources(this, "$this");
@@ -1281,6 +1304,9 @@
         private Button button1;
         private PictureBox pictureBox3;
         private PictureBox pictureBox1;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker startTimePicker;
+        private Label label19;
+        private Label label18;
+        private DateTimePicker endTimePicker;
     }
 }

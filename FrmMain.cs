@@ -377,7 +377,7 @@ namespace Vivy
         // Асинхронний метод для отримання відповіді від GPT API
         private async Task<string> GetGPTResponse(string userMessage)
         {
-            string apiKey = "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";
+            string apiKey = "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";
             string apiUrl = "https://openrouter.ai/api/v1/chat/completions";
 
             var requestBody = new
