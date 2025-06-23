@@ -64,6 +64,8 @@
             label3 = new Label();
             label2 = new Label();
             panelSettings = new Panel();
+            pictureBox3 = new PictureBox();
+            pictureBox1 = new PictureBox();
             checkBox1 = new CheckBox();
             btnLogout = new Button();
             cbModel = new ComboBox();
@@ -145,6 +147,7 @@
             toolTip1 = new ToolTip(components);
             toolTip2 = new ToolTip(components);
             toolTip3 = new ToolTip(components);
+            dateTimePicker1 = new DateTimePicker();
             pnlNaw.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picUserAvatar).BeginInit();
@@ -156,6 +159,8 @@
             panelAboutVivy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panelSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelCalendar.SuspendLayout();
             panel1.SuspendLayout();
             panelEventsWrapper.SuspendLayout();
@@ -455,6 +460,9 @@
             // panelSettings
             // 
             panelSettings.BackColor = Color.FromArgb(46, 51, 72);
+            panelSettings.Controls.Add(dateTimePicker1);
+            panelSettings.Controls.Add(pictureBox3);
+            panelSettings.Controls.Add(pictureBox1);
             panelSettings.Controls.Add(checkBox1);
             panelSettings.Controls.Add(btnLogout);
             panelSettings.Controls.Add(cbModel);
@@ -470,6 +478,22 @@
             panelSettings.Controls.Add(lblSettingsTitle);
             resources.ApplyResources(panelSettings, "panelSettings");
             panelSettings.Name = "panelSettings";
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox3.Image = Properties.Resources.theme_dark;
+            resources.ApplyResources(pictureBox3, "pictureBox3");
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox1.Image = Properties.Resources.theme_light;
+            resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.TabStop = false;
             // 
             // checkBox1
             // 
@@ -1070,6 +1094,13 @@
             richTextBox1.Name = "richTextBox1";
             richTextBox1.ReadOnly = true;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Format = DateTimePickerFormat.Time;
+            resources.ApplyResources(dateTimePicker1, "dateTimePicker1");
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Value = new DateTime(2025, 6, 23, 23, 57, 0, 0);
+            // 
             // FrmMain
             // 
             resources.ApplyResources(this, "$this");
@@ -1102,6 +1133,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panelSettings.ResumeLayout(false);
             panelSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelCalendar.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panelEventsWrapper.ResumeLayout(false);
@@ -1246,5 +1279,8 @@
         private CheckBox checkBox1;
         private Label label12;
         private Button button1;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox1;
+        private DateTimePicker dateTimePicker1;
     }
 }
