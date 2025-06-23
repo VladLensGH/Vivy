@@ -81,7 +81,6 @@
             panel1 = new Panel();
             btnMarkAsDone = new Button();
             cbEventFilter = new ComboBox();
-            btnDeleteEvent2 = new Button();
             listBoxAllEvents = new ListBox();
             lblAllEventsTitle = new Label();
             panelEventsWrapper = new Panel();
@@ -590,7 +589,6 @@
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(btnMarkAsDone);
             panel1.Controls.Add(cbEventFilter);
-            panel1.Controls.Add(btnDeleteEvent2);
             panel1.Controls.Add(listBoxAllEvents);
             panel1.Controls.Add(lblAllEventsTitle);
             panel1.ForeColor = Color.White;
@@ -607,15 +605,9 @@
             // cbEventFilter
             // 
             cbEventFilter.FormattingEnabled = true;
+            cbEventFilter.Items.AddRange(new object[] { resources.GetString("cbEventFilter.Items"), resources.GetString("cbEventFilter.Items1"), resources.GetString("cbEventFilter.Items2"), resources.GetString("cbEventFilter.Items3") });
             resources.ApplyResources(cbEventFilter, "cbEventFilter");
             cbEventFilter.Name = "cbEventFilter";
-            // 
-            // btnDeleteEvent2
-            // 
-            resources.ApplyResources(btnDeleteEvent2, "btnDeleteEvent2");
-            btnDeleteEvent2.Name = "btnDeleteEvent2";
-            btnDeleteEvent2.UseVisualStyleBackColor = true;
-            btnDeleteEvent2.Click += btnDeleteEvent2_Click;
             // 
             // listBoxAllEvents
             // 
@@ -1077,9 +1069,9 @@
             BackColor = Color.FromArgb(46, 51, 73);
             Controls.Add(pnlNaw);
             Controls.Add(panelSettings);
+            Controls.Add(panelAnalytics);
             Controls.Add(panelCalendar);
             Controls.Add(panelVivy);
-            Controls.Add(panelAnalytics);
             Controls.Add(panelAbout);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMain";
@@ -1189,7 +1181,6 @@
         private Label label14;
         private Panel panel1;
         private Label label16;
-        private Button btnDeleteEvent2;
         private DateTimePicker datePickerEvent;
         private Label lblLongestChatTitle;
         private Label lblAvgResponseLengthTitle;
