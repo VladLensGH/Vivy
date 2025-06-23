@@ -1077,11 +1077,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             Controls.Add(pnlNaw);
-            Controls.Add(panelAnalytics);
-            Controls.Add(panelAbout);
             Controls.Add(panelSettings);
             Controls.Add(panelCalendar);
             Controls.Add(panelVivy);
+            Controls.Add(panelAnalytics);
+            Controls.Add(panelAbout);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMain";
             Load += FrmMain_Load;

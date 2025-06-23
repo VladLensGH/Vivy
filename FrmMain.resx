@@ -5981,7 +5981,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelAbout.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="checkBox1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 11pt</value>
@@ -6401,7 +6401,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelSettings.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="btnMarkAsDone.Location" type="System.Drawing.Point, System.Drawing">
     <value>34, 222</value>
@@ -6914,7 +6914,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelCalendar.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -7451,7 +7451,7 @@
     <value>0</value>
   </data>
   <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 294</value>
+    <value>220, 296</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
     <value>334, 250</value>
@@ -7805,7 +7805,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelAnalytics.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="btnSend.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -8131,7 +8131,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelVivy.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
