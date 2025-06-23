@@ -35,11 +35,11 @@ namespace Vivy
         private Color sideButtonTextColorDark = Color.FromArgb(0, 126, 249);
         private Color sideButtonTextColorLight = Color.Black;
 
-        
+
         private Color panelElementTextColorDark = Color.White;
         private Color panelElementTextColorLight = Color.Black;
 
-        
+
         private Color userNameTextColorDark = Color.FromArgb(0, 126, 149);
         private Color userNameTextColorLight = Color.Black;
 
@@ -134,14 +134,14 @@ namespace Vivy
             PanelElementTextColor = Color.White;
             UserNameTextColor = Color.FromArgb(0, 126, 149);
 
-            UpdateTopicChart(); 
+            UpdateTopicChart();
 
             RestoreCustomUI();
 
             LoadChatHistoryFromDb();
             LoadCalendarEventsFromDb();
 
-           
+
             textBoxInput.KeyDown += textBoxInput_KeyDown;
         }
         private Dictionary<string, List<(string sender, string text, DateTime sentAt)>> chatHistory = new();
@@ -155,7 +155,7 @@ namespace Vivy
             chartTopics.DrawMarginFrame = new DrawMarginFrame
             {
                 Stroke = null,
-                Fill = new SolidColorPaint(new SKColor(30, 35, 60)) 
+                Fill = new SolidColorPaint(new SKColor(30, 35, 60))
             };
             chartTopics.BackColor = Color.FromArgb(30, 35, 60);
 
@@ -186,7 +186,7 @@ namespace Vivy
 
             // Додаємо посилання для підтримки
             linkSupportCard.Links.Clear();
-            linkSupportCard.Links.Add(0, linkSupportCard.Text.Length, "https://send.monobank.ua/jar/4441114498935962"); 
+            linkSupportCard.Links.Add(0, linkSupportCard.Text.Length, "https://send.monobank.ua/jar/4441114498935962");
             Usder.Text = currentLogin;
             LoadUserAvatar();
 
@@ -216,7 +216,7 @@ namespace Vivy
             cbEventFilter.SelectedIndex = 0;
             cbEventFilter.SelectedIndexChanged += (s, e) => ApplyEventFilter();
 
-            var darkBackground = SKColors.Transparent; 
+            var darkBackground = SKColors.Transparent;
             var darkText = SKColors.White;
 
             var analyticsBackgroundColor = selectedTheme == "Світла"
@@ -377,7 +377,7 @@ namespace Vivy
         // Асинхронний метод для отримання відповіді від GPT API
         private async Task<string> GetGPTResponse(string userMessage)
         {
-            string apiKey = "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"; 
+            string apiKey = "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";
             string apiUrl = "https://openrouter.ai/api/v1/chat/completions";
 
             var requestBody = new
@@ -504,7 +504,6 @@ namespace Vivy
                 UpdateTopicChart();
 
             }
-            MessageBox.Show("Сохраняем историю чата в БД...");
             SaveChatHistoryToDb();
 
         }
@@ -555,7 +554,7 @@ namespace Vivy
             cmdMsg.ExecuteNonQuery();
         }
 
- 
+
 
         private void listBoxHistory_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -645,7 +644,7 @@ namespace Vivy
                 this.Controls.Clear();
                 InitializeComponent();
                 RestoreCustomUI();
-                textBoxInput.KeyDown += textBoxInput_KeyDown; 
+                textBoxInput.KeyDown += textBoxInput_KeyDown;
                 Usder.Text = currentLogin;
                 LoadUserAvatar();
                 ApplyTheme(selectedTheme?.ToString() ?? string.Empty);
@@ -735,7 +734,7 @@ namespace Vivy
         private SpeechSynthesizer synthesizer = new SpeechSynthesizer();
 
 
-        
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -745,7 +744,7 @@ namespace Vivy
                 currentLogin = loginForm.UserLogin;
                 Usder.Text = currentLogin;
                 LoadUserAvatar();
-                LoadAndApplyUserSettings(); 
+                LoadAndApplyUserSettings();
                 this.Show();
             }
             else
@@ -965,7 +964,7 @@ namespace Vivy
             this.Controls.Clear();
             InitializeComponent();
             RestoreCustomUI();
-            textBoxInput.KeyDown += textBoxInput_KeyDown; 
+            textBoxInput.KeyDown += textBoxInput_KeyDown;
 
             Usder.Text = currentLogin;
             LoadUserAvatar();
@@ -1069,7 +1068,7 @@ namespace Vivy
                 return;
             }
 
-            DateTime selectedDate = datePickerEvent.Value.Date; 
+            DateTime selectedDate = datePickerEvent.Value.Date;
             DateTime selectedTime = timePickerEvent.Value;
 
             DateTime fullDateTime = new DateTime(
@@ -1123,7 +1122,7 @@ namespace Vivy
             {
                 var selected = listBoxAllEvents.SelectedItem.ToString();
 
-                
+
                 var item = allEvents.FirstOrDefault(ev =>
                     $"{ev.Date:dd.MM.yyyy HH:mm} — {ev.Text}" == selected);
 
@@ -1149,7 +1148,7 @@ namespace Vivy
             string selectedItem = listBoxEvents.SelectedItem.ToString();
             DateTime selectedDate = monthCalendar1.SelectionStart.Date;
 
-            
+
             var eventToRemove = allEvents
                 .FirstOrDefault(ev => ev.Date.Date == selectedDate && $"{ev.Date:HH:mm} — {ev.Text}" == selectedItem);
 
@@ -1174,6 +1173,7 @@ namespace Vivy
             string longestChatTitle = "";
             int longestChatMessages = 0;
 
+            // Найти самый длинный чат(заменил1)
             foreach (var chat in chatHistory)
             {
                 totalMessages += chat.Value.Count;
@@ -1184,16 +1184,21 @@ namespace Vivy
                     longestChatMessages = currentChatMessageCount;
                     longestChatTitle = chat.Key;
                 }
+            }
 
-                foreach (var (sender, message, sentAt) in chatHistory[currentChatTitle])
+            // Подсчитать длину GPT-ответов ТОЛЬКО ПОСЛЕ того, как найден longestChatTitle
+            if (!string.IsNullOrEmpty(longestChatTitle) && chatHistory.ContainsKey(longestChatTitle))
+            {
+                foreach (var (sender, message, sentAt) in chatHistory[longestChatTitle])
                 {
-                    if (sender == "Vivy") 
+                    if (sender == "Vivy")
                     {
                         totalGptResponsesLength += message.Length;
                         gptResponsesCount++;
                     }
                 }
             }
+
 
             int avgLength = gptResponsesCount > 0 ? totalGptResponsesLength / gptResponsesCount : 0;
 
@@ -1413,7 +1418,7 @@ namespace Vivy
                     }
                 })
                 .ToList<ISeries>();
-            
+
             if (topicFrequency.Count == 0) ;
 
 
@@ -1658,7 +1663,7 @@ namespace Vivy
             {
                 DateTime date = reader.GetDateTime(0);
                 string text = reader.GetString(1);
-                
+
                 bool isDone = !reader.IsDBNull(3) && reader.GetInt32(3) == 1;
                 allEvents.Add(new Event(date, text, isDone));
             }
@@ -1838,9 +1843,9 @@ namespace Vivy
         {
             var tempFrequency = new Dictionary<string, int>();
 
-            foreach (var chat in chatHistory.Values.ToList()) 
+            foreach (var chat in chatHistory.Values.ToList())
             {
-                foreach (var (sender, message, sentAt) in chat.ToList()) 
+                foreach (var (sender, message, sentAt) in chat.ToList())
                 {
                     if (sender != currentLogin) continue;
 
@@ -1854,10 +1859,25 @@ namespace Vivy
                 }
             }
 
-            topicFrequency = tempFrequency; 
+            topicFrequency = tempFrequency;
             UpdateTopicChart(); // Оновлюємо графік
         }
 
+        private void panelVivy_VisibleChanged(object sender, EventArgs e)
+        {
+            if (panelVivy.Visible)
+                LoadChatHistoryFromDb();
+        }
 
+        private void btnUpdateAnalytics_Click(object sender, EventArgs e)
+        {
+            UpdateAnalytics();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoadChatHistoryFromDb();
+            RebuildTopicFrequencyFromHistory();
+        }
     }
 }

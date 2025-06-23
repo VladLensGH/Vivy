@@ -99,6 +99,8 @@
             monthCalendar1 = new MonthCalendar();
             panelAnalytics = new Panel();
             panel6 = new Panel();
+            button1 = new Button();
+            label12 = new Label();
             pieChartTopics = new LiveChartsCore.SkiaSharpView.WinForms.PieChart();
             panel5 = new Panel();
             label17 = new Label();
@@ -750,9 +752,26 @@
             // 
             panel6.BackColor = Color.Transparent;
             panel6.BackgroundImage = Properties.Resources.BackgroundBlack;
+            panel6.Controls.Add(button1);
+            panel6.Controls.Add(label12);
             panel6.Controls.Add(pieChartTopics);
             resources.ApplyResources(panel6, "panel6");
             panel6.Name = "panel6";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(24, 30, 54);
+            button1.ForeColor = Color.White;
+            resources.ApplyResources(button1, "button1");
+            button1.Name = "button1";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // label12
+            // 
+            resources.ApplyResources(label12, "label12");
+            label12.ForeColor = Color.White;
+            label12.Name = "label12";
             // 
             // pieChartTopics
             // 
@@ -898,6 +917,7 @@
             resources.ApplyResources(btnUpdateAnalytics, "btnUpdateAnalytics");
             btnUpdateAnalytics.Name = "btnUpdateAnalytics";
             btnUpdateAnalytics.UseVisualStyleBackColor = false;
+            btnUpdateAnalytics.Click += btnUpdateAnalytics_Click;
             // 
             // lblLongestChat
             // 
@@ -990,6 +1010,7 @@
             panelVivy.Controls.Add(richTextBox1);
             resources.ApplyResources(panelVivy, "panelVivy");
             panelVivy.Name = "panelVivy";
+            panelVivy.VisibleChanged += panelVivy_VisibleChanged;
             // 
             // label15
             // 
@@ -1056,11 +1077,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             Controls.Add(pnlNaw);
+            Controls.Add(panelAnalytics);
+            Controls.Add(panelAbout);
             Controls.Add(panelSettings);
             Controls.Add(panelCalendar);
             Controls.Add(panelVivy);
-            Controls.Add(panelAnalytics);
-            Controls.Add(panelAbout);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmMain";
             Load += FrmMain_Load;
@@ -1092,6 +1113,7 @@
             panelCalendarWrapper.PerformLayout();
             panelAnalytics.ResumeLayout(false);
             panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             panel4.ResumeLayout(false);
@@ -1223,5 +1245,7 @@
         private ComboBox cbTimeViewMode;
         private Label label17;
         private CheckBox checkBox1;
+        private Label label12;
+        private Button button1;
     }
 }
