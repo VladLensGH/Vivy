@@ -6554,7 +6554,7 @@
     <value>1</value>
   </data>
   <data name="btnMarkAsDone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 222</value>
+    <value>104, 220</value>
   </data>
   <data name="btnMarkAsDone.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 23</value>
@@ -6577,6 +6577,18 @@
   <data name="&gt;&gt;btnMarkAsDone.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="cbEventFilter.Items" xml:space="preserve">
+    <value>Усі події</value>
+  </data>
+  <data name="cbEventFilter.Items1" xml:space="preserve">
+    <value>Заплановані</value>
+  </data>
+  <data name="cbEventFilter.Items2" xml:space="preserve">
+    <value>Виконані</value>
+  </data>
+  <data name="cbEventFilter.Items3" xml:space="preserve">
+    <value>Прострочені</value>
+  </data>
   <data name="cbEventFilter.Location" type="System.Drawing.Point, System.Drawing">
     <value>91, 43</value>
   </data>
@@ -6597,33 +6609,6 @@
   </data>
   <data name="&gt;&gt;cbEventFilter.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="btnDeleteEvent2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnDeleteEvent2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>210, 222</value>
-  </data>
-  <data name="btnDeleteEvent2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 23</value>
-  </data>
-  <data name="btnDeleteEvent2.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="btnDeleteEvent2.Text" xml:space="preserve">
-    <value>Видалити подію</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteEvent2.Name" xml:space="preserve">
-    <value>btnDeleteEvent2</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteEvent2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteEvent2.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteEvent2.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="listBoxAllEvents.ItemHeight" type="System.Int32, mscorlib">
     <value>15</value>
@@ -6647,7 +6632,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;listBoxAllEvents.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="lblAllEventsTitle.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Black, 14pt, style=Bold</value>
@@ -6677,7 +6662,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;lblAllEventsTitle.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>560, 305</value>
@@ -8281,7 +8266,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelVivy.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
