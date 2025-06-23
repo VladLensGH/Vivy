@@ -150,7 +150,7 @@ namespace Vivy
         // Подія завантаження форми
         private void FrmMain_Load(object sender, EventArgs e)
         {
-
+   
 
             chartTopics.DrawMarginFrame = new DrawMarginFrame
             {
@@ -619,8 +619,11 @@ namespace Vivy
                 string? interfaceLanguage = cbLanguage.SelectedItem?.ToString();
 
                 if (theme == null || model == null || interfaceLanguage == null)
+                {
                     return;
+                }
 
+                ChangeLocalisation();
                 // Застосовуємо тему
                 ApplyTheme(theme);
 
@@ -951,7 +954,7 @@ namespace Vivy
             }
         }
 
-        private void cbLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        private void ChangeLocalisation()
         {
             if (cbLanguage.SelectedItem is not string selectedCulture || string.IsNullOrWhiteSpace(selectedCulture))
                 return;

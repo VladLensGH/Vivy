@@ -561,7 +561,6 @@
             cbLanguage.Items.AddRange(new object[] { resources.GetString("cbLanguage.Items"), resources.GetString("cbLanguage.Items1"), resources.GetString("cbLanguage.Items2") });
             resources.ApplyResources(cbLanguage, "cbLanguage");
             cbLanguage.Name = "cbLanguage";
-            cbLanguage.SelectedIndexChanged += cbLanguage_SelectedIndexChanged;
             // 
             // lblLanguage
             // 
@@ -1077,9 +1076,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             Controls.Add(pnlNaw);
+            Controls.Add(panelSettings);
             Controls.Add(panelAnalytics);
             Controls.Add(panelAbout);
-            Controls.Add(panelSettings);
             Controls.Add(panelCalendar);
             Controls.Add(panelVivy);
             FormBorderStyle = FormBorderStyle.None;
