@@ -150,7 +150,7 @@ namespace Vivy
         // Подія завантаження форми
         private void FrmMain_Load(object sender, EventArgs e)
         {
-   
+
 
             chartTopics.DrawMarginFrame = new DrawMarginFrame
             {
@@ -207,12 +207,7 @@ namespace Vivy
 
             UpdateCalendarStats();
 
-            cbEventFilter.Items.AddRange(new[] {
-              "Усі події",
-              "Заплановані",
-              "Виконані",
-              "Прострочені"
-             });
+            
             cbEventFilter.SelectedIndex = 0;
             cbEventFilter.SelectedIndexChanged += (s, e) => ApplyEventFilter();
 
@@ -623,7 +618,7 @@ namespace Vivy
                     return;
                 }
 
-                ChangeLocalisation();
+
                 // Застосовуємо тему
                 ApplyTheme(theme);
 
@@ -732,6 +727,8 @@ namespace Vivy
             this.Controls.Add(btnClose);
             btnMinimize.BringToFront();
             btnClose.BringToFront();
+
+            ChangeLocalisation();
         }
 
         private SpeechSynthesizer synthesizer = new SpeechSynthesizer();
@@ -1119,26 +1116,8 @@ namespace Vivy
         }
 
 
-        private void btnDeleteEvent2_Click(object sender, EventArgs e)
-        {
-            if (listBoxAllEvents.SelectedIndex >= 0)
-            {
-                var selected = listBoxAllEvents.SelectedItem.ToString();
+        
 
-
-                var item = allEvents.FirstOrDefault(ev =>
-                    $"{ev.Date:dd.MM.yyyy HH:mm} — {ev.Text}" == selected);
-
-
-                if (item != default)
-                {
-                    allEvents.Remove(item);
-                    ApplyEventFilter();
-                    UpdateEventsForDate(monthCalendar1.SelectionStart.Date); // оновимо поточну дату
-                    UpdateCalendarStats();
-                }
-            }
-        }
 
         private void btnDeleteEvent_Click_1(object sender, EventArgs e)
         {
@@ -1151,12 +1130,33 @@ namespace Vivy
             string selectedItem = listBoxEvents.SelectedItem.ToString();
             DateTime selectedDate = monthCalendar1.SelectionStart.Date;
 
-
             var eventToRemove = allEvents
                 .FirstOrDefault(ev => ev.Date.Date == selectedDate && $"{ev.Date:HH:mm} — {ev.Text}" == selectedItem);
 
             if (eventToRemove != default)
             {
+                // Удаление из базы данных
+                int userId = GetUserIdByLogin(currentLogin);
+                if (userId != -1)
+                {
+                    string connectionString = "Data Source=vivy.db";
+                    using (var connection = new Microsoft.Data.Sqlite.SqliteConnection(connectionString))
+                    {
+                        connection.Open();
+                        string deleteCmd = @"
+                        DELETE FROM Events 
+                        WHERE OwnerId = @userId AND Title = @title AND Date = @date";
+                        using (var cmd = new Microsoft.Data.Sqlite.SqliteCommand(deleteCmd, connection))
+                        {
+                            cmd.Parameters.AddWithValue("@userId", userId);
+                            cmd.Parameters.AddWithValue("@title", eventToRemove.Text);
+                            cmd.Parameters.AddWithValue("@date", eventToRemove.Date);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                }
+
+                // Удаляем локально из списка
                 allEvents.Remove(eventToRemove);
                 UpdateEventsForDate(selectedDate);
                 ApplyEventFilter();
@@ -1882,5 +1882,39 @@ namespace Vivy
             LoadChatHistoryFromDb();
             RebuildTopicFrequencyFromHistory();
         }
+
+        private void cbEventFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedFilter = cbEventFilter.SelectedItem?.ToString();
+            listBoxAllEvents.Items.Clear();
+
+            IEnumerable<Event> filtered = allEvents;
+
+            switch (selectedFilter)
+            {
+                case "Усі події":
+                    break;
+
+                case "Заплановані":
+                    filtered = allEvents.Where(ev => !ev.IsDone && ev.Date >= DateTime.Now);
+                    break;
+
+                case "Виконані":
+                    filtered = allEvents.Where(ev => ev.IsDone);
+                    break;
+
+                case "Прострочені":
+                    filtered = allEvents.Where(ev => !ev.IsDone && ev.Date < DateTime.Now);
+                    break;
+            }
+
+            foreach (var ev in filtered.OrderBy(ev => ev.Date))
+            {
+                string status = ev.IsDone ? "✅" : ev.Date < DateTime.Now ? "⏰" : "";
+                listBoxAllEvents.Items.Add($"{ev.Date:dd.MM.yyyy HH:mm} — {ev.Text} {status}");
+            }
+        }
+
+        
     }
 }
